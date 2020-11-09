@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.SimpleTabResources">
+
+    <!-- tab simple, no soporta iconos-->
+    <Style
+		x:Key="SimpleTabStyle"
+		TargetType="grial:TabControl">
+        <Setter
+			Property="TabItemStyle">
+            <Setter.Value>
+                <Style
+					TargetType="grial:TabItem">
+                    <Setter
+						Property="TextColor"
+						Value="{ DynamicResource SimpleTabDefaultStateTextColor }" />
+                    <Setter
+						Property="TextColorSelected"
+						Value="{ DynamicResource AccentColor }" />
+                    <Setter
+						Property="FontSize"
+						Value="14" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter
+			Property="TabItemControlTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid>
+                        <Label
+							Margin="0,14"
+							VerticalOptions="Center"
+							HorizontalOptions="Center"
+							FontSize="{ TemplateBinding FontSize }"
+							Style="{ StaticResource LabelBoldStyle }"
+							Text="{ TemplateBinding Text }"
+							TextColor="{ TemplateBinding CurrentTextColor }" />
+
+                        <BoxView
+							HeightRequest="2"
+							VerticalOptions="End"
+							IsVisible="{ TemplateBinding IsSelected }"
+							BackgroundColor="{ DynamicResource AccentColor }" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

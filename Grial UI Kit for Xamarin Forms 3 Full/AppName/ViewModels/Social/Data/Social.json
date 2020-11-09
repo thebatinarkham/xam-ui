@@ -1,0 +1,214 @@
+{
+  "SocialPage.xaml": {
+    "$id": "SocialPage.xaml",
+    "Profile": {
+      "Name": "Robert Stainford",
+      "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/user_01.png",
+      "Description": "Passion driven designer and developer. Frustrated musician and father of two."
+    },
+    "Related": {
+      "$id": "social-related",
+      "Images": [
+        "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/gallery_01.jpg",
+        "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/gallery_02.jpg",
+        "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/gallery_03.jpg",
+        "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/gallery_04.jpg",
+        "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/gallery_05.jpg",
+        "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/gallery_06.jpg",
+        "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/gallery_07.jpg",
+        "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/gallery_08.jpg",
+        "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/gallery_09.jpg"
+      ],
+      "Friends": [
+        {
+          "$id": "friend-1",
+          "Name": "Donald Davies",
+          "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png"
+        },
+        {
+          "Name": "Janis Spector",
+          "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_02.png"
+        },
+        {
+          "Name": "Regina Joplin",
+          "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png"
+        },
+        {
+          "Name": "Jaco Morrison",
+          "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_04.png"
+        },
+        {
+          "Name": "Margaret Whites",
+          "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_05.png"
+        },
+        {
+          "Name": "Skyler Harrisson",
+          "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_06.png"
+        },
+        {
+          "Name": "Alison Pastorius",
+          "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_07.png"
+        }
+      ]
+    }
+  },
+  "SocialVariantPage.xaml": {
+    "Profile": {
+      "Name": "Clare Japi",
+      "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/user_02.png",
+      "Description": "I like my toast done on one side."
+    },
+    "Related": {
+      "$ref": "social-related"
+    }
+  },
+  "ProfilePage.xaml": {
+    "Name": "Regina Joplin",
+    "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/profile_image.jpg",
+    "Description": "Photography is my passion. Black and white is the way I see the world."
+  },
+  "TimelinePage.xaml": {
+    "TimelineList": [
+      {
+        "$id": "timeline-item-1",
+        "EventTitle": "Eric Douglas has a new photo",
+        "EventDescription": "Eric uploaded a more recently pic from him.",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png",
+        "When": "JUN 29, 2018"
+      },
+      {
+        "EventTitle": "Sam joined a new group",
+        "EventDescription": "Sam joined the Marketing and Affiliates group",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png",
+        "When": "JUN 28, 2018"
+      },
+      {
+        "EventTitle": "You have a new follower!",
+        "EventDescription": "Tony is now folowing you.",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_04.png",
+        "When": "JUN 17, 2018"
+      },
+      {
+        "EventTitle": "You have a new follower!",
+        "EventDescription": "Ingrid Davies is now followig you.",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_05.png",
+        "When": "JUN 17, 2018"
+      },
+      {
+        "EventTitle": "You have a new like!",
+        "EventDescription": "Emily liked your last post!",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_06.png",
+        "When": "JUN 14, 2018"
+      },
+      {
+        "EventTitle": "Jaco joined a new group!",
+        "EventDescription": "Jaco Davies has joined the Internet of Things group. He is now the member number 100 of this group.",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_07.png",
+        "When": "JUN 14, 2018"
+      },
+      {
+        "EventTitle": "Jaco added a new comment to \"Internet of Things\" group",
+        "EventDescription": "Hi guys, thanks for allow me be part of this great group. I would like to suggest...",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_07.png",
+        "When": "JUN 14, 2018"
+      },
+      {
+        "EventTitle": "Ingrid have a new like!",
+        "EventDescription": "Jaco liked your last post.",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_05.png",
+        "When": "JUN 14, 2018"
+      },
+      {
+        "EventTitle": "Eric Douglas joined a new group!",
+        "EventDescription": "Eric has joined the Jazz and Blues group. He is now the member number 207 of this group.",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png",
+        "When": "JUN 12, 2018"
+      },
+      {
+        "EventTitle": "You have a new like!",
+        "EventDescription": "Emily liked your last post!",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_06.png",
+        "When": "JUN 12, 2018"
+      },
+      {
+        "EventTitle": "You have a new like!",
+        "EventDescription": "Sam liked your last post!",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png",
+        "When": "JUN 12, 2018"
+      },
+      {
+        "EventTitle": "Sam joined a new group!",
+        "EventDescription": "Sam has joined the Avant Garde group. She is now the member number 99 of this group.",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png",
+        "When": "JUN 12, 2018"
+      },
+      {
+        "EventTitle": "Sam joined a new group!",
+        "EventDescription": "Sam has joined the Bon Apetite! group. She is now the member number 487 of this group.",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png",
+        "When": "JUN 12, 2018"
+      },
+      {
+        "EventTitle": "Ingrid have a new like!",
+        "EventDescription": "Jaco liked your last post.",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_05.png",
+        "When": "JUN 11, 2018"
+      }
+    ]
+  },
+  "SocialCardPage.xaml": {
+    "Profile": {
+      "Name": "Clare Japi",
+      "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/user_02.png",
+      "Description": "I like my toast done on one side."
+    },
+    "Related": {
+      "$ref": "social-related"
+    }
+  },
+  "ContactSimpleDetailPage.xaml": {
+    "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png",
+    "Values": [
+      {
+        "Label": "Name",
+        "Value": "Regina Joplin"
+      },
+      {
+        "Label": "Address 1",
+        "Value": "05673 Brisa Cape"
+      },
+      {
+        "Label": "Address 2",
+        "Value": "4618 Skiles Vista"
+      },
+      {
+        "Label": "Phone Number",
+        "Value": "(+352) 621-7040 4940"
+      },
+      {
+        "Label": "Email",
+        "Value": "rjoplin@BINARIA.com"
+      },
+      {
+        "Label": "Organization",
+        "Value": "BINARIA"
+      },
+      {
+        "Label": "Country",
+        "Value": "USA"
+      },
+      {
+        "Label": "City",
+        "Value": "San Francisco"
+      },
+      {
+        "Label": "ZIP",
+        "Value": "WY 96078"
+      },
+      {
+        "Label": "Notes",
+        "Value": "UX/UI Designer with a BA in Motion Design."
+      }
+    ]
+  }
+}

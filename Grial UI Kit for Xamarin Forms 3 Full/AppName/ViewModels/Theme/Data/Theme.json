@@ -1,0 +1,28 @@
+﻿
+{
+    "CustomActionSheet.xaml": {
+		"Title": "File Actions",
+		"Actions": [
+			{
+				"Icon": "\ue9f2",
+				"Label": "Share"
+			},
+			{
+				"Icon": "\uea1c",
+				"Label": "Upload"
+			},
+			{
+				"Icon": "\ue94b",
+				"Label": "Copy"
+			},
+			{
+				"Icon": "\ue9d5",
+				"Label": "Print"
+			},
+			{
+				"Icon": "\uea15",
+				"Label": "Delete"
+			}
+		]
+    }
+}

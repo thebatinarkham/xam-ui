@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.ArticleFeedItemTemplate" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+
+	<Grid
+		Padding="20"
+		RowSpacing="6"
+		ColumnSpacing="0"
+		BackgroundColor="{ DynamicResource BasePageColor }">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="56" />
+			<ColumnDefinition
+				Width="*" />
+		</Grid.ColumnDefinitions>
+
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="16" />
+		</Grid.RowDefinitions>
+
+		<!-- LEFT COL -->
+		<!-- Avatar -->
+		<local:CircleCachedImage
+			Grid.Row="0"
+			Grid.Column="0"
+			Grid.RowSpan="4"
+			Source="{ Binding Avatar }"
+			Style="{ StaticResource AvatarXSmall }"
+			VerticalOptions="Start"
+			HorizontalOptions="Start" />
+			
+			
+		<!-- RIGHT COL -->
+		<!-- Author -->
+		<Label
+			Grid.Row="0"
+			Grid.Column="1"
+			Text="{ Binding Author }"
+			Style="{ StaticResource LabelBoldStyle }"
+			TextColor="{ DynamicResource AccentColor }" />
+		
+		<!-- Title -->
+		<Label
+			Grid.Row="1"
+			Grid.Column="1"
+			Text="{ Binding Title }"
+			LineBreakMode="WordWrap"
+			TextColor="{ DynamicResource BaseTextColor }" />
+		
+		<!-- Image -->
+		<ffimageloading:CachedImage
+			Grid.Row="2"
+			Grid.Column="1"
+			Margin="0,10"
+			FadeAnimationEnabled="true"
+			Source="{ Binding BackgroundImage }"
+			Aspect="AspectFill"
+			VerticalOptions="StartAndExpand"
+			HeightRequest="{ grial:OnOrientationDouble 
+				Default=130, 
+				PortraitPhone=130,
+				LandscapePhone=130,
+				PortraitTablet=220,
+				LandscapeTablet=220 
+            }" />
+				
+		<!-- Date -->
+		<Label
+			Grid.Row="3"
+			Grid.Column="1"
+			VerticalOptions="End"
+			HorizontalTextAlignment="End"
+			HorizontalOptions="FillAndExpand"
+			Text="{ Binding When }"
+			FontSize="12"
+			Opacity=".9"
+			TextColor="{ DynamicResource BaseTextColor }" />
+
+	</Grid>
+
+</ContentView>

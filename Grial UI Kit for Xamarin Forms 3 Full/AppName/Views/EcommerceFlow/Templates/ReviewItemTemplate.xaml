@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.ReviewItemTemplate">
+    
+    <ContentView.Content>
+        <grial:CardView
+			Margin="20,10"
+			RowSpacing="8"
+			Padding="16">
+            <grial:CardView.RowDefinitions>
+                <RowDefinition
+					Height="Auto" />
+                <RowDefinition
+					Height="Auto" />
+                <RowDefinition
+					Height="*" />
+            </grial:CardView.RowDefinitions>
+            
+            <grial:CardView.ColumnDefinitions>
+                <ColumnDefinition
+					Width="*" />
+                <ColumnDefinition
+					Width="*" />
+            </grial:CardView.ColumnDefinitions>
+            
+            <!-- TITLE -->
+            <Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Text="{ Binding Title }"
+				FontSize="18"
+				Style="{ StaticResource LabelBoldStyle }" />
+            
+            <!-- REVIEWER -->
+            <Label
+				Grid.Row="0"
+				Grid.Column="1"
+				FontSize="14"
+				Text="{ Binding Reviewer }"
+				VerticalOptions="End"
+				HorizontalOptions="End" />
+            
+            <!-- RATING -->
+            <local:Rating
+				Scale="0.6"
+				Grid.Row="1"
+				TranslationX="-25"
+				TranslationY="-5"
+				Grid.Column="0"
+				HorizontalOptions="Start"
+				VerticalOptions="Start"
+				Max="5"
+				Value="{ Binding RatingValue }" />
+            
+            <!-- DATE -->
+            <Label
+				Grid.Row="1"
+				Grid.Column="1"
+				Text="{ Binding Date }"
+				FontSize="14"
+				Opacity=".5"
+				HorizontalOptions="End" />
+            
+            <Label
+				Grid.Row="2"
+				Grid.Column="0"
+				Grid.ColumnSpan="2"
+				FontSize="14"
+				Text="{ Binding Comment }" />
+                
+        </grial:CardView>
+    </ContentView.Content>
+    
+</ContentView>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.SamplesListItemTemplate" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core">
+
+    <ContentView.Content>
+        <grial:CardView
+			Padding="30,15"
+			Margin="10"
+			RowSpacing="10"
+			ColumnSpacing="4"
+			CornerRadius="5">
+            <grial:CardView.ColumnDefinitions>
+                <ColumnDefinition
+					Width="22" />
+                <ColumnDefinition
+					Width="*" />
+            </grial:CardView.ColumnDefinitions>
+        
+            <grial:CardView.RowDefinitions>
+                <RowDefinition
+					Height="22" />
+                <RowDefinition
+					Height="*" />
+            </grial:CardView.RowDefinitions>
+            
+            <Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Text="{ Binding Icon }"
+				FontSize="18"
+				Style="{ StaticResource MainMenuIconStyle }"
+				TextColor="{ DynamicResource SecondaryPageTextColor }" />
+
+            <Label
+				Grid.Row="0"
+				Grid.Column="1"
+				Style="{ StaticResource LabelBoldStyle }"
+				Text="{ Binding Name }"
+				FontSize="14"
+				VerticalOptions="Center" />
+            
+            <Label
+				Grid.Row="1"
+				VerticalOptions="FillAndExpand"
+				Grid.Column="0"
+				Grid.ColumnSpan="2"
+				Text="{ Binding Description }"
+				LineBreakMode="WordWrap"
+				FontSize="14" />
+            
+            <local:Tag
+				IsVisible="{ Binding IsFlow }"
+				Grid.Column="1"
+				Text="FLOW"
+				Padding="6,0"
+				CornerRadius="8"
+				FontSize="9"
+				TranslationX="8"
+				HorizontalOptions="End"
+				grial:Effects.BackgroundGradient="{ DynamicResource PrimaryButtonGradient }" />
+        </grial:CardView>
+    </ContentView.Content>
+    
+</ContentView>

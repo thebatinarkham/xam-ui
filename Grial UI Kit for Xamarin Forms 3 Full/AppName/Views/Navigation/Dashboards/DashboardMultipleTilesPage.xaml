@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.DashboardMultipleTilesPage"
+	BackgroundColor="{ DynamicResource BasePageColor }"
+	Title="{ grial:Translate PageTitleDashboardMultipleTiles }">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <grial:BoolMemberTemplateSelector
+				x:Key="Selector"
+				MemberName="IsNotification">
+                
+                <grial:BoolMemberTemplateSelector.TrueDataTemplate>
+                    <DataTemplate>
+                        <local:DashboardAppNotificationItemTemplate
+							WidthRequest="145"
+							HeightRequest="145" />
+                    </DataTemplate>
+                </grial:BoolMemberTemplateSelector.TrueDataTemplate>
+                
+                <grial:BoolMemberTemplateSelector.FalseDataTemplate>
+                    <DataTemplate>
+                        <local:DashboardVariantItemTemplate
+							ShowBackgroundImage="true"
+							ShowBackgroundColor="true"
+							ShowiconColoredCircleBackground="false"
+							TextColor="{ DynamicResource DashboardIconColor }"
+							WidthRequest="145"
+							HeightRequest="145" />
+                    </DataTemplate>
+                </grial:BoolMemberTemplateSelector.FalseDataTemplate>
+                
+            </grial:BoolMemberTemplateSelector>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ScrollView
+		Orientation="Both">
+        <grial:GridView
+			WidthRequest="320"
+			Margin="0"
+			Padding="10"
+			ColumnSpacing="10"
+			RowSpacing="10"
+			ColumnCount="2"
+			ItemsSource="{ Binding Items }"
+			ItemTemplate="{ StaticResource Selector }" />
+    </ScrollView>
+</ContentPage>

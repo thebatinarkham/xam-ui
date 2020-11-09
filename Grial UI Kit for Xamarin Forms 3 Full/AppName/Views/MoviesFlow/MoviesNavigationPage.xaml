@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NavigationPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.MoviesNavigationPage"
+	grial:GrialNavigationPage.IsBarTransparent="True"
+	grial:GrialNavigationPage.BarBackgroundHeight="-1"
+	BarTextColor="{ DynamicResource OverImageTextColor }">
+    <NavigationPage.ToolbarItems>
+        <ToolbarItem
+			Icon="close_icon.png"
+			Clicked="OnClose" />
+    </NavigationPage.ToolbarItems>
+</NavigationPage>

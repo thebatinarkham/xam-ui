@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.TasksOverviewListItemTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <grial:GreaterThanOrEqualConverter
+				x:TypeArguments="Color"
+				x:Key="ColorConverter"
+				TrueValue="{ StaticResource OkColor }"
+				FalseValue="{ StaticResource ErrorColor }" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid
+			Padding="20,0"
+			ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="30" />
+                <ColumnDefinition
+					Width="*" />
+                <ColumnDefinition
+					Width="40" />
+                <ColumnDefinition
+					Width="70" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- AVATAR -->
+            <local:CircleCachedImage
+				Grid.Column="0"
+				Source="{ Binding Avatar }"
+				HeightRequest="30"
+				WidthRequest="30" />
+            
+            <!-- TEXT -->
+            <StackLayout
+				Grid.Column="1"
+				VerticalOptions="Center"
+				Spacing="0">
+                <Label
+					Text="{ Binding Name }"
+					Style="{ StaticResource LabelBoldStyle }" />
+                <Label
+					Text="{ Binding Division, Converter={StaticResource ToUpperConverter} }"
+					FontSize="10"
+					Opacity="0.5" />
+            </StackLayout>
+
+            <!-- CHART -->
+            <local:LineChart
+				Grid.Column="2"
+				ItemsSource="{ Binding Evolution }"
+				BackgroundColor="Transparent"
+				DefaultEntryColor="{ Binding Change, Converter={StaticResource ColorConverter} }"
+				ShowValueLabel="false"
+				LineSize="1"
+				LineMode="Straight"
+				PointMode="None"
+				AreaAlpha="0"
+				Margin="-5,0"
+				VerticalOptions="Center" />
+
+            <!-- CHANGE -->
+            <Button
+				Grid.Column="3"
+				Text="{ Binding Change, StringFormat='{}{0}%' }"
+				Style="{ DynamicResource OutlineButtonStyle }"
+				BorderColor="{ Binding Change, Converter={StaticResource ColorConverter} }"
+				TextColor="{ Binding Change, Converter={StaticResource ColorConverter} }"
+				HeightRequest="24"
+				CornerRadius="12"
+				FontSize="12"
+				Padding="12,0"
+				VerticalOptions="Center" />
+
+            <!-- SEPARATOR -->
+            <BoxView
+				Grid.Column="0"
+				Grid.ColumnSpan="4"
+				VerticalOptions="End"
+				Margin="-20,0"
+				Style="{ StaticResource Horizontal1ptLineStyle }" />
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

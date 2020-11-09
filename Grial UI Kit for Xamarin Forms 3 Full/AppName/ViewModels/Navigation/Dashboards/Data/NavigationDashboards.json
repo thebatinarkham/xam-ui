@@ -1,0 +1,445 @@
+{
+  "DashboardItems": {
+    "$id": "dashboard-items",
+    "Items": [
+      {
+        "$id": "dashboard-item-1",
+        "Name": "Contacts",
+        "BackgroundColor": "#FF921243",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_05.jpg",
+        "Icon": "",
+        "ItemCount": 6,
+        "Description": "All the people you know is here. Create, remove and organize your contacts efficiently. You can share them too!",
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-item-2",
+        "Name": "Documents",
+        "BackgroundColor": "#FFB31250",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_04.jpg",
+        "Icon": "",
+        "ItemCount": 5,
+        "Description": "All the documents you work with everyday are here. Create, remove and organize your files efficiently. You can share them too!",
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-item-3",
+        "Name": "Notifications",
+        "BackgroundColor": "#FFCD195E",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_07.jpg",
+        "Icon": "",
+        "ItemCount": 15,
+        "Description": "The ultimate notifications hub. Messages, emails, social networks, reminders, everything.",
+        "Badge": 9
+      },
+      {
+        "$id": "dashboard-item-4",
+        "Name": "My Photos",
+        "BackgroundColor": "#FF56329A",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_03.jpg",
+        "Icon": "",
+        "ItemCount": 10,
+        "Description": "All the pictures you take are here. Create, remove and organize your photos efficiently. You can share them too!",
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-item-5",
+        "Name": "Music",
+        "BackgroundColor": "#FF6A40B9",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_06.jpg",
+        "Icon": "",
+        "ItemCount": 5,
+        "Description": "All your favorites songs are here. All the styles, from classic to avant-garde composers. Make playlists matching your mood. Music is everything :)",
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-item-6",
+        "Name": "Offers",
+        "BackgroundColor": "#FF7C4ECD",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_02.jpg",
+        "Icon": "",
+        "ItemCount": 7,
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-item-7",
+        "Name": "World News",
+        "BackgroundColor": "#FF525ABB",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_08.jpg",
+        "Icon": "",
+        "ItemCount": 3,
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-item-8",
+        "Name": "Events",
+        "BackgroundColor": "#FF5F7DD4",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_09.jpg",
+        "Icon": "",
+        "ItemCount": 19,
+        "Badge": 9
+      },
+      {
+        "$id": "dashboard-item-9",
+        "Name": "Settings",
+        "BackgroundColor": "#FF7B96E5",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_01.jpg",
+        "Icon": "",
+        "ItemCount": 4,
+        "Badge": 0
+      }
+    ]
+  },
+  "DashboardCardsPage.xaml": {
+    "Items": [
+      {
+        "$id": "dashboard-card-1",
+        "Title": "Top fishing secrets revealed",
+        "Section": "NATURE",
+        "Author": "Margaret Whites",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_04.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_04.jpg",
+        "BackgroundColor": "#d81b60"
+      },
+      {
+        "$id": "dashboard-card-2",
+        "Title": "Chasing mavericks",
+        "Section": "SPORTS",
+        "Author": "Skyler Harrisson",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_05.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_05.jpg",
+        "BackgroundColor": "#c2185b"
+      },
+      {
+        "$id": "dashboard-card-3",
+        "Title": "Another one bites the dust",
+        "Section": "HEALTH",
+        "Author": "Irma Leites",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_06.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_06.jpg",
+        "BackgroundColor": "#56329A"
+      },
+      {
+        "$id": "dashboard-card-4",
+        "Title": "United by friendship",
+        "Section": "ACTUALITY",
+        "Author": "BINARIA",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_01.jpg",
+        "BackgroundColor": "#4B436E"
+      },
+      {
+        "$id": "dashboard-card-5",
+        "Title": "The road to you",
+        "Section": "DISCIPLINE",
+        "Author": "Donald Davies",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_02.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_02.jpg",
+        "BackgroundColor": "#1e88e5"
+      },
+      {
+        "$id": "dashboard-card-6",
+        "Title": "Nature and its influence on design",
+        "Section": "FREE TIME",
+        "Author": "Regina Joplin",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_03.jpg",
+        "BackgroundColor": "#1565c0"
+      },
+      {
+        "$id": "dashboard-card-7",
+        "Title": "Another one bites the dust",
+        "Section": "SELF-ESTEEM",
+        "Author": "Dimitar Taradasov",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_07.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_07.jpg",
+        "BackgroundColor": "#0097a7"
+      },
+      {
+        "$id": "dashboard-card-8",
+        "Title": "A retrospective on Jazz evolution",
+        "Section": "CULTURE",
+        "Author": "Thelonious Davies",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_08.jpg",
+        "BackgroundColor": "#00838f"
+      },
+      {
+        "$id": "dashboard-card-9",
+        "Title": "Blowing in the wind",
+        "Section": "MUSIC",
+        "Author": "Cire Notpalc",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_02.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_09.jpg",
+        "BackgroundColor": "#2e7d32"
+      }
+    ]
+  },
+  "DashboardMultipleTilesPage.xaml": {
+    "Items": [
+      {
+        "$id": "dashboard-tile-1",
+        "Title": "Social",
+        "Body": "",
+        "Avatar": "",
+        "BackgroundColor": "#774C4C4C",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/profile_image.jpg",
+        "ShowBackgroundColor": false,
+        "IsNotification": false,
+        "Icon": "",
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-tile-2",
+        "Title": "Contacts",
+        "Body": "",
+        "Avatar": "",
+        "BackgroundColor": "#48B5BA",
+        "BackgroundImage": "",
+        "ShowBackgroundColor": true,
+        "IsNotification": false,
+        "Icon": "",
+        "Badge": 2
+      },
+      {
+        "$id": "dashboard-tile-3",
+        "Title": "Binaria Wallet",
+        "Body": "",
+        "Avatar": "",
+        "BackgroundColor": "#CD195E",
+        "BackgroundImage": "",
+        "ShowBackgroundColor": false,
+        "IsNotification": false,
+        "Icon": "",
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-tile-4",
+        "Title": "Photos",
+        "Body": "",
+        "Avatar": "",
+        "BackgroundColor": "#77742DAF",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/gallery_03.jpg",
+        "ShowBackgroundColor": false,
+        "IsNotification": false,
+        "Icon": "",
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-tile-5",
+        "Title": "Music",
+        "Body": "",
+        "Avatar": "",
+        "BackgroundColor": "#BD3434",
+        "BackgroundImage": "",
+        "ShowBackgroundColor": true,
+        "IsNotification": false,
+        "Icon": "",
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-tile-6",
+        "Title": "Offers",
+        "Body": "",
+        "Avatar": "",
+        "BackgroundColor": "#770C60AF",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/product_item_4.jpg",
+        "ShowBackgroundColor": false,
+        "IsNotification": false,
+        "Icon": "",
+        "Badge": 1
+      },
+      {
+        "$id": "dashboard-tile-7",
+        "Title": "Twitter",
+        "Body": "@Grialuikit did it again!",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_05.png",
+        "BackgroundColor": "#1DA1F2",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_09.jpg",
+        "ShowBackgroundColor": false,
+        "IsNotification": true,
+        "Icon": "",
+        "Badge": 2
+      },
+      {
+        "$id": "dashboard-tile-8",
+        "Title": "World News",
+        "Body": "",
+        "Avatar": "",
+        "BackgroundColor": "#770A002B",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_01.jpg",
+        "ShowBackgroundColor": false,
+        "IsNotification": false,
+        "Icon": "",
+        "Badge": 1
+      },
+      {
+        "$id": "dashboard-tile-9",
+        "Title": "Facebook",
+        "Body": "GrialKit #AWESOME",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png",
+        "BackgroundColor": "#3b5998",
+        "BackgroundImage": "",
+        "ShowBackgroundColor": false,
+        "IsNotification": true,
+        "Icon": "",
+        "Badge": 2
+      },
+      {
+        "$id": "dashboard-tile-10",
+        "Title": "Instagram",
+        "Body": "Binaria preview, sweet!",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png",
+        "BackgroundColor": "#833ab4",
+        "BackgroundImage": "",
+        "ShowBackgroundColor": false,
+        "IsNotification": true,
+        "Icon": "",
+        "Badge": 2
+      },
+      {
+        "$id": "dashboard-tile-11",
+        "Title": "Events",
+        "Body": "",
+        "Avatar": "",
+        "BackgroundColor": "#319E3A",
+        "BackgroundImage": "",
+        "ShowBackgroundColor": true,
+        "IsNotification": false,
+        "Icon": "",
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-tile-12",
+        "Title": "Whatsapp",
+        "Body": "Check This",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_02.png",
+        "BackgroundColor": "#128c7e",
+        "BackgroundImage": "",
+        "ShowBackgroundColor": false,
+        "IsNotification": true,
+        "Icon": "",
+        "Badge": 5
+      },
+      {
+        "$id": "dashboard-tile-13",
+        "Title": "Linkedin",
+        "Body": "Xamarin Forms IS Grial",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_07.png",
+        "BackgroundColor": "#0077b5",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/category_08.jpg",
+        "ShowBackgroundColor": false,
+        "IsNotification": true,
+        "Icon": "",
+        "Badge": 0
+      },
+      {
+        "$id": "dashboard-tile-14",
+        "Title": "Games",
+        "Body": "",
+        "Avatar": "",
+        "BackgroundColor": "#DE6D3B",
+        "BackgroundImage": "",
+        "ShowBackgroundColor": true,
+        "IsNotification": false,
+        "Icon": "",
+        "Badge": 0
+      }
+    ]
+  },
+  "IconsDashboardPage.xaml": {
+    "$ref": "dashboard-items"
+  },
+  "ImagesDashboardPage.xaml": {
+    "$ref": "dashboard-items"
+  },
+  "FlatDashboardPage.xaml": {
+    "$ref": "dashboard-items"
+  },
+  "NavigationListWithImagesPage.xaml": {
+    "$ref": "dashboard-items"
+  },
+  "NavigationListWithIconsPage.xaml": {
+    "$ref": "dashboard-items"
+  },
+  "NavigationFlatListPage.xaml": {
+    "$ref": "dashboard-items"
+  },
+  "NavigationCardsListPage.xaml": {
+    "$ref": "dashboard-items"
+  },
+  "NavigationCardsDescriptionListPage.xaml": {
+    "Category": {
+      "Icon": "",
+      "Name": "Trending"
+    },
+    "Items": [
+      {
+        "$ref": "dashboard-item-1"
+      },
+      {
+        "$ref": "dashboard-item-2"
+      },
+      {
+        "$ref": "dashboard-item-3"
+      },
+      {
+        "$ref": "dashboard-item-4"
+      },
+      {
+        "$ref": "dashboard-item-5"
+      }
+    ]
+  },
+  "DashboardCarouselPage.xaml": {
+    "Items": [
+      {
+        "$ref": "dashboard-item-1"
+      },
+      {
+        "$ref": "dashboard-item-2"
+      },
+      {
+        "$ref": "dashboard-item-3"
+      },
+      {
+        "$ref": "dashboard-item-4"
+      },
+      {
+        "$ref": "dashboard-item-5"
+      },
+      {
+        "$ref": "dashboard-item-6"
+      },
+      {
+        "$ref": "dashboard-item-7"
+      },
+      {
+        "$ref": "dashboard-item-8"
+      },
+      {
+        "$ref": "dashboard-item-9"
+      }
+    ],
+    "Headers": [
+      {
+        "$id": "dashboard-header-item-1",
+        "Name": "World News",
+        "Description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.",
+        "Icon": ""
+      },
+      {
+        "$id": "dashboard-header-item-1",
+        "Name": "Award-winning Films",
+        "Description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.",
+        "Icon": ""
+      },
+      {
+        "$id": "dashboard-header-item-1",
+        "Name": "Learn",
+        "Description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.",
+        "Icon": ""
+      }
+    ]
+  }
+}

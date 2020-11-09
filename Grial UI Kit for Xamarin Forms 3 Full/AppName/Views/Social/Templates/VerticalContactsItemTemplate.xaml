@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.VerticalContactsItemTemplate">
+    <ContentView.Content>
+        <StackLayout
+			Spacing="0"
+			VerticalOptions="Center"
+			WidthRequest="70"
+			HorizontalOptions="Center">
+            <local:CircleCachedImage
+				TranslationY="-10"
+				Source="{ Binding Avatar }"
+				Style="{ StaticResource Avatar }"
+				VerticalOptions="Start"
+				HeightRequest="46" />
+            <Label
+				Text="{ Binding Name }"
+				VerticalOptions="CenterAndExpand"
+				HorizontalOptions="Center"
+				HorizontalTextAlignment="Center" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,477 @@
+{
+  "ShippingDetailPage.xaml": {
+    "All": [
+      {
+        "$id": "order-1",
+        "Id": "#45453",
+        "Progress": 0.5,
+        "Time": "5 days",
+        "Weight": 2,
+        "Price": 399.9
+      },
+      {
+        "$id": "order-2",
+        "Id": "#45443",
+        "Progress": 1,
+        "Time": "-",
+        "Weight": 1,
+        "Price": 125.9
+      },
+      {
+        "$id": "order-3",
+        "Id": "#45236",
+        "Progress": 0.5,
+        "Time": "2 days",
+        "Weight": 4,
+        "Price": 112.9
+      },
+      {
+        "$id": "order-4",
+        "Id": "#45918",
+        "Progress": 0.3,
+        "Time": "3 days",
+        "Weight": 2,
+        "Price": 231.9
+      },
+      {
+        "$id": "order-5",
+        "Id": "#45401",
+        "Progress": 1,
+        "Time": "-",
+        "Weight": 6,
+        "Price": 41.9
+      },
+      {
+        "$id": "order-6",
+        "Id": "#45418",
+        "Progress": 0.1,
+        "Time": "5 days",
+        "Weight": 4,
+        "Price": 14.9
+      },
+      {
+        "$id": "order-7",
+        "Id": "#45462",
+        "Progress": 0.5,
+        "Time": "2 days",
+        "Weight": 1,
+        "Price": 99.9
+      },
+      {
+        "$id": "order-8",
+        "Id": "#45422",
+        "Progress": 0.5,
+        "Time": "2 days",
+        "Weight": 3,
+        "Price": 890.9
+      },
+      {
+        "$id": "order-9",
+        "Id": "#45431",
+        "Progress": 0.7,
+        "Time": "1 days",
+        "Weight": 5,
+        "Price": 599.9
+      },
+      {
+        "$id": "order-10",
+        "Id": "#45416",
+        "Progress": 0.6,
+        "Time": "4 days",
+        "Weight": 1,
+        "Price": 12.9
+      }
+    ],
+    "InTransit": [
+      {
+        "$ref": "order-1"
+      },
+      {
+        "$ref": "order-3"
+      },
+      {
+        "$ref": "order-4"
+      },
+      {
+        "$ref": "order-6"
+      },
+      {
+        "$ref": "order-7"
+      },
+      {
+        "$ref": "order-8"
+      },
+      {
+        "$ref": "order-9"
+      },
+      {
+        "$ref": "order-10"
+      }
+    ],
+    "Closed": [
+      {
+        "$ref": "order-2"
+      },
+      {
+        "$ref": "order-5"
+      }
+    ]
+  },
+  "DocumentTimelinePage.xaml": {
+    "DocumentTimelineList": [
+      {
+        "$id": "timeline-document-1",
+        "Title": "Document Added",
+        "Author": "Andrew Reynolds",
+        "Icon": "",
+        "When": "Jul 7",
+        "IsInbound": true
+      },
+      {
+        "$id": "timeline-document-2",
+        "Title": "Document Edited",
+        "Author": "Tony Kamo",
+        "Icon": "",
+        "When": "Jul 7",
+        "IsInbound": false
+      },
+      {
+        "Title": "Document Edited",
+        "Author": "Elissa Steamer",
+        "Icon": "",
+        "When": "Jul 8",
+        "IsInbound": true
+      },
+      {
+        "Title": "I've added comments on policy section. Need to discuss about this first.",
+        "Author": "Gershon Mosley",
+        "Icon": "",
+        "When": "Jul 9",
+        "IsInbound": false
+      },
+      {
+        "Title": "Looks great!",
+        "Author": "Ingrid Davies",
+        "Icon": "",
+        "When": "Jul 9",
+        "IsInbound": true
+      },
+      {
+        "Title": "Approved!",
+        "Author": "Patrick Rampsey",
+        "Icon": "",
+        "When": "Jul 9",
+        "IsInbound": false
+      },
+      {
+        "Title": "Document signed",
+        "Author": "Ingrid Davies",
+        "Icon": "",
+        "When": "Jul 11",
+        "IsInbound": true
+      },
+      {
+        "Title": "Document Added",
+        "Author": "Chris Duff",
+        "Icon": "",
+        "When": "Jul 7",
+        "IsInbound": true
+      },
+      {
+        "Title": "Document Edited",
+        "Author": "Tony Kamo",
+        "Icon": "",
+        "When": "Aug 7",
+        "IsInbound": false
+      },
+      {
+        "Title": "Document Added",
+        "Author": "Chris Duff",
+        "Icon": "",
+        "When": "Aug 7",
+        "IsInbound": true
+      },
+      {
+        "Title": "Document Edited",
+        "Author": "Tony Kamo",
+        "Icon": "",
+        "When": "Aug 8",
+        "IsInbound": false
+      }
+    ]
+  },
+  "TaskBrowserPage.xaml": {
+    "Date": "Oct 16, 2018",
+    "Workspaces": [
+      {
+        "$id": "task-browser-group-1",
+        "Name": "Design Space",
+        "Completed": 29,
+        "Remaining": 12,
+        "RemainingTasks": "12 task remaining",
+        "Activity": [
+          0,
+          180,
+          90,
+          170,
+          400,
+          200
+        ]
+      },
+      {
+        "Name": "Development Space",
+        "Completed": 10,
+        "Remaining": 2,
+        "RemainingTasks": "2 task remaining",
+        "Activity": [
+          180,
+          190,
+          170,
+          40,
+          200,
+          90
+        ]
+      },
+      {
+        "Name": "Personal Space",
+        "Completed": 8,
+        "Remaining": 9,
+        "RemainingTasks": "9 task remaining",
+        "Activity": [
+          100,
+          180,
+          90,
+          170,
+          400,
+          200
+        ]
+      },
+      {
+        "Name": "Admin Space",
+        "Completed": 12,
+        "Remaining": 22,
+        "RemainingTasks": "22 task remaining",
+        "Activity": [
+          180,
+          190,
+          170,
+          40,
+          0,
+          90
+        ]
+      }
+    ],
+    "Projects": [
+      {
+        "Name": "BankSur",
+        "Completed": 15,
+        "Remaining": 2,
+        "RemainingTasks": "2 task remaining",
+        "Activity": [
+          180,
+          190,
+          170,
+          40,
+          200,
+          90
+        ]
+      },
+      {
+        "Name": "Live & Play",
+        "Completed": 18,
+        "Remaining": 9,
+        "RemainingTasks": "9 task remaining",
+        "Activity": [
+          100,
+          180,
+          90,
+          170,
+          400,
+          200
+        ]
+      },
+      {
+        "Name": "Real state App",
+        "Completed": 2,
+        "Remaining": 22,
+        "RemainingTasks": "22 task remaining",
+        "Activity": [
+          180,
+          190,
+          170,
+          40,
+          0,
+          90
+        ]
+      }
+    ]
+  },
+  "TaskOverviewPage.xaml": {
+    "Urgent": {
+      "$id": "task-overview",
+      "Title": "Urgent",
+      "Total": 45,
+      "Evolution": [
+        100,
+        120,
+        190,
+        170,
+        100,
+        150,
+        200,
+        200
+      ]
+    },
+    "Maintenance": {
+      "Title": "Maintenance",
+      "Total": 145,
+      "Evolution": [
+        120,
+        130,
+        190,
+        170,
+        40,
+        80,
+        40,
+        20,
+        60,
+        30
+      ]
+    },
+    "Closed": {
+      "Title": "Closed",
+      "Total": 345,
+      "Evolution": [
+        180,
+        200,
+        100,
+        100,
+        240,
+        80,
+        40,
+        20,
+        60,
+        30
+      ]
+    },
+    "Period": "This month",
+    "People": [
+      {
+        "Name": "Donald Davies",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png",
+        "Division": "Support",
+        "Change": -0.87,
+        "Evolution": [
+          180,
+          200,
+          190,
+          170,
+          40,
+          80,
+          40,
+          0,
+          60,
+          30
+        ]
+      },
+      {
+        "Name": "Janis Spector",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_02.png",
+        "Division": "Support",
+        "Change": 0.54,
+        "Evolution": [
+          70,
+          60,
+          0,
+          40,
+          80,
+          40,
+          170,
+          190,
+          200,
+          180
+        ]
+      },
+      {
+        "Name": "Regina Joplin",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png",
+        "Division": "Marketing",
+        "Change": -0.12,
+        "Evolution": [
+          100,
+          120,
+          190,
+          170,
+          40,
+          80,
+          40,
+          0,
+          60,
+          30
+        ]
+      },
+      {
+        "Name": "Jaco Morrison",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_04.png",
+        "Division": "Sales",
+        "Change": 0.103,
+        "Evolution": [
+          10,
+          60,
+          0,
+          40,
+          80,
+          40,
+          170,
+          190,
+          200,
+          180
+        ]
+      },
+      {
+        "Name": "Margaret Whites",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_05.png",
+        "Division": "Sales",
+        "Change": 0.45,
+        "Evolution": [
+          30,
+          60,
+          0,
+          140,
+          80,
+          140,
+          170,
+          190,
+          200,
+          180
+        ]
+      },
+      {
+        "Name": "Skyler Harrisson",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_06.png",
+        "Division": "IT",
+        "Change": 0.11,
+        "Evolution": [
+          30,
+          40,
+          50,
+          40,
+          60
+        ]
+      },
+      {
+        "Name": "Alison Pastorius",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_07.png",
+        "Division": "IT",
+        "Change": 0.23,
+        "Evolution": [
+          30,
+          40,
+          30,
+          40,
+          80
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.RecentChatListPage"
+	BackgroundColor="{ DynamicResource BasePageColor }"
+	Title="{ grial:Translate PageTitleRecentChatList }">
+
+    <ContentPage.Content>
+        <ListView
+			ItemsSource="{ Binding Messages }"
+			SeparatorVisibility="Default"
+			SeparatorColor="{ DynamicResource ListViewSeparatorColor }"
+			HasUnevenRows="false"
+			CachingStrategy="RecycleElement">
+            
+            <ListView.RowHeight>
+                <OnIdiom
+					x:TypeArguments="x:Int32"
+					Phone="80"
+					Tablet="100" />
+            </ListView.RowHeight>
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <local:RecentChatItemTemplate />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+    
+        </ListView>
+
+    </ContentPage.Content>
+</ContentPage>

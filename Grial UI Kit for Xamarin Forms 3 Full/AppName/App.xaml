@@ -1,0 +1,2346 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.App" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:resx="clr-namespace:AppName.Resx" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <!-- 
+                Escoger de alguno de los temas prediseñados:
+                
+                <local:BlackboardTheme />
+                <local:BlackSunTheme />
+                <local:DarkTheme />
+                
+                <local:MyAppTheme />
+                <local:CabernetMyAppTheme />
+                <local:HazeTheme />
+                
+                O utilizar uno personalizado:
+                
+                <local:MyAppTheme />
+                -->
+
+                <local:MyAppTheme />
+            </ResourceDictionary.MergedDictionaries>
+
+            <ResourceDictionary
+				Source="/Styles/AppFontFamilies.xaml" />
+
+            <!-- GENERAL CONVERTERS -->
+            <grial:IsNotNullConverter
+				x:Key="IsNotNullConverter" />
+            <grial:NegateBooleanConverter
+				x:Key="NegateBooleanConverter" />
+            <grial:ToUpperConverter
+				x:Key="ToUpperConverter" />
+            <grial:IsEmptyStringConverter
+				x:Key="IsEmptyStringConverter" />
+            <grial:IsNotEmptyStringConverter
+				x:Key="IsNotEmptyStringConverter" />
+            <grial:GreaterThanZeroConverter
+				x:Key="GreaterThanZeroConverter" />
+
+
+            <!-- UNITS -->
+            <x:Double
+				x:Key="BaseFontSize">14</x:Double>
+
+            <x:Double
+				x:Key="MainMenuLabelFontsize">22</x:Double>
+            <x:Double
+				x:Key="MainMenuIconFontsize">24</x:Double>
+            <x:Double
+				x:Key="MainMenuChevronRightFontsize">24</x:Double>
+            <x:Double
+				x:Key="MainMenuIconWidthRequest">22</x:Double>
+
+            <x:Double
+				x:Key="BadgeSize">28</x:Double>
+            <x:Double
+				x:Key="BadgeCornerRadius">14</x:Double>
+            <x:Double
+				x:Key="BadgeFontSize">14</x:Double>
+
+
+            <!-- STATIC IMAGES -->
+            <FileImageSource
+				x:Key="MainBackgroundImage">main_background_image.png</FileImageSource>
+
+            <FileImageSource
+				x:Key="HamburguerIcon">hamburguer_icon.png</FileImageSource>
+            <FileImageSource
+				x:Key="WelcomeBackgroundImagePhone">bg_phone.png</FileImageSource>
+            <FileImageSource
+				x:Key="WelcomeBackgroundImageTablet">bg_tablet.png</FileImageSource>
+
+            <FileImageSource
+				x:Key="BrandImage">logo.png</FileImageSource>
+
+            <FileImageSource
+				x:Key="GenericBackgroundImage">bg_phone.png</FileImageSource>
+
+            <FileImageSource
+				x:Key="SignUpBackgroundImagePhone">bg_phone.png</FileImageSource>
+            <FileImageSource
+				x:Key="SignUpBackgroundImageTablet">bg_tablet.png</FileImageSource>
+
+            <FileImageSource
+				x:Key="LoginBackgroundImagePhone">bg_phone.png</FileImageSource>
+            <FileImageSource
+				x:Key="LoginBackgroundImageTablet">bg_tablet.png</FileImageSource>
+
+            <FileImageSource
+				x:Key="PasswordRecoveryBackgroundImagePhone">bg_phone.png</FileImageSource>
+            <FileImageSource
+				x:Key="PasswordRecoveryBackgroundImageTablet">bg_tablet.png</FileImageSource>
+
+            <FileImageSource
+				x:Key="WalkthroughStepGenericPhoneBackgroundImage">device_white.png</FileImageSource>
+
+            <FileImageSource
+				x:Key="ThemeAvatarSample0Image">user_01.png</FileImageSource>
+            <FileImageSource
+				x:Key="ThemeAvatarSample1Image">friend_06.png</FileImageSource>
+
+            <FileImageSource
+				x:Key="SocialHeaderBackgroundImage1">social_header_bg.jpg</FileImageSource>
+
+            <x:String
+				x:Key="SayHelloURL">https://http://bit.ly/2Ed0T4G</x:String>
+
+            <!-- RESPONSIVE COMMON -->
+            <OnIdiom
+				x:Key="MainWrapperPadding"
+				x:TypeArguments="Thickness">
+                <OnIdiom.Phone>0</OnIdiom.Phone>
+                <OnIdiom.Tablet>100,0,100,0</OnIdiom.Tablet>
+            </OnIdiom>
+
+            <Style
+				x:Key="ResponsiveLandscapeMarginStyle"
+				TargetType="View">
+                <Setter
+					Property="Margin"
+					Value="{ 
+                        grial:OnOrientationThickness
+                            Portrait=0,
+                            Landscape='100,0,100,0' 
+                    }" />
+            </Style>
+
+            <Style
+				x:Key="LoginFormsContentStyle"
+				TargetType="Layout">
+                <Setter
+					Property="Padding"
+					Value="{
+                        grial:OnOrientationThickness 
+                            PortraitPhone='0,10,0,20',
+                            LandscapePhone='30,10,30,30',
+                            PortraitTablet=0,
+                            LandscapeTablet=0
+                    }" />
+            </Style>
+
+            <Style
+				x:Key="SimpleLoginFormsContentStyle"
+				TargetType="Layout">
+                <Setter
+					Property="Padding"
+					Value="{
+                        grial:OnOrientationThickness 
+                            PortraitPhone='20,30,20,20',
+                            LandscapePhone='40,10,40,30',
+                            PortraitTablet='20,30,20,30',
+                            LandscapeTablet='20,30,20,30'
+                    }" />
+            </Style>
+            <!-- END RESPONSIVE COMMON -->
+
+            <!-- BEGINS RESPONSIVE HELPERS -->
+            <OnIdiom
+				x:Key="TabletVisible"
+				x:TypeArguments="x:Boolean">
+                <OnIdiom.Phone>false</OnIdiom.Phone>
+                <OnIdiom.Tablet>true</OnIdiom.Tablet>
+            </OnIdiom>
+
+            <OnIdiom
+				x:Key="PhoneVisible"
+				x:TypeArguments="x:Boolean">
+                <OnIdiom.Phone>true</OnIdiom.Phone>
+                <OnIdiom.Tablet>false</OnIdiom.Tablet>
+            </OnIdiom>
+
+            <OnPlatform
+				x:Key="AndroidVisible"
+				x:TypeArguments="x:Boolean">
+                <OnPlatform.iOS>false</OnPlatform.iOS>
+                <OnPlatform.Android>true</OnPlatform.Android>
+            </OnPlatform>
+
+            <OnPlatform
+				x:Key="iOSVisible"
+				x:TypeArguments="x:Boolean">
+                <OnPlatform.iOS>true</OnPlatform.iOS>
+                <OnPlatform.Android>false</OnPlatform.Android>
+            </OnPlatform>
+            <!-- ENDS RESPONSIVE HELPERS -->
+
+            <!-- IMPLICIT STYLES -->
+            <Style
+				TargetType="ContentPage"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource BasePageColor }" />
+                <Setter
+					Property="NavigationPage.BackButtonTitle"
+					Value="" />
+            </Style>
+
+            <Style
+				TargetType="ContentView"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="BackgroundColor"
+					Value="Transparent" />
+            </Style>
+
+            <Style
+				TargetType="ScrollView"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="BackgroundColor"
+					Value="Transparent" />
+            </Style>
+
+            <Style
+				TargetType="NavigationPage"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="BarBackgroundColor"
+					Value="{ DynamicResource NavigationBarStartBackgroundColor }" />
+                <Setter
+					Property="BarTextColor"
+					Value="{ DynamicResource NavigationBarTextColor }" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource BasePageColor }" />
+
+                <Setter
+					Property="grial:GrialNavigationPage.BarBackground"
+					Value="{ DynamicResource NavigationBarGradient }" />
+                <Setter
+					Property="grial:GrialNavigationPage.BarBackgroundHeight"
+					Value="600" />
+            </Style>
+
+            <Style
+				TargetType="Frame"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="OutlineColor"
+					Value="{DynamicResource BrandColor}" />
+            </Style>
+
+            <Style
+				TargetType="Entry"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="FontFamily"
+					Value="{ StaticResource AppFontFamily }" />
+                <Setter
+					Property="FontSize"
+					Value="{ StaticResource BaseFontSize }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource BaseTextColor }" />
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Start" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource EntryAndEditorsBackgroundColor }" />
+                <Setter
+					Property="FontSize"
+					Value="{ StaticResource BaseFontSize }" />
+
+                <Setter
+					Property="HeightRequest"
+					Value="{ DynamicResource EntryHeightRequest }" />
+                <Setter
+					Property="grial:EntryProperties.BorderWidth"
+					Value="{ DynamicResource EntryAndEditorsBorderWidth }" />
+                <Setter
+					Property="grial:EntryProperties.BorderColor"
+					Value="{ DynamicResource EntryAndEditorsBorderColor }" />
+                <Setter
+					Property="grial:EntryProperties.PlaceholderColor"
+					Value="{ DynamicResource PlaceholderColor }" />
+                <Setter
+					Property="grial:EntryProperties.BorderStyle"
+					Value="{ DynamicResource EntryBorderStyle }" />
+                <Setter
+					Property="grial:EntryProperties.BorderCornerRadius"
+					Value="{ DynamicResource EntryBorderCornerRadiusCornerRadius }" />
+                <Setter
+					Property="grial:EntryProperties.HorizontalPadding"
+					Value="{ DynamicResource EntryAndEditorsHorizontalPadding }" />
+            </Style>
+
+            <Style
+				TargetType="Editor"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="FontFamily"
+					Value="{StaticResource AppFontFamily}" />
+                <Setter
+					Property="FontSize"
+					Value="{StaticResource BaseFontSize}" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource BaseTextColor }" />
+                <Setter
+					Property="PlaceholderColor"
+					Value="{ DynamicResource PlaceholderColor }" />
+                <Setter
+					Property="grial:EditorProperties.PlaceholderColor"
+					Value="{ DynamicResource PlaceholderColor }" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource EntryAndEditorsBackgroundColor }" />
+                <Setter
+					Property="FontSize"
+					Value="{ DynamicResource EditorFontSize }" />
+
+                <Setter
+					Property="HeightRequest"
+					Value="{ DynamicResource EditorHeightRequest }" />
+                <Setter
+					Property="grial:EditorProperties.BorderWidth"
+					Value="{ DynamicResource EntryAndEditorsBorderWidth }" />
+                <Setter
+					Property="grial:EditorProperties.BorderColor"
+					Value="{ DynamicResource EntryAndEditorsBorderColor }" />
+                <Setter
+					Property="grial:EditorProperties.BorderStyle"
+					Value="{ DynamicResource EditorBorderStyle }" />
+                <Setter
+					Property="grial:EditorProperties.BorderCornerRadius"
+					Value="{ DynamicResource EditorBorderCornerRadiusCornerRadius }" />
+                <Setter
+					Property="grial:EditorProperties.HorizontalPadding"
+					Value="{ DynamicResource EntryAndEditorsHorizontalPadding }" />
+            </Style>
+
+
+
+
+            <Style
+				x:Key="BasePickersRoundedStyle"
+				TargetType="View">
+                <Setter
+					Property="HeightRequest"
+					Value="{ DynamicResource EntryHeightRequest }" />
+                <Setter
+					Property="grial:PickerProperties.HorizontalTextAlignment"
+					Value="Start" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource EntryAndEditorsBackgroundColor }" />
+                <Setter
+					Property="grial:PickerProperties.BorderWidth"
+					Value="{ DynamicResource EntryAndEditorsBorderWidth }" />
+                <Setter
+					Property="grial:PickerProperties.BorderColor"
+					Value="{ DynamicResource EntryAndEditorsBorderColor }" />
+                <Setter
+					Property="grial:PickerProperties.PlaceholderColor"
+					Value="{ DynamicResource PlaceholderColor }" />
+                <Setter
+					Property="grial:PickerProperties.BorderStyle"
+					Value="{ DynamicResource EntryBorderStyle }" />
+                <Setter
+					Property="grial:PickerProperties.BorderCornerRadius"
+					Value="{ DynamicResource EntryBorderCornerRadiusCornerRadius }" />
+                <Setter
+					Property="grial:PickerProperties.HorizontalPadding"
+					Value="{ DynamicResource EntryAndEditorsHorizontalPadding }" />
+            </Style>
+
+
+            <Style
+				TargetType="Picker"
+				BasedOn="{ StaticResource BasePickersRoundedStyle }">
+                <Setter
+					Property="FontFamily"
+					Value="{StaticResource AppFontFamily}" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource BaseTextColor }" />
+                <Setter
+					Property="FontSize"
+					Value="{ DynamicResource EditorFontSize }" />
+            </Style>
+
+            <Style
+				TargetType="DatePicker"
+				BasedOn="{ StaticResource BasePickersRoundedStyle }">
+                <Setter
+					Property="FontFamily"
+					Value="{StaticResource AppFontFamily}" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource BaseTextColor }" />
+                <Setter
+					Property="FontSize"
+					Value="{ DynamicResource EditorFontSize }" />
+            </Style>
+
+            <Style
+				TargetType="TimePicker"
+				BasedOn="{ StaticResource BasePickersRoundedStyle }">
+                <Setter
+					Property="FontFamily"
+					Value="{StaticResource AppFontFamily}" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource BaseTextColor }" />
+                <Setter
+					Property="FontSize"
+					Value="{ DynamicResource EditorFontSize }" />
+            </Style>
+
+            <Style
+				x:Key="SingleLinePickerStyle"
+				TargetType="Picker"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource AccentColor }" />
+                <Setter
+					Property="grial:PickerProperties.HorizontalTextAlignment"
+					Value="End" />
+                <Setter
+					Property="grial:PickerProperties.BorderWidth"
+					Value="0" />
+                <Setter
+					Property="grial:PickerProperties.PlaceholderColor"
+					Value="{ DynamicResource AccentColor }" />
+                <Setter
+					Property="grial:PickerProperties.BorderStyle"
+					Value="None" />
+                <Setter
+					Property="grial:PickerProperties.BorderCornerRadius"
+					Value="0" />
+                <Setter
+					Property="grial:PickerProperties.HorizontalPadding"
+					Value="0" />
+            </Style>
+
+            <Style
+				TargetType="ActivityIndicator"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="Color"
+					Value="{DynamicResource AccentColor}" />
+            </Style>
+
+            <Style
+				TargetType="TabbedPage"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource BaseTabbedPageColor}" />
+            </Style>
+
+            <Style
+				TargetType="Label"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="FontFamily"
+					Value="{StaticResource AppFontFamily}" />
+                <Setter
+					Property="FontSize"
+					Value="{StaticResource BaseFontSize}" />
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource BaseTextColor}" />
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Start" />
+            </Style>
+
+            <Style
+				TargetType="Span"
+				ApplyToDerivedTypes="true"
+				x:Key="DefaultSpanStyle">
+                <Setter
+					Property="FontFamily"
+					Value="{ StaticResource AppFontFamily }" />
+                <Setter
+					Property="FontSize"
+					Value="{ StaticResource BaseFontSize }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource BaseTextColor }" />
+            </Style>
+
+            <Style
+				TargetType="ListView"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="BackgroundColor"
+					Value="Transparent" />
+                <Setter
+					Property="SeparatorColor"
+					Value="{ DynamicResource ListViewSeparatorColor }" />
+                <Setter
+					Property="SeparatorVisibility"
+					Value="Default" />
+
+                <Setter
+					Property="ios:ListView.SeparatorStyle"
+					Value="FullWidth" />
+            </Style>
+
+            <Style
+				TargetType="TableView"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="BackgroundColor"
+					Value="Transparent" />
+                <Setter
+					Property="grial:TableViewProperties.HeaderFooterTextColor"
+					Value="{ DynamicResource AccentColor }" />
+            </Style>
+
+            <Style
+				TargetType="Image">
+                <Setter
+					Property="IsOpaque">
+                    <Setter.Value>
+                        <OnPlatform
+							x:TypeArguments="x:Boolean"
+							Android="true" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style
+				TargetType="ProgressBar"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="ProgressColor"
+					Value="{ DynamicResource AccentColor }" />
+                <Setter
+					Property="Rotation"
+					Value="0" />
+            </Style>
+
+            <Style
+				TargetType="Slider"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="MinimumTrackColor"
+					Value="{ DynamicResource AccentColor }" />
+                <Setter
+					Property="MaximumTrackColor"
+					Value="{ DynamicResource TranslucidBlack }" />
+                <Setter
+					Property="ThumbColor"
+					Value="{ DynamicResource AccentColor }" />
+                <Setter
+					Property="Rotation"
+					Value="0" />
+            </Style>
+
+            <Style
+				TargetType="TextCell"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource AccentColor }" />
+                <Setter
+					Property="DetailColor"
+					Value="{ DynamicResource BaseTextColor }" />
+            </Style>
+
+            <Style
+				TargetType="SearchBar"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Start" />
+                <Setter
+					Property="HeightRequest"
+					Value="44" />
+                <Setter
+					Property="BackgroundColor"
+					Value="Transparent" />
+                <Setter
+					Property="CancelButtonColor"
+					Value="{ DynamicResource OverImageTextColor }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource BaseTextColor }" />
+                <Setter
+					Property="PlaceholderColor"
+					Value="{ DynamicResource BaseTextColor }" />
+            </Style>
+
+            <Style
+				x:Key="TranslucidSearchBarStyle"
+				TargetType="SearchBar">
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource InverseTextColor }" />
+                <Setter
+					Property="PlaceholderColor"
+					Value="{ DynamicResource InverseTextColor }" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource TranslucidWhite }" />
+                <Setter
+					Property="grial:SearchBarProperties.IconColor"
+					Value="{ DynamicResource InverseTextColor }" />
+                <Setter
+					Property="grial:SearchBarProperties.FieldBackgroundColor"
+					Value="Transparent" />
+                <Setter
+					Property="grial:SearchBarProperties.BorderWidth"
+					Value="0" />
+                <Setter
+					Property="grial:SearchBarProperties.BorderColor"
+					Value="Transparent" />
+                <Setter
+					Property="grial:Effects.CornerRadius"
+					Value="{ DynamicResource BaseButtonCornerRadius }" />
+            </Style>
+
+            <Style
+				TargetType="Button"
+				ApplyToDerivedTypes="true">
+                <Setter
+					Property="FontFamily"
+					Value="{StaticResource AppFontFamily}" />
+                <Setter
+					Property="FontAttributes"
+					Value="None" />
+
+                <Setter
+					Property="FontSize"
+					Value="{StaticResource BaseFontSize}" />
+                <Setter
+					Property="CornerRadius"
+					Value="{DynamicResource BaseButtonCornerRadius}" />
+                <Setter
+					Property="BorderWidth"
+					Value="{DynamicResource BaseButtonBorderWith}" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource BaseButtonBorderColor}" />
+                <Setter
+					Property="HeightRequest"
+					Value="{DynamicResource BaseButtonHeight}" />
+                <Setter
+					Property="Padding"
+					Value="0" />
+
+                <Setter
+					Property="BackgroundColor">
+                    <Setter.Value>
+                        <OnPlatform
+							x:TypeArguments="Color"
+							Android="#d6d6d6" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- IMAGE STYLES -->
+            <Style
+				TargetType="Image"
+				x:Key="MainMenuBackgroundImageStyle">
+                <Setter
+					Property="Aspect"
+					Value="Fill" />
+                <Setter
+					Property="Source"
+					Value="{ StaticResource MainBackgroundImage }" />
+                <Setter
+					Property="Opacity"
+					Value="{ DynamicResource MainMenuBackgroundImageOpacity }" />
+            </Style>
+
+            <!-- FFIMAGELOADING STYLES -->
+            <Style
+				TargetType="ffimageloading:CachedImage">
+                <Setter
+					Property="LoadingPlaceholder"
+					Value="loading_placeholder.png" />
+                <Setter
+					Property="BitmapOptimizations"
+					Value="true" />
+                <Setter
+					Property="RetryCount"
+					Value="3" />
+                <Setter
+					Property="RetryDelay"
+					Value="250" />
+            </Style>
+
+            <Style
+				TargetType="ffimageloading:CachedImage"
+				x:Key="NoPlaceholderImageStyle">
+                <Setter
+					Property="LoadingPlaceholder"
+					Value="{ x:Null }" />
+                <Setter
+					Property="BitmapOptimizations"
+					Value="true" />
+                <Setter
+					Property="RetryCount"
+					Value="3" />
+                <Setter
+					Property="RetryDelay"
+					Value="250" />
+            </Style>
+
+            <!-- RATING STYLES -->
+            <Style
+				TargetType="local:Rating">
+                <Setter
+					Property="RotationY"
+					Value="0" />
+            </Style>
+
+            <!-- TAGS -->
+            <Style
+				TargetType="local:Tag">
+                <Setter
+					Property="Margin"
+					Value="{ DynamicResource TagItemMargin }" />
+                <Setter
+					Property="CornerRadius"
+					Value="{ DynamicResource TagItemCornerRadius }" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource TagItemBackgroundColor }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource TagItemTextColor }" />
+                <Setter
+					Property="HeightRequest"
+					Value="26" />
+                <Setter
+					Property="ImageSize"
+					Value="18" />
+                <Setter
+					Property="Padding"
+					Value="{ DynamicResource TagItemPadding }" />
+                <Setter
+					Property="FontSize"
+					Value="{ DynamicResource TagItemFontSize }" />
+                <Setter
+					Property="IconFontSize"
+					Value="{ DynamicResource TagItemIconSize }" />
+                <Setter
+					Property="VerticalOptions"
+					Value="Center" />
+            </Style>
+
+            <!-- CARDS -->
+            <Style
+				TargetType="grial:CardView">
+                <Setter
+					Property="CornerRadius"
+					Value="3" />
+                <Setter
+					Property="ShadowOpacity"
+					Value="0.4" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource BasePageColor }" />
+            </Style>
+
+            <!-- BASE STYLES -->
+            <Style
+				x:Key="FontIcon"
+				TargetType="Label">
+                <Setter
+					Property="FontFamily"
+					Value="{ DynamicResource IconsFontFamily }" />
+            </Style>
+
+            <Style
+				x:Key="FontIconFill"
+				TargetType="Label">
+                <Setter
+					Property="FontFamily"
+					Value="{ StaticResource GrialIconsFill }" />
+            </Style>
+
+            <Style
+				x:Key="RoundedButtonStyle"
+				TargetType="Button">
+                <Setter
+					Property="FontSize"
+					Value="{StaticResource BaseFontSize}" />
+                <Setter
+					Property="CornerRadius"
+					Value="{DynamicResource BaseButtonCornerRadius}" />
+                <Setter
+					Property="HeightRequest"
+					Value="{DynamicResource BaseButtonHeight}" />
+            </Style>
+
+            <Style
+				x:Key="Horizontal1ptLineStyle"
+				TargetType="BoxView">
+                <Setter
+					Property="HeightRequest"
+					Value="1" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource ListViewSeparatorColor}" />
+            </Style>
+
+            <Style
+				x:Key="StatusLabelStyle"
+				TargetType="Label">
+                <Setter
+					Property="Text"
+					Value=" AVAILABLE " />
+                <Setter
+					Property="VerticalOptions"
+					Value="End" />
+                <Setter
+					Property="HorizontalOptions"
+					Value="Start" />
+                <Setter
+					Property="FontSize"
+					Value="14" />
+            </Style>
+
+            <!-- SPECIFIC STYLES -->
+            <Style
+				x:Key="IconCloseLabelStyle"
+				TargetType="Label"
+				BasedOn="{ StaticResource FontIcon }">
+                <Setter
+					Property="FontSize"
+					Value="28" />
+                <Setter
+					Property="Text"
+					Value="{ x:Static local:GrialIconsFont.Close }" />
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="End" />
+                <Setter
+					Property="VerticalOptions"
+					Value="Start" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource InverseTextColor }" />
+                <Setter
+					Property="HeightRequest"
+					Value="30" />
+                <Setter
+					Property="WidthRequest"
+					Value="30" />
+                <Setter
+					Property="Margin"
+					Value="{
+                    grial:OnOrientationThickness 
+                        PortraitPhone='20,40',
+                        LandscapePhone=20,
+
+                        PortraitTablet='20,40', 
+                        LandscapeTablet=20
+                }" />
+            </Style>
+
+            <Style
+				x:Key="LabelBoldStyle"
+				TargetType="Label">
+                <Setter
+					Property="FontFamily"
+					Value="{StaticResource AppBoldFontFamily}" />
+                <Setter
+					Property="FontAttributes"
+					Value="Bold" />
+            </Style>
+
+            <Style
+				x:Key="SpanBoldStyle"
+				TargetType="Span"
+				BasedOn="{ StaticResource DefaultSpanStyle }">
+                <Setter
+					Property="FontFamily"
+					Value="{StaticResource AppBoldFontFamily}" />
+                <Setter
+					Property="FontAttributes"
+					Value="Bold" />
+            </Style>
+
+            <Style
+				x:Key="Hyperlink"
+				TargetType="Span">
+                <Setter
+					Property="FontSize"
+					Value="{ StaticResource BaseFontSize }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource AccentColor }" />
+                <Setter
+					Property="TextDecorations"
+					Value="Underline" />
+            </Style>
+
+            <!-- COMMON -->
+
+            <!-- MAIN MENU STYLES -->
+            <Style
+				x:Key="MainMenuStyle"
+				TargetType="ContentPage">
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource MainMenuBackgroundColor}" />
+            </Style>
+
+            <Style
+				x:Key="MainMenuOrModalBackgroundStyle"
+				TargetType="VisualElement">
+                <Setter
+					Property="grial:Effects.BackgroundGradient"
+					Value="{DynamicResource MainMenuGradient}" />
+            </Style>
+
+            <Style
+				x:Key="MainMenuListViewStyle"
+				TargetType="ListView">
+                <Setter
+					Property="SeparatorVisibility"
+					Value="None" />
+                <Setter
+					Property="SeparatorColor"
+					Value="{DynamicResource MainMenuSeparatorColor}" />
+                <Setter
+					Property="RowHeight"
+					Value="55" />
+            </Style>
+
+            <Style
+				x:Key="MainMenuIconStyle"
+				TargetType="Label">
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource MainMenuIconColor }" />
+                <Setter
+					Property="FontFamily"
+					Value="{ DynamicResource IconsFontFamily }" />
+                <Setter
+					Property="FontSize"
+					Value="{ StaticResource MainMenuIconFontsize }" />
+                <Setter
+					Property="VerticalOptions"
+					Value="CenterAndExpand" />
+            </Style>
+
+            <Style
+				x:Key="MainMenuLabelStyle"
+				TargetType="Label">
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource MainMenuTextColor }" />
+                <Setter
+					Property="VerticalTextAlignment"
+					Value="Center" />
+                <Setter
+					Property="FontSize"
+					Value="{StaticResource MainMenuLabelFontsize}" />
+                <Setter
+					Property="HorizontalOptions"
+					Value="FillAndExpand" />
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Start" />
+                <Setter
+					Property="VerticalOptions"
+					Value="CenterAndExpand" />
+                <Setter
+					Property="LineBreakMode"
+					Value="TailTruncation" />
+            </Style>
+
+            <!-- CARDS LIST -->
+            <Style
+				x:Key="CardsListItemTemplateChevronStyle"
+				TargetType="Label"
+				BasedOn="{ StaticResource MainMenuIconStyle }">
+                <Setter
+					Property="FontFamily"
+					Value="{ StaticResource IconsFontFamily }" />
+                <Setter
+					Property="VerticalTextAlignment"
+					Value="Center" />
+                <Setter
+					Property="FontSize"
+					Value="{ DynamicResource MainMenuChevronRightFontsize }" />
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Start" />
+                <Setter
+					Property="Margin"
+					Value="0,0,20,0" />
+                <Setter
+					Property="Text"
+					Value="{x:Static local:GrialIconsFont.ChevronRight}" />
+            </Style>
+
+            <!-- NOTIFICATION STYLES -->
+            <Style
+				x:Key="NotificationItemTemplateShape"
+				TargetType="BoxView">
+                <Setter
+					Property="CornerRadius"
+					Value="15" />
+                <Setter
+					Property="WidthRequest">
+                    <Setter.Value>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="30"
+							Tablet="30" />
+                    </Setter.Value>
+                </Setter>
+                <Setter
+					Property="HeightRequest">
+                    <Setter.Value>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="30"
+							Tablet="30" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- WELCOME STYLES -->
+            <Style
+				x:Key="WelcomeBackgroundImage"
+				TargetType="Image">
+                <Setter
+					Property="Aspect"
+					Value="AspectFill" />
+                <Setter
+					Property="Source">
+                    <Setter.Value>
+                        <OnIdiom
+							x:TypeArguments="ImageSource"
+							Phone="{ StaticResource WelcomeBackgroundImagePhone }"
+							Tablet="{ StaticResource WelcomeBackgroundImageTablet }" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
+            <!-- LOGINS STYLES -->
+            <Style
+				x:Key="SignUpBackgroundImage"
+				TargetType="Image">
+                <Setter
+					Property="Aspect"
+					Value="AspectFill" />
+                <Setter
+					Property="Source">
+                    <Setter.Value>
+                        <OnIdiom
+							x:TypeArguments="ImageSource"
+							Phone="{ StaticResource SignUpBackgroundImagePhone }"
+							Tablet="{ StaticResource LoginBackgroundImageTablet }" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style
+				x:Key="LoginBackgroundImage"
+				TargetType="Image">
+                <Setter
+					Property="Aspect"
+					Value="AspectFill" />
+                <Setter
+					Property="Source">
+                    <Setter.Value>
+                        <OnIdiom
+							x:TypeArguments="ImageSource"
+							Phone="{ StaticResource LoginBackgroundImagePhone }"
+							Tablet="{ StaticResource LoginBackgroundImageTablet }" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style
+				x:Key="PasswordRecoveryBackgroundImage"
+				TargetType="Image">
+                <Setter
+					Property="Aspect"
+					Value="AspectFill" />
+                <Setter
+					Property="Source">
+                    <Setter.Value>
+                        <OnIdiom
+							x:TypeArguments="ImageSource"
+							Phone="{ StaticResource PasswordRecoveryBackgroundImagePhone }"
+							Tablet="{ StaticResource LoginBackgroundImageTablet }" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- OUTLINE BUTTONS -->
+            <Style
+				x:Key="OutlineInverseButtonStyle"
+				TargetType="Button">
+                <Setter
+					Property="BackgroundColor"
+					Value="Transparent" />
+                <Setter
+					Property="BorderWidth"
+					Value="1" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource InverseTextColor}" />
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource InverseTextColor}" />
+            </Style>
+
+            <Style
+				x:Key="OutlineButtonStyle"
+				TargetType="Button">
+                <Setter
+					Property="BackgroundColor"
+					Value="Transparent" />
+                <Setter
+					Property="BorderWidth"
+					Value="1" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource BaseTextColor}" />
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource BaseTextColor}" />
+            </Style>
+
+            <Style
+				x:Key="PrimaryActionOutlineButtonStyle"
+				TargetType="Button"
+				BasedOn="{StaticResource OutlineButtonStyle}">
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource AccentColor}" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource AccentColor}" />
+            </Style>
+
+            <Style
+				x:Key="SecondaryActionOutlineButtonStyle"
+				TargetType="Button"
+				BasedOn="{StaticResource OutlineButtonStyle}">
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource ComplementColor}" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource ComplementColor}" />
+            </Style>
+
+            <Style
+				x:Key="SaveOutlineButtonStyle"
+				TargetType="Button"
+				BasedOn="{StaticResource OutlineButtonStyle}">
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource SaveButtonColor}" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource SaveButtonColor}" />
+            </Style>
+
+            <Style
+				x:Key="DeleteOutlineButtonStyle"
+				TargetType="Button"
+				BasedOn="{StaticResource OutlineButtonStyle}">
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource DeleteButtonColor}" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource DeleteButtonColor}" />
+            </Style>
+
+
+            <!-- FILLED BUTTONS -->
+            <Style
+				x:Key="PrimaryActionButtonStyle"
+				TargetType="Button"
+				BasedOn="{ StaticResource RoundedButtonStyle }">
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource PrimaryActionButtonStartColor }" />
+                <Setter
+					Property="BorderColor"
+					Value="{ DynamicResource PrimaryActionButtonStartColor }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource OverImageTextColor }" />
+                <Setter
+					Property="grial:Effects.BackgroundGradient"
+					Value="{DynamicResource PrimaryButtonGradient}" />
+            </Style>
+
+            <Style
+				x:Key="SecondaryActionButtonStyle"
+				TargetType="Button"
+				BasedOn="{StaticResource RoundedButtonStyle}">
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource ComplementColor}" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource ComplementColor}" />
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource OverImageTextColor}" />
+            </Style>
+
+            <Style
+				x:Key="TransparentButtonStyle"
+				TargetType="Button"
+				BasedOn="{StaticResource RoundedButtonStyle}">
+                <Setter
+					Property="BackgroundColor"
+					Value="Transparent" />
+                <Setter
+					Property="BorderColor"
+					Value="Transparent" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource InverseTextColor }" />
+            </Style>
+
+            <Style
+				x:Key="GoogleButtonStyle"
+				TargetType="Button"
+				BasedOn="{StaticResource RoundedButtonStyle}">
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource BasePageColor }" />
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource BaseTextColor}" />
+                <Setter
+					Property="BorderColor"
+					Value="Transparent" />
+                <Setter
+					Property="grial:Effects.ShadowSize"
+					Value="3" />
+                <Setter
+					Property="grial:Effects.Shadow"
+					Value="True" />
+                <Setter
+					Property="grial:Effects.ShadowIOSColor"
+					Value="#22000000" />
+            </Style>
+
+            <Style
+				x:Key="TranslucidButtonStyle"
+				TargetType="Button"
+				BasedOn="{StaticResource RoundedButtonStyle}">
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource TranslucidButtonColor }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource InverseTextColor }" />
+                <Setter
+					Property="HeightRequest"
+					Value="{DynamicResource BaseButtonHeight}" />
+                <Setter
+					Property="grial:Effects.ShadowSize"
+					Value="3" />
+                <Setter
+					Property="grial:Effects.Shadow"
+					Value="True" />
+                <Setter
+					Property="grial:Effects.ShadowIOSColor"
+					Value="#22000000" />
+                <Setter
+					Property="BorderColor"
+					Value="Transparent" />
+            </Style>
+
+            <!-- CIRCLE BUTTONS FLAT -->
+            <Style
+				x:Key="CircleActionButtonFlatStyle"
+				TargetType="Button">
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource CircleActionButtonFlatBackgroundColor}" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource CircleActionButtonFlatBorderColor}" />
+                <Setter
+					Property="BorderWidth"
+					Value="1" />
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource CircleActionButtonFlatIconColor}" />
+                <Setter
+					Property="FontSize"
+					Value="22" />
+                <Setter
+					Property="CornerRadius"
+					Value="22" />
+                <Setter
+					Property="HeightRequest"
+					Value="44" />
+                <Setter
+					Property="WidthRequest"
+					Value="44" />
+            </Style>
+
+            <Style
+				x:Key="PrimaryCircleActionButtonStyle"
+				TargetType="Button">
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource PrimaryActionButtonStartColor}" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource PrimaryActionButtonStartColor}" />
+                <Setter
+					Property="BorderWidth"
+					Value="1" />
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource CircleActionButtonFlatIconColor}" />
+                <Setter
+					Property="FontSize"
+					Value="22" />
+                <Setter
+					Property="CornerRadius"
+					Value="22" />
+                <Setter
+					Property="HeightRequest"
+					Value="44" />
+                <Setter
+					Property="WidthRequest"
+					Value="44" />
+            </Style>
+
+            <!-- ENTRY FIELDS -->
+            <Style
+				x:Key="SingleLineEntryStyle"
+				TargetType="Entry">
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource InverseTextColor }" />
+                <Setter
+					Property="BackgroundColor"
+					Value="Transparent" />
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Start" />
+                <Setter
+					Property="grial:EntryProperties.BorderStyle"
+					Value="BottomLine" />
+                <Setter
+					Property="grial:EntryProperties.BorderColor"
+					Value="{ DynamicResource InverseTextColor }" />
+                <Setter
+					Property="grial:EntryProperties.PlaceholderColor"
+					Value="{ DynamicResource InverseTextColor }" />
+                <Setter
+					Property="grial:EntryProperties.HorizontalPadding"
+					Value="0" />
+                <Style.Triggers>
+                    <Trigger
+						TargetType="Entry"
+						Property="IsFocused"
+						Value="True">
+                        <Setter
+							Property="grial:EntryProperties.BorderColor"
+							Value="{ DynamicResource AccentColor }" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- VALIDATIONS -->
+            <Style
+				x:Key="ValidationEntryBaseStyle"
+				TargetType="local:RoundedLabel">
+                <Setter
+					Property="FontSize"
+					Value="12" />
+                <Setter
+					Property="HeightRequest"
+					Value="18" />
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Start" />
+                <Setter
+					Property="HorizontalOptions"
+					Value="Start" />
+                <Setter
+					Property="Padding"
+					Value="{ OnPlatform iOS='5,1', Android='5,0' }" />
+                <Setter
+					Property="CornerRadius"
+					Value="9" />
+            </Style>
+
+            <Style
+				x:Key="ValidationEntryErrorStyle"
+				BasedOn="{ StaticResource ValidationEntryBaseStyle }"
+				TargetType="local:RoundedLabel">
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource ErrorColor }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource OverImageTextColor }" />
+            </Style>
+
+            <Style
+				x:Key="ValidationEntryWarningStyle"
+				BasedOn="{ StaticResource ValidationEntryBaseStyle }"
+				TargetType="local:RoundedLabel">
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource WarningColor }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource OverImageTextColor }" />
+            </Style>
+
+            <Style
+				x:Key="ValidationBaseStyle"
+				TargetType="local:Tag">
+                <Setter
+					Property="FontSize"
+					Value="12" />
+                <Setter
+					Property="IconFontSize"
+					Value="12" />
+                <Setter
+					Property="HeightRequest"
+					Value="12" />
+                <Setter
+					Property="HorizontalOptions"
+					Value="Start" />
+                <Setter
+					Property="Padding"
+					Value="10,4" />
+                <Setter
+					Property="CornerRadius"
+					Value="10" />
+            </Style>
+
+            <Style
+				x:Key="ValidationErrorStyle"
+				BasedOn="{ StaticResource ValidationBaseStyle }"
+				TargetType="local:Tag">
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource ErrorColor }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource OverImageTextColor }" />
+            </Style>
+
+            <Style
+				x:Key="ValidationWarningStyle"
+				BasedOn="{ StaticResource ValidationBaseStyle }"
+				TargetType="local:Tag">
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource WarningColor }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource OverImageTextColor }" />
+            </Style>
+
+            <!-- CHAT STYLES -->
+            <Style
+				x:Key="ChatMessageItemBaseStyle"
+				TargetType="Label">
+                <Setter
+					Property="FontSize"
+					Value="14" />
+            </Style>
+
+            <Style
+				x:Key="ChatMessageItemInfoBaseStyle"
+				TargetType="Label">
+                <Setter
+					Property="FontSize"
+					Value="12" />
+                <Setter
+					Property="TextColor"
+					Value="#FF212121" />
+            </Style>
+
+            <Style
+				x:Key="ChatMessageItemBalloonBaseStyle"
+				TargetType="StackLayout">
+                <Setter
+					Property="Padding"
+					Value="10" />
+            </Style>
+
+            <Style
+				x:Key="ChatIconButtonBaseStyle"
+				TargetType="Label"
+				BasedOn="{ StaticResource FontIcon }">
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Center" />
+                <Setter
+					Property="VerticalTextAlignment"
+					Value="Center" />
+                <Setter
+					Property="FontSize"
+					Value="20" />
+            </Style>
+
+            <Style
+				x:Key="ChatIconButtonPictureStyle"
+				TargetType="Label"
+				BasedOn="{ StaticResource ChatIconButtonBaseStyle }">
+                <Setter
+					Property="Text"
+					Value="{ x:Static local:GrialIconsFont.Camera }" />
+            </Style>
+
+            <Style
+				x:Key="ChatIconButtonSendStyle"
+				TargetType="Label"
+				BasedOn="{ StaticResource ChatIconButtonBaseStyle }">
+                <Setter
+					Property="Text"
+					Value="{ x:Static local:GrialIconsFont.Send }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource AccentColor }" />
+            </Style>
+
+            <Style
+				x:Key="ChatMessageEntryStyle"
+				TargetType="Entry">
+                <Setter
+					Property="FontSize"
+					Value="12" />
+                <Setter
+					Property="BackgroundColor">
+                    <Setter.Value>
+                        <OnPlatform
+							x:TypeArguments="Color"
+							iOS="#FFFFFF"
+							Android="#00FFFFFF" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- WALKTHROUGH -->
+            <Style
+				x:Key="WalkthroughStepBaseStyle"
+				TargetType="ContentPage">
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource BrandColor}" />
+            </Style>
+
+            <Style
+				x:Key="WalkthroughPageBaseStyle"
+				TargetType="ContentPage">
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource BrandColor}" />
+            </Style>
+
+            <Style
+				x:Key="WalkthroughFlatStepItemTemplateStyle"
+				TargetType="ContentPage">
+                <Setter
+					Property="grial:Effects.BackgroundGradient"
+					Value="{DynamicResource WalkthroughFlatStepItemTemplateGradient}" />
+            </Style>
+
+            <Style
+				x:Key="WalkthroughStepStyle"
+				TargetType="ContentPage"
+				BasedOn="{StaticResource WalkthroughStepBaseStyle}">
+                <Setter
+					Property="Opacity"
+					Value="1" />
+            </Style>
+
+            <Style
+				x:Key="WalkthroughPageStyle"
+				TargetType="ContentPage"
+				BasedOn="{StaticResource WalkthroughPageBaseStyle}">
+                <Setter
+					Property="Opacity"
+					Value="1" />
+            </Style>
+
+            <Style
+				x:Key="WalkthroughStepIconStyle"
+				TargetType="Label"
+				BaseResourceKey="FontIcon">
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Center" />
+                <Setter
+					Property="VerticalOptions"
+					Value="CenterAndExpand" />
+                <Setter
+					Property="HorizontalOptions"
+					Value="CenterAndExpand" />
+                <Setter
+					Property="FontSize"
+					Value="72" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource OverImageTextColor }" />
+            </Style>
+
+            <Style
+				x:Key="WalktrhoughItemTemplateShape"
+				TargetType="BoxView">
+                <Setter
+					Property="VerticalOptions"
+					Value="CenterAndExpand" />
+                <Setter
+					Property="HorizontalOptions"
+					Value="CenterAndExpand" />
+                <Setter
+					Property="BackgroundColor"
+					Value="White" />
+                <Setter
+					Property="Opacity"
+					Value="0.09" />
+                <Setter
+					Property="WidthRequest"
+					Value="80" />
+                <Setter
+					Property="HeightRequest"
+					Value="80" />
+                <Setter
+					Property="CornerRadius"
+					Value="40" />
+            </Style>
+
+
+            <!-- SETTINGS -->
+            <Style
+				x:Key="SaveButtonStyle"
+				TargetType="Button"
+				BasedOn="{StaticResource RoundedButtonStyle}">
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource SaveButtonColor}" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource SaveButtonColor}" />
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource OverImageTextColor}" />
+                <Setter
+					Property="HeightRequest"
+					Value="{DynamicResource BaseButtonHeight}" />
+            </Style>
+
+            <Style
+				x:Key="DeleteButtonStyle"
+				TargetType="Button"
+				BasedOn="{StaticResource RoundedButtonStyle}">
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource DeleteButtonColor}" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource DeleteButtonColor}" />
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource OverImageTextColor}" />
+                <Setter
+					Property="HeightRequest"
+					Value="{DynamicResource BaseButtonHeight}" />
+            </Style>
+
+            <!-- DOCUMENT TIMELINE -->
+            <Style
+				x:Key="DocumentTimelineBubbleStyle"
+				TargetType="VisualElement">
+                <Setter
+					Property="grial:Effects.CornerRadius"
+					Value="4" />
+            </Style>
+
+            <Style
+				x:Key="DocumentTimelineBulletStyle"
+				TargetType="VisualElement">
+                <Setter
+					Property="WidthRequest"
+					Value="50" />
+                <Setter
+					Property="HeightRequest"
+					Value="50" />
+                <Setter
+					Property="grial:Effects.CornerRadius"
+					Value="25" />
+            </Style>
+
+            <!-- SOCIAL -->
+            <Style
+				x:Key="SocialHeaderStyle"
+				TargetType="Label">
+                <Setter
+					Property="VerticalOptions"
+					Value="CenterAndExpand" />
+                <Setter
+					Property="FontSize"
+					Value="14" />
+                <Setter
+					Property="HeightRequest"
+					Value="46" />
+                <Setter
+					Property="VerticalTextAlignment"
+					Value="Center" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource BaseTextColor }" />
+
+                <Setter
+					Property="HorizontalOptions"
+					Value="Start" />
+            </Style>
+
+            <Style
+				x:Key="SocialHeaderStyleBorderBottomStyle"
+				TargetType="Label">
+                <Setter
+					Property="HeightRequest"
+					Value="1" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource ListViewSeparatorColor }" />
+            </Style>
+
+
+            <Style
+				x:Key="ToolbarStyle"
+				TargetType="Grid">
+                <Setter
+					Property="HeightRequest"
+					Value="60" />
+                <Setter
+					Property="ColumnSpacing"
+					Value="0" />
+            </Style>
+
+            <!-- BRAND BLOCK -->
+            <Style
+				x:Key="BrandContainerStyle"
+				TargetType="Grid">
+                <Setter
+					Property="HorizontalOptions"
+					Value="Start" />
+                <Setter
+					Property="VerticalOptions"
+					Value="Start" />
+            </Style>
+
+            <Style
+				x:Key="BrandNameStyle"
+				TargetType="Label"
+				BasedOn="{ StaticResource LabelBoldStyle }">
+                <Setter
+					Property="FontSize"
+					Value="24" />
+                <Setter
+					Property="TextColor"
+					Value="{DynamicResource BrandBlockTextColor}" />
+            </Style>
+
+            <Style
+				x:Key="BrandNameOrnamentStyle"
+				TargetType="BoxView">
+                <Setter
+					Property="HeightRequest"
+					Value="2" />
+                <Setter
+					Property="VerticalOptions"
+					Value="End" />
+                <Setter
+					Property="WidthRequest"
+					Value="40" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource AccentColor }" />
+                <Setter
+					Property="HorizontalOptions"
+					Value="Start" />
+            </Style>
+
+            <!-- LAYOUT HELPERS -->
+
+            <Style
+				x:Key="HorizontalRuleStyle"
+				TargetType="BoxView">
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource AccentColor}" />
+                <Setter
+					Property="HeightRequest"
+					Value="1" />
+            </Style>
+
+            <Style
+				x:Key="ThemeShowCaseHorizontalRuleStyle"
+				TargetType="BoxView"
+				BasedOn="{ StaticResource HorizontalRuleStyle }">
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource BaseSeparatorColor }" />
+                <Setter
+					Property="Margin"
+					Value="0,28" />
+            </Style>
+
+            <Style
+				x:Key="LoginPadding"
+				TargetType="StackLayout">
+                <Setter
+					Property="Padding"
+					Value="40,0,40,0" />
+            </Style>
+
+
+            <!-- THEME -->
+            <Style
+				TargetType="local:CircleCachedImage">
+                <Setter
+					Property="WidthRequest"
+					Value="50" />
+                <Setter
+					Property="HeightRequest"
+					Value="50" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource AccentColor}" />
+            </Style>
+
+            <Style
+				x:Key="Avatar"
+				TargetType="local:CircleCachedImage">
+                <Setter
+					Property="WidthRequest"
+					Value="50" />
+                <Setter
+					Property="HeightRequest"
+					Value="50" />
+                <Setter
+					Property="BorderColor"
+					Value="{DynamicResource AccentColor}" />
+            </Style>
+
+            <Style
+				x:Key="AvatarXSmall"
+				TargetType="local:CircleCachedImage"
+				BasedOn="{ StaticResource Avatar }">
+                <Setter
+					Property="WidthRequest"
+					Value="36" />
+                <Setter
+					Property="HeightRequest"
+					Value="36" />
+            </Style>
+
+            <Style
+				x:Key="AvatarSmall"
+				TargetType="local:CircleCachedImage"
+				BasedOn="{ StaticResource Avatar }">
+                <Setter
+					Property="WidthRequest"
+					Value="44" />
+                <Setter
+					Property="HeightRequest"
+					Value="44" />
+            </Style>
+
+            <Style
+				x:Key="AvatarLarge"
+				TargetType="local:CircleCachedImage"
+				BasedOn="{ StaticResource Avatar }">
+                <Setter
+					Property="WidthRequest"
+					Value="110" />
+                <Setter
+					Property="HeightRequest"
+					Value="110" />
+            </Style>
+
+
+            <!-- ECOMMERCE -->
+            <Style
+				x:Key="EcommerceProductGridBannerStyle"
+				TargetType="Grid">
+                <Setter
+					Property="HeightRequest"
+					Value="{ grial:OnOrientationDouble
+                        PortraitPhone=70,
+                        LandscapePhone=70,
+                        PortraitTablet=100,
+                        LandscapeTablet=100 
+                    }" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{DynamicResource BrandColor}" />
+            </Style>
+
+            <!--Dashboard Item Template-->
+            <Style
+				x:Key="DashboardItemTemplateShape"
+				TargetType="BoxView">
+                <Setter
+					Property="WidthRequest">
+                    <Setter.Value>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="60"
+							Tablet="66" />
+                    </Setter.Value>
+                </Setter>
+                <Setter
+					Property="HeightRequest">
+                    <Setter.Value>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="60"
+							Tablet="66" />
+                    </Setter.Value>
+                </Setter>
+                <Setter
+					Property="Opacity"
+					Value="1" />
+            </Style>
+
+            <Style
+				x:Key="DashboardItemTemplateIcon"
+				TargetType="Label"
+				BasedOn="{ StaticResource FontIcon }">
+                <Setter
+					Property="FontSize">
+                    <Setter.Value>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="30"
+							Tablet="35" />
+                    </Setter.Value>
+                </Setter>
+                <Setter
+					Property="Opacity"
+					Value="1" />
+            </Style>
+
+            <Style
+				x:Key="DashboardVariantItemTemplateIcon"
+				TargetType="Label"
+				BasedOn="{ StaticResource FontIcon }">
+                <Setter
+					Property="FontSize">
+                    <Setter.Value>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="70"
+							Tablet="85" />
+                    </Setter.Value>
+                </Setter>
+                <Setter
+					Property="Opacity"
+					Value="1" />
+            </Style>
+
+            <Style
+				x:Key="DashboardItemTemplateFlatStyle"
+				TargetType="VisualElement">
+                <Setter
+					Property="grial:Effects.BackgroundGradient"
+					Value="{DynamicResource DashboardItemTemplateGradient}" />
+            </Style>
+
+            <Style
+				x:Key="DashboardAppNotificationItemTemplateStyle"
+				TargetType="VisualElement">
+                <Setter
+					Property="grial:Effects.BackgroundGradient"
+					Value="{DynamicResource DashboardAppNotificationItemTemplateGradient}" />
+            </Style>
+
+            <Style
+				x:Key="DashboardVariantItemTemplateStyle"
+				TargetType="VisualElement">
+                <Setter
+					Property="grial:Effects.BackgroundGradient"
+					Value="{DynamicResource DashboardVariantItemTemplateGradient}" />
+            </Style>
+            <Style
+				x:Key="DashboardItemTemplateImageStyle"
+				TargetType="ffimageloading:CachedImage">
+                <Setter
+					Property="grial:Effects.BackgroundGradient"
+					Value="{DynamicResource DashboardItemTemplateImageGradient}" />
+            </Style>
+
+
+            <!--Dashboard Multiple Scroll-->
+            <OnIdiom
+				x:TypeArguments="GridLength"
+				Phone="250"
+				Tablet="500"
+				x:Key="DashboardMultipleScrollMainItemHeight" />
+            <OnIdiom
+				x:TypeArguments="GridLength"
+				Phone="134"
+				Tablet="268"
+				x:Key="DashboardMultipleScrollSecondaryItemRowHeight" />
+            <OnIdiom
+				x:TypeArguments="GridLength"
+				Phone="81"
+				Tablet="162"
+				x:Key="DashboardMultipleScrollSecondaryItemColumnWidth" />
+            <OnIdiom
+				x:TypeArguments="LayoutOptions"
+				Phone="FillAndExpand"
+				Tablet="CenterAndExpand"
+				x:Key="DashboardMultipleScrollMainItemVerticalAlignment" />
+            <OnIdiom
+				x:TypeArguments="Thickness"
+				Phone="20,30,20,20"
+				Tablet="60"
+				x:Key="DashboardMultipleScrollMainItemMargin" />
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="20"
+				Tablet="30"
+				x:Key="DashboardMultipleScrollMainItemTitleFontSize" />
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="14"
+				Tablet="18"
+				x:Key="DashboardMultipleScrollMainItemDescriptionFontSize" />
+            <OnIdiom
+				x:TypeArguments="x:Double"
+				Phone="10"
+				Tablet="40"
+				x:Key="DashboardMultipleScrollMainItemRowSpacing" />
+
+            <Style
+				x:Key="DashboardMultipleScrollItemTitleStyle"
+				TargetType="Label">
+                <Setter
+					Property="Margin"
+					Value="10,20,10,5" />
+                <Setter
+					Property="FontSize"
+					Value="{ StaticResource BaseFontSize }" />
+                <Setter
+					Property="FontAttributes"
+					Value="Bold" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource BaseTextColor }" />
+                <Setter
+					Property="VerticalTextAlignment"
+					Value="End" />
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Start" />
+            </Style>
+
+            <Style
+				x:Key="DashboardMultipleScrollResponsiveImageStyle"
+				TargetType="ffimageloading:CachedImage">
+                <Setter
+					Property="Aspect"
+					Value="AspectFill" />
+            </Style>
+
+            <Style
+				x:Key="DashboardMultipleScrollMainItemTitleStyle"
+				TargetType="Label">
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource OverImageTextColor }" />
+                <Setter
+					Property="FontSize"
+					Value="{ StaticResource DashboardMultipleScrollMainItemTitleFontSize }" />
+                <Setter
+					Property="FontAttributes"
+					Value="Bold" />
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Start" />
+            </Style>
+
+
+            <Style
+				x:Key="DashboardMultipleScrollMainItemDescriptionStyle"
+				TargetType="Label">
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource OverImageTextColor }" />
+                <Setter
+					Property="FontSize"
+					Value="{ StaticResource DashboardMultipleScrollMainItemDescriptionFontSize }" />
+                <Setter
+					Property="VerticalOptions"
+					Value="FillAndExpand" />
+                <Setter
+					Property="HorizontalTextAlignment"
+					Value="Start" />
+            </Style>
+
+            <Style
+				x:Key="DashboardBadgeStyle"
+				TargetType="VisualElement">
+                <Setter
+					Property="grial:Effects.Shadow"
+					Value="True" />
+                <Setter
+					Property="grial:Effects.ShadowSize"
+					Value="2" />
+                <Setter
+					Property="grial:Effects.ShadowIOSColor"
+					Value="#33000000" />
+                <Setter
+					Property="grial:Effects.CornerRadius"
+					Value="{ OnPlatform Android={ StaticResource BadgeCornerRadius } }" />
+            </Style>
+
+            <!-- TAG LABEL -->
+            <OnPlatform
+				x:TypeArguments="x:Double"
+				x:Key="TagCornerRadius"
+				Android="6"
+				iOS="6" />
+
+            <Style
+				x:Key="TagLabelStyle"
+				TargetType="local:Tag">
+                <Setter
+					Property="CornerRadius"
+					Value="{ StaticResource TagCornerRadius }" />
+                <Setter
+					Property="TextColor"
+					Value="{ DynamicResource OverImageTextColor }" />
+                <Setter
+					Property="FontSize"
+					Value="12" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource TranslucidBlack }" />
+            </Style>
+
+            <!-- STATUS BAR GRADIENT -->
+            <Style
+				x:Key="StatusBarShimStyle"
+				TargetType="Image">
+                <Setter
+					Property="Source"
+					Value="status_bar_gradient.png" />
+                <Setter
+					Property="VerticalOptions"
+					Value="Start" />
+                <Setter
+					Property="HorizontalOptions"
+					Value="FillAndExpand" />
+                <Setter
+					Property="Aspect"
+					Value="Fill" />
+                <Setter
+					Property="HeightRequest"
+					Value="44" />
+            </Style>
+
+            <!-- NAVIGATION LIST WITH ICONS -->
+            <Style
+				x:Key="NavigationListWithIconsItemTemplateChevronStyle"
+				TargetType="Label">
+                <Setter
+					Property="VerticalOptions"
+					Value="Center" />
+                <Setter
+					Property="FontSize"
+					Value="{ DynamicResource MainMenuChevronRightFontsize }" />
+                <Setter
+					Property="Margin"
+					Value="0,0,10,0" />
+                <Setter
+					Property="Text"
+					Value="{x:Static local:GrialIconsFont.ChevronRight}" />
+                <Setter
+					Property="FontFamily"
+					Value="{ StaticResource IconsFontFamily }" />
+            </Style>
+
+            <!-- NAVIGATION LIST FLAT -->
+            <Style
+				x:Key="NavigationListItemTemplateStyle"
+				TargetType="ContentView">
+                <Setter
+					Property="grial:Effects.BackgroundGradient"
+					Value="{DynamicResource CategoriesListItemTemplateGradient}" />
+            </Style>
+
+            <!-- CHECKBOX TEMPLATE -->
+            <Style
+				TargetType="grial:Checkbox">
+                <Setter
+					Property="ControlTemplate">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+										Width="Auto" />
+                                    <ColumnDefinition
+										Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid
+									x:Name="Unchecked"
+									Grid.Column="0">
+                                    <!-- OUTER CIRCLE -->
+                                    <Frame
+										Padding="0"
+										CornerRadius="13"
+										WidthRequest="26"
+										HeightRequest="26"
+										VerticalOptions="Center"
+										HorizontalOptions="Center"
+										HasShadow="False"
+										BackgroundColor="{ TemplateBinding UncheckedBackgroundColor }"
+										OutlineColor="{ TemplateBinding UncheckedBorderColor }" />
+                                </Grid>
+
+                                <Grid
+									x:Name="Checked"
+									Grid.Column="0">
+                                    <!-- INNER CIRCLE -->
+                                    <Frame
+										Padding="0"
+										CornerRadius="13"
+										WidthRequest="26"
+										HeightRequest="26"
+										VerticalOptions="Center"
+										HorizontalOptions="Center"
+										HasShadow="False"
+										BackgroundColor="Transparent"
+										OutlineColor="{ TemplateBinding CheckedBorderColor }">
+                                        <!-- OUTER CIRCLE -->
+                                        <Frame
+											Margin="3"
+											CornerRadius="10"
+											WidthRequest="20"
+											HeightRequest="20"
+											VerticalOptions="Center"
+											HorizontalOptions="Center"
+											HasShadow="False"
+											BackgroundColor="{ TemplateBinding CheckedBackgroundColor }"
+											OutlineColor="Transparent" />
+                                    </Frame>
+
+                                    <!-- CHECK -->
+                                    <Label
+										Style="{ DynamicResource FontIconFill }"
+										Text="{ x:Static local:GrialIconsFont.Check }"
+										TextColor="{ TemplateBinding IconColor }"
+										FontSize="{ TemplateBinding IconFontSize }"
+										HorizontalOptions="Center"
+										VerticalOptions="Center" />
+                                </Grid>
+
+                                <ContentPresenter
+									Grid.Column="1"
+									VerticalOptions="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter
+					Property="IconFontSize"
+					Value="13" />
+                <Setter
+					Property="HeightRequest"
+					Value="26" />
+                <Setter
+					Property="HorizontalOptions"
+					Value="Start" />
+                <Setter
+					Property="CheckedBackgroundColor"
+					Value="{ DynamicResource OkColor }" />
+                <Setter
+					Property="CheckedBorderColor"
+					Value="{ DynamicResource OkColor }" />
+                <Setter
+					Property="UncheckedBackgroundColor"
+					Value="Transparent" />
+                <Setter
+					Property="UncheckedBorderColor"
+					Value="{ DynamicResource ListViewSeparatorColor }" />
+                <Setter
+					Property="IconColor"
+					Value="{ DynamicResource OverImageTextColor }" />
+            </Style>
+
+            <!-- GRADIENT MASK STYLE -->
+            <Style
+				x:Key="ScrollViewBottomGradientMaskStyle"
+				TargetType="VisualElement">
+                <Setter
+					Property="grial:Effects.BackgroundGradient"
+					Value="{ DynamicResource ScrollViewBottomGradientMaskGradient }" />
+                <Setter
+					Property="HeightRequest"
+					Value="30" />
+                <Setter
+					Property="TranslationY"
+					Value="-30" />
+            </Style>
+
+            <!-- DIALOGS STYLES -->
+            <Style
+				x:Key="BlurredShadow"
+				TargetType="VisualElement">
+                <Setter
+					Property="grial:Effects.Shadow"
+					Value="True" />
+                <Setter
+					Property="grial:Effects.ShadowSize"
+					Value="14" />
+                <Setter
+					Property="grial:Effects.ShadowIOSColor"
+					Value="#77000000" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

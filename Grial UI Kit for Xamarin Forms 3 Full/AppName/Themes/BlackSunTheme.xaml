@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.BlackSunTheme">
+    
+    <x:Double
+		x:Key="BaseButtonHeight">44</x:Double>
+    <x:Int32
+		x:Key="BaseButtonCornerRadius">22</x:Int32>
+    <x:Double
+		x:Key="BaseButtonBorderWith">0</x:Double>
+
+    <Color
+		x:Key="BaseButtonBorderColor">Transparent</Color>
+
+    <!--
+        THEME COLORS
+    
+        The colors below will be automatically updated on each platform project by the build task.
+    
+        IMPORTANT: To avoid issues on Android please make sure your accent color is not transparent!
+        Just add "FF" inmediately after the "#" on your color.
+    
+        So these are not valid (both are equivalent and means a transparent color): 
+            #169CEE
+            #00169CEE
+    
+        ...but this is: 
+            #FF169CEE 
+    -->
+    <!-- Theme Exported Colors -->
+    <Color
+		x:Key="AccentColor">#FFE76745</Color>
+    <Color
+		x:Key="BaseTextColor">#CED4E8</Color>
+    <Color
+		x:Key="ListViewSelectedItemBackgroundColor">#11FFFFFF</Color>
+    <Color
+		x:Key="SplashBackgroundColor">#E76745</Color>
+
+    <Color
+		x:Key="BrandBlockTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="BrandBlockBackgroundColor">Transparent</Color>
+
+    <!-- By Default same color as AccentColor -->
+    <Color
+		x:Key="NavigationBarStartBackgroundColor">#FF9B3D</Color>
+    <Color
+		x:Key="NavigationBarEndBackgroundColor">#D6175B</Color>
+    <Color
+		x:Key="NavigationBarTextColor">#FFFFFF</Color>
+
+    <Color
+		x:Key="MainMenuOverlayBackgroundColor">#22F1F3F5</Color>
+    
+    <!-- these pointed to MainMenu color resources -->
+    <Color
+		x:Key="SecondaryPageBackgroundColor">#FFFFFF</Color>
+    <Color
+		x:Key="SecondaryPageTextColor">#666666</Color>
+
+    <!-- DATA GRIDS -->
+    <Color
+		x:Key="DataGridHeaderRowBackgroundColor">#31353D</Color>
+    <Color
+		x:Key="DataGridHeaderTextColor">#E76745</Color>
+    <Color
+		x:Key="DataGridBackgroundColor">#24272D</Color>
+    <Color
+		x:Key="DataGridCellTextColor">#CED4E8</Color>
+    
+    <!-- DIALOGS & POPUPS -->
+    <x:Double
+		x:Key="DialogsCornerRadius">4</x:Double>
+    <x:Int32
+		x:Key="DialogsButtonCornerRadius">16</x:Int32>
+
+    <x:Double
+		x:Key="DialogsButtonWidthRequest">126</x:Double>
+    <x:Double
+		x:Key="DialogsButtonHeightRequest">32</x:Double>
+    <Thickness
+		x:Key="DialogsButtonMargin">5,0</Thickness>
+    
+    <Color
+		x:Key="DialogsShimBackgroundColor">#CC000000</Color>
+    <Color
+		x:Key="CustomActionSheetShimBackgroundColor">#CC000000</Color>
+
+    <Color
+		x:Key="CustomActionSheetBackgroundColor">#F1F3F5</Color>
+    <Color
+		x:Key="CustomActionSheetTextColor">#666666</Color>
+    
+    <!-- TAGS -->
+    <Thickness
+		x:Key="TagItemMargin">4,2</Thickness>
+    <Thickness
+		x:Key="TagItemPadding">10,0</Thickness>
+    <x:Double
+		x:Key="TagItemCornerRadius">13</x:Double>
+    <x:Double
+		x:Key="TagItemFontSize">12</x:Double>
+    <x:Double
+		x:Key="TagItemIconSize">12</x:Double>
+    <x:Double
+		x:Key="TagItemImageSize">16</x:Double>
+    <Color
+		x:Key="TagItemBackgroundColor">#3E5276</Color>
+    <Color
+		x:Key="TagItemTextColor">White</Color>
+       
+    <!-- CIRCLE ACTION BUTTON FLAT -->
+    <Color
+		x:Key="CircleActionButtonFlatBackgroundColor">#3E5276</Color>
+    <Color
+		x:Key="CircleActionButtonFlatIconColor">White</Color>
+    <Color
+		x:Key="CircleActionButtonFlatBorderColor">Transparent</Color>
+    <Color
+		x:Key="CircleActionButtonFlatTextColor">White</Color>
+    
+    <!-- GENERAL COLORS -->
+    <Color
+		x:Key="InverseTextColor">White</Color>
+    <Color
+		x:Key="BrandColor">#BB4424</Color>
+    <Color
+		x:Key="BrandNameColor">#FFFFFF</Color>
+    <Color
+		x:Key="BaseLightTextColor">#7b7b7b</Color>
+    <Color
+		x:Key="OverImageTextColor">#FFFFFF</Color>
+    <OnPlatform
+		x:Key="OverImageHighlightedColor"
+		x:TypeArguments="Color"
+		Default="{ StaticResource AccentColor }" />    
+    <Color
+		x:Key="EcommercePromoTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="SocialHeaderTextColor">#666666</Color>
+    <Color
+		x:Key="ArticleHeaderBackgroundColor">#22000000</Color>
+    <Color
+		x:Key="ListViewItemTextColor">#666666</Color>
+    <Color
+		x:Key="AboutHeaderBackgroundColor">#FFFFFF</Color>
+    
+    <Color
+		x:Key="BasePageColor">#24272D</Color>
+    <Color
+		x:Key="BaseTabbedPageColor">#fafafa</Color>
+    
+    <Color
+		x:Key="MainWrapperBackgroundColor">#31353D</Color>
+    
+    <Color
+		x:Key="CategoriesListIconColor">#55000000</Color>
+    <Color
+		x:Key="DashboardIconColor">#FFFFFF</Color>
+    
+    <!-- COMPLEMENT COLORS -->
+    <Color
+		x:Key="ComplementColor">#3E5276</Color>
+    <Color
+		x:Key="TranslucidBlack">#55000000</Color>
+    <Color
+		x:Key="TranslucidWhite">#11ffffff</Color>
+    
+    <!-- INDICATOR COLORS -->
+    <Color
+		x:Key="OkColor">#22C064</Color>
+    <Color
+		x:Key="ErrorColor">Red</Color>
+    <Color
+		x:Key="WarningColor">#ffc107</Color>
+    <Color
+		x:Key="NotificationColor">#1274d1</Color>
+    <Color
+		x:Key="DisabledColor">#bbbbbb</Color>
+    
+    <!-- BUTTONS & ENTRY COLORS -->
+    <Color
+		x:Key="PrimaryActionButtonStartColor">#FF9B3D</Color>
+    <Color
+		x:Key="PrimaryActionButtonEndColor">#D6175B</Color>
+
+    <Color
+		x:Key="SaveButtonColor">#22c064</Color>
+    <Color
+		x:Key="DeleteButtonColor">#EB505C</Color>
+    
+    <Color
+		x:Key="TranslucidButtonColor">#33FFFFFF</Color>
+    
+    <!-- ENTRIES AND EDITORS COMMON PROPERTIES -->
+    <Color
+		x:Key="PlaceholderColor">#8D8DA9</Color>
+    <Color
+		x:Key="EntryAndEditorsBackgroundColor">#24272D</Color>
+    <Color
+		x:Key="EntryAndEditorsBorderColor">#24272D</Color>
+    <x:Single
+		x:Key="EntryAndEditorsBorderWidth">1</x:Single>
+    <OnPlatform
+		x:Key="EntryAndEditorsHorizontalPadding"
+		x:TypeArguments="x:Single">
+        <On
+			Platform="iOS"
+			Value="12" />
+        <On
+			Platform="Android"
+			Value="30" />
+    </OnPlatform>
+
+    <!-- ENTRIES PROPERTIES -->
+    <x:Double
+		x:Key="EntryHeightRequest">44</x:Double>
+    <x:Single
+		x:Key="EntryBorderCornerRadiusCornerRadius">22</x:Single>
+    <grial:BorderStyle
+		x:Key="EntryBorderStyle">RoundRect</grial:BorderStyle>
+
+    <!-- EDITORS PROPERTIES -->
+    <grial:BorderStyle
+		x:Key="EditorBorderStyle">RoundRect</grial:BorderStyle>
+    <x:Double
+		x:Key="EditorHeightRequest">100</x:Double>
+    <x:Double
+		x:Key="EditorFontSize">14</x:Double>
+    <x:Single
+		x:Key="EditorBorderCornerRadiusCornerRadius">11</x:Single>
+
+    <Color
+		x:Key="RoundedLabelBackgroundColor">#3E5276</Color>
+
+    <!-- MAIN MENU COLORS -->
+    <Color
+		x:Key="MainMenuHeaderBackgroundColor">Transparent</Color>
+    <Color
+		x:Key="MainMenuBackgroundColor">Transparent</Color>
+    <Color
+		x:Key="MainMenuSeparatorColor">Transparent</Color>
+    <Color
+		x:Key="MainMenuTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="MainMenuIconColor">#FFFFFF</Color>
+    
+    <!-- SEPARATORS COLORS -->
+    <Color
+		x:Key="ListViewSeparatorColor">#22FFFFFF</Color>
+    <Color
+		x:Key="BaseSeparatorColor">#7b7b7b</Color>
+    
+    <!-- CHAT COLORS -->
+    <Color
+		x:Key="ChatRightBalloonBackgroundColor">#3E5276</Color>
+    <Color
+		x:Key="ChatBalloonFooterTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="ChatRightTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="ChatLeftTextColor">#FFFFFF</Color>
+    
+    <!-- OnPlatform does not support DynamicResource so to make the switch color dynamic in iOS it's included
+         in each theme. Android's OnColor only affects the track but not the thumb, so it shouldn't be used -->
+    <Style
+		TargetType="Switch"
+		ApplyToDerivedTypes="true">
+        <Setter
+			Property="OnColor">
+            <OnPlatform
+				x:TypeArguments="Color">
+                    <On
+					Platform="iOS"
+					Value="{ StaticResource AccentColor }" />
+                </OnPlatform>
+        </Setter>
+    </Style>
+
+    <x:Double
+		x:Key="MainMenuBackgroundImageOpacity">0.25</x:Double>
+    
+    <!--RATINGS COLORS-->
+    <Color
+		x:Key="RatingsColor">#ffb300</Color>
+
+    <!-- TAB CONTROL COLORS -->
+    <Color
+		x:Key="AndroidTabStripBackgroundColor">#0F000000</Color>
+    <OnPlatform
+		x:Key="AndroidBottomTabStripBackgroundColor"
+		x:TypeArguments="Color"
+		Default="{ StaticResource ArticleHeaderBackgroundColor }" />
+    <Color
+		x:Key="AndroidTabItemDefaultTextColor">#77FFFFFF</Color>
+    <Color
+		x:Key="AndroidTabItemSelectedTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="AndroidSelectedBackgroundColor">#3E5276</Color>
+    <Color
+		x:Key="SimpleTabDefaultStateTextColor">White</Color>
+
+
+    <!-- GRADIENTS -->
+    
+    <!-- APP NAVIGATION BAR -->
+    <grial:LinearGradient
+		x:Key="NavigationBarGradient"
+		Angle="135">
+        <grial:GradientColor
+			Color="{StaticResource NavigationBarStartBackgroundColor}"
+			Position="0" />
+        <grial:GradientColor
+			Color="{StaticResource NavigationBarEndBackgroundColor}"
+			Position="0.65" />
+    </grial:LinearGradient>
+
+    <!-- FLOWS NAVIGATION BARS -->
+    <grial:LinearGradient
+		x:Key="FlowsNavigationBarGradient"
+		Angle="135">
+        <grial:GradientColor
+			Color="{ StaticResource NavigationBarStartBackgroundColor }"
+			Position="0" />
+        <grial:GradientColor
+			Color="{ StaticResource NavigationBarEndBackgroundColor }"
+			Position=".65" />
+    </grial:LinearGradient>
+
+    <!-- MAIN MENU  -->
+    <grial:LinearGradient
+		x:Key="MainMenuGradient"
+		Angle="135">
+        <grial:GradientColor
+			Color="{ StaticResource NavigationBarStartBackgroundColor }"
+			Position="0" />
+        <grial:GradientColor
+			Color="{ StaticResource NavigationBarEndBackgroundColor }"
+			Position=".65" />
+    </grial:LinearGradient>
+
+    <!-- BUTTONS GRADIENTS -->
+    <grial:LinearGradient
+		x:Key="PrimaryButtonGradient"
+		Angle="90">
+        <grial:GradientColor
+			Color="{ StaticResource PrimaryActionButtonStartColor }"
+			Position="0" />
+        <grial:GradientColor
+			Color="{ StaticResource PrimaryActionButtonEndColor }"
+			Position="1" />
+    </grial:LinearGradient>
+
+
+    <!-- SPECIFIC -->
+
+    <!-- CUSTOM ACTION SHEET -->
+    <grial:LinearGradient
+		x:Key="CustomActionSheetGradient"
+		Angle="0">
+        <grial:GradientColor
+			Color="{StaticResource InverseTextColor}"
+			Opacity="0" />
+        <grial:GradientColor
+			Color="{StaticResource InverseTextColor}"
+			Opacity="0.1" />
+    </grial:LinearGradient>
+
+
+    <!-- SIMPLE DIALOG GRADIENTS -->
+    <grial:LinearGradient
+		x:Key="SimpleDialogBodyGradient"
+		Angle="135">
+        <grial:GradientColor
+			Color="{StaticResource BasePageColor}" />
+    </grial:LinearGradient>
+
+    <grial:LinearGradient
+		x:Key="SimpleDialogBodyInverseGradient"
+		Angle="135">
+        <grial:GradientColor
+			Color="{ StaticResource PrimaryActionButtonStartColor }"
+			Position="0" />
+        <grial:GradientColor
+			Color="{ StaticResource PrimaryActionButtonEndColor }"
+			Position="1" />
+    </grial:LinearGradient>
+
+    <grial:LinearGradient
+		x:Key="SimpleDialogTitleGradient"
+		Angle="135">
+        <grial:GradientColor
+			Color="{StaticResource AccentColor}" />
+        <grial:GradientColor
+			Color="{StaticResource ComplementColor}" />
+    </grial:LinearGradient>
+    
+
+    <!-- DASHBOARD CARD ITEM TEMPLATE GRADIENT -->
+    <grial:LinearGradient
+		x:Key="DashboardCardItemTemplateGradient"
+		Angle="135">
+        <grial:GradientColor
+			Color="{StaticResource BasePageColor}"
+			Opacity="0" />
+        <grial:GradientColor
+			Color="{StaticResource BasePageColor}"
+			Opacity="0.35" />
+    </grial:LinearGradient>
+
+    <!-- DASHBOARD ITEM TEMPLATE GRADIENT -->
+    <grial:LinearGradient
+		x:Key="DashboardItemTemplateGradient"
+		Angle="45">
+        <grial:GradientColor
+			Color="{StaticResource AccentColor}"
+			Opacity="0" />
+        <grial:GradientColor
+			Color="{StaticResource AccentColor}"
+			Opacity="0.20" />
+    </grial:LinearGradient>
+
+    <!-- DASHBOARD ITEM TEMPLATE GRADIENT -->
+    <grial:LinearGradient
+		x:Key="DashboardAppNotificationItemTemplateGradient"
+		Angle="45">
+        <grial:GradientColor
+			Color="{StaticResource AccentColor}"
+			Opacity="0" />
+        <grial:GradientColor
+			Color="{StaticResource AccentColor}"
+			Opacity="0.20" />
+    </grial:LinearGradient>
+
+    <!-- DASHBOARD ITEM TEMPLATE GRADIENT -->
+    <grial:LinearGradient
+		x:Key="DashboardVariantItemTemplateGradient"
+		Angle="45">
+        <grial:GradientColor
+			Color="{StaticResource ComplementColor}"
+			Opacity="0" />
+        <grial:GradientColor
+			Color="{StaticResource ComplementColor}"
+			Opacity="0.2" />
+    </grial:LinearGradient>
+
+    <!-- DASHBOARD ITEM TEMPLATE GRADIENT -->
+    <grial:LinearGradient
+		x:Key="DashboardItemTemplateImageGradient"
+		Angle="45">
+        <grial:GradientColor
+			Color="{StaticResource BasePageColor}"
+			Opacity="0" />
+        <grial:GradientColor
+			Color="{StaticResource BasePageColor}"
+			Opacity="0.5" />
+    </grial:LinearGradient>
+
+
+    <!-- CategoriesListItemTemplateGradient -->
+    <grial:LinearGradient
+		x:Key="CategoriesListItemTemplateGradient"
+		Angle="0">
+        <grial:GradientColor
+			Color="{StaticResource BasePageColor}"
+			Opacity="0" />
+        <grial:GradientColor
+			Color="{StaticResource BasePageColor}"
+			Opacity="0.1" />
+    </grial:LinearGradient>
+
+    <!-- WalkthroughFlatStepItemTemplateGradient -->
+    <grial:LinearGradient
+		x:Key="WalkthroughFlatStepItemTemplateGradient"
+		Angle="-45">
+        <grial:GradientColor
+			Color="{StaticResource BasePageColor}"
+			Opacity="0" />
+        <grial:GradientColor
+			Color="{StaticResource BasePageColor}"
+			Opacity="0.25" />
+    </grial:LinearGradient>
+    
+    <grial:LinearGradient
+		Angle="90"
+		x:Key="LightBackgroundGradient">
+        <grial:GradientColor
+			Color="#2A2E38"
+			Position="0" />
+        <grial:GradientColor
+			Color="#1F2228"
+			Position="1" />
+    </grial:LinearGradient>
+    
+    <grial:LinearGradient
+		x:Key="ScrollViewBottomGradientMaskGradient"
+		Angle="180">
+        <grial:GradientColor
+			Color="{ StaticResource MainWrapperBackgroundColor }"
+			Opacity="0"
+			Position="0" />
+    
+        <grial:GradientColor
+			Color="{ StaticResource MainWrapperBackgroundColor }"
+			Opacity="0.8"
+			Position=".5" />
+
+        <grial:GradientColor
+			Color="{ StaticResource MainWrapperBackgroundColor }"
+			Opacity="1"
+			Position="1" />
+    </grial:LinearGradient>
+    
+</ResourceDictionary>

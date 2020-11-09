@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	x:Class="AppName.ProductImageFullScreenPage"
+	NavigationPage.HasNavigationBar="false"
+	BackgroundColor="Black">
+    <Grid>
+        <ffimageloading:CachedImage
+			FadeAnimationEnabled="true"
+			x:Name="img"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="FillAndExpand"
+			Source="https://s3-us-west-2.amazonaws.com/grial-images/v3.0/product_item_0.jpg">
+           <View.GestureRecognizers>
+                <TapGestureRecognizer
+					Tapped="OnImagePreviewDoubleTapped"
+					NumberOfTapsRequired="2" />
+            </View.GestureRecognizers>
+        </ffimageloading:CachedImage>
+
+        <!--CLOSE ICON-->
+        <Label
+			Style="{ StaticResource IconCloseLabelStyle }"
+			TextColor="{ DynamicResource BaseTextColor }">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+					Tapped="OnCloseButtonClicked" />
+            </Label.GestureRecognizers>
+        </Label>
+
+    </Grid>
+
+</ContentPage>

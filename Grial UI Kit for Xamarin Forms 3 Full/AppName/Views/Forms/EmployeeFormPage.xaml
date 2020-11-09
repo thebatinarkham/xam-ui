@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+	x:Class="AppName.EmployeeFormPage"
+	Title="{ grial:Translate PageTitleEmployeeForm }"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid
+				Style="{ StaticResource ResponsiveLandscapeMarginStyle }"
+				RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="*" />
+                    <RowDefinition
+						Height="54" />
+                    <RowDefinition
+						Height="54" />
+                    <RowDefinition
+						Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <!-- FIELD BLOCK 1 -->
+                <StackLayout
+					Spacing="20"
+					Padding="20">
+                    <StackLayout
+						Orientation="Horizontal"
+						Spacing="14">
+                        
+                        <!-- Name -->
+                        <Entry
+							Placeholder="Name"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand" />
+                        
+                        <!-- Last Name -->
+                        <Entry
+							Placeholder="Last Name"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                    
+                    <!-- Email -->
+                    <Entry
+						Placeholder="Email"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand" />
+                    
+                    <!-- Phone -->
+                    <Entry
+						Placeholder="Phone number"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand" />
+                    
+                    <!-- Country -->
+                    <Entry
+						Placeholder="Country"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand" />
+                    
+                    <!-- Address -->
+                    <Entry
+						Placeholder="Address"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand" />
+                    
+                    <StackLayout
+						Orientation="Horizontal"
+						Spacing="14">
+                        
+                        <!-- City -->
+                        <Entry
+							Placeholder="City"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand" />
+                        
+                        <!-- Zip -->
+                        <Entry
+							Placeholder="Zip"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                    
+                </StackLayout>
+                
+                <!-- ACTION 1 -->
+                <Grid
+					Grid.Row="1"
+					Padding="20,0">
+                    
+                    <!-- BG -->
+                    <BoxView
+						Margin="-20,0"
+						BackgroundColor="{ DynamicResource BasePageColor }" />
+                    
+                    <!-- Line -->
+                    <BoxView
+						Margin="-20,0"
+						VerticalOptions="End"
+						Style="{ StaticResource Horizontal1ptLineStyle }" />
+                    
+                    <!-- Title -->
+                    <Label
+						Text="Team"
+						VerticalOptions="Center"
+						HorizontalOptions="Start" /> 
+                    
+                    <StackLayout
+						Orientation="Horizontal"
+						Spacing="10"
+						HorizontalOptions="End"
+						VerticalOptions="Center">
+                        
+                        <!-- Option -->
+                        <Label
+							Text="Marketing"
+							TextColor="{ DynamicResource AccentColor }"
+							VerticalOptions="Center"
+							HorizontalOptions="Start" />
+                        
+                        <!-- Chevron -->
+                        <Label
+							FontSize="24"
+							VerticalOptions="Center"
+							HorizontalOptions="Center"
+							Text="{ x:Static local:GrialIconsFont.ChevronRight }"
+							FontFamily="{ StaticResource IconsFontFamily }"
+							TextColor="{ DynamicResource BaseTextColor }" />
+                        
+                    </StackLayout>
+                </Grid>
+                
+                
+                <!-- ACTION 2 -->
+                <Grid
+					Grid.Row="2"
+					Padding="20,0">
+                    
+                    <!-- BG -->
+                    <BoxView
+						Margin="-20,0"
+						BackgroundColor="{ DynamicResource BasePageColor }" />
+                    
+                    <!-- Line -->
+                    <BoxView
+						Margin="-20,0"
+						VerticalOptions="End"
+						Style="{ StaticResource Horizontal1ptLineStyle }" />
+                    
+                    <!-- Title -->
+                    <Label
+						Text="Track hours"
+						VerticalOptions="Center"
+						HorizontalOptions="Start" /> 
+                    
+                    <!-- Switch -->
+                    <Switch
+						VerticalOptions="Center"
+						HorizontalOptions="End" />
+                </Grid>
+                
+                <StackLayout
+					Grid.Row="3"
+					Spacing="20"
+					Padding="20">
+                    <Editor
+						grial:EditorProperties.Placeholder="Type here" />
+                    
+                    <!-- Primary Button -->
+                    <Button
+						HeightRequest="44"
+						VerticalOptions="Center"
+						Text="Save"
+						Style="{ StaticResource PrimaryActionButtonStyle }" />
+                    
+                </StackLayout>
+                
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

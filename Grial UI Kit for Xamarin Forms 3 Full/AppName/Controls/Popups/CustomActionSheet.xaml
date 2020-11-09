@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+	x:Class="AppName.CustomActionSheet"
+	BackgroundColor="{ DynamicResource CustomActionSheetShimBackgroundColor }"
+	HasSystemPadding="false">
+
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:DialogsResources />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <pages:PopupPage.Animation>
+        <animations:MoveAnimation
+			PositionIn="Bottom"
+			PositionOut="Bottom" />
+    </pages:PopupPage.Animation>
+
+    <Grid
+		Style="{ StaticResource CustomActionSheetStyle }"
+		VerticalOptions="{ StaticResource CustomActionSheetPositioning }"
+		HeightRequest="400"
+		RowSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="54" />
+            <RowDefinition
+				Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--TITLE-->
+        <Grid
+			Grid.Row="0"
+			Padding="20,0">
+
+            <!-- TITLE -->
+            <Label
+				Style="{ StaticResource CustomActionSheetTitleStyle }"
+				Text="{ Binding Title }"
+				VerticalTextAlignment="Center" />
+
+        </Grid>
+
+
+        <!-- CONTENT -->
+        <ListView
+			Grid.Row="1"
+			ItemsSource="{ Binding Actions }"
+			Style="{ StaticResource CustomActionSheetListViewStyle }"
+			SelectionMode="None">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid
+							Padding="20,0"
+							ColumnSpacing="20">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+									Width="Auto" />
+                                <ColumnDefinition
+									Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- ICON -->
+                            <Label
+								HorizontalOptions="Start"
+								Text="{ Binding Icon }"
+								Style="{ StaticResource CustomActionSheetIconStyle }"
+								VerticalTextAlignment="Center" />
+
+                            <!-- LABEL -->
+                            <Label
+								Grid.Column="1"
+								Text="{ Binding Label }"
+								Style="{ StaticResource CustomActionSheetLabelStyle }"
+								VerticalTextAlignment="Center" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+    </Grid>
+
+
+</pages:PopupPage>

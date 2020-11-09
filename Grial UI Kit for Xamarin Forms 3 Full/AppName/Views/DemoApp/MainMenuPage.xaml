@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.MainMenuPage"
+	NavigationPage.HasNavigationBar="false"
+	Icon="{ StaticResource HamburguerIcon }"
+	Style="{ StaticResource MainMenuStyle }"
+	Title="{ grial:Translate PageTitleMainMenu }">
+
+    <Grid>
+        
+        <BoxView
+			Style="{ StaticResource MainMenuOrModalBackgroundStyle }"
+			Opacity="1" />
+
+        <Image
+			Style="{ StaticResource MainMenuBackgroundImageStyle }" /> 
+        
+        <Grid
+			grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+			RowSpacing="0"
+			VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="Auto" />
+                <RowDefinition
+					Height="*" />
+            </Grid.RowDefinitions>
+            
+            <!-- LOGO -->
+            <local:BrandBlock
+				Grid.Row="0"
+				Grid.Column="0"
+				Margin="20,60,20,30"
+				VerticalOptions="Start"
+				HorizontalOptions="Start" />
+
+            <!-- MENU ENTRIES -->
+            <ListView
+				Margin="0,0,0,10"
+				Grid.Row="1"
+				x:Name="sampleListView"
+				SelectedItem="{ Binding MainMenuSelectedItem, Mode=TwoWay }"
+				ItemsSource="{ Binding MainMenuEntries }"
+				VerticalOptions="FillAndExpand"
+				Style="{ StaticResource MainMenuListViewStyle }"
+				CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <local:MainMenuItemTemplate />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </Grid>
+    </Grid>
+</ContentPage>

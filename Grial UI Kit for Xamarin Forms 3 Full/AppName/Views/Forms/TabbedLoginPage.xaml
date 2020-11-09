@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.TabbedLoginPage"
+	NavigationPage.HasNavigationBar="False"
+	Style="{ StaticResource MainMenuOrModalBackgroundStyle }">
+    <ContentPage.Resources>
+        <ResourceDictionary
+			Source="/Styles/TabControl/SimpleTabResources.xaml" />
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="145" />
+                <RowDefinition
+					Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid
+				RowSpacing="0"
+				ColumnSpacing="0"
+				Margin="0,0,0,10"
+				VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="10" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="120" />
+                    <ColumnDefinition
+						Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- LOGO -->
+                <Label
+					Grid.Row="0"
+					Grid.RowSpan="3"
+					Margin="20,0"
+					TextColor="{ DynamicResource InverseTextColor }"
+					FontSize="74"
+					Text="{ x:Static local:GrialIconsFont.LogoGrialSquare }"
+					Style="{ StaticResource FontIcon }"
+					HorizontalOptions="Start"
+					VerticalTextAlignment="Center" />
+                    
+                <!-- WELCOME -->
+                <Label
+					Grid.Row="1"
+					Grid.Column="1"
+					Text="{ grial:Translate StringWelcomeToGrial }"
+					FontSize="22"
+					TextColor="{ DynamicResource InverseTextColor }"
+					Style="{ StaticResource LabelBoldStyle }"
+					VerticalOptions="End"
+					HorizontalOptions="Start" />
+                    
+                <!-- SUB -->
+                <Label
+					Grid.Row="2"
+					Grid.Column="1"
+					Text="Welcome back"
+					FontSize="16"
+					TextColor="{ DynamicResource InverseTextColor }"
+					VerticalOptions="Start"
+					HorizontalOptions="Start" />
+            </Grid>
+
+            <Grid
+				Grid.Row="1"
+				BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }"
+				grial:Effects.ApplyIOSSafeAreaAsPadding="Bottom">
+                <!-- TAB -->
+                <grial:TabControl
+					Style="{ StaticResource SimpleTabStyle }"
+					TabStripPlacement="Top"
+					TabStripBackgroundColor="{ DynamicResource BasePageColor}"
+					TabContentBackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+
+                    <!-- LOGIN TAB -->
+                    <grial:TabItem
+						IconText="{ x:Static local:GrialIconsFont.Camera }"
+						Text="Login">
+                        <ScrollView>
+                            <Grid
+								Padding="20"
+								Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+										Height="*" />
+                                    <RowDefinition
+										Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <StackLayout
+									Grid.Row="0"
+									VerticalOptions="Center"
+									Spacing="20">
+                                    <!-- Email -->
+                                    <StackLayout
+										Orientation="Horizontal"
+										Spacing="14">
+                                        <Label
+											FontSize="24"
+											VerticalOptions="Center"
+											HorizontalOptions="Center"
+											Text="{ x:Static local:GrialIconsFont.Mail }"
+											FontFamily="{ StaticResource IconsFontFamily }"
+											TextColor="{ DynamicResource BaseTextColor }" />
+
+                                        <Entry
+											Placeholder="{ grial:Translate StringEmail }"
+											VerticalOptions="Center"
+											HorizontalOptions="FillAndExpand" />
+                                    </StackLayout>
+
+                                    <!-- Password -->
+                                    <StackLayout
+										Orientation="Horizontal"
+										Spacing="14">
+                                        <Label
+											FontSize="24"
+											VerticalOptions="Center"
+											HorizontalOptions="Center"
+											Text="{ x:Static local:GrialIconsFont.Lock }"
+											FontFamily="{ StaticResource IconsFontFamily }"
+											TextColor="{ DynamicResource BaseTextColor }" />
+
+                                        <Entry
+											Placeholder="{ grial:Translate StringPassword }"
+											VerticalOptions="Center"
+											HorizontalOptions="FillAndExpand" />
+                                    </StackLayout>
+                                    
+                                    <!-- Remember me? -->
+                                    <grial:Checkbox
+										Margin="0,10,0,20"
+										IsChecked="true"
+										HorizontalOptions="Start">
+                                        <Label
+											Margin="10,0"
+											Text="Remember me?"
+											VerticalOptions="Center" />
+                                    </grial:Checkbox>
+                                    
+                                </StackLayout>
+
+
+                                <StackLayout
+									Grid.Row="1"
+									Spacing="14"
+									VerticalOptions="End">
+                                    <!-- Primary Button -->
+                                    <Button
+										HeightRequest="44"
+										VerticalOptions="Center"
+										Text="Login"
+										Style="{ StaticResource PrimaryActionButtonStyle }" />
+
+                                    <!-- Google Button -->
+                                    <Button
+										VerticalOptions="Center"
+										Text="Login with Google"
+										Style="{ StaticResource GoogleButtonStyle }" />
+
+                                    <!-- Line -->
+                                    <BoxView
+										VerticalOptions="Center"
+										HorizontalOptions="Fill"
+										Style="{ StaticResource Horizontal1ptLineStyle }" />
+
+                                    <!-- Forgot password -->
+                                    <Label
+										Text="Forgot your password?"
+										VerticalOptions="Center"
+										HorizontalOptions="Center" />
+                                </StackLayout>
+
+                            </Grid>
+                        </ScrollView>
+                    </grial:TabItem>
+                    
+                    <!-- SIGNUP TAB -->
+                    <grial:TabItem
+						IconText="{ x:Static local:GrialIconsFont.Camera }"
+						Text="Signup">   
+                        <ScrollView>
+                            <Grid
+								Padding="20"
+								Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+										Height="*" />
+                                    <RowDefinition
+										Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <StackLayout
+									Grid.Row="0"
+									VerticalOptions="Center"
+									Spacing="20">
+                                    <!-- Name -->
+                                    <StackLayout
+										Orientation="Horizontal"
+										Spacing="14">
+                                        <Label
+											FontSize="24"
+											VerticalOptions="Center"
+											HorizontalOptions="Center"
+											Text="{ x:Static local:GrialIconsFont.AccountCircle }"
+											FontFamily="{ StaticResource IconsFontFamily }"
+											TextColor="{ DynamicResource BaseTextColor }" />
+
+                                        <Entry
+											Placeholder="Name"
+											VerticalOptions="Center"
+											HorizontalOptions="FillAndExpand" />
+                                        
+                                    </StackLayout>
+
+                                    <!-- Email -->
+                                    <StackLayout
+										Orientation="Horizontal"
+										Spacing="14">
+                                        <Label
+											FontSize="24"
+											VerticalOptions="Center"
+											HorizontalOptions="Center"
+											Text="{ x:Static local:GrialIconsFont.Mail }"
+											FontFamily="{ StaticResource IconsFontFamily }"
+											TextColor="{ DynamicResource BaseTextColor }" />
+
+                                        <Entry
+											Placeholder="Email"
+											VerticalOptions="Center"
+											HorizontalOptions="FillAndExpand" />
+                                    </StackLayout>
+
+                                    <!-- Password -->
+                                    <StackLayout
+										Orientation="Horizontal"
+										Spacing="14">
+                                        <Label
+											FontSize="24"
+											VerticalOptions="Center"
+											HorizontalOptions="Center"
+											Text="{ x:Static local:GrialIconsFont.Lock }"
+											FontFamily="{ StaticResource IconsFontFamily }"
+											TextColor="{ DynamicResource BaseTextColor }" />
+
+                                        <Entry
+											Placeholder="Password"
+											VerticalOptions="Center"
+											HorizontalOptions="FillAndExpand" />
+                                        
+                                    </StackLayout>
+
+                                    <!-- Phone -->
+                                    <StackLayout
+										Orientation="Horizontal"
+										Spacing="14">
+                                        <Label
+											FontSize="24"
+											VerticalOptions="Center"
+											HorizontalOptions="Center"
+											Text="{ x:Static local:GrialIconsFont.Phone }"
+											FontFamily="{ StaticResource IconsFontFamily }"
+											TextColor="{ DynamicResource BaseTextColor }" />
+
+                                        <Entry
+											Placeholder="+235"
+											WidthRequest="80"
+											VerticalOptions="Center"
+											HorizontalOptions="FillAndExpand" />
+                                        
+                                        <Entry
+											Placeholder="Phone"
+											VerticalOptions="Center"
+											HorizontalOptions="FillAndExpand" />
+                                        
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout
+									Grid.Row="1"
+									Spacing="15"
+									VerticalOptions="End"
+									Margin="0,30,0,0">
+                                    <!-- Primary Button -->
+                                    <Button
+										HeightRequest="44"
+										VerticalOptions="Center"
+										Text="Sign Up"
+										Style="{ StaticResource PrimaryActionButtonStyle }" />
+
+                                    <!-- Google Button -->
+                                    <Button
+										HeightRequest="44"
+										VerticalOptions="Center"
+										Text="Sign in with Google"
+										Style="{ StaticResource GoogleButtonStyle }" />
+
+                                </StackLayout>
+
+                            </Grid>
+                        </ScrollView>
+                        
+                    </grial:TabItem>
+
+                </grial:TabControl>
+            </Grid>
+            
+            <!-- CLOSE ICON -->
+            <Label
+				Style="{StaticResource IconCloseLabelStyle}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnCloseButtonClicked" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.NotificationsListItemTemplate" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <local:NotificationConverter
+				x:Key="NotificationConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    
+    <ContentView.Content>
+        <!-- MAIN GRID -->
+        <Grid
+			Padding="20,0,15,0"
+			VerticalOptions="FillAndExpand"
+			ColumnSpacing="15"
+			RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="Auto" />
+                <ColumnDefinition
+					Width="*" />
+                <ColumnDefinition
+					Width="40" />
+
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="5" />
+                <RowDefinition
+					Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- ICON BACKGROUND -->
+            <BoxView
+				Grid.Column="0"
+				Grid.Row="0"
+				Grid.RowSpan="3"
+				Style="{ StaticResource NotificationItemTemplateShape }"
+				BackgroundColor="{ Binding Type, 
+                Converter={StaticResource NotificationConverter} }"
+				VerticalOptions="Center"
+				HorizontalOptions="Center" />
+
+            <!-- ICON -->
+            <Label
+				Grid.Column="0"
+				Grid.Row="0"
+				Grid.RowSpan="3"
+				Text="{ Binding Type, Converter={StaticResource NotificationConverter} }"
+				FontSize="{ 
+                    grial:OnOrientationDouble
+                        PortraitPhone=18,
+                        LandscapePhone=18,
+                        PortraitTablet=22,
+                        LandscapeTablet=22 
+                }"
+				Style="{ StaticResource FontIconFill }"
+				HorizontalTextAlignment="Center"
+				TextColor="{ DynamicResource OverImageTextColor }"
+				VerticalOptions="Center"
+				HorizontalOptions="Center" />
+
+            <!-- NOTIFICATION -->
+            <Label
+				Grid.Column="1"
+				Grid.Row="0"
+				Style="{ StaticResource LabelBoldStyle }"
+				Text="{ Binding Title }"
+				HorizontalOptions="Start"
+				VerticalOptions="End" />
+
+            <Label
+				Grid.Column="1"
+				Grid.Row="2"
+				FontSize="14"
+				FontAttributes="Italic"
+				Text="{ Binding Description }"
+				HorizontalOptions="Start"
+				VerticalOptions="Start" />
+
+            <!-- CHEVRON -->
+            <Label
+				Grid.Column="2"
+				Grid.Row="0"
+				Grid.RowSpan="3"
+				WidthRequest="20"
+				HorizontalOptions="End"
+				TextColor="{ DynamicResource BaseTextColor }"
+				Style="{ DynamicResource CardsListItemTemplateChevronStyle }"
+				Margin="0" />
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

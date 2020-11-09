@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation" xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+	x:Class="AppName.MovieDetailPage"
+	BackgroundColor="{ DynamicResource BasePageColor }">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:VideoPlayerResources />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <Thickness
+				x:Key="Margins">20,0</Thickness>
+            
+            <x:Double
+				x:Key="BigImageInTreshold">110</x:Double>
+            <x:Double
+				x:Key="SmallImageOutThreshold">40</x:Double>
+            <x:Double
+				x:Key="PlayButtonThreshold">140</x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid
+			BindingContext="{ Binding Movie }">
+            <Grid
+				x:Name="PictureHeader">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="360" />
+                </Grid.RowDefinitions>
+                
+                <ffimageloading:CachedImage
+					Grid.Row="0"
+					FadeAnimationEnabled="true"
+					Source="{ Binding Source }"
+					Aspect="AspectFill"
+					DownsampleHeight="360"
+					Opacity="1">
+                    <View.Behaviors>
+                        <grial:AnimatedTranslationY
+							Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+							ProgressStart="0"
+							ProgressEnd="250"
+							Start="-20"
+							End="0" /> 
+                        <grial:AnimatedScale
+							Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+							ProgressStart="10"
+							ProgressEnd="250"
+							Start="1.1"
+							End="1.14" />
+                    </View.Behaviors>
+                    
+                </ffimageloading:CachedImage>
+                
+                <!-- MOVIE BLUR BACKGROUND -->
+                <ffimageloading:CachedImage
+					Grid.Row="0"
+					FadeAnimationEnabled="true"
+					Source="{ Binding Source }"
+					Aspect="AspectFill"
+					HeightRequest="100"
+					DownsampleHeight="20"
+					Opacity="1"
+					ScaleX="1.2">
+                    <ffimageloading:CachedImage.Transformations>
+                        <fftransformations:BlurredTransformation
+							Radius="2" />
+                    </ffimageloading:CachedImage.Transformations>
+                    
+                    <VisualElement.Behaviors>
+                        <grial:AnimatedOpacity
+							Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+							ProgressStart="0"
+							ProgressEnd="{ StaticResource BigImageInTreshold }"
+							Start="1"
+							End="0" /> 
+                    </VisualElement.Behaviors>
+                </ffimageloading:CachedImage>
+
+                <!-- MOVIE PICTURE -->
+                <ffimageloading:CachedImage
+					HeightRequest="{ grial:OnOrientationDouble 
+                        Default=260,
+                        PortraitTablet=240,
+                        LandscapeTablet=240
+                    }"
+					FadeAnimationEnabled="true"
+					Source="{ Binding Source }"
+					Aspect="AspectFit"
+					LoadingPlaceholder="{x:Null}"
+					VerticalOptions="Center">
+                    <VisualElement.Behaviors>
+                        <grial:AnimatedScale
+							Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+							ProgressStart="0"
+							ProgressEnd="{ StaticResource SmallImageOutThreshold }"
+							Start="1"
+							End=".85" /> 
+                        <grial:AnimatedTranslationY
+							Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+							ProgressStart="0"
+							ProgressEnd="{ StaticResource SmallImageOutThreshold }"
+							Start="0"
+							End="34" /> 
+                        <grial:AnimatedOpacity
+							Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+							ProgressStart="0"
+							ProgressEnd="{ StaticResource SmallImageOutThreshold }"
+							Start="1"
+							End="0" /> 
+                    </VisualElement.Behaviors>
+                </ffimageloading:CachedImage>
+                
+                <!--PLAY BUTTON-->
+                <Button
+					Grid.Row="0"
+					VerticalOptions="Start"
+					HorizontalOptions="Center"
+					WidthRequest="80"
+					HeightRequest="80"
+					CornerRadius="40"
+					Margin="0,60,0,0"
+					FontSize="38"
+					BorderWidth="2"
+					BackgroundColor="#55000000"
+					Text="{ x:Static local:GrialIconsFont.AudioPlay }"
+					TextColor="{ DynamicResource OverImageTextColor }"
+					FontFamily="{ StaticResource IconsFontFamily }"
+					BorderColor="{ DynamicResource OverImageTextColor }"
+					x:Name="Play2"
+					Padding="5,0,0,0"
+					TranslationY="0"
+					BindingContext="{ Binding . }">
+                    <VisualElement.Behaviors>
+                        <grial:AnimatedTrigger
+							Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+							Threshold="{ StaticResource PlayButtonThreshold }">
+                            <local:AnimationWrapper>
+                                <xamanimation:FadeToAnimation
+									Target="{ x:Reference Play2 }"
+									Opacity="1"
+									Duration="150" />
+                            </local:AnimationWrapper>
+                        </grial:AnimatedTrigger>
+                        <grial:AnimatedTrigger
+							Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+							Threshold="{ StaticResource PlayButtonThreshold }"
+							TriggerBeforeThreshold="true">
+                            <local:AnimationWrapper>
+                                <xamanimation:FadeToAnimation
+									Target="{ x:Reference Play2 }"
+									Opacity="0"
+									Duration="150" />
+                            </local:AnimationWrapper>
+                        </grial:AnimatedTrigger>
+                        
+                        <grial:FullScreenVideoBehavior
+							Source="{ Binding BindingContext.TrailerVideo, Source={x:Reference Play2} }"
+							SkinTemplate="{ StaticResource VideoPlayerSkin }" />
+                    </VisualElement.Behaviors>
+                </Button>
+            </Grid>
+            
+            <ScrollView
+				grial:Effects.IgnoreIOSSafeAreaOnScrollView="All"
+				Grid.Row="0"
+				Margin="0,160,0,0"
+				Grid.RowSpan="2"
+				Padding="0,0,0,-160">
+                <VisualElement.Behaviors>
+                    <grial:ScrollViewScrollBehavior
+						x:Name="scroll" />
+                </VisualElement.Behaviors>
+                
+                <Grid
+					Margin="0,175,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="Auto" />
+                        <RowDefinition
+							Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Button
+						Grid.Row="0"
+						WidthRequest="200"
+						HorizontalOptions="Center"
+						Text="{ grial:Translate Key=ButtonPlayMovie }"
+						Style="{ StaticResource PrimaryActionButtonStyle }"
+						x:Name="Play1"
+						BindingContext="{ Binding . }">
+                        <VisualElement.Behaviors>
+                             <grial:AnimatedTrigger
+								Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+								Threshold="{ StaticResource PlayButtonThreshold }">
+                                <local:AnimationWrapper>
+                                    <local:TranslateYAnimation
+										Target="{ x:Reference Play1 }"
+										Duration="350"
+										TranslateY="100" /> 
+                                </local:AnimationWrapper>
+                            </grial:AnimatedTrigger>
+
+                             <grial:AnimatedTrigger
+								Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+								Threshold="{ StaticResource PlayButtonThreshold }"
+								TriggerBeforeThreshold="true">
+                                <local:AnimationWrapper>
+                                    <local:TranslateYAnimation
+										Target="{ x:Reference Play1 }"
+										Duration="250"
+										TranslateY="0" />
+                                </local:AnimationWrapper>
+                            </grial:AnimatedTrigger>
+
+                            <grial:FullScreenVideoBehavior
+								Source="{ Binding BindingContext.TrailerVideo, Source={x:Reference Play1} }"
+								SkinTemplate="{ StaticResource VideoPlayerSkin }" />
+                        </VisualElement.Behaviors>
+                    </Button>
+                
+                    <!-- DETAILS -->
+                    <StackLayout
+						grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+						Grid.Row="1"
+						Padding="0,20,0,0"
+						Spacing="20"
+						BackgroundColor="{ DynamicResource BasePageColor }"
+						VerticalOptions="Start"
+						grial:Effects.CornerRadius="10"
+						android:VisualElement.Elevation="10">
+                        <!-- TITLE -->
+                        <Label
+							Text="{ Binding Title }"
+							FontSize="{ 
+                                grial:OnOrientationDouble
+                                    PortraitPhone=26,
+                                    LandscapePhone=26,
+                                    PortraitTablet=34,
+                                    LandscapeTablet=34 
+                            }"
+							Style="{ StaticResource LabelBoldStyle }"
+							Margin="{ StaticResource Margins }" /> 
+                        
+                        <!-- DESCRIPTION -->
+                        <Label
+							Grid.Row="4"
+							Text="{ Binding Plot }"
+							FontSize="{ grial:OnOrientationDouble
+                                PortraitPhone=14,
+                                LandscapePhone=14,
+                                PortraitTablet=18,
+                                LandscapeTablet=18 }"
+							Margin="{ StaticResource Margins }"
+							HorizontalTextAlignment="Start" /> 
+
+                        <!-- RATING -->
+                        <Grid
+							Margin="{ StaticResource Margins }">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+									Width="*" />
+                                <ColumnDefinition
+									Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <Label
+								Grid.Column="0"
+								Text="Audience rating"
+								Style="{ StaticResource LabelBoldStyle }"
+								FontSize="{ grial:OnOrientationDouble
+                                    PortraitPhone=16,
+                                    LandscapePhone=16,
+                                    PortraitTablet=20,
+                                    LandscapeTablet=20 }"
+								HorizontalOptions="FillAndExpand"
+								HorizontalTextAlignment="Start" /> 
+                                
+                            <local:Rating
+								Grid.Column="1"
+								VerticalOptions="Center"
+								Max="{ Binding RatingMax }"
+								Value="{ Binding RatingValue }"
+								HorizontalOptions="End" />
+                        </Grid>
+                        
+                        <!-- GENRES -->
+                        <Grid
+							grial:Effects.BackgroundGradient="{ DynamicResource MainWrapperBackgroundColor }"
+							HorizontalOptions="FillAndExpand">
+                            
+                            <!-- GENRES -->
+                            <grial:WrapPanel
+								Margin="{ StaticResource Margins }"
+								ItemsSource="{ Binding Genres }"
+								VerticalOptions="Center">
+                                <grial:WrapPanel.ItemTemplate>
+                                    <DataTemplate>
+                                        <local:Tag
+											Text="{ Binding ., Converter={StaticResource ToUpperConverter} }" />
+                                    </DataTemplate>
+                                </grial:WrapPanel.ItemTemplate>
+                            </grial:WrapPanel>
+                        </Grid>
+        
+                        <!-- CAST -->
+                        <grial:WrapPanel
+							RowSpacing="0"
+							Margin="{ StaticResource Margins }"
+							HorizontalOptions="FillAndExpand"
+							ItemsSource="{ Binding Cast }">
+                            <grial:WrapPanel.ItemTemplate>
+                                <DataTemplate>
+                                    <Label
+										VerticalOptions="Center"
+										Text="{ Binding . }"
+										FontSize="{ grial:OnOrientationDouble 
+                                            Default=10, 
+                                            PortraitPhone=14,
+                                            LandscapePhone=14,
+                                            PortraitTablet=18,
+                                            LandscapeTablet=18 }" />
+                                </DataTemplate>
+                            </grial:WrapPanel.ItemTemplate>
+                            <grial:WrapPanel.ItemSeparatorTemplate>
+                                <DataTemplate>
+                                    <Label
+										VerticalOptions="Center"
+										Margin="0,0,6,0"
+										Text="{ grial:Translate StringColon }"
+										FontSize="{ grial:OnOrientationDouble 
+                                            Default=10, 
+                                            PortraitPhone=14,
+                                            LandscapePhone=14,
+                                            PortraitTablet=18,
+                                            LandscapeTablet=18 }" />
+                                </DataTemplate>
+                            </grial:WrapPanel.ItemSeparatorTemplate>
+
+                            <Label
+								VerticalOptions="Center"
+								Text="CAST:  "
+								Style="{ StaticResource LabelBoldStyle }"
+								FontSize="{ grial:OnOrientationDouble 
+                                    Default=10, 
+                                    PortraitPhone=14,
+                                    LandscapePhone=14,
+                                    PortraitTablet=18,
+                                    LandscapeTablet=18 }" />     
+                                                    
+                        </grial:WrapPanel>
+               
+                        <!-- ICONS GRID -->
+                        <Grid
+							grial:Effects.BackgroundGradient="{ DynamicResource LightBackgroundGradient }"
+							Padding="15"
+							WidthRequest="{ 
+                                grial:OnOrientationInt 
+                                    Default=-1, 
+                                    Landscape=370 
+                            }">
+                            <Grid.RowDefinitions>
+                                <RowDefinition
+									Height="Auto" />
+                                <RowDefinition
+									Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            
+                            <!-- PLUS -->
+                            <Button
+								HorizontalOptions="Center"
+								Text="{ x:Static local:GrialIconsFont.Plus }"
+								FontFamily="{ StaticResource IconsFontFamily }"
+								Style="{ StaticResource CircleActionButtonFlatStyle }" />
+
+                            <!--Text-->
+                            <Label
+								Grid.Row="1"
+								Grid.Column="0"
+								Text="My List"
+								FontSize="14"
+								TextColor="{ DynamicResource ComplementColor }"
+								VerticalOptions="Center"
+								HorizontalOptions="Center" />
+                            
+                            <!-- SHARE -->
+                            <Button
+								Grid.Row="0"
+								Grid.Column="1"
+								HorizontalOptions="Center"
+								Text="{ x:Static local:GrialIconsFont.Share }"
+								FontFamily="{ StaticResource IconsFontFamily }"
+								Style="{ StaticResource CircleActionButtonFlatStyle }" />
+
+                            <!--Text-->
+                            <Label
+								Grid.Row="1"
+								Grid.Column="1"
+								Text="Share"
+								FontSize="14"
+								TextColor="{ DynamicResource ComplementColor }"
+								VerticalOptions="Center"
+								HorizontalOptions="Center" />
+
+                            <!-- SAVE -->
+                            <Button
+								Grid.Row="0"
+								Grid.Column="2"
+								HorizontalOptions="Center"
+								Text="{ x:Static local:GrialIconsFont.Bookmark }"
+								FontFamily="{ StaticResource IconsFontFamily }"
+								Style="{ StaticResource CircleActionButtonFlatStyle }" />
+
+                            <!--Text-->
+                            <Label
+								Grid.Row="1"
+								Grid.Column="2"
+								Text="Save"
+								FontSize="14"
+								TextColor="{ DynamicResource ComplementColor }"
+								VerticalOptions="Center"
+								HorizontalOptions="Center" />
+
+                            <!-- SMS -->
+                            <Button
+								Grid.Row="0"
+								Grid.Column="3"
+								HorizontalOptions="Center"
+								Text="{ x:Static local:GrialIconsFont.Star }"
+								FontFamily="{ StaticResource IconsFontFamily }"
+								Style="{ StaticResource CircleActionButtonFlatStyle }" />
+
+                            <!--Text-->
+                            <Label
+								Grid.Row="1"
+								Grid.Column="3"
+								Text="Favorite"
+								FontSize="14"
+								TextColor="{ DynamicResource ComplementColor }"
+								VerticalOptions="Center"
+								HorizontalOptions="Center" />
+
+                        </Grid>
+
+                        <!-- SIMILAR MOVIES -->
+                        <local:MoviesSectionTemplate
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+							BindingContext="{ Binding Section }"
+							Margin="{
+                                OnPlatform
+                                    Android='10,-15,0,180',
+                                    iOS='10,-15,0,20'
+                            }" />
+                    </StackLayout>
+                    
+                </Grid>
+
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>
+

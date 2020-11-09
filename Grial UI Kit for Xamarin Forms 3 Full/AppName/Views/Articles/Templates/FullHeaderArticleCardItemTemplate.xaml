@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.FullHeaderArticleCardItemTemplate">
+    <ContentView.Content>
+        <grial:CardView
+			RowSpacing="0"
+			HeightRequest="115"
+			VerticalOptions="Center"
+			ShadowOpacity="0.5"
+			Padding="12,0,12,0">
+            <grial:CardView.RowDefinitions>
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="30" />
+                <RowDefinition
+					Height="30" />
+            </grial:CardView.RowDefinitions>
+            
+            <!-- ICON -->
+            <Label
+				Grid.Row="0"
+				FontSize="40"
+				VerticalTextAlignment="End"
+				Text="{ Binding Icon }"
+				Style="{ StaticResource FontIcon }"
+				TextColor="{ DynamicResource AccentColor }" />
+            
+            <!-- VALUE -->
+            <Label
+				Grid.Row="1"
+				Text="{ Binding Value }"
+				Style="{ StaticResource LabelBoldStyle }"
+				FontSize="24"
+				VerticalOptions="Center" />
+            
+            <!-- DESCRIPTION -->
+            <Label
+				Grid.Row="2"
+				Text="{ Binding Description }"
+				FontSize="12" />
+            
+        </grial:CardView>
+    </ContentView.Content>
+</ContentView>

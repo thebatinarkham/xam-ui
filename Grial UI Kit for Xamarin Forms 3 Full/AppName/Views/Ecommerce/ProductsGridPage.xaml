@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.ProductsGridPage" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	BackgroundColor="{ DynamicResource BasePageColor }"
+	Title="{ grial:Translate Key=PageTitleProductsGrid }">
+    <Grid
+		RowSpacing="0"
+		Padding="0">
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="Auto" />
+            <RowDefinition
+				Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid
+			Grid.Row="0"
+			RowSpacing="0"
+			Padding="0"
+			VerticalOptions="Center"
+			Style="{ StaticResource EcommerceProductGridBannerStyle }">
+            
+            <View.GestureRecognizers>
+                <TapGestureRecognizer
+					Tapped="OnBannerTapped" />
+            </View.GestureRecognizers>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="60*" />
+                <RowDefinition
+					Height="40*" />
+            </Grid.RowDefinitions>
+            
+            <Label
+				Grid.Row="0"
+				FontSize="{ 
+                    grial:OnOrientationDouble 
+                        Default=20,
+                        PortraitTablet=30,
+                        LandscapeTablet=30 
+                }"
+				Text="{ grial:Translate Key=BannerTitle25DiscOff }"
+				TranslationY="2"
+				TextColor="{ DynamicResource EcommercePromoTextColor }"
+				HorizontalTextAlignment="Center"
+				HorizontalOptions="Center"
+				VerticalTextAlignment="Center" />
+
+            <Label
+				Grid.Row="1"
+				FontSize="{ 
+                    grial:OnOrientationDouble 
+                        Default=14,
+                        PortraitTablet=20,
+                        LandscapeTablet=20 
+                }"
+				TranslationY="-5"
+				Text="{ grial:Translate Key=BannerBodyEnjoyItNow }"
+				TextColor="{ DynamicResource EcommercePromoTextColor }"
+				HorizontalTextAlignment="Center"
+				HorizontalOptions="Center"
+				VerticalTextAlignment="Center" />
+        </Grid>
+        
+        <ScrollView
+			Grid.Row="1"> 
+            <grial:GridView
+				Padding="10"
+				ColumnSpacing="10"
+				RowSpacing="10"
+				ColumnCount="{
+                    grial:OnOrientationInt 
+                        PortraitPhone=2,
+                        LandscapePhone=3,
+
+                        PortraitTablet=3,
+                        LandscapeTablet=4,
+                    
+                        PortraitDesktop=3,
+                        LandscapeDesktop=4
+                }"
+				VerticalOptions="FillAndExpand"
+				ItemsSource="{ Binding List }"
+				Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                <grial:GridView.ItemTemplate>
+                    <DataTemplate>
+                        <local:ProductGridItemTemplate />
+                    </DataTemplate>
+                </grial:GridView.ItemTemplate>
+            </grial:GridView>            
+          
+        </ScrollView>
+        
+    </Grid>
+</ContentPage>

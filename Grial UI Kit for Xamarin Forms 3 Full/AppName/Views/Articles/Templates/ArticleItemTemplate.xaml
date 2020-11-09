@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.ArticleItemTemplate">
+
+    <Grid>
+        
+        <ffimageloading:CachedImage
+			FadeAnimationEnabled="true"
+			Source="{ Binding BackgroundImage }"
+			Aspect="AspectFill" />
+        
+        <BoxView
+			HeightRequest="120"
+			VerticalOptions="End">
+            <grial:Effects.BackgroundGradient>
+                <grial:LinearGradient
+					Angle="180">
+                    <grial:GradientColor
+						Color="#77000000"
+						Opacity="0"
+						Position="0" />
+                    <grial:GradientColor
+						Color="#77000000"
+						Opacity="0.8"
+						Position=".5" />
+                    <grial:GradientColor
+						Color="#77000000"
+						Opacity="1"
+						Position="1" />
+                </grial:LinearGradient>            
+            </grial:Effects.BackgroundGradient>
+        </BoxView>
+        
+        <Grid
+			ColumnSpacing="0"
+			RowSpacing="6"
+			Padding="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="Auto" />
+                <RowDefinition
+					Height="10" />
+            </Grid.RowDefinitions>
+
+            <Label
+				FontSize="30"
+				Style="{ StaticResource LabelBoldStyle }"
+				Text="{ Binding Title }"
+				LineBreakMode="WordWrap"
+				TextColor="{ DynamicResource OverImageTextColor }"
+				VerticalOptions="End" />
+            
+            <!--HEADER INFO-->
+            <Grid
+				Grid.Row="1"
+				VerticalOptions="End"
+				ColumnSpacing="6">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="*" />
+                    <ColumnDefinition
+						Width="Auto" />
+                    <ColumnDefinition
+						Width="Auto" />
+                    <ColumnDefinition
+						Width="Auto" />
+                    <ColumnDefinition
+						Width="Auto" />
+                    <ColumnDefinition
+						Width="Auto" />
+                </Grid.ColumnDefinitions>
+                
+                <Label
+					Grid.Column="0"
+					Text="{ Binding Section }"
+					TextColor="{ DynamicResource OverImageTextColor }"
+					VerticalOptions="End" />
+                    
+                <Label
+					Grid.Column="1"
+					Text="{ Binding When }"
+					TextColor="{ DynamicResource OverImageTextColor }" />
+                    
+                <Label
+					Grid.Column="2"
+					Text="{ x:Static local:GrialIconsFont.Users } "
+					FontSize=" { StaticResource BaseFontSize }"
+					TextColor="{ DynamicResource OverImageHighlightedColor }"
+					FontFamily="{ StaticResource IconsFontFamily }"
+					TranslationY="3" />
+            
+                <Label
+					Grid.Column="3"
+					Text="77"
+					FontSize="{ StaticResource BaseFontSize }"
+					TextColor="{ DynamicResource OverImageHighlightedColor }" />
+
+                <Label
+					Grid.Column="4"
+					Text="{ x:Static local:GrialIconsFont.Heart } "
+					FontSize="{ StaticResource BaseFontSize }"
+					TextColor="{ DynamicResource OverImageHighlightedColor }"
+					FontFamily="{ StaticResource IconsFontFamily }"
+					TranslationY="3" />
+            
+                <Label
+					Grid.Column="5"
+					Text="22"
+					FontSize="{ StaticResource BaseFontSize }"
+					TextColor="{ DynamicResource OverImageHighlightedColor }" />
+            </Grid>
+
+            <BoxView
+				Grid.Row="2"
+				Style="{ DynamicResource BrandNameOrnamentStyle }" />
+        
+        </Grid>
+        
+    </Grid>
+        
+</ContentView>

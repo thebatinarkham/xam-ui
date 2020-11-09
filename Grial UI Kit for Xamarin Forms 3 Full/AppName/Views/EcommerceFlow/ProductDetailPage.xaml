@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }"
+	Title="{ grial:Translate Key=PageTitleProductDetail }"
+	x:Class="AppName.ProductDetailPage">
+    <ContentPage.Resources>
+        <x:Double
+			x:Key="CarouselHeight">340</x:Double>
+        <x:Double
+			x:Key="BannerHeight">64</x:Double>
+        <x:Double
+			x:Key="BannerHideThreshold">276</x:Double>
+        
+        <grial:BooleanToObjectConverter
+			x:TypeArguments="x:Int32"
+			x:Key="ShowMoreConverter"
+			TrueValue="-1"
+			FalseValue="2" />
+        
+        <ControlTemplate
+			x:Key="CheckboxHeartTemplate">
+            <Grid>
+                <Grid
+					x:Name="Unchecked">
+                    <Label
+						Opacity=".5"
+						Style="{ DynamicResource FontIcon }"
+						Text="{ x:Static local:GrialIconsFont.Heart }"
+						FontSize="{ TemplateBinding IconFontSize }"
+						TextColor="{ DynamicResource TagItemBackgroundColor }"
+						HorizontalOptions="Center"
+						VerticalOptions="Center" />
+                </Grid>
+
+                <Grid
+					x:Name="Checked">
+                    <Label
+						Style="{ DynamicResource FontIconFill }"
+						Text="{ x:Static local:GrialIconsFont.Heart }"
+						TextColor="{ DynamicResource TagItemBackgroundColor }"
+						FontSize="{ TemplateBinding IconFontSize }"
+						HorizontalOptions="Center"
+						VerticalOptions="Center" />
+                </Grid>
+            </Grid>
+            
+        </ControlTemplate>
+        
+        <ControlTemplate
+			x:Key="ShowMoreCheckboxTemplate">
+            <Grid>
+                <Grid
+					x:Name="Unchecked"
+					BackgroundColor="Transparent">
+                    <Button
+						InputTransparent="true"
+						Padding="30,0"
+						WidthRequest="210"
+						HorizontalOptions="Center"
+						Style="{ StaticResource OutlineButtonStyle }"
+						Text="{ grial:Translate SeeMoreComments }" />
+                </Grid>
+
+                <Grid
+					x:Name="Checked"
+					BackgroundColor="Transparent">
+                    <Button
+						InputTransparent="true"
+						Padding="30,0"
+						WidthRequest="210"
+						HorizontalOptions="Center"
+						Style="{ StaticResource OutlineButtonStyle }"
+						Text="{ grial:Translate SeeLessComments }" />
+                </Grid>
+            </Grid>
+        </ControlTemplate>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid>
+            <!-- SCROLLING AREA -->
+            <ScrollView
+				x:Name="scrollView"
+				Padding="0,0,0,30"
+				Grid.Row="0"
+				BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }"
+				grial:Effects.IgnoreIOSSafeAreaOnScrollView="Top,Left,Bottom,Right">
+            
+                <VisualElement.Behaviors>
+                    <grial:ScrollViewScrollBehavior
+						x:Name="scroll" />
+                </VisualElement.Behaviors> 
+            
+                <StackLayout
+					Spacing="0">
+                    <!-- HERO -->
+                    <Grid>
+                        
+                        <!-- CAROUSEL -->
+                        <local:ExtendedCarouselViewControl
+							ShowIndicators="true"
+							Margin="0"
+							ResetPositionOnItemsChange="true"
+							IndicatorsTintColor="{ DynamicResource BasePageColor }"
+							CurrentPageIndicatorTintColor="{ DynamicResource BaseTextColor }"
+							ItemsSource="{ Binding SelectedItem.Gallery, Source={x:Reference Colors} }"
+							HeightRequest="{ StaticResource CarouselHeight }">
+                            
+                            <cv:CarouselViewControl.ItemTemplate>
+                                <DataTemplate>
+                                    <ffimageloading:CachedImage
+										FadeAnimationEnabled="true"
+										Source="{ Binding . }"
+										Aspect="AspectFill" />
+                                </DataTemplate>
+                            </cv:CarouselViewControl.ItemTemplate>
+                            
+                        </local:ExtendedCarouselViewControl>
+                       
+                        <local:Tag
+							IsVisible="{ Binding IsNew }"
+							Text="NEW"
+							FontSize="14"
+							HeightRequest="22"
+							CornerRadius="11"
+							Margin="{ 
+                                grial:OnOrientationThickness
+                                    Portrait=20,
+                                    Landscape='100,20' 
+                            }"
+							Padding="10,0"
+							VerticalOptions="End"
+							HorizontalOptions="Start" />
+
+                        <grial:Checkbox
+							IconFontSize="26"
+							ControlTemplate="{ StaticResource CheckboxHeartTemplate }"
+							IsChecked="{ Binding IsFavorite, Mode=TwoWay }"
+							VerticalOptions="Start"
+							HorizontalOptions="End"
+							Margin="{ 
+                                grial:OnOrientationThickness
+                                    Portrait=20,
+                                    Landscape='100,20' 
+                            }"
+							x:Name="checkbox">
+                            <grial:Checkbox.Triggers>
+                                <EventTrigger
+									Event="IsCheckedChanged">
+                                    <xamanimation:BeginAnimation>
+                                        <xamanimation:BeginAnimation.Animation>    
+                                            <xamanimation:HeartAnimation
+												Duration="1000"
+												Target="{ x:Reference checkbox }" />
+                                        </xamanimation:BeginAnimation.Animation>    
+                                    </xamanimation:BeginAnimation>
+                                </EventTrigger>
+                            </grial:Checkbox.Triggers>
+                            
+                        </grial:Checkbox>                        
+                    </Grid>
+                    
+                    <!-- PRODUCT INFO -->
+                    <Grid
+						Padding="20"
+						RowSpacing="2"
+						Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="Auto" />
+                            <RowDefinition
+								Height="Auto" />
+                        </Grid.RowDefinitions>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- NAME -->
+                        <Label
+							Grid.Row="0"
+							Grid.Column="0"
+							Text="{ Binding Name }"
+							FontSize="22"
+							HorizontalOptions="Start"
+							TextColor="{ DynamicResource BaseTextColor }" />
+                        
+                        <!-- MANUFACTURER -->
+                        <Label
+							Grid.Row="1"
+							Grid.Column="0"
+							Text="{ Binding Manufacturer, StringFormat='BY {0}' } }"
+							FontSize="11"
+							HorizontalOptions="Start"
+							TextColor="{ DynamicResource AccentColor }" />
+
+                        <!-- PRICE -->
+                        <Label
+							Grid.Row="0"
+							Grid.RowSpan="2"
+							Grid.Column="1"
+							Text="{ Binding Price, StringFormat='$ {0:0.##}' } }"
+							FontSize="{ grial:OnOrientationDouble
+                                PortraitPhone=32,
+                                LandscapePhone=32,
+                                PortraitTablet=34,
+                                LandscapeTablet=34 }"
+							HorizontalOptions="Start"
+							TextColor="{ DynamicResource BaseTextColor }" />
+                        
+                        <!-- DESCRIPTION -->
+                        <Label
+							Grid.Row="1"
+							Grid.ColumnSpan="2"
+							Margin="0,24,0,0"
+							Text="{ Binding Description }"
+							FontSize="{ grial:OnOrientationDouble
+                                PortraitPhone=15,
+                                LandscapePhone=15,
+                                PortraitTablet=16,
+                                LandscapeTablet=16 }"
+							HorizontalOptions="Start"
+							TextColor="{ DynamicResource BaseTextColor }" />
+                    </Grid>
+                    
+                    <!-- COLORS AND QUANTITY -->
+                    <Grid
+						Padding="20,0,20,18"
+						ColumnSpacing="16"
+						Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- AVAILABLE COLORS -->
+                        <grial:Repeater
+							x:Name="Colors"
+							Grid.Column="0"
+							ScrollPadding="0"
+							ItemsSource="{ Binding AvailableColors }"
+							ScrollBarVisibility="Never"
+							Spacing="16"
+							ItemSize="32"
+							HorizontalOptions="Start"
+							SelectionMode="Single"
+							InitialSelection="First"
+							Orientation="Horizontal">
+                            <grial:Repeater.ItemTemplate>
+                                <DataTemplate>
+                                    <!-- PRODUCT ITEM TEMPLATE -->
+                                    <Frame
+										Padding="0"
+										CornerRadius="16"
+										WidthRequest="32"
+										HeightRequest="32"
+										VerticalOptions="Center"
+										HorizontalOptions="Center"
+										HasShadow="False"
+										BackgroundColor="{ Binding Color }"
+										OutlineColor="{ Binding Color }" />
+                                </DataTemplate>
+                            </grial:Repeater.ItemTemplate>
+                            
+                            <grial:Repeater.SelectedItemTemplate>
+                                <DataTemplate>
+                                    <!-- PRODUCT ITEM TEMPLATE -->
+                                    <Frame
+										Padding="6"
+										VerticalOptions="Center"
+										CornerRadius="16"
+										HasShadow="False"
+										OutlineColor="{ Binding Color }"
+										BackgroundColor="{ DynamicResource TranslucidWhite }">
+                                        <Frame
+											Padding="0"
+											WidthRequest="20"
+											HeightRequest="20"
+											VerticalOptions="Center"
+											HorizontalOptions="Center"
+											CornerRadius="10"
+											HasShadow="False"
+											OutlineColor="{ Binding Color }"
+											BackgroundColor="{ Binding Color }" />
+                                    </Frame>
+                                </DataTemplate>
+                            </grial:Repeater.SelectedItemTemplate>
+                            
+                        </grial:Repeater>
+
+                        <Picker
+							Grid.Column="1"
+							VerticalOptions="Center"
+							FontSize="14"
+							WidthRequest="45"
+							HeightRequest="{ 
+                                OnPlatform 
+                                  iOS=35, 
+                                  Android=44
+                            }"
+							TextColor="{ DynamicResource BaseTextColor }"
+							grial:PickerProperties.BorderStyle="Default"
+							grial:PickerProperties.HorizontalTextAlignment="Center"
+							ItemsSource="{ Binding Quantities }"
+							SelectedItem="{ Binding SelectedQuantity, Mode=TwoWay }"
+							BackgroundColor="{ DynamicResource BasePageColor }" />
+                    </Grid>
+                    
+                    <!-- BUY BUTTON -->
+                    <Button
+						Margin="20"
+						Style="{ StaticResource PrimaryActionButtonStyle }"
+						Text="{ grial:Translate BuyIt }"
+						Clicked="OnBuy"
+						WidthRequest="{ 
+                            grial:OnOrientationDouble
+                                LandscapePhone=200,
+                                LandscapeTablet=400 
+                        }"
+						HorizontalOptions="{ 
+                            grial:OnOrientationLayoutOptions
+                                PortraitPhone=Fill,
+                                LandscapePhone=Center,
+                                PortraitTablet=Fill,
+                                LandscapeTablet=Center 
+                        }" />
+                    
+                    <!-- RATING -->
+                    <Grid
+						Padding="20"
+						RowSpacing="0"
+						ColumnSpacing="10"
+						Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="Auto" />
+                            <ColumnDefinition
+								Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label
+							Grid.RowSpan="2"
+							FontSize="{ 
+                                OnPlatform 
+                                    Android=45, 
+                                    iOS=60 
+                            }"
+							TranslationY="{ 
+                                OnPlatform 
+                                    Android=-6
+                            }"
+							TextColor="{ DynamicResource AccentColor }"
+							Text="{ Binding Rating, StringFormat='{}{0:0.0}' }"
+							VerticalOptions="Center" />
+                        
+                        <local:Rating
+							Grid.Column="1"
+							Max="5"
+							Value="{ Binding Rating }"
+							VerticalOptions="End" />
+                        
+                        <Label
+							Grid.Row="1"
+							Grid.Column="1"
+							Text="{ Binding Reviews.Count, StringFormat='Based on {0} customer reviews' }"
+							VerticalOptions="End" />
+                        
+                    </Grid>
+                    
+                    <!-- COMMENTS -->
+                    <ListView
+						Style="{ StaticResource ResponsiveLandscapeMarginStyle }"
+						SelectionMode="None"
+						ItemsSource="{ Binding Reviews.List }"
+						CachingStrategy="RecycleElement"
+						SeparatorVisibility="None"
+						HasUnevenRows="False"
+						RowHeight="190">
+                        <ListView.Behaviors>
+                            <local:ListViewLimitCountBehavior
+								CountLimit="{ Binding IsChecked, Source={x:Reference showMore}, Converter={StaticResource ShowMoreConverter} }" />
+                        </ListView.Behaviors>
+                        
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <local:ReviewItemTemplate />
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        
+                    </ListView>
+                    
+                    <!-- SHOW MORE -->
+                    <grial:Checkbox
+						HorizontalOptions="Center"
+						Margin="0,0,0,15"
+						HeightRequest="44"
+						ControlTemplate="{ StaticResource ShowMoreCheckboxTemplate }"
+						x:Name="showMore" />
+                    
+                    <!-- RELATED PRODUCTS -->
+                    <grial:Repeater
+						IsVisible="{ Binding RelatedProducts.Count, Converter={ StaticResource GreaterThanZeroConverter } }"
+						ScrollPadding="16,10"
+						ItemsSource="{ Binding RelatedProducts }"
+						ScrollBarVisibility="Never"
+						Spacing="12"
+						HeightRequest="{
+                            OnPlatform 
+                                iOS=330,
+                                Android=330, 
+                        }"
+						grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                        <grial:Repeater.ItemSize>
+                            <OnIdiom
+								x:TypeArguments="x:Double"
+								Phone="180"
+								Tablet="260" />
+                        </grial:Repeater.ItemSize>
+                        
+                        <grial:Repeater.ItemTemplate>
+                            <DataTemplate>
+                                <!-- PRODUCT ITEM TEMPLATE -->
+                                <local:ProductCardItemTemplate />
+                            </DataTemplate>
+                        </grial:Repeater.ItemTemplate>
+                    </grial:Repeater>
+                    
+                </StackLayout>
+            </ScrollView>
+
+            
+            <!-- PRODUCT DATA ANIMATED BY SCROLL -->
+            <grial:GrialNavigationBar
+				UseNavigationPageBarBackgroundColor="true"
+				UseNavigationPageBarBackgroundGradient="true"
+				HeightRequestBeyondNativeBar="100"
+				IsClippedToBounds="true"
+				x:Name="AnimatedHeader">
+                <Grid
+					Style="{ StaticResource ResponsiveLandscapeMarginStyle }"
+					VerticalOptions="End"
+					HeightRequest="{ StaticResource BannerHeight }"
+					TranslationY="0"
+					Padding="20"
+					RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="60" />
+                        <ColumnDefinition
+							Width="0" />
+                        <ColumnDefinition
+							Width="*" />
+                        <ColumnDefinition
+							Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <VisualElement.Behaviors>    
+                        
+                        <grial:AnimatedTrigger
+							Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+							Threshold="{ StaticResource CarouselHeight }">
+                            <local:AnimationWrapper>
+                                <xamanimation:TranslateToAnimation
+									Target="{ x:Reference AnimatedHeader }"
+									Duration="75"
+									TranslateY="0" />                                          
+                            </local:AnimationWrapper>
+                        </grial:AnimatedTrigger>
+
+                        <grial:AnimatedTrigger
+							Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+							Threshold="{ StaticResource BannerHideThreshold }"
+							TriggerBeforeThreshold="true">
+                            <local:AnimationWrapper>
+                                <xamanimation:TranslateToAnimation
+									Target="{ x:Reference AnimatedHeader }"
+									Duration="75"
+									TranslateY="-100" />
+                            </local:AnimationWrapper>
+                        </grial:AnimatedTrigger>
+
+                    </VisualElement.Behaviors>
+                    
+                    <ffimageloading:CachedImage
+						Grid.RowSpan="2"
+						grial:Effects.CornerRadius="2"
+						FadeAnimationEnabled="true"
+						Source="{ Binding SelectedItem.Gallery[0], Source={x:Reference Colors} }"
+						Aspect="AspectFill" />
+                    
+                    <!-- NAME -->
+                    <Label
+						Grid.Row="0"
+						Grid.Column="2"
+						Text="{ Binding Name }"
+						VerticalOptions="End"
+						FontSize="18"
+						Style="{ StaticResource LabelBoldStyle }"
+						HorizontalOptions="Start"
+						TextColor="{ DynamicResource OverImageTextColor }"
+						LineBreakMode="TailTruncation" />
+                    
+                    <!-- MANUFACTURER -->
+                    <Label
+						Grid.Row="1"
+						Grid.Column="2"
+						Text="{ Binding Manufacturer, StringFormat='BY {0}' } }"
+						FontSize="11"
+						HorizontalOptions="Start"
+						TextColor="{ DynamicResource OverImageTextColor }" />
+
+                    <!-- BUTTON PRICE -->
+                    <Button
+						Grid.Column="3"
+						Grid.Row="0"
+						Grid.RowSpan="2"
+						Style="{ StaticResource OutlineInverseButtonStyle }"
+						VerticalOptions="Center"
+						HorizontalOptions="End"
+						WidthRequest="110"
+						Text="{ Binding Price, StringFormat='Buy ${0:0.##}' } }"
+						Clicked="OnBuy" />
+                </Grid>
+                
+            </grial:GrialNavigationBar>
+            
+        </Grid>
+            
+    </ContentPage.Content>
+    
+</ContentPage>

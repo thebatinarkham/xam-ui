@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.AvatarWithStatus"
+	x:Name="Root">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <local:AvatarWithStatusColorConverter
+				x:Key="ColorConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+        <Grid
+			VerticalOptions="Center"
+			HorizontalOptions="Center">
+            <!-- AVATAR -->
+            <local:CircleCachedImage
+				Source="{ Binding Source, Source={x:Reference Root} }"
+				Style="{ StaticResource Avatar }" />
+
+            <!-- STATUS NOTIFICATION -->
+            <BoxView
+				BackgroundColor="{ Binding Status, Source={x:Reference Root}, Converter={StaticResource ColorConverter} }"
+				HeightRequest="10"
+				WidthRequest="10"
+				TranslationX="1"
+				TranslationY="1"
+				VerticalOptions="End"
+				HorizontalOptions="End"
+				grial:Effects.CornerRadius="5" />
+
+            <!-- OUTLINE -->
+            <Frame
+				Padding="0"
+				CornerRadius="5"
+				HeightRequest="10"
+				WidthRequest="10"
+				TranslationX="1"
+				TranslationY="1"
+				VerticalOptions="End"
+				HorizontalOptions="End"
+				HasShadow="False"
+				BackgroundColor="Transparent"
+				OutlineColor="#88FFFFFF" />
+
+        </Grid>
+    </ContentView.Content>
+
+</ContentView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.RoundedLabel"
+	x:Name="Root"
+	grial:Effects.CornerRadius="{ Binding CornerRadius, Source={ x:Reference Root } }">
+
+    <ContentView.Content>
+        <Label
+			x:Name="label"
+			FontSize="{ Binding Source={ x:Reference Root }, Path=FontSize }"
+			Text="{ Binding Source={ x:Reference Root }, Path=Text }"
+			TextColor="{ Binding Source={ x:Reference Root }, Path=TextColor }"
+			HorizontalTextAlignment="{ Binding Source={ x:Reference Root }, Path=HorizontalTextAlignment }"
+			FontAttributes="{ Binding Source={ x:Reference Root }, Path=FontAttributes }" />
+    </ContentView.Content>
+
+</ContentView>

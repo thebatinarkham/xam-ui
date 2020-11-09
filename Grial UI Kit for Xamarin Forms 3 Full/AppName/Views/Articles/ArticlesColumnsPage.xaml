@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.ArticlesColumnsPage"
+	Title="{ grial:Translate PageTitleArticlesColumns }"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>        
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="280" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- HEADER TEMPLATE -->
+                <local:ArticleColumnsHeaderItemTemplate
+					BindingContext="{ Binding Main }"
+					Grid.Row="0">
+                    <View.GestureRecognizers>
+                        <TapGestureRecognizer
+							Tapped="OnItemTapped" />
+                    </View.GestureRecognizers>
+                </local:ArticleColumnsHeaderItemTemplate>
+
+                <!-- ARTICLE LIST-->
+                <grial:GridView
+					Grid.Row="1"
+					Margin="15"
+					ColumnSpacing="15"
+					RowSpacing="15"
+					Padding="5"
+					ColumnCount="{
+                        grial:OnOrientationInt 
+                            PortraitPhone=1,
+                            LandscapePhone=2,
+
+                            PortraitTablet=2,
+                            LandscapeTablet=2,
+                        
+                            PortraitDesktop=3,
+                            LandscapeDesktop=3
+                    }"
+					VerticalOptions="FillAndExpand"
+					ItemsSource="{ Binding Secondary.List }">
+                    <grial:GridView.ItemTemplate>
+                        <DataTemplate>
+                            <local:ArticleColumnItemTemplate>
+                                <View.GestureRecognizers>
+                                    <TapGestureRecognizer
+										Tapped="OnItemTapped" />
+                                </View.GestureRecognizers>
+                            </local:ArticleColumnItemTemplate>
+                        </DataTemplate>
+                    </grial:GridView.ItemTemplate>
+                    
+                </grial:GridView>
+            </Grid>
+            
+        </ScrollView>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

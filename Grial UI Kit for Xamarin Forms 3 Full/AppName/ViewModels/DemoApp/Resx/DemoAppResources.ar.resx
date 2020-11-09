@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <data name="PageTitleThemesPreview" xml:space="preserve">
+        <value>اختر مظهرك</value>
+    </data>
+  <data name="StringApply" xml:space="preserve">
+        <value>تطبيق</value>
+    </data>
+  <data name="ScreenCount" xml:space="preserve">
+        <value>{0} شاشات</value>
+    </data>
+
+  <!-- MAIN MENU -->
+  <data name="MainMenuWhatsNew" xml:space="preserve">
+        <value>ما هو الجديد؟</value>
+    </data>
+  <data name="MainMenuControlsAndFeatures" xml:space="preserve">
+        <value>عناصر التحكم والميزات</value>
+    </data>
+  <data name="MainMenuAbout" xml:space="preserve">
+        <value>حول</value>
+    </data>
+  <data name="MainMenuDashboard" xml:space="preserve">
+        <value>لوحة القيادة الرئيسية</value>
+    </data>
+  <data name="MainMenuIcons" xml:space="preserve">
+        <value>كل الرموز</value>
+    </data>
+  <data name="MainMenuGrialThemes" xml:space="preserve">
+        <value>مواضيع </value>
+    </data>
+  <data name="MainMenuAbout" xml:space="preserve">
+        <value>حول</value>
+    </data>
+
+  <data name="StringGetGrial" xml:space="preserve">
+        <value>احصل على </value>
+    </data>
+  <data name="StringGetGrialNow" xml:space="preserve">
+        <value>احصل عل الآن</value>
+    </data>
+  <data name="ButtonBrowseOurSamples" xml:space="preserve">
+        <value>استعرض العينات</value>
+    </data>
+  <data name="ButtonSeeOurWalkThrough" xml:space="preserve">
+        <value>ترى ما هو الجديد</value>
+    </data>
+
+
+  <!-- FLOW DESCRIPTIONS -->
+  <data name="FlowDescriptionMovies" xml:space="preserve">
+        <value>تجربة قوة الرسوم المتحركة ، والتأثيرات المرئية في هذا المثال المصقول للغاية من أفلام الملاحة.</value>
+    </data>
+  <data name="FlowDescriptionMessages" xml:space="preserve">
+        <value>تعامل مع الرسائل والإشعارات من تطبيقك المحمول بطريقة جميلة وبسيطة.</value>
+    </data>
+  <data name="FlowDescriptionTasks" xml:space="preserve">
+        <value>لوحة المهام نظرة عامة على الأداء. نظرة عامة على أداء الفريق وتفاصيل أعضاء الفريق.</value>
+    </data>
+  <data name="FlowDescriptionEcommerce" xml:space="preserve">
+        <value>تدفق التجارة الإلكترونية جميلة وبسيطة.</value>
+    </data>
+
+
+  <!-- PAGES DESCRIPTIONS -->
+  <data name="DocumentTimelinePageDescription" xml:space="preserve">
+        <value>تم تصميم هذا المخطط الزمني لعرض الإجراءات على مستند. استخدمها لإظهار تأمين واضح للإجراءات التي يتم تنفيذها على أي عنصر ، بمعنى أي معاملة.</value>
+    </data>
+  <data name="TimelinePageDescription" xml:space="preserve">
+        <value>تم تصميم هذا المخطط الزمني لإعطاء نظرة واضحة على الرسائل أو المحادثة. تعاون لاعب الفريق هو دائما شيء جيد.</value>
+    </data>
+  <data name="ProfilePageTimelinePageDescription" xml:space="preserve">
+        <value>استخدم صفحة ملف تعريف المستخدم هذه لعرض السيرة الذاتية وبعض الإحصائيات الرئيسية لشخص أو منتج أو خدمة. استخدم صورًا كبيرة للاستفادة إلى أقصى حد من هذا العرض.</value>
+    </data>
+  <data name="SocialPageDescription" xml:space="preserve">
+        <value>كلاسيكية بين تطبيقات الجوال الحديثة. يحتوي تخطيط الصفحة الاجتماعية على نظرة عامة ، وبعض الإحصائيات الرئيسية ، وألبوم الصور ، والشكل والمظهر اللطيف.</value>
+    </data>
+  <data name="SocialVariantPageDescription" xml:space="preserve">
+        <value>كلاسيكية بين تطبيقات الجوال الحديثة. يحتوي تخطيط الصفحة الاجتماعية على نظرة عامة ، وبعض الإحصائيات الرئيسية ، وألبوم الصور ، والشكل والمظهر اللطيف.</value>
+    </data>
+  <data name="SocialCardPageDescription" xml:space="preserve">
+        <value>الكلاسيكية بين تطبيقات الجوال الحديثة ولكن مع تطور التصميم. يحتوي تخطيط صفحة البطاقات الاجتماعية على نظرة عامة حول بعض الإحصاءات الأساسية ، والأصدقاء المتصلين ، وألبوم الصور. شيء بسيط وجميل لإمتاع المستخدمين لديك.</value>
+    </data>
+  <data name="FullHeaderArticlePagePageDescription" xml:space="preserve">
+        <value>تجمع هذه الصفحة بين طرق مختلفة لعرض أي نوع من المحتوى في واجهة مستخدم جميلة ومتوازنة مع تأثير مثير للإعجاب.</value>
+    </data>
+  <data name="ArticlesClassicViewPageDescription" xml:space="preserve">
+        <value>استخدم هذه الصفحة لعرض المقالات أو الوثائق. وهو نمط شائع الاستخدام لعرض نظرة عامة على العناصر.</value>
+    </data>
+  <data name="ArticlesColumnPageDescription" xml:space="preserve">
+        <value>استخدم هذه الصفحة لعرض المقالات أو الوثائق. يعرض هذا العرض المحدد مقالة مميزة أعلى الصفحة ، وفي تخطيط التغييرات للمناظر الطبيعية لعرض المزيد من الأعمدة.</value>
+    </data>
+  <data name="ArticleDetailPageDescription" xml:space="preserve">
+        <value>هذا عرض المقالة الكلاسيكية ، فإنه يعرض صورة مميزة وشريط الأدوات مع الإحصائيات الرئيسية. إنه تخطيط بسيط ولكنه مفيد.</value>
+    </data>
+  <data name="ArticlesListPageDescription" xml:space="preserve">
+        <value>يمكن أيضًا استخدام هذا الاختلاف في قائمة المقالات لعرض أي نوع من أنواع المنتجات أو الخدمات أو وصفة الصور. يمكنك أيضًا إزالة الصور واستخدام خلفية بلون خالص.</value>
+    </data>
+  <data name="ArticlesFeedPageDescription" xml:space="preserve">
+        <value>يستند هذا الاختلاف في طريقة عرض المقالات إلى خلاصة تشبه Twitter. تحتوي كل بطاقة على مؤلف ، صورة مميزة ، عنوان وتاريخ.</value>
+    </data>
+  <data name="DashboardCarouselPageDescription" xml:space="preserve">
+        <value>لوحة تحكم جميلة مع عرض دائري في الأعلى. استخدمه لعرض الفئات ومحتوى لفتت الانظار.</value>
+    </data>
+  <data name="NavigationCardsDescriptionListPageDescription" xml:space="preserve">
+        <value>قائمة التنقل مفصلة تظهر العنوان والوصف والعلامات. استخدمه لعرض تفاصيل حول المحتوى الداخلي.</value>
+    </data>
+  <data name="MoviesMainPageDescription" xml:space="preserve">
+        <value>مستوحاة من Netflix و Spotify ، تعرض هذه الصفحة عنصرًا مميزًا وقوائم متعددة للأفلام قابلة للتمرير الأفقي. استخدمه لعرض عدد كبير من معاينات العناصر مثل الكتب أو المستندات أو الأفلام أو الملفات الصوتية.</value>
+    </data>
+  <data name="MovieDetailPageDescription" xml:space="preserve">
+        <value>تعرض صفحة تفاصيل المادة عنصرًا مميزًا ومعلومات ذات صلة مثل الوصف والتصنيف والعناصر ذات الصلة. استخدمه لعرض أي نوع من المنتجات أو المستندات أو الخدمات.</value>
+    </data>
+  <data name="DashboardCardsPageDescription" xml:space="preserve">
+        <value>استخدم هذه الصفحة لعرض أي نوع من المقالات أو الخدمات أو المستندات أو المنتجات. كل عنصر على الشبكة لديه مؤلف ، وصف مختصر وصورة مميزة.</value>
+    </data>
+  <data name="DashboardMultipleTilesPageDescription" xml:space="preserve">
+        <value>استخدم شبكة ملاحة جميلة تحتوي على رموز وصور وبيانات. استخدم هذه الصفحة لعرض تجانبات مختلفة للانتقال إلى التطبيقات أو المواقع أو لعرض معاينات الرسائل فقط.</value>
+    </data>
+  <data name="IconsDashboardPageDescription" xml:space="preserve">
+        <value>هذه شبكة الملاحة الكلاسيكية مع الرموز. الاستخدام هو بمثابة الشاشة الرئيسية لتطبيقك. من المفيد أن تظهر للمستخدمين طريقة سهلة للتنقل عبر تطبيقك.</value>
+    </data>
+  <data name="FlatDashboardPageDescription" xml:space="preserve">
+        <value>هذه شبكة الملاحة الكلاسيكية مع الرموز. الاستخدام هو بمثابة الشاشة الرئيسية لتطبيقك. من المفيد أن تظهر للمستخدمين طريقة سهلة للتنقل عبر تطبيقك.</value>
+    </data>
+  <data name="ImagesDashboardPageDescription" xml:space="preserve">
+        <value>هذه شبكة ملاحة كلاسيكية مع صور خلفية ورموز. الاستخدام هو بمثابة الشاشة الرئيسية لتطبيقك. من المفيد أن تظهر للمستخدمين طريقة سهلة للتنقل عبر تطبيقك.</value>
+    </data>
+  <data name="NavigationCardsListPageDescription" xml:space="preserve">
+        <value>دائمًا ما تكون قائمة قائمة البطاقات الجيدة فعالة لعرض فئات مختلفة من العناصر. على سبيل المثال ، أقسام المتجر المختلفة أو فئات الوثيقة المختلفة.</value>
+    </data>
+  <data name="EmptyStatePageDescription" xml:space="preserve">
+        <value>هذه وجهة نظر بسيطة ولكنها مفيدة. استخدمها لإعلام المستخدمين عندما حدث خطأ ما أو تم تغيير شيء ما.</value>
+    </data>
+  <data name="NotificationsPageDescription" xml:space="preserve">
+        <value>صفحة الإشعارات مفيدة دائمًا في أي تطبيق. التحديثات والتغييرات في السياسة وتحديثات كلمات المرور وغير ذلك</value>
+    </data>
+  <data name="NavigationFlatListPageDescription" xml:space="preserve">
+        <value>دائمًا ما تكون قائمة القائمة الجيدة فعالة لإظهار فئات مختلفة من العناصر. على سبيل المثال ، أقسام المتجر المختلفة أو فئات الوثيقة المختلفة.</value>
+    </data>
+  <data name="NavigationListWithImagesPageDescription" xml:space="preserve">
+        <value>دائمًا ما تكون قائمة القائمة الجيدة فعالة لإظهار فئات مختلفة من العناصر. على سبيل المثال ، أقسام المتجر المختلفة أو فئات الوثيقة المختلفة.</value>
+    </data>
+  <data name="NavigationListWithIconsPageDescription" xml:space="preserve">
+        <value>يوضح هذا المثال قائمة قائمة بسيطة تحتوي على رموز وعناوين ومعاينة رقم. استخدمها لإظهار فئات مختلفة من المنتجات أو الخدمات أو المستندات.</value>
+    </data>
+  <data name="TabbedLoginPageDescription" xml:space="preserve">
+        <value>مزيج مثالي من البساطة والوظائف. هذه الصفحة المبوبة هي خيار رائع آخر لتضمينه في تطبيقك.</value>
+    </data>
+  <data name="SimpleSignUpPageDescription" xml:space="preserve">
+        <value>صفحة تسجيل بسيطة لتسجيل مستخدمين جدد في تطبيقك. إضافة أو إزالة عناصر التحكم والمحتوى حسب احتياجك.</value>
+    </data>
+  <data name="SimpleLoginPageDescription" xml:space="preserve">
+        <value>صفحة تسجيل الدخول هذه مفيدة وبسيطة. إضافة أو إزالة عناصر التحكم والمحتوى حسب احتياجك.</value>
+    </data>
+  <data name="LoginPageDescription" xml:space="preserve">
+        <value>صفحة تسجيل الدخول هذه مفيدة وبسيطة. إضافة أو إزالة عناصر التحكم والمحتوى حسب احتياجك.</value>
+    </data>
+  <data name="SignUpPageDescription" xml:space="preserve">
+        <value>صفحة تسجيل بسيطة لتسجيل مستخدمين جدد في تطبيقك. إضافة أو إزالة عناصر التحكم والمحتوى حسب احتياجك.</value>
+    </data>
+  <data name="PasswordRecoveryPageDescription" xml:space="preserve">
+        <value>هذه صفحة بسيطة لاستعادة كلمة المرور. إضافة أو إزالة عناصر التحكم والمحتوى حسب احتياجك.</value>
+    </data>
+  <data name="ProductImageFullScreenPageDescription" xml:space="preserve">
+        <value>من المفيد جدا لعرض صور المنتجات والأوصاف القصيرة. استخدمه لإظهار تفاصيل المنتج.</value>
+    </data>
+  <data name="ProductsCatalogPageDescription" xml:space="preserve">
+        <value>واجهة مستخدم شائعة لعرض المنتجات أو المجموعات. استخدمه لعرض المنتج أو الخدمات.</value>
+    </data>
+  <data name="ProductOrderPageDescription" xml:space="preserve">
+        <value>هذه صفحة مفيدة إذا كنت تخطط لبيع منتجات أو خدمات أخرى من خلال التطبيق.</value>
+    </data>
+  <data name="ProductsGridPageDescription" xml:space="preserve">
+        <value>هذه صفحة مفيدة إذا كنت تخطط لبيع منتجات أو خدمات أخرى من خلال التطبيق.</value>
+    </data>
+  <data name="ProductsGridVariantPageDescription" xml:space="preserve">
+        <value>هذه الصفحة مستوحاة من نمط عرض المنتجات الشائعة. استخدم لعرض منتجات أو خدمات في تطبيقك.</value>
+    </data>
+  <data name="ProductItemViewPageDescription" xml:space="preserve">
+        <value>طريقة بسيطة ولكنها مفيدة لإظهار المحتوى. في هذا المثال ، نختار عرض منتج. صورة مميزة والعنوان والسعر والوصف.</value>
+    </data>
+  <data name="ProductsCarouselPageDescription" xml:space="preserve">
+        <value>طريقة بسيطة ولكنها مفيدة لإظهار المحتوى. في هذا المثال ، نختار عرض منتج. تصفح المزيد من المنتجات ذات الصلة الضرب.</value>
+    </data>
+  <data name="WalkthroughPageDescription" xml:space="preserve">
+        <value>تم تصميم هذا التجوّل ليعمل تقريبًا في كل تطبيق. استخدمه لمنح المستخدمين جولة سريعة عبر تطبيقك.</value>
+    </data>
+  <data name="WalkthroughFlatPageDescription" xml:space="preserve">
+        <value>تم تصميم هذا التجوّل ليعمل تقريبًا في كل تطبيق. استخدمه لمنح المستخدمين جولة سريعة عبر تطبيقك.</value>
+    </data>
+  <data name="WalkthroughVariantPageDescription" xml:space="preserve">
+        <value>تم تصميم هذا التجوّل ليعمل تقريبًا في كل تطبيق. استخدمه لمنح المستخدمين جولة سريعة عبر تطبيقك.</value>
+    </data>
+  <data name="ChatTimelinePageDescription" xml:space="preserve">
+        <value>تم تصميم صفحة "جدول زمني للدردشة" لعرض محادثة أو تفاعل. استخدمه لعرض التفاعلات أو سير العمل.</value>
+    </data>
+  <data name="RecentChatListPageDescription" xml:space="preserve">
+        <value>مستوحاة من تطبيقات الدردشة المستخدمة عادة ، هذه قائمة من المحادثات. يعرض كل عنصر قائمة جهة اتصال ورسالته الأخيرة.</value>
+    </data>
+  <data name="MessagesListPageDescription" xml:space="preserve">
+        <value>مستوحاة من تطبيقات الدردشة المستخدمة عادة ، هذه قائمة من المحادثات. يعرض كل عنصر قائمة جهة اتصال ورسالته الأخيرة.</value>
+    </data>
+  <data name="ChatMessagesListPageDescription" xml:space="preserve">
+        <value>مستوحاة من تطبيقات الدردشة الأكثر استخدامًا مثل Skype و Telegram و Whatsapp و Slack وغير ذلك الكثير.</value>
+    </data>
+  <data name="TabControlCustomSamplePageDescription" xml:space="preserve">
+        <value>Grial Tab Control قابلة للتخصيص بالكامل. ضعه في أي مكان على الشاشة واحصل على مظهر وملمس متناسقين عبر الأنظمة الأساسية.</value>
+    </data>
+  <data name="TabControlAndroidSamplePageDescription" xml:space="preserve">
+        <value>احصل على مظهر وشاشة Android TabControl أيضًا في تطبيق iOS الخاص بك.</value>
+    </data>
+  <data name="TabControliOSSamplePageDescription" xml:space="preserve">
+        <value>احصل على مظهر وشاشة iOS TabControl أيضًا في تطبيق Android.</value>
+    </data>
+  <data name="TabControlBottomPlacementSamplePageDescription" xml:space="preserve">
+        <value>احصل على عنصر تحكم تبويب أسفل Android قابل للتخصيص بالكامل لتطبيقك.</value>
+    </data>
+  <data name="TabPageDescription" xml:space="preserve">
+        <value>صفحة نموذج صفحة مبوبة بسيطة.</value>
+    </data>
+  <data name="DemoSettingsPageDescription" xml:space="preserve">
+        <value>يعرض قائمة بكل موضوعاتنا الرائعة حيث يمكنك اختيار أي منها.</value>
+    </data>
+  <data name="GenericAboutPageDescription" xml:space="preserve">
+        <value>استخدم هذا القالب لعرض معلومات عامة حول تطبيق هاتفك المحمول.</value>
+    </data>
+  <data name="RichAboutPageDescription" xml:space="preserve">
+        <value>لفتت للنظر عن الصفحة مع المنظر لطيفة والرسوم المتحركة التمرير. استخدم هذا القالب لعرض معلومات عامة حول تطبيق هاتفك المحمول.</value>
+    </data>
+  <data name="CustomSettingsPageDescription" xml:space="preserve">
+        <value>صفحة إعدادات بسيطة. استخدم هذه الصفحة كصفحة عرض إعدادات أساسية.</value>
+    </data>
+  <data name="CustomActivityIndicatorPageDescription" xml:space="preserve">
+        <value>هذا هو مؤشر نشاط مخصص بسيط. تغيير المحتوى كما يحلو لك.</value>
+    </data>
+  <data name="ResponsiveHelpersPageDescription" xml:space="preserve">
+        <value>سيسمح لك المستخدمون المتجاوبون بالتحكم الكامل في كيفية تخطيط الأشياء على صفحاتك ، والأجهزة المختلفة ، والاتجاهات ، والأنظمة الأساسية.</value>
+    </data>
+  <data name="IconsPageDescription" xml:space="preserve">
+        <value>استخدم هذه الصفحة لإلقاء نظرة عامة على جميع الرموز المتاحة في Grial.</value>
+    </data>
+  <data name="ThemeOverviewPageDescription" xml:space="preserve">
+        <value>صفحة بسيطة تظهر جميع عناصر التحكم في نماذج xamarin التي تم تصميمها بمظهر Grial المحدد الحالي.</value>
+    </data>
+  <data name="CustomRenderersPageDescription" xml:space="preserve">
+        <value>صفحة بسيطة تسرد جميع العارضين المخصصين من Grial.</value>
+    </data>
+  <data name="SettingsPageDescription" xml:space="preserve">
+        <value>صفحة إعدادات بسيطة. استخدم هذه الصفحة كصفحة عرض إعدادات أساسية.</value>
+    </data>
+  <data name="PerformanceDashboardMainPageDescription" xml:space="preserve">
+        <value>احصل على نظرة عامة سريعة على مهام الفريق. يعرض هذا المثال الرائع الكثير من الأشياء الرائعة ، بما في ذلك التحكم في شبكة البيانات.</value>
+    </data>
+  <data name="PerformanceDashboardMainPageDescription" xml:space="preserve">
+        <value>احصل على نظرة عامة سريعة على مهام الفريق. يعرض هذا المثال الرائع الكثير من الأشياء الرائعة ، بما في ذلك التحكم في شبكة البيانات.</value>
+    </data>
+  <data name="EmployeePerformanceDashboardPageDescription" xml:space="preserve">
+        <value>مثال نظيف مفيد لإظهار تفاصيل أداء الموظف. يمكنك إضافة وإزالة وتخصيصها وفقًا لاحتياجاتك الخاصة.</value>
+    </data>
+  <data name="EmployeeProfileDashboardPageDescription" xml:space="preserve">
+        <value>مثال نظيف مفيد لإظهار تفاصيل أداء الموظف. يمكنك إضافة وإزالة وتخصيصها وفقًا لاحتياجاتك الخاصة.</value>
+    </data>
+  <data name="AddContactPageDescription" xml:space="preserve">
+        <value>أضف جهة اتصال جديدة إلى تطبيقك أو مؤسستك أو فريقك. تم تصميم هذا النموذج لتبسيط صفحة شائعة الاستخدام في تطبيقات الجوال.</value>
+    </data>
+  <data name="ContactSimpleDetailPageDescription" xml:space="preserve">
+        <value>هذه صفحة تفاصيل اتصال بسيطة ولكنها جميلة مصممة. يمكن استخدامه أيضًا كصفحة ملف شخصي.</value>
+    </data>
+  <data name="ContactDetailPageDescription" xml:space="preserve">
+        <value>هذه صفحة تفاصيل اتصال بسيطة ولكنها جميلة مصممة. يمكن استخدامه أيضًا كصفحة ملف شخصي.</value>
+    </data>
+  <data name="ChatMessagesPageDescription" xml:space="preserve">
+        <value>نوع القالب الذي سيوفر لك ساعات لا تحصى من التصميم والتنفيذ.</value>
+    </data>
+  <data name="ChatMainPageDescription" xml:space="preserve">
+        <value>تصميم نظيف وفعال. عرض التحكم في علامة التبويب Grial المخصصة. هذا مثال رائع لتصميم واجهة المستخدم البسيطة.</value>
+    </data>
+  <data name="CardArticlePageDescription" xml:space="preserve">
+        <value>مثالي لعرض أي نوع من المحتوى ، يعرض قالب صفحة مقالة البطاقة مظهرًا وأسلوبًا حديثًا. مثالية لإظهار وصفات الطعام.</value>
+    </data>
+  <data name="ArticlesBrowserPageDescription" xml:space="preserve">
+        <value>طريقة جميلة لعرض المحتوى. مثالية للاستخدام كملاحة رئيسية للسفريات والمحتوى المتعلق بالسياحة.</value>
+    </data>
+  <data name="FeaturedMoviesPageDescription" xml:space="preserve">
+        <value>استمتع بمستخدمي هذا التنقل للمحتوى المصمم بشكل جميل. استخدمها لعرض أي نوع من المنتجات أو الخدمات داخل تطبيقك.</value>
+    </data>
+  <data name="CurvedHeaderArticlePageDescription" xml:space="preserve">
+        <value>تم تصميم صفحة مقالة المدونة هذه لعرض جولات أو رحلات أو أي نوع مماثل من التجارب.</value>
+    </data>
+  <data name="OrganizationFormPageDescription" xml:space="preserve">
+        <value>صفحة نموذج جميلة ونظيفة تعرض بيانات المستخدم.</value>
+    </data>
+  <data name="FullBackgroundLoginPageDescription" xml:space="preserve">
+        <value>صفحة تسجيل دخول أنيقة وبسيطة. أضف بعض العلامات التجارية باستخدام صورة بسيطة في الخلفية.</value>
+    </data>
+  <data name="FullBackgroundSignupPageDescription" xml:space="preserve">
+        <value>إذا كنت بصدد إنشاء تطبيق يتعامل مع موفرين متعددين ، فسيكون هذا النموذج مفيدًا جدًا.</value>
+    </data>
+  <data name="EmployeeFormPageDescription" xml:space="preserve">
+        <value>من الموظفين إلى المنتجات ، تخطيط النموذج هذا ، إنها طريقة لطيفة لإضافة أي شيء في تطبيقك.</value>
+    </data>
+  <data name="EcommerceMainPageDescription" xml:space="preserve">
+        <value>هذا تخطيط مثالي لاستخدامه في أي نوع من تطبيقات المتجر. يتضمن حقل بحث ومنطقة أعلى لعرض العروض أو المنتجات المميزة.</value> 
+    </data>
+  <data name="ProductDetailPageDescription" xml:space="preserve">
+        <value>هذه الصفحة عرض المنتج لديها كل شيء. إذا كنت بصدد إنشاء تطبيق يعرض منتجات أو خدمات ، فيجب أن تكون هذه الصفحة ضرورية.</value>
+    </data>
+  <data name="OrderConfirmationPageDescription" xml:space="preserve">
+        <value>مفيدة في أي تطبيق للتجارة الإلكترونية: هناك حاجة دائمًا إلى تأكيد الطلب.</value>
+    </data>
+  <data name="CheckoutPageDescription" xml:space="preserve">
+        <value>إذا كنت تخطط لبيع أي شيء من خلال تطبيقك ، فستحتاج على الأرجح إلى هذا النموذج.</value>
+    </data>
+  <data name="VideoCarouselHighlightsPageDescription" xml:space="preserve">
+        <value>صفحة جذابة وتفاعلية تعرض خلفية للفيديو مع عرض دائري يحفز وينقل ألوان الفيديو على التمرير فوقها.</value>
+    </data>
+  <data name="WalkthroughGradientPageDescription" xml:space="preserve">
+        <value>جولة بسيطة ولكنها جذابة بصريًا تستدعي اتخاذ إجراء.</value>
+    </data>
+  <data name="WalkthroughImagePageDescription" xml:space="preserve">
+        <value>هذه عينة تجول تم تصميمها ببساطة. يعرض فقط صورة وصفًا وزرًا.</value>
+    </data>
+  <data name="WalkthroughMinimalPageDescription" xml:space="preserve">
+        <value>تقديم ملاحظات فورية لمستخدمي التطبيق. غيّر الرسالة وسيكون جاهزًا للاستخدام في أي تطبيق.</value>
+    </data>
+  <data name="PopupsPageDescription" xml:space="preserve">
+        <value>مجموعة كاملة من تصميمات Pop Up لتضمينها في تطبيقك. من ملاحظات المستخدم إلى نماذج الاختيار من متعدد.</value>
+    </data>
+  <data name="ShippingDetailPageDescription" xml:space="preserve">
+        <value>قائمة معروضة بشكل جميل من المهام والبيانات ذات الصلة. تستخدم هذه الصفحة تحكم Grial Data Grid والتحكم في علامة التبويب Grial المخصصة.</value>
+    </data>
+  <data name="TaskBrowserPageDescription" xml:space="preserve">
+        <value>رؤية نظيفة للمهام مجمعة في المشاريع ومساحات العمل. تستخدم هذه الصفحة مخططات لتطور إكمال المهمة ، و Grial Custom Tab Control و Grial Card View.</value>
+    </data>
+  <data name="TaskOverviewPageDescription" xml:space="preserve">
+        <value>تصور جميل لأداء الأشخاص المرتبط بالمهام. تستخدم هذه الصفحة المخططات البيانية و Grial Card.</value>
+    </data>
+
+  <!--FEATURES-->
+  <data name="FeatureRtlInvite" xml:space="preserve">
+        <value>يرجى تجربة زر LTR في الأعلى لمشاهدة التطبيق من خلال التنسيق من اليسار إلى اليمين.</value>
+    </data>
+  <data name="FeatureI18nInvite" xml:space="preserve">
+        <value>يرجى محاولة زر LTR في الأعلى لرؤية التطبيق باللغة الإنجليزية!</value>
+    </data>
+  <data name="FeatureI18nTitle" xml:space="preserve">
+        <value>i18n</value>
+    </data>
+  <data name="FeatureI18nDescription" xml:space="preserve">
+        <value>التطبيقات المستندة إلى Grial قابلة للتخصيص افتراضيًا ، مما يعني أنها تدعم لغات مختلفة دون بذل أي جهد. نحن نوفر تمديد XAML لتستهلك السلاسل من ملفات RESX وخيارات وقت التشغيل لتغيير لغة التطبيق.</value>
+    </data>
+  <data name="FeatureRTLTitle" xml:space="preserve">
+        <value>Right-to-left</value>
+    </data>
+  <data name="FeatureRTLDescription" xml:space="preserve">
+        <value>تأتي جميع الصفحات مع دعم للغات التي تُكتب من اليمين إلى اليسار باستخدام نفس شفرة XAML. نعم فعلا! شفرة أكواد XAML واحدة تعمل لكل من LTR و RTL مع عدم وجود أجزاء مكررة من الشفرة أو الرؤية الشرطية أو التعقيدات الأخرى. كما نقدم أيضًا خيار تغيير اتجاه التنسيق في وقت التشغيل باعتباره تفضيل المستخدم.</value>
+    </data>
+  <data name="FeatureDataGridTitle" xml:space="preserve">
+        <value>DataGrid</value>
+    </data>
+  <data name="FeatureDataGridDescription" xml:space="preserve">
+        <value>عرض البيانات المجدولة مع شبكة البيانات عبر الأنظمة الأساسية الخاصة بنا. بسهولة تخصيص مظهرها وشعورها من خلال خصائص XAML مثل لون الصف الغريب ، لون خلفية الرأس ، وما إلى ذلك ، أو التعمق في التخصيص باستخدام قوالب للخلايا ، والأعمدة ، والرؤوس ، وما إلى ذلك. وهو يتيح الفرز والاختيار.</value>
+    </data>
+
+  <data name="FeatureCardViewTitle" xml:space="preserve">
+        <value>Card View</value>
+    </data>
+  <data name="FeatureCardViewDescription" xml:space="preserve">
+        <value>واحدة من أنماط واجهة المستخدم المحمولة الأكثر استخداما الآن مبسطة في استخدامها ومتاحة ل Xamarin Forms من خلال XAML. حدد لون الظل وظلال الظل ونصف قطر الزاوية ، واضبط لون الخلفية واستخدمه كحاوية لأي من محتوياتك.</value>
+    </data>
+
+  <data name="FeatureVideoPlayerTitle" xml:space="preserve">
+        <value>Video Player </value>
+    </data>
+  <data name="FeatureVideoPlayerDescription" xml:space="preserve">
+        <value>مشغل فيديو كامل عبر منصة متوفرة في Xamarin Forms و skinnable بالكامل من خلال XAML. يمكنك استخدامه كخلفية كاملة لصفحتك لدمجها مع شريط التنقل الجديد ، أو ببساطة لعرض خلاصة مقاطع الفيديو. يمكنك إعادة إنتاج مقاطع الفيديو المحلية أو البعيدة بسهولة بتنسيقات متنوعة بما في ذلك مقاطع فيديو YouTube.</value>
+    </data>
+
+  <data name="FeaturePopupsTitle" xml:space="preserve">
+        <value>Pop Ups</value>
+    </data>
+  <data name="FeaturePopupsDescription" xml:space="preserve">
+        <value>مجموعة كاملة من الحوارات الجميلة و pop-us صنع في XAML ، قابل للتخصيص بالكامل وقابلية للتشغيل. ويغطي حالات الاستخدام الأكثر شيوعًا مثل: الإشعارات ، وتعليقات المستخدمين ، ومربعات الحوار غير النظامية ، وأوراق الإجراءات المخصصة ، وما إلى ذلك.</value>
+    </data>
+
+  <data name="FeatureCarouselViewTitle" xml:space="preserve">
+        <value>Carousel View</value>
+    </data>
+  <data name="FeatureCarouselViewDescription" xml:space="preserve">
+        <value>عرض مجموعة من المقدمات الفرعية في صفحتك من خلال عرض Carousel. وهي قابلة للتخصيص بالكامل وتدعم الرسوم المتحركة التقدمية التي تسمح بتغيير المحتوى الخاص بك على أحداث السحب أو التمرير أو المسح السريع للمستخدم ، مما يؤدي إلى إنشاء تطبيقات UX الغنية والجذابة لتطبيقك الذي سيستمتع به المستخدمون.</value>
+    </data>
+
+  <data name="FeatureAnimationsViewTitle" xml:space="preserve">
+        <value>Animations</value>
+    </data>
+  <data name="FeatureAnimationsViewDescription" xml:space="preserve">
+        <value>يمكنك بسهولة دمج واجهة برمجة تطبيقات الرسوم المتحركة وإضافة الحياة إلى تطبيقك. إنشاء واجهات UX جميلة وجذابة على التمرير المستخدم. ترجمة العناصر أو تدويرها ، وتغيير ألوانها وتلاشيها وتوسيع نطاقها لتحقيق تأثيرات المنظر المعلقة.المجموعات لا نهائية ، وسيحب مستخدموك تطبيقك.</value>
+    </data>
+
+  <data name="FeatureGradientsViewTitle" xml:space="preserve">
+        <value>Gradients</value>
+    </data>
+  <data name="FeatureGradientsViewDescription" xml:space="preserve">
+        <value>إضافة جديدة رائعة للسماح بمزيد من التصميم والتخصيص لتطبيقك. لا حاجة لإنشاء صور إضافية. التدرجات الخطية والشعاعية متاحة الآن في XAML من خلال واجهة برمجة التطبيقات المعبّرة: تحديد الألوان ، توقف اللون ، التعتيم ، الزوايا ، الموضع النسبي أو المطلق بطريقة مماثلة في CSS.</value>
+    </data>
+
+  <data name="FeatureGrialNavbarViewTitle" xml:space="preserve">
+        <value>Grial Navbar</value>
+    </data>
+  <data name="FeatureGrialNavbarViewDescription" xml:space="preserve">
+        <value>وأخيرًا ، تتمثل إحدى الميزات الأكثر طلبًا لنماذج Xamarin في: هنا ، يمكنك الآن جعل شريط التنقل شفافًا تمامًا وجعل تطبيقك يشبع الشاشة تمامًا. يمكنك الجمع بين قوتها من خلال استخدام التدرجات والرسوم المتحركة الجديدة لـ XAML لإنشاء واجهات مستخدم رائعة وجذابة.</value>
+    </data>
+
+  <data name="FeatureCheckboxesAndRadiosTitle" xml:space="preserve">
+        <value>Checkboxes and radios</value>
+    </data>
+  <data name="FeatureCheckboxesAndRadiosDescription" xml:space="preserve">
+        <value>أكمل احتياجات التفاعل في واجهة المستخدم في نماذج Xamarin من خلال تضمين اختيار واحد ومتعدد المستخدمين من خلال قوالب XAML القابلة للتخصيص بالكامل. تغيير الألوان والأنماط والأحجام لتناسب احتياجاتك. اجمعها مع جهاز إعادة الإرسال لديك للحصول على تفاعلات قوية في صفحات نماذج البيانات.</value>
+    </data>
+
+  <data name="FeatureTabControlTitle" xml:space="preserve">
+        <value>Tab Control</value>
+    </data>
+  <data name="FeatureTabControlDescription" xml:space="preserve">
+        <value>تبديل العروض داخل صفحتك بسهولة. رؤية محتوى بديلة على نفس الصفحة. المظهر والأسلوب الافتراضيان اللذان يتطابقان مع نظامي التشغيل Android و iOS وموقعهما الأصلي. مظهر قابل للتخصيص بالكامل من خلال قوالب وأنماط XAML. دعم أيقونة بجانب التصنيفات. العرض الكامل أو AutoScrollable ، بغض النظر عن عدد علامات التبويب التي تضيفها ، فسوف يتم التمرير تلقائيًا.</value>
+    </data>
+
+  <data name="FeatureRepeaterTitle" xml:space="preserve">
+        <value>Repeater</value>
+    </data>
+  <data name="FeatureRepeaterDescription" xml:space="preserve">
+        <value>تخطيط يسمح بتكرار المحتوى بداخله. وهو يدعم الربط ، قوالب البيانات ، الاتجاه الأفقي والعمودي ، واختيار العناصر وأكثر من ذلك.</value>
+    </data>
+
+  <data name="FeatureWrapPanelTitle" xml:space="preserve">
+        <value>Wrap Panel</value>
+    </data>
+  <data name="FeatureWrapPanelDescription" xml:space="preserve">
+        <value>يسمح تخطيط لوحة التغليف الخاص بنا بعرض محتوى ملفوف بالداخل. يرتب أطفاله أفقيا داخله ، ثم يلف عرض الأطفال اللاحقين إلى صفوف إضافية. يدعم القوالب أو الارتباطات أو محتوى XAML مباشرة.</value>
+    </data>
+
+  <data name="FeatureGridViewTitle" xml:space="preserve">
+        <value>Grid View </value>
+    </data>
+  <data name="FeatureGridViewDescription" xml:space="preserve">
+        <value>تحكم واجهة المستخدم الديناميكي والديناميكي الذي يرث من الشبكة. يسمح بسهولة التحكم في كيفية تقديم العمود والصفوف من البيانات المرتبطة.</value>
+    </data>
+
+  <data name="FeatureIconsTitle" xml:space="preserve">
+        <value>Icons</value>
+    </data>
+  <data name="FeatureIconsDescription" xml:space="preserve">
+        <value>يوفر Grial 3 8 خطوط تحتوي على أكثر من 5K من الرموز المجانية المتاحة لواجهة المستخدم التطبيق الخاص بك! يتم توفير الرموز في أنماط مختلفة: مملوءة ، خط ، مظهر مطابق ومظهر من التصميم متعدد الأبعاد ونظام iOS.يتم استخدامها عبر الصفحات والقوالب ، وسوف يتم عرضها بشكل حاد عبر أجهزة مختلفة بكثافات وحلول بكسل مختلفة ، مما يجعل هذه الطريقة مرنة جدًا وقابلة للصيانة وتتجنب توليد الكثير من الصور النقطية.</value>
+    </data>
+
+  <data name="FeatureGrialFlowsTitle" xml:space="preserve">
+        <value>Grial Flows </value>
+    </data>
+  <data name="FeatureGrialFlowsDescription" xml:space="preserve">
+        <value>أحدث إضافة إلى المجموعة: يمكن رؤية التدفقات كتطبيقات صغيرة تغطي الأنماط النموذجية و UX. تحتوي على عدد معين من الشاشات والقوالب وعناصر تحكم واجهة المستخدم ذات الصلة ، والتي تساعد على تحقيق أهداف محددة تعمل معًا كوحدة واحدة. تتوفر الرسائل والأفلام والمهام وتدفقات التجارة الإلكترونية.</value>
+    </data>
+
+  <data name="FeatureSafeAreaEffectTitle" xml:space="preserve">
+        <value>Safe Area Effect</value>
+    </data>
+  <data name="FeatureSafeAreaEffectDescription" xml:space="preserve">
+        <value>يساعد دعم Xamarin Forms للمنطقة الآمنة لـ iOS على التأكد من عدم قص المحتوى من زوايا الجهاز المستدير أو مؤشر المنزل أو غلاف المستشعر. في بعض الأحيان لا يكفي ذلك ، وتحتاج إلى الذهاب إلى ما هو أبعد والتحكم بشكل أفضل في كيفية عرض الأشياء على شاشات iOS كبيرة. هذا هو السبب في أننا قدمنا هذا التأثير في Grial 3.</value>
+    </data>
+
+  <data name="FeatureCustomRenderersTitle" xml:space="preserve">
+        <value>Custom Renderers</value>
+    </data>
+  <data name="FeatureCustomRenderersDescription" xml:space="preserve">
+        <value>احصل على مزيد من التحكم في عناصر تحكم Xamarin Forms الشائعة لجعلها تبدو كما تحتاج إليها تمامًا. أضفنا المزيد من خصائص التصميم إلى عناصر التحكم ، مثل المحرر ، أو الإدخال ، أو الملتقطون ، أو شريط البحث ، أو عرض الجدول ، وما إلى ذلك.</value>
+    </data>
+
+  <data name="FeatureResponsiveHelpersTitle" xml:space="preserve">
+        <value>Responsive Helpers</value>
+    </data>
+  <data name="FeatureResponsiveHelpersDescription" xml:space="preserve">
+        <value>تمتع بالتحكم الكامل في كيفية عرض واجهة المستخدم عبر العديد من الأجهزة والأنظمة الأساسية وتوجيهات الشاشة. التحكم في كيفية تدفق محتوى صفحتك. تعيين أحجام الخط الخاص بك ، والمحاذاة ، والهوامش ، paddings وتقريبا كل الممتلكات الممكنة لكل حالة محددة.</value>
+    </data>
+
+  <data name="FeatureChartsTitle" xml:space="preserve">
+        <value>Charts</value>
+    </data>
+  <data name="FeatureChartsDescription" xml:space="preserve">
+        <value>إضافة تصور البيانات إلى تطبيقك من خلال مخططاتنا الرائعة. يمكنك تغيير الألوان والإعدادات بسهولة من خلال المساعدين والمغلفين وجعل بياناتك تبدو رائعة.</value>
+    </data>
+
+  <data name="FeatureAnimationLoopsTitle" xml:space="preserve">
+        <value>الرسوم المتحركة حلقة السلوك</value>
+    </data>
+  <data name="FeatureAnimationLoopsDescription" xml:space="preserve">
+        <value>اجعل صورك الثابتة تظهر في حياتك بإضافة سلوك كين بيرنز. يمكنك الحصول بسهولة على هذا التحريك وتأثير التكبير / التصغير في الصور أو الرموز أو أي ملف شخصي في تطبيقك من خلال هذا السلوك.</value>
+    </data>
+  <data name="FeaturePoweredBy" xml:space="preserve">
+        <value>مدعوم من</value>
+    </data>
+
+  <!-- DEMO APP ABOUT PAGE -->
+  <data name="GrialAboutDescription" xml:space="preserve">
+        <value>مصممة لمطوري .NET. يوفر جموعة جاهزة كاملة من التخطيطات والمكونات والقوالب والموارد القابلة للتخصيص بالكامل لمساعدة المطورين والشركات على إنشاء تطبيقات جوّال عبر منصة جميلة باستخدام Xamarin.Forms.</value>
+    </data>
+  <data name="GrialAboutMission" xml:space="preserve">
+        <value>نحن أحد مصممي ومصممي الفريق في مهمة: اتخاذ Xamarin.Forms التطبيقات إلى المستوى التالي في حين يلهون ، أن يصبحوا أكثر صحة ، وسعادة الناس في هذه العملية.</value>
+    </data>
+  <data name="GrialAboutTeam" xml:space="preserve">
+        <value>فريقنا معروف أيضًا بأداة XAML Previsizationization الخاصة بنا ، Gorilla Player.</value>
+    </data>
+  <data name="GrialAboutFollowUs" xml:space="preserve">
+        <value>اتبعنا:</value>
+    </data>
+  <data name="GrialAboutEagerToHear" xml:space="preserve">
+        <value>نحن حريصون على سماع خبراتك في العمل مع Xamarin.
+        
+         لا تخجل وتقول مرحبا!</value>
+    </data>
+  <data name="GrialAboutSayHello" xml:space="preserve">
+        <value>قل مرحبا</value>
+    </data>
+  <!--
+    This should be a string with parameters so I'm keeping it always in english for now.
+    <data name="GrialAboutGrialUses" xml:space="preserve">
+        <value>يستخدم Grial هذه</value>
+    </data>
+    <data name="GrialAboutGrialThirdParty" xml:space="preserve">
+        <value>حزم طرف ثالث</value>
+    </data>
+    <data name="GrialAboutGrialPoweredBy" xml:space="preserve">
+        <value>مدعوم من رائع</value>
+    </data>
+    <data name="GrialAboutGrialCommunity" xml:space="preserve">
+        <value>تواصل اجتماعي.</value>
+    </data>
+    -->
+  <data name="GrialAboutTestimonialMiguelDeIcaza" xml:space="preserve">
+        <value>أنا في مهب كيف جيدة المظهر وسهلة الاستخدام هي GrialKit. اعمل في نفسك معروف وتأكد منه.</value>
+    </data>
+  <data name="GrialAboutTestimonialDavidOrtinau" xml:space="preserve">
+        <value>أنا في مهب كيف جيدة المظهر وسهلة الاستخدام هلا يمنحك GrialKit 3.0 الرسوم المتحركة الرائعة والتصميم والأطنان من التخطيطات فحسب ، بل إنه يعلمك تقنيات مذهلة لتقديم تجارب الهاتف المحمول من المستوى التالي.</value>
+    </data>
+
+  <data name="WhatsNewDescription1" xml:space="preserve">
+        <value>أكثر من 160 صفحة وقوالب XAML. مجموعة لا حصر لها من الاحتمالات لبناء تطبيقات جميلة.</value>
+    </data>
+  <data name="WhatsNewDescription2" xml:space="preserve">
+        <value>تقدم Grial Icons مجموعة ضخمة من الرموز والأنماط.</value>
+    </data>
+  <data name="WhatsNewDescription3" xml:space="preserve">
+        <value>صور متحركة سلسة ودعم تدرجات الألوان وتخطيطات مرنة وغير ذلك الكثير.</value>
+    </data>
+  <data name="WhatsNewDescription4" xml:space="preserve">
+        <value>Tab Control, Data grid, Checkbox, Radio Button, Video Player, Repeater وأكثر من ذلك.</value>
+    </data>
+  <data name="WhatsNewDescription5" xml:space="preserve">
+        <value>قم بتضمين الشاشات في مشروعك وابن موضوعك الخاص من خلال Grial Web Admin.</value>
+    </data>
+  <data name="WhatsNewTitle1" xml:space="preserve">
+        <value>160+ XAMLs</value>
+    </data>
+  <data name="WhatsNewTitle2" xml:space="preserve">
+        <value>أكثر من 5000 Icons</value>
+    </data>
+  <data name="WhatsNewTitle3" xml:space="preserve">
+        <value>محتوى أكثر ثراء</value>
+    </data>
+  <data name="WhatsNewTitle4" xml:space="preserve">
+        <value>12 ضوابط جديدة</value>
+    </data>
+  <data name="WhatsNewTitle5" xml:space="preserve">
+        <value>Fast Kickstart</value>
+    </data>
+
+  <!-- Pick Your Theme -->
+  <data name="StringPickYourTheme" xml:space="preserve">
+        <value>اختر مظهرك</value>
+    </data>
+  <data name="LightThemeDescription" xml:space="preserve">
+        <value>اجعل عينيك تبكي من السعادة!</value>
+    </data>
+  <data name="DarkThemeDescription" xml:space="preserve">
+        <value>مظهر احترافي لشاشاتك.</value>
+    </data>
+  <data name="BlackboardThemeDescription" xml:space="preserve">
+        <value>الحصول على عرض نظيف لتنسيقات Grial.</value>
+    </data>
+  <data name="BlackSunThemeDescription" xml:space="preserve">
+        <value>جو رائع في تطبيقك.</value>
+    </data>
+  <data name="HazeThemeDescription" xml:space="preserve">
+        <value>مظهر طبيعي من تخطيطات Grial.</value>
+    </data>
+  <data name="CabernetLightThemeDescription" xml:space="preserve">
+        <value>الخيار الدقيق لتطبيقك.</value>
+    </data>
+
+</root>

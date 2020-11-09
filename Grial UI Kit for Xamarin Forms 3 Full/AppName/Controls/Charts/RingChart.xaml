@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:converter="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.RingChart"
+	x:Name="Root">
+    <ContentView.Content>
+        <Grid
+			RowSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <!-- CHART VALUE -->
+                <Label
+					IsVisible="{ Binding RingChartValueLabel, Source={ x:Reference Root }, Converter={ StaticResource IsNotEmptyStringConverter }}"
+					Text="{ Binding RingChartValueLabel, Source={ x:Reference Root } }"
+					TextColor="{ Binding RingChartTextColor, Source={ x:Reference Root } }"
+					HorizontalOptions="Center"
+					VerticalOptions="Center"
+					FontSize="{ Binding RingChartValueLabelFontSize, Source={ x:Reference Root } }" />
+
+                <!-- CHART -->
+                <local:DonutChart
+					x:Name="chart"
+					Margin="-5"
+					HoleRadius=".8"
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand"
+					ShowValueLabel="false" />
+            </Grid>
+
+            <!-- CHART VALUE LABEL -->
+            <Label
+				Grid.Row="1"
+				IsVisible="{ Binding RingChartLabel, Source={ x:Reference Root }, Converter={ StaticResource IsNotEmptyStringConverter }}"
+				LineBreakMode="TailTruncation"
+				HorizontalOptions="Center"
+				VerticalOptions="End"
+				Text="{ Binding Source={ x:Reference Root }, Path=RingChartLabel }"
+				FontSize="{ Binding Source={ x:Reference Root }, Path=RingChartLabelFontSize }"
+				TextColor="{ Binding Source={ x:Reference Root }, Path=RingChartTextColor }" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

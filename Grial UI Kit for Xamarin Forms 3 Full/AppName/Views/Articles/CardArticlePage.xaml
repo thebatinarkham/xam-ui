@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }"
+	Title="{ grial:Translate Key=PageTitleCardArticle }"
+	x:Class="AppName.CardArticlePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid
+				Padding="20"
+				RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="280" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="170" />
+                    <RowDefinition
+						Height="50" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="50" />
+                </Grid.RowDefinitions>
+                
+                <!-- ARTICLE IMAGE -->
+                <ffimageloading:CachedImage
+					Grid.Row="0"
+					Grid.RowSpan="2"
+					Margin="-20,-20,-20,0"
+					Source="{ Binding Article.BackgroundImage }"
+					HeightRequest="367"
+					VerticalOptions="Start"
+					Aspect="AspectFill" />
+                
+                <!--PLAY BUTTON-->
+                <Button
+					VerticalOptions="Center"
+					HorizontalOptions="Center"
+					WidthRequest="60"
+					HeightRequest="60"
+					CornerRadius="30"
+					Margin="0,0,0,0"
+					FontSize="30"
+					BorderWidth="2"
+					BackgroundColor="#22000000"
+					Text="{ x:Static local:GrialIconsFont.AudioPlay }"
+					TextColor="{ DynamicResource OverImageTextColor }"
+					FontFamily="{ StaticResource IconsFontFamily }"
+					BorderColor="{ DynamicResource OverImageTextColor }"
+					Padding="5,0,0,0" />
+                
+                <!-- CARD -->
+                <grial:CardView
+					CornerRadius="5"
+					RowSpacing="0"
+					Grid.Row="1"
+					Padding="20,16"
+					grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                    
+                    <StackLayout
+						Spacing="10">
+                        
+                        <!-- Date -->
+                        <Label
+							VerticalOptions="Center"
+							Text="{ Binding Article.When }"
+							FontSize="12"
+							Opacity="0.5" />
+                        
+                        <!-- Title -->
+                        <Label
+							VerticalOptions="Center"
+							Text="{ Binding Article.Title }"
+							FontSize="30"
+							Style="{ StaticResource LabelBoldStyle }" />
+                        
+                        
+                        <Grid>
+                            <!-- Category -->
+                            <Label
+								Text="{ Binding Article.Section }"
+								TextColor="{ DynamicResource AccentColor }"
+								FontSize="16"
+								VerticalOptions="Center" />
+                            
+                            <StackLayout
+								VerticalOptions="Center"
+								HorizontalOptions="End"
+								Orientation="Horizontal">
+                                
+                                <!-- Value -->
+                                <Label
+									Text="2K"
+									FontSize="16"
+									VerticalTextAlignment="Center"
+									HorizontalTextAlignment="Center"
+									TextColor="{ DynamicResource AccentColor }" />
+
+                                <!-- Icon -->
+                                <Label
+									FontSize="20"
+									VerticalTextAlignment="Center"
+									HorizontalTextAlignment="Center"
+									Text="{ x:Static local:GrialIconsFont.Heart }"
+									FontFamily="{ StaticResource IconsFontFamily }"
+									TextColor="{ DynamicResource AccentColor }" />
+
+                                <!-- Value 2 -->
+                                <Label
+									Text="15"
+									FontSize="16"
+									VerticalTextAlignment="Center"
+									HorizontalTextAlignment="Center"
+									TextColor="{ DynamicResource AccentColor }" />
+
+                                <!-- Icon 2 -->
+                                <Label
+									FontSize="20"
+									VerticalTextAlignment="Center"
+									HorizontalTextAlignment="Center"
+									Text="{ x:Static local:GrialIconsFont.MessageCircle }"
+									FontFamily="{ StaticResource IconsFontFamily }"
+									TextColor="{ DynamicResource AccentColor }" />
+                                
+                            </StackLayout>
+                        </Grid>
+                        
+                        <!-- Separator -->
+                        <BoxView
+							Margin="0,5"
+							Style="{ StaticResource Horizontal1ptLineStyle }" />
+                        
+                        <!-- Text block 1 -->
+                        <Label
+							Text="{ Binding Article.Body }" />
+                        
+                        <Grid
+							Margin="-20,0">
+                            <!--Gallery-->
+                            <grial:Repeater
+								ItemsSource="{ Binding Gallery }"
+								Orientation="Horizontal"
+								HeightRequest="160"
+								Spacing="15"
+								ItemSize="250"
+								ScrollPadding="20,0"
+								ScrollBarVisibility="Never">
+                                <grial:Repeater.ItemTemplate>
+                                    <DataTemplate>
+                                        <local:FullHeaderArticleGalleryItemTemplate />
+                                    </DataTemplate>
+                                </grial:Repeater.ItemTemplate>
+                            </grial:Repeater>
+                        </Grid>
+                        
+                        <!-- Text block 2 -->
+                        <Label
+							Text="{ Binding Article.Body }" />
+                        
+                    </StackLayout>
+                </grial:CardView>
+                
+                <StackLayout
+					Grid.Row="2"
+					Spacing="10"
+					Padding="0,20,0,20">
+                    
+                    <!-- Separator -->
+                    <BoxView
+						Margin="-20,0"
+						VerticalOptions="End"
+						Style="{ StaticResource Horizontal1ptLineStyle }" />
+                    
+                    <!-- Related title -->
+                    <Label
+						Text="{ grial:Translate Key=StringRelatedNews }"
+						Style="{ StaticResource LabelBoldStyle }"
+						VerticalOptions="Center" />
+                    
+                    <local:ExtendedCarouselViewControl
+						HeightRequest="110"
+						ShowIndicators="true"
+						Margin="0"
+						VerticalOptions="Center"
+						IndicatorsTintColor="{ DynamicResource TranslucidBlack }"
+						CurrentPageIndicatorTintColor="{ DynamicResource BaseTextColor }"
+						ItemsSource="{ Binding Related }">
+                        <cv:CarouselViewControl.ItemTemplate>
+                            <DataTemplate>
+                                <local:RelatedArticlesCarouselItemTemplate />
+                            </DataTemplate>    
+                        </cv:CarouselViewControl.ItemTemplate>
+                    </local:ExtendedCarouselViewControl>
+                </StackLayout>
+                
+                
+                <!-- Separator -->
+                <BoxView
+					Grid.Row="2"
+					Margin="-20,0"
+					VerticalOptions="End"
+					Style="{ StaticResource Horizontal1ptLineStyle }" />
+                
+                
+                <!-- BG -->
+                <BoxView
+					Grid.Row="3"
+					Grid.RowSpan="3"
+					Margin="-20,0,-20,-20"
+					BackgroundColor="{ DynamicResource BasePageColor }" />
+                
+                <!-- Comments title -->
+                <Label
+					Grid.Row="3"
+					Text="{ Binding Comments.Count, StringFormat='{}{0:F0} Comments' }"
+					Style="{ StaticResource LabelBoldStyle }"
+					VerticalOptions="Center" />
+                    
+                <!-- COMMENTS -->
+                <ListView
+					Grid.Row="4"
+					Margin="-20,0,-20,0"
+					CachingStrategy="RecycleElement"
+					SeparatorVisibility="None"
+					ItemsSource="{ Binding Comments }"
+					HasUnevenRows="false"
+					TranslationY="-2"
+					BackgroundColor="{ DynamicResource BasePageColor }"
+					RowHeight="100">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <local:ArticleCommentVariantItemTemplate
+									Padding="{StaticResource MainWrapperPadding}" />
+                                </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+                
+                
+                <!-- BUTTON ROW -->
+                <Button
+					Grid.Row="5"
+					Margin="20,0"
+					Clicked="OnPrimaryActionButtonClicked"
+					HeightRequest="44"
+					VerticalOptions="Center"
+					Text="{ grial:Translate ButtonAddComment }"
+					Style="{ StaticResource PrimaryActionButtonStyle }"
+					HorizontalOptions="{ 
+                        grial:OnOrientationLayoutOptions
+                            PortraitPhone=Fill,
+                            LandscapePhone=Center,
+                            PortraitTablet=Fill,
+                            LandscapeTablet=Center 
+                    }"
+					WidthRequest="{ 
+                        grial:OnOrientationDouble
+                            LandscapePhone=200,
+                            LandscapeTablet=400
+                    }" />
+                
+            </Grid>
+       </ScrollView>     
+    </ContentPage.Content>
+</ContentPage>

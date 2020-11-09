@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.EmployeeProfileDashboardPage"
+	Title="Employee Profile">
+
+    <ContentPage.Content>
+        <Grid
+			RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="100" />
+                <RowDefinition
+					Height="*" />
+            </Grid.RowDefinitions>
+        
+            <!-- EMPLOYEE HEADER -->
+            <Grid
+				Grid.Row="0"
+				VerticalOptions="Center"
+				Padding="10,0"
+				grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+				grial:Effects.BackgroundGradient="{ DynamicResource LightBackgroundGradient }">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="*" />
+                    <ColumnDefinition
+						Width="80" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- CARD -->
+                <local:EmployeeCardTemplate
+					Grid.Column="0"
+					BindingContext="{ Binding Employee }" />
+
+                <local:RingChart
+					Grid.Column="1"
+					Margin="10"
+					Value="{ Binding Employee.Score }"
+					ValueColor="{ DynamicResource ComplementColor }"
+					IsAnimated="false"
+					RingChartValueLabelFontSize="16"
+					RingChartValueLabel="{ Binding Employee.ScoreLabel }"
+					RingChartTextColor="{ DynamicResource BaseTextColor }" />
+                
+            </Grid>
+
+            <ScrollView
+				Grid.Row="1"
+				Padding="0,0,0,20">
+                <Grid
+					RowSpacing="0"
+					ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="170" />
+                        <RowDefinition
+							Height="Auto" />
+                        <RowDefinition
+							Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!-- TEAM ROW -->
+                    <StackLayout
+						Grid.Row="0"
+						grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                        <!--Title-->
+                        <Label
+							Margin="20,20,0,0"
+							Text="Team"
+							FontSize="15"
+							Style="{ StaticResource LabelBoldStyle }"
+							HorizontalOptions="Start" />
+
+                        <!--Team repeater-->
+                        <grial:Repeater
+							Grid.Row="1"
+							ItemsSource="{ Binding TeamMembers }"
+							HorizontalOptions="Center"
+							Orientation="Horizontal"
+							HeightRequest="120"
+							ScrollPadding="10"
+							ScrollBarVisibility="Never">
+                            <grial:Repeater.ItemSize>
+                                <OnIdiom
+									x:TypeArguments="x:Double"
+									Phone="80"
+									Tablet="150" />
+                            </grial:Repeater.ItemSize>
+
+                            <grial:Repeater.ItemTemplate>
+                                <DataTemplate>
+                                    
+                                    <Grid
+										VerticalOptions="Center">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer
+												Tapped="OnEmployee" />
+                                        </Grid.GestureRecognizers>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition
+												Height="Auto" />
+                                            <RowDefinition
+												Height="40" />
+                                        </Grid.RowDefinitions>
+                                        
+                                        <local:AvatarWithStatus
+											Source="{ Binding Avatar }"
+											Status="{ Binding Status }" />
+                                        
+                                        <!--Name-->
+                                        <Label
+											Grid.Row="1"
+											Text="{ Binding Name }"
+											FontSize="14"
+											Margin="10,0"
+											HorizontalTextAlignment="Center"
+											VerticalOptions="Start"
+											HorizontalOptions="Center" />
+                                    </Grid>
+                                </DataTemplate>
+                            </grial:Repeater.ItemTemplate>
+                        </grial:Repeater>
+
+                    </StackLayout>
+                    
+                    <!-- TAGS ROW -->
+                    <Grid
+						grial:Effects.BackgroundGradient="{ DynamicResource LightBackgroundGradient }"
+						Grid.Row="1">
+                        <grial:WrapPanel
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+							Padding="0,0"
+							Margin="20,20"
+							VerticalOptions="CenterAndExpand"
+							HorizontalOptions="CenterAndExpand"
+							ItemsSource="{ Binding Employee.Tags }">
+                            <grial:WrapPanel.ItemTemplate>
+                                <DataTemplate>
+                                    <local:Tag
+										VerticalOptions="Start"
+										Text="{ Binding . }" />
+                                </DataTemplate>
+                            </grial:WrapPanel.ItemTemplate>
+                        </grial:WrapPanel>
+                    </Grid>
+                    
+                    <!-- NOTES ROW -->
+                    <StackLayout
+						Grid.Row="2"
+						Spacing="16"
+						Margin="20"
+						grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+						Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                        
+                        <!--Title-->
+                        <Label
+							Style="{ StaticResource LabelBoldStyle }"
+							Text="Notes"
+							FontSize="15"
+							Margin="{ 
+                                grial:OnOrientationThickness 
+                                    Default='0,0,0,30', 
+                                    Landscape='30,0,0,30' 
+                            }" />
+
+                        <!--Text-->
+                        <Label
+							Text="{ Binding Notes }"
+							FontSize="14"
+							Margin="{ 
+                                grial:OnOrientationThickness 
+                                    Default='0,0,0,30', 
+                                    Landscape='30,0,0,30' 
+                            }"
+							Style="{ StaticResource ResponsiveLandscapeMarginStyle }" />
+
+                        <!-- ICONS GRID -->
+                        <Grid
+							HorizontalOptions="Center"
+							WidthRequest="{ 
+                                grial:OnOrientationInt 
+                                    Default=-1, 
+                                    Landscape=370 
+                            }">
+                            <Grid.RowDefinitions>
+                                <RowDefinition
+									Height="Auto" />
+                                <RowDefinition
+									Height="Auto" />
+                            </Grid.RowDefinitions>
+                            
+                            <!-- EMAIL -->
+                            <Button
+								HorizontalOptions="Center"
+								Text="{ x:Static local:GrialIconsFont.Mail }"
+								FontFamily="{ StaticResource IconsFontFamily }"
+								Style="{ StaticResource CircleActionButtonFlatStyle }" />
+
+                            <!--Text-->
+                            <Label
+								Grid.Row="1"
+								Grid.Column="0"
+								Text="Email"
+								FontSize="14"
+								TextColor="{ DynamicResource CircleActionButtonFlatTextColor }"
+								VerticalOptions="Center"
+								HorizontalOptions="Center" />
+                            
+                            <!-- MOBILE -->
+                            <Button
+								Grid.Row="0"
+								Grid.Column="1"
+								HorizontalOptions="Center"
+								Text="{ x:Static local:GrialIconsFont.Smartphone }"
+								FontFamily="{ StaticResource IconsFontFamily }"
+								Style="{ StaticResource CircleActionButtonFlatStyle }" />
+
+                            <!--Text-->
+                            <Label
+								Grid.Row="1"
+								Grid.Column="1"
+								Text="Mobile"
+								FontSize="14"
+								TextColor="{ DynamicResource CircleActionButtonFlatTextColor }"
+								VerticalOptions="Center"
+								HorizontalOptions="Center" />
+
+                            <!-- HOME -->
+                            <Button
+								Grid.Row="0"
+								Grid.Column="2"
+								HorizontalOptions="Center"
+								Text="{ x:Static local:GrialIconsFont.Phone }"
+								FontFamily="{ StaticResource IconsFontFamily }"
+								Style="{ StaticResource CircleActionButtonFlatStyle }" />
+
+                            <!--Text-->
+                            <Label
+								Grid.Row="1"
+								Grid.Column="2"
+								Text="Home"
+								FontSize="14"
+								TextColor="{ DynamicResource CircleActionButtonFlatTextColor }"
+								VerticalOptions="Center"
+								HorizontalOptions="Center" />
+
+                            <!-- SMS -->
+                            <Button
+								Grid.Row="0"
+								Grid.Column="3"
+								HorizontalOptions="Center"
+								Text="{ x:Static local:GrialIconsFont.MessageSquare }"
+								FontFamily="{ StaticResource IconsFontFamily }"
+								Style="{ StaticResource CircleActionButtonFlatStyle }" />
+
+                            <!--Text-->
+                            <Label
+								Grid.Row="1"
+								Grid.Column="3"
+								Text="SMS"
+								FontSize="14"
+								TextColor="{ DynamicResource CircleActionButtonFlatTextColor }"
+								VerticalOptions="Center"
+								HorizontalOptions="Center" />
+
+                        </Grid>
+                        
+                    </StackLayout>
+
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

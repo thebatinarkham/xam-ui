@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.CustomActivityIndicatorPage"
+	BackgroundColor="{ DynamicResource BasePageColor }"
+	Title="{ grial:Translate PageTitleCustomActivityIndicator }">
+
+	<ContentPage.Content>
+		<Grid
+			VerticalOptions="Center"
+			Padding="10">
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="*" />
+			</Grid.RowDefinitions>
+
+			<local:CustomActivityIndicator
+				Grid.Row="0"
+				x:Name="Indicator"
+				HorizontalOptions="Center"
+				VerticalOptions="CenterAndExpand" />
+            
+			<Label
+				Grid.Row="1"
+				HorizontalTextAlignment="Center"
+				Text="{ grial:Translate StringLoading }" />
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

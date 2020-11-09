@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.ChatPreviewItemTemplate">
+    
+    <ContentView.Content>
+        <Grid
+			Padding="20,0"
+			ColumnSpacing="20"
+			RowSpacing="6"
+			Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="Auto" />
+                <ColumnDefinition
+					Width="*" />
+                <ColumnDefinition
+					Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- AVATAR -->
+            <local:AvatarWithStatus
+				Grid.Row="0"
+				HeightRequest="54"
+				WidthRequest="54"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				BindingContext="{ Binding From }"
+				Source="{ Binding Avatar }"
+				Status="{ Binding Status }">
+                <local:AvatarWithStatus.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnAvatarTapped" />
+                </local:AvatarWithStatus.GestureRecognizers>
+            </local:AvatarWithStatus>
+            
+            <StackLayout
+				Grid.Row="0"
+				Grid.Column="1"
+				Margin="0,20"
+				VerticalOptions="Center">
+                <!-- NAME -->
+                <Label
+					Grid.Column="1"
+					Grid.Row="0"
+					Text="{ Binding From.Name }"
+					FontSize="14"
+					VerticalOptions="End"
+					Style="{ StaticResource LabelBoldStyle }" />
+
+                <!-- TEXT -->
+                <Label
+					Grid.Column="1"
+					Grid.Row="1"
+					Text="{ Binding Preview.Text }"
+					FontSize="14"
+					VerticalOptions="Start"
+					LineBreakMode="TailTruncation" />
+            </StackLayout>
+
+            <!-- WHEN -->
+            <Label
+				Grid.Column="2"
+				Grid.Row="0"
+				Opacity=".5"
+				Text="{ Binding Preview.When }"
+				FontSize="14"
+				VerticalOptions="Center" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

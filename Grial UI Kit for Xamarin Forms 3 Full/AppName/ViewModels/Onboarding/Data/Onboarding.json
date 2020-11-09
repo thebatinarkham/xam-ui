@@ -1,0 +1,31 @@
+{
+  "VideoCarouselHighlightsPage.xaml": {
+    "BackgroundVideo": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/local_video.mp4",
+    "Highlights": [
+      {
+        "Title": "More Content",
+        "Description": "Flows, more themes, more pages, more layouts, more icons.",
+        "Icon": "",
+        "Color": "#48B5BA"
+      },
+      {
+        "Title": "Richer Content",
+        "Description": "Fluid animations, flexible layouts, gradient support, more custom controls.",
+        "Icon": "",
+        "Color": "#CD195E"
+      },
+      {
+        "Title": "Faster Kickstart",
+        "Description": "Setup your project and create your own themes with Grial Customizer.",
+        "Icon": "",
+        "Color": "#0C60AF"
+      },
+      {
+        "Title": "App 3.0",
+        "Description": "Xamarin Forms",
+        "Icon": "",
+        "Color": "#833AB4"
+      }
+    ]
+  }
+}

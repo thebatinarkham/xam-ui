@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.NavigationListWithImagesItemTemplate"
+	BackgroundColor="{ Binding BackgroundColor }" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	Style="{ StaticResource NavigationListItemTemplateStyle }">
+
+    <Grid
+		ColumnSpacing="20"
+		RowSpacing="0">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+				Width="Auto" />
+            <ColumnDefinition
+				Width="*" />
+
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="*" />
+            <RowDefinition
+				Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid
+			Grid.RowSpan="2"
+			Grid.Column="0"
+			Grid.Row="0"
+			BackgroundColor="#33000000"
+			WidthRequest="80"
+			HorizontalOptions="Start"
+			VerticalOptions="FillAndExpand">
+            
+            <Grid.WidthRequest>
+                <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="80"
+					Tablet="100" />
+            </Grid.WidthRequest>
+        
+            <ffimageloading:CachedImage
+				Source="{Binding BackgroundImage}"
+				Aspect="AspectFill"
+				VerticalOptions="FillAndExpand" />
+        </Grid>
+
+        <Label
+			Grid.Column="1"
+			Grid.Row="0"
+			Text="{ Binding Name }"
+			TextColor="{ DynamicResource OverImageTextColor }"
+			HorizontalOptions="Start"
+			VerticalTextAlignment="End" />
+
+        <Label
+			Grid.Column="1"
+			Grid.Row="1"
+			Text="{ Binding ItemCount, StringFormat='{}{0:F0} items'} }"
+			FontAttributes="Italic"
+			TextColor="{ DynamicResource OverImageTextColor }"
+			FontSize="14"
+			Opacity=".5"
+			HorizontalOptions="Start"
+			VerticalTextAlignment="Start" />
+
+    </Grid>
+</ContentView>

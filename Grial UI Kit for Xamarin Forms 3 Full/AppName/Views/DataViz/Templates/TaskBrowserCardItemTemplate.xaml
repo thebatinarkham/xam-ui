@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.TaskBrowserCardItemTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <grial:GreaterThanConverter
+				x:Key="ChartHeightConverter"
+				Threshold="220"
+				x:TypeArguments="x:Double"
+				TrueValue="200"
+				FalseValue="100" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid
+			Padding="7,14,7,14">
+            <grial:CardView
+				CornerRadius="12">
+                
+                <Grid
+					RowSpacing="0"
+					Padding="20,20,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="70" />
+                        <RowDefinition
+							Height="*" />
+                        <RowDefinition
+							Height="80" />
+                        <RowDefinition
+							Height="44" />
+                    </Grid.RowDefinitions>
+                    
+                    <!-- TOP ROW -->
+                    <StackLayout
+						Grid.Row="0"
+						VerticalOptions="Center">
+                        
+                        <Label
+							Text="{ Binding Completed }"
+							FontSize="32"
+							VerticalOptions="Center" />
+                        
+                        <Label
+							Text="{ grial:Translate CompletedTasks }"
+							FontSize="10"
+							VerticalOptions="Center" />
+                    </StackLayout>
+                    
+                    <!-- CHART -->
+                    <Grid
+						VerticalOptions="FillAndExpand"
+						x:Name="parent"
+						Grid.Row="1">
+                        <local:LineChart
+							ItemsSource="{ Binding Activity }"
+							BackgroundColor="Transparent"
+							DefaultEntryColor="{ DynamicResource AccentColor }"
+							ShowValueLabel="false"
+							LineSize="2"
+							LineMode="Straight"
+							PointMode="None"
+							AreaAlpha="0"
+							Margin="-10,0"
+							HeightRequest="{ Binding Height, Source={x:Reference parent}, Converter={StaticResource ChartHeightConverter} }"
+							VerticalOptions="Center" />
+                    </Grid>
+                    
+                    <!-- BOTTOM ROW -->
+                    <StackLayout
+						Grid.Row="2"
+						VerticalOptions="Center">
+                        
+                        <Label
+							Text="{ Binding Name }"
+							Style="{ StaticResource LabelBoldStyle }"
+							VerticalOptions="Center" />
+                        
+                        <Label
+							Text="{ Binding RemainingTasks }"
+							Opacity=".7"
+							VerticalOptions="Center" />
+                    </StackLayout>
+                    
+                    <!-- BUTTON -->
+                    <BoxView
+						Grid.Row="3"
+						Margin="-20,0"
+						VerticalOptions="Start"
+						Style="{ StaticResource Horizontal1ptLineStyle }" />
+                    
+                    <Button
+						Grid.Row="3"
+						Text="{ grial:Translate StringDetails }"
+						VerticalOptions="Center"
+						Style="{ StaticResource TransparentButtonStyle }"
+						TextColor="{ DynamicResource AccentColor }" />
+                    
+                </Grid>
+            </grial:CardView>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

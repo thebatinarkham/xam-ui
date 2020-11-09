@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.TimelineItemTemplate">
+
+    <ContentView.Content>
+        <Grid
+			ColumnSpacing="0"
+			RowSpacing="0"
+			Padding="20,0,10,0"
+			VerticalOptions="Center">
+    
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="Auto" />
+                <ColumnDefinition
+					Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <AbsoluteLayout>
+                <BoxView
+					AbsoluteLayout.LayoutFlags="XProportional, HeightProportional"
+					AbsoluteLayout.LayoutBounds=".5,0,2,1.09"
+					WidthRequest="2"
+					VerticalOptions="Fill"
+					HorizontalOptions="FillAndExpand"
+					BackgroundColor="{ DynamicResource AccentColor }" />
+            </AbsoluteLayout>
+            
+            <local:CircleCachedImage
+				Source="{ Binding Image }"
+				HorizontalOptions="Center"
+				Aspect="AspectFill"
+				WidthRequest="60"
+				HeightRequest="60"
+				VerticalOptions="Center" />
+
+            <StackLayout
+				Grid.Column="1"
+				VerticalOptions="Center"
+				Padding="20"
+				Spacing="4">
+                
+                <Label
+					Text="{ Binding EventTitle }"
+					Style="{ StaticResource LabelBoldStyle }"
+					TextColor="{ DynamicResource AccentColor }" />
+                
+                <Label
+					Text="{ Binding EventDescription }" />
+                <Label
+					Text="{ Binding When }"
+					Style="{ StaticResource LabelBoldStyle }"
+					FontSize="12"
+					TextColor="{ DynamicResource ComplementColor }" />
+            </StackLayout>
+
+        </Grid>
+    </ContentView.Content>
+    
+</ContentView>

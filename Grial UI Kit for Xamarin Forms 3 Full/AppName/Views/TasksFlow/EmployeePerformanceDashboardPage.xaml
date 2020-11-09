@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.EmployeePerformanceDashboardPage"
+	Title="Employee Performance">
+
+    <ContentPage.Resources>
+        <ResourceDictionary
+			Source="/Styles/TabControl/SimpleTabResources.xaml" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <!-- TALL NAVIGATION BAR BACKGROUND -->
+            <grial:GrialNavigationBar
+				UseNavigationPageBarBackgroundColor="true"
+				UseNavigationPageBarBackgroundGradient="true" />
+        
+            <Grid
+				RowSpacing="0">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+                
+                <!-- FILTER -->
+                <local:PerformanceDashboardFilterTemplate
+					Grid.Row="0"
+					grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right" />
+                 
+                <!-- SCROLLING AREA -->
+                <ScrollView
+					BackgroundColor=" {DynamicResource BasePageColor }"
+					Grid.Row="1"
+					grial:Effects.IgnoreIOSSafeAreaOnScrollView="Bottom,Left,Right">
+
+                    <StackLayout
+						Spacing="0">
+                    
+                        <!-- EMPLOYEE HEADER -->
+                        <Grid
+							RowSpacing="0"
+							ColumnSpacing="0"
+							VerticalOptions="Center"
+							Padding="10,0"
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+							BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+									Tapped="OnDetail" />
+                            </Grid.GestureRecognizers>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+									Width="*" />
+                                <ColumnDefinition
+									Width="90" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- CARD -->
+                            <local:EmployeeCardTemplate
+								Grid.Column="0"
+								BindingContext="{ Binding Employee }" />
+
+                            <!-- ARROW -->
+                            <Label
+								Text="{x:Static local:GrialIconsFont.ChevronRight}"
+								FontFamily="{ StaticResource IconsFontFamily }"
+								Grid.Column="1"
+								HorizontalOptions="End"
+								VerticalOptions="Center"
+								TextColor="{ DynamicResource BaseTextColor }"
+								FontSize="30"
+								Margin="10,0" />
+                            
+                        </Grid>
+
+                        <!-- RING CHARTS -->
+                        <grial:Repeater
+							Padding="5,5,0,5"
+							ItemsSource="{ Binding SelectedPeriodData.RingSeries }"
+							Orientation="Horizontal"
+							VerticalOptions="Start"
+							HeightRequest="170"
+							BackgroundColor="{ DynamicResource BasePageColor }"
+							HorizontalOptions="Center">
+                             
+                            <grial:Repeater.ItemSize>
+                                <OnIdiom
+									x:TypeArguments="x:Double"
+									Phone="116"
+									Tablet="150" />
+                            </grial:Repeater.ItemSize>
+
+                            <grial:Repeater.ItemTemplate>
+                                <DataTemplate>
+                                    <local:RingChart
+										Margin="15"
+										Grid.Column="4"
+										Value="{ Binding Value }"
+										ValueColor="{ Binding Color }"
+										IsAnimated="true"
+										RingChartLabel="{ Binding Label }"
+										RingChartLabelFontSize="16"
+										RingChartValueLabelFontSize="20"
+										RingChartValueLabel="{ Binding ValueLabel }"
+										RingChartTextColor="{ DynamicResource BaseTextColor }" />
+                                </DataTemplate>
+                            </grial:Repeater.ItemTemplate>
+                            
+                        </grial:Repeater>
+                        
+                        <BoxView
+							BackgroundColor="{ DynamicResource ListViewSeparatorColor }"
+							HeightRequest="1"
+							Margin="0,20,0,0" />
+
+                        <!-- TAB CHARTS -->
+                        <grial:TabControl
+							TabStripPlacement="Top"
+							Style="{ StaticResource SimpleTabStyle }"
+							TabContentHeight="320"
+							TabContentBackgroundColor="Transparent"
+							TabStripBackgroundColor="{ DynamicResource BasePageColor }"
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Bottom"
+							grial:Effects.BackgroundGradient="{ DynamicResource LightBackgroundGradient }">
+
+                            <grial:TabItem
+								Text="Performance">
+                                
+                                <!-- BAR CHART -->
+                                <local:BarChart
+									Margin="30,30,30,20"
+									HeightRequest="200"
+									MaxValue="{ Binding Performance.MaxValue }"
+									ItemsSource="{ Binding Performance.Series }"
+									IsAnimated="false"
+									ShowValueLabel="true"
+									LabelTextSize="8"
+									DefaultEntryColor="#518DD8"
+									LabelOrientation="Horizontal"
+									ValueLabelOrientation="Horizontal"
+									LabelColor="#518DD8"
+									AreaAlpha="0.1"
+									PointMode="None"
+									PointAreaAlpha=".5" />
+                                
+                            </grial:TabItem>
+
+                            <grial:TabItem
+								Text="Services">
+                                
+                                <!-- LINE CHART -->
+                                <local:LineChart
+									HeightRequest="200"
+									Margin="0,20"
+									MaxValue="{ Binding Services.MaxValue }"
+									ItemsSource="{ Binding Services.Series }"
+									IsAnimated="true"
+									ShowValueLabel="true"
+									LabelOrientation="Horizontal"
+									ValueLabelOrientation="Horizontal"
+									LabelColor="#518DD8"
+									DefaultEntryColor="#518DD8"
+									LineSize="1"
+									LineMode="Spline"
+									PointSize="0"
+									UseEntryValuesAsLabels="true"
+									PointMode="Square"
+									AreaAlpha="0.1"
+									LabelTextSize="10" />
+                                
+                            </grial:TabItem>
+
+                            <grial:TabItem
+								Text="Worked hours">
+                                <Grid
+									ColumnSpacing="10"
+									Margin="20,0"
+									HorizontalOptions="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition
+											Width="190" /> 
+                                        <ColumnDefinition
+											Width="*" /> 
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- PIE CHART -->
+                                    <local:DonutChart
+										Grid.Column="0"
+										MaxValue="{ Binding WorkedHours.MaxValue }"
+										ItemsSource="{ Binding WorkedHours.Series }"
+										IsAnimated="true"
+										ShowValueLabel="false"
+										LabelOrientation="Horizontal"
+										ValueLabelOrientation="Horizontal"
+										LabelColor="#518DD8"
+										DefaultEntryColor="#518DD8"
+										UseEntryValuesAsLabels="true"
+										PointMode="Square"
+										AreaAlpha="0.1"
+										LabelTextSize="10" />
+                                    
+                                    <!-- CUSTOM LEGEND -->
+                                    <ListView
+										Grid.Column="1"
+										SelectionMode="None"
+										WidthRequest="290"
+										HorizontalOptions="Start"
+										VerticalOptions="Center"
+										RowHeight="42"
+										InputTransparent="true"
+										ItemsSource="{ Binding WorkedHours.Series }"
+										SeparatorVisibility="Default"
+										SeparatorColor="{DynamicResource ListViewSeparatorColor}"
+										HasUnevenRows="false"
+										Footer="">
+                                        
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <Grid
+														Margin="10,0">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition
+																Width="Auto" />
+                                                            <ColumnDefinition
+																Width="*" />
+                                                            <ColumnDefinition
+																Width="Auto" />
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <BoxView
+															Margin="0,2,2,0"
+															Grid.Column="0"
+															WidthRequest="14"
+															HeightRequest="14"
+															HorizontalOptions="Center"
+															VerticalOptions="Center"
+															BackgroundColor="{Binding Color}" />
+                                                        
+                                                        <Label
+															Grid.Column="1"
+															Text="{Binding Label}"
+															VerticalOptions="Center"
+															FontSize="12" />
+
+                                                        <Label
+															Grid.Column="2"
+															Style="{StaticResource LabelBoldStyle}"
+															Text="{Binding Value}"
+															VerticalOptions="Center"
+															FontSize="12" />
+                                                    </Grid>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                
+                                    </ListView>
+                                </Grid>
+                                
+                            </grial:TabItem>
+                        
+                        </grial:TabControl>
+
+                    </StackLayout>
+                </ScrollView>
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

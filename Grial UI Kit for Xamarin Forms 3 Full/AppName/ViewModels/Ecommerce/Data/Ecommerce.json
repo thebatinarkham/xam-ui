@@ -1,0 +1,114 @@
+{
+  "Products": {
+    "$id": "products",
+    "List": [
+      {
+        "$id": "product-1",
+        "Name": "Flannel Shirt",
+        "Description": "Classic 90's Skateboarding style shirt. Feel like Pat Duffy or even flow like Edie from Pearl Jam. With that casual grunge style this is the shirt you need.",
+        "Price": "$39.90",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/product_item_0.jpg",
+        "RatingValue": 4.5,
+        "RatingMax": 5,
+        "Manufacturer": "BINARIA",
+        "UseLargeImage": false
+      },
+      {
+        "$id": "product-2",
+        "Name": "Bomber Jacket",
+        "Description": "Top gun in every gentelman closet. This leather jacket will make you feel like Tom Cruise without that crazy look. Be a good boy make mom proud.",
+        "Price": "$89.90",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/product_item_1.jpg",
+        "RatingValue": 4,
+        "RatingMax": 5,
+        "Manufacturer": "BINARIA",
+        "UseLargeImage": false
+      },
+      {
+        "$id": "product-3",
+        "Name": "Classic Black",
+        "Description": "Get that instant normal look that everybody wants. Blend with the humans, it will make you feel less strange. You know you are not normal.",
+        "Price": "$49.90",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/product_item_2.jpg",
+        "RatingValue": 3.5,
+        "RatingMax": 5,
+        "Manufacturer": "BINARIA",
+        "UseLargeImage": false
+      },
+      {
+        "$id": "product-4",
+        "Name": "Flowers Shirt",
+        "Description": "Our newest swim tees with a much looser fit than traditional rash guard for yet more comfort and versatility, is well known for great fit, function and colors.",
+        "Price": "$29.90",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/product_item_3.jpg",
+        "RatingValue": 4,
+        "RatingMax": 5,
+        "Manufacturer": "BINARIA",
+        "UseLargeImage": false
+      },
+      {
+        "$id": "product-5",
+        "Name": "Sccotish Shirt",
+        "Description": "Not just another common shirt. Upgrade your sexappeal looking good. Rock and roll never gets old. Eric Burdon wears a shirt like this one when he wants to look good.",
+        "Price": "$34.90",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/product_item_4.jpg",
+        "RatingValue": 2.5,
+        "RatingMax": 5,
+        "Manufacturer": "BINARIA",
+        "UseLargeImage": false
+      },
+      {
+        "$id": "product-6",
+        "Name": "Silk Shirt",
+        "Description": "Let's face it, this shirt does not look good on anybody. But how many times do you buy something that you don't need? Buy this one feel happy for a minute then dismiss it.",
+        "Price": "$39.90",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/product_item_5.jpg",
+        "RatingValue": 4.5,
+        "RatingMax": 5,
+        "Manufacturer": "BINARIA",
+        "UseLargeImage": false
+      },
+      {
+        "$id": "product-7",
+        "Name": "Entrepreneur Shirt",
+        "Description": "Do you have a meeting? Do you want to look good reliable and confident? This is the shirt that you need for those horrible meetings trying to find someone that lend you some money.",
+        "Price": "$65.90",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/product_item_6.jpg",
+        "RatingValue": 4,
+        "RatingMax": 5,
+        "Manufacturer": "BINARIA",
+        "UseLargeImage": false
+      },
+      {
+        "$id": "product-8",
+        "Name": "Soldier Shirt",
+        "Description": "Now is your time. Wanna be the alpha male of your local bar? Common! Get this shirt now and feel like a sexy Rambo on your next date. Remember that girls loves peacefull soliders.",
+        "Price": "$46.90",
+        "Image": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/product_item_7.jpg",
+        "RatingValue": 5,
+        "RatingMax": 5,
+        "Manufacturer": "BINARIA",
+        "UseLargeImage": false
+      }
+    ]
+  },
+  "ProductsCatalogPage.xaml": {
+    "$ref": "products"
+  },
+  "ProductsGridPage.xaml": {
+    "$ref": "products"
+  },
+  "ProductsGridVariantPage.xaml": {
+    "$ref": "products"
+  },
+  "ProductItemViewPage.xaml": {
+    "Product": {
+      "$ref": "product-1"
+    }
+  },
+  "ProductItemFullScreenPage.xaml": {
+    "Product": {
+      "$ref": "product-1"
+    }
+  }
+}

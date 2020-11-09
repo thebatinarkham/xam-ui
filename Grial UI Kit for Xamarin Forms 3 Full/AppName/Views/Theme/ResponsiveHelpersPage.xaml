@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.ResponsiveHelpersPage"
+	Title="{ grial:Translate PageTitleResponsiveHelpers }" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+	
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style
+				x:Key="ComparisonBaseTableStyle"
+				TargetType="Grid">
+			 	<Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource AccentColor }" />
+				<Setter
+					Property="Margin"
+					Value="10" />
+				<Setter
+					Property="Padding"
+					Value="1" />
+				<Setter
+					Property="RowSpacing"
+					Value="1" />
+				<Setter
+					Property="ColumnSpacing"
+					Value="1" />
+			</Style>
+
+			<Style
+				x:Key="ComparisonTableStyle"
+				TargetType="Grid">
+				<Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource MainWrapperBackgroundColor }" />
+				<Setter
+					Property="Margin"
+					Value="10" />
+				<Setter
+					Property="Padding"
+					Value="1" />
+				<Setter
+					Property="RowSpacing"
+					Value="1" />
+				<Setter
+					Property="ColumnSpacing"
+					Value="1" />
+				<Setter
+					Property="HorizontalOptions"
+					Value="Center" />
+				<Setter
+					Property="WidthRequest"
+					Value="{ 
+						grial:OnOrientationInt 
+							Portrait=-1,
+							Landscape=700
+					}" />
+			</Style>
+
+			<Style
+				x:Key="ComparisonTableHeaderLabelStyle"
+				TargetType="Label">
+				<Setter
+					Property="TextColor"
+					Value="White" />
+				<Setter
+					Property="FontSize"
+					Value="12" />
+				<Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource AccentColor }" />
+
+				<Setter
+					Property="HorizontalTextAlignment"
+					Value="Center" />
+				<Setter
+					Property="VerticalTextAlignment"
+					Value="Center" />
+				<Setter
+					Property="HeightRequest"
+					Value="40" />
+			</Style>
+
+			<Style
+				x:Key="ComparisonTableIconTickStyle"
+				TargetType="Label"
+				BasedOn="{ StaticResource FontIcon }">
+			 	<Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource BasePageColor }" />
+			 	<Setter
+					Property="HorizontalTextAlignment"
+					Value="Center" />
+				<Setter
+					Property="VerticalTextAlignment"
+					Value="Center" />
+				<Setter
+					Property="FontSize"
+					Value="24" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+	<ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+				Padding="40,30,40,40"
+				Spacing="25">
+                
+                <!-- LOGO -->
+                <Grid
+					WidthRequest="60"
+					HeightRequest="60"
+					VerticalOptions="Center"
+					HorizontalOptions="Center">
+
+                    <BoxView
+						Style="{ StaticResource MainMenuOrModalBackgroundStyle }"
+						Opacity="1"
+						HorizontalOptions="Center"
+						WidthRequest="60" />
+                        
+                    <Label
+						TextColor="{ DynamicResource InverseTextColor }"
+						FontSize="42"
+						Text="{ x:Static local:GrialIconsFont.LogoGrial }"
+						Style="{ StaticResource FontIcon }"
+						HorizontalOptions="Center"
+						VerticalTextAlignment="Center" />
+                </Grid>
+                
+                <!-- PLATFORM CARD -->
+                <grial:CardView
+					CornerRadius="5"
+					HeightRequest="130">
+                    <Grid
+						RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="35" />
+                            <RowDefinition
+								Height="*" />
+                        </Grid.RowDefinitions>
+                        
+                        <!-- Header Bg -->
+                        <BoxView
+							Grid.Row="0"
+							Grid.Column="0"
+							Grid.ColumnSpan="2"
+							Style="{ StaticResource MainMenuOrModalBackgroundStyle }"
+							Opacity="1" />
+                        
+                        <!-- Header Title -->
+                        <Label
+							Grid.Row="0"
+							Grid.Column="0"
+							Grid.ColumnSpan="2"
+							Text="PLATFORM"
+							TextColor="{ DynamicResource OverImageTextColor }"
+							Style="{ StaticResource LabelBoldStyle }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center" />
+                        
+                        <!-- iOS -->
+                        <StackLayout
+							Grid.Row="1"
+							Grid.Column="0"
+							VerticalOptions="Center"
+							HorizontalOptions="Center">
+                            
+                            <!-- Icon -->
+                            <Label
+								FontSize="35"
+								TextColor="{ DynamicResource ComplementColor }"
+								Style="{ StaticResource FontIcon }"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="End"
+								Text="{ x:Static local:GrialIconsFont.LogoApple }"
+								Opacity="{ OnPlatform iOS=1, Android=0.2 }" />
+                                
+                            <!-- Text -->
+                            <Label
+								HorizontalTextAlignment="Center"
+								Text="iOS"
+								Opacity="{ OnPlatform iOS=1, Android=0.2 }" />
+                        </StackLayout>
+                        
+                        <!-- ANDROID -->
+                        <StackLayout
+							Grid.Row="1"
+							Grid.Column="1"
+							VerticalOptions="Center"
+							HorizontalOptions="Center">
+                            
+                            <!-- Icon -->
+                            <Label
+								FontSize="35"
+								TextColor="{ DynamicResource ComplementColor }"
+								Style="{ StaticResource FontIcon }"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="End"
+								Text="{ x:Static local:GrialIconsFont.LogoAndroid }"
+								Opacity="{ OnPlatform iOS=0.2, Android=1 }" />
+                            
+                            <!-- Text -->
+                            <Label
+								HorizontalTextAlignment="Center"
+								Text="Android"
+								Opacity="{ OnPlatform iOS=0.2, Android=1 }" />
+                                
+                        </StackLayout>
+                    </Grid>
+                </grial:CardView>
+                
+                
+                <!-- DEVICES CARD -->
+                <grial:CardView
+					CornerRadius="5"
+					HeightRequest="130">
+                    <Grid
+						RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="35" />
+                            <RowDefinition
+								Height="*" />
+                        </Grid.RowDefinitions>
+                        
+                        <!-- Header Bg -->
+                        <BoxView
+							Grid.Row="0"
+							Grid.Column="0"
+							Grid.ColumnSpan="2"
+							Style="{ StaticResource MainMenuOrModalBackgroundStyle }"
+							Opacity="1" />
+                        
+                        <!-- Header Title -->
+                        <Label
+							Grid.Row="0"
+							Grid.Column="0"
+							Grid.ColumnSpan="2"
+							Text="DEVICES"
+							TextColor="{ DynamicResource OverImageTextColor }"
+							Style="{ StaticResource LabelBoldStyle }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center" />
+                        
+                        <!-- Phone -->
+                        <StackLayout
+							Grid.Row="1"
+							Grid.Column="0"
+							VerticalOptions="Center"
+							HorizontalOptions="Center">
+                            
+                            <!-- Icon -->
+                            <Label
+								FontSize="35"
+								TextColor="{ DynamicResource ComplementColor }"
+								Style="{ StaticResource FontIcon }"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="End"
+								Text="{ x:Static local:GrialIconsFont.Smartphone }"
+								Opacity="{ OnPlatform iOS=1, Android=0.2 }"
+								Rotation="{ 
+                                grial:OnOrientationString 
+                                    LandscapePhone=-90,
+                                    LandscapeTablet=0,
+                                    PortraitPhone=0,
+                                    PortraitTablet=0,
+                                    Default=0
+                                }" />
+                                
+                            <!-- Text -->
+                            <Label
+								HorizontalTextAlignment="Center"
+								Text="Phone"
+								Opacity="{ OnIdiom Phone=1, Tablet=0.2 }" />
+                        </StackLayout>
+                        
+                        <!-- TABLET -->
+                        <StackLayout
+							Grid.Row="1"
+							Grid.Column="1"
+							VerticalOptions="Center"
+							HorizontalOptions="Center">
+                            
+                            <!-- Icon -->
+                            <Label
+								FontSize="35"
+								TextColor="{ DynamicResource ComplementColor }"
+								Style="{ StaticResource FontIcon }"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="End"
+								Text="{ x:Static local:GrialIconsFont.Tablet }"
+								Opacity="{ OnPlatform iOS=0.2, Android=1 }"
+								Rotation="{ 
+                                grial:OnOrientationString 
+                                    LandscapePhone=0,
+                                    LandscapeTablet=-90,
+                                    PortraitPhone=0,
+                                    PortraitTablet=0,
+                                    Default=0
+                                }" />
+                            
+                            <!-- Text -->
+                            <Label
+								HorizontalTextAlignment="Center"
+								Text="Tablet"
+								Opacity="{ OnIdiom Phone=0.2, Tablet=1 }" />
+                                
+                        </StackLayout>
+                    </Grid>
+                </grial:CardView>
+                
+                
+                <!-- ORIENTATION CARD -->
+                <grial:CardView
+					CornerRadius="5"
+					HeightRequest="130">
+                    <Grid
+						RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="35" />
+                            <RowDefinition
+								Height="*" />
+                        </Grid.RowDefinitions>
+                        
+                        <!-- Header Bg -->
+                        <BoxView
+							Grid.Row="0"
+							Grid.Column="0"
+							Grid.ColumnSpan="2"
+							Style="{ StaticResource MainMenuOrModalBackgroundStyle }"
+							Opacity="1" />
+                        
+                        <!-- Header Title -->
+                        <Label
+							Grid.Row="0"
+							Grid.Column="0"
+							Grid.ColumnSpan="2"
+							Text="ORIENTATION"
+							TextColor="{ DynamicResource OverImageTextColor }"
+							Style="{ StaticResource LabelBoldStyle }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center" />
+                        
+                        <!-- LANDSCAPE -->
+                        <StackLayout
+							Grid.Row="1"
+							Grid.Column="0"
+							VerticalOptions="Center"
+							HorizontalOptions="Center">
+                            
+                            <!-- Icon -->
+                            <Label
+								FontSize="35"
+								TextColor="{ DynamicResource ComplementColor }"
+								Style="{ StaticResource FontIcon }"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="End"
+								Text="{ x:Static local:GrialIconsFont.Landscape }"
+								Opacity="{ 
+                                grial:OnOrientationString 
+                                    LandscapePhone=1,
+                                    LandscapeTablet=1,
+                                    PortraitPhone=0.2,
+                                    PortraitTablet=0.2,
+                                    Default=0.2
+                                }" />
+                                
+                            <!-- Text -->
+                            <Label
+								HorizontalTextAlignment="Center"
+								Text="Landscape"
+								Opacity="{ 
+                                grial:OnOrientationString 
+                                    LandscapePhone=1,
+                                    LandscapeTablet=1,
+                                    PortraitPhone=0.2,
+                                    PortraitTablet=0.2,
+                                    Default=0.2
+                                }" />
+                        </StackLayout>
+                        
+                        <!-- PORTRAIT -->
+                        <StackLayout
+							Grid.Row="1"
+							Grid.Column="1"
+							VerticalOptions="Center"
+							HorizontalOptions="Center">
+                            
+                            <!-- Icon -->
+                            <Label
+								FontSize="35"
+								TextColor="{ DynamicResource ComplementColor }"
+								Style="{ StaticResource FontIcon }"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="End"
+								Text="{ x:Static local:GrialIconsFont.Portrait }"
+								Opacity="{ 
+                                grial:OnOrientationString 
+                                    LandscapePhone=0.2,
+                                    LandscapeTablet=0.2,
+                                    PortraitPhone=1,
+                                    PortraitTablet=1,
+                                    Default=1
+                                }" />
+                            
+                            <!-- Text -->
+                            <Label
+								HorizontalTextAlignment="Center"
+								Text="Portrait"
+								Opacity="{ 
+                                grial:OnOrientationString 
+                                    LandscapePhone=0.2,
+                                    LandscapeTablet=0.2,
+                                    PortraitPhone=1,
+                                    PortraitTablet=1,
+                                    Default=1
+                                }" />
+                                
+                        </StackLayout>
+                    </Grid>
+                </grial:CardView>
+                
+                <!-- LAYOUT DIRECTION -->
+                <grial:CardView
+					CornerRadius="5"
+					HeightRequest="130">
+                    <Grid
+						RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="35" />
+                            <RowDefinition
+								Height="*" />
+                        </Grid.RowDefinitions>
+                        
+                        <!-- Header Bg -->
+                        <BoxView
+							Grid.Row="0"
+							Grid.Column="0"
+							Grid.ColumnSpan="2"
+							Style="{ StaticResource MainMenuOrModalBackgroundStyle }"
+							Opacity="1" />
+                        
+                        <!-- Header Title -->
+                        <Label
+							Grid.Row="0"
+							Grid.Column="0"
+							Grid.ColumnSpan="2"
+							Text="LAYOUT DIRECTION"
+							TextColor="{ DynamicResource OverImageTextColor }"
+							Style="{ StaticResource LabelBoldStyle }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center" />
+                        
+                        <!-- LANDSCAPE -->
+                        <StackLayout
+							Grid.Row="1"
+							Grid.Column="0"
+							Spacing="14"
+							VerticalOptions="Center"
+							HorizontalOptions="Center">
+                            
+                            <!-- Icon -->
+                            <Label
+								FontSize="18"
+								TextColor="{ DynamicResource ComplementColor }"
+								Style="{ StaticResource FontIcon }"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="End"
+								Text="LTR"
+								Opacity="1.0" />
+                                
+                            <!-- Text -->
+                            <Label
+								HorizontalTextAlignment="Center"
+								Text="Left-to-rigth"
+								Opacity="1.0" />
+                        </StackLayout>
+                        
+                        <!-- PORTRAIT -->
+                        <StackLayout
+							Grid.Row="1"
+							Grid.Column="1"
+							Spacing="14"
+							VerticalOptions="Center"
+							HorizontalOptions="Center">
+                            
+                            <!-- Icon -->
+                            <Label
+								FontSize="18"
+								TextColor="{ DynamicResource ComplementColor }"
+								Style="{ StaticResource FontIcon }"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="End"
+								Text="RTL"
+								Opacity="0.2" />
+                            
+                            <!-- Text -->
+                            <Label
+								HorizontalTextAlignment="Center"
+								Text="Right-to-left"
+								Opacity="0.2" />
+                                
+                        </StackLayout>
+                    </Grid>
+                </grial:CardView>                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

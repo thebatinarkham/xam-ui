@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.ChatRightMessageItemTemplate">
+
+    <Grid
+		ColumnSpacing="0"
+		RowSpacing="0"
+		VerticalOptions="StartAndExpand"
+		Margin="20">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+				Width="*" />
+            <ColumnDefinition
+				Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="Auto" />
+            <RowDefinition
+				Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- LEFT TRIANGLE -->
+        <Label
+			Grid.Row="1"
+			Grid.Column="1"
+			HorizontalTextAlignment="Start"
+			VerticalTextAlignment="Start"
+			TranslationX="-26"
+			TranslationY="-11"
+			Text="{ x:Static local:GrialIconsFont.ShapeArrowDown }"
+			TextColor="{ DynamicResource ChatRightBalloonBackgroundColor }"
+			Style="{StaticResource FontIcon}"
+			FontSize="26" />
+
+        <!-- BALLOON BACKGROUND -->
+        <BoxView
+			Grid.Row="0"
+			Grid.Column="0"
+			BackgroundColor="{ DynamicResource ChatRightBalloonBackgroundColor }"
+			grial:Effects.CornerRadius="4"
+			VerticalOptions="FillAndExpand" />
+        
+        <Label
+			Grid.Row="0"
+			Grid.Column="0"
+			Margin="10"
+			TextColor="{ DynamicResource ChatRightTextColor }"
+			FontSize="12"
+			Text="{ Binding Body }"
+			VerticalOptions="EndAndExpand" />
+
+
+        <!-- RIGHT AVATAR -->
+        <local:CircleCachedImage
+			Grid.Row="1"
+			Grid.Column="1"
+			Source="{ Binding From.Avatar }"
+			Style="{ StaticResource AvatarXSmall }"
+			BorderColor="{ DynamicResource ChatRightBalloonBackgroundColor }"
+			HorizontalOptions="Start"
+			TranslationY="10" />
+
+        <!-- WHEN -->
+        <Label
+			Grid.Row="1"
+			Grid.Column="0"
+			HorizontalOptions="Start"
+			VerticalOptions="CenterAndExpand"
+			TranslationX="10"
+			TranslationY="10"
+			FontSize="12"
+			TextColor="{ DynamicResource BaseTextColor }"
+			Text="{ Binding When }" />
+
+        <!-- BY -->
+        <Label
+			Grid.Row="1"
+			Grid.Column="0"
+			TranslationX="-10"
+			TranslationY="10"
+			FontSize="12"
+			TextColor="{ DynamicResource BaseTextColor }"
+			HorizontalTextAlignment="End"
+			VerticalTextAlignment="Center"
+			Text="{ Binding From.Name }" />
+    </Grid>
+    
+</ContentView>

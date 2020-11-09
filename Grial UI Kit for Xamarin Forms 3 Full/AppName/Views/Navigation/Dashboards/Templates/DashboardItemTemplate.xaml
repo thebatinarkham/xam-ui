@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<local:DashboardItemTemplateBase xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.DashboardItemTemplate"
+	x:Name="Root"
+	BackgroundColor="{ DynamicResource BasePageColor }">
+
+    <ContentView.Content>
+        <Grid>
+            <BoxView
+				BackgroundColor="{Binding BackgroundColor}"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				InputTransparent="true"
+				IsVisible="{Binding Source={x:Reference Root}, Path=ShowBackgroundColor}"
+				Style="{StaticResource DashboardItemTemplateFlatStyle}" />
+
+            <ffimageloading:CachedImage
+				FadeAnimationEnabled="true"
+				Source="{Binding BackgroundImage}"
+				Aspect="AspectFill"
+				Opacity=".4"
+				VerticalOptions="Fill"
+				HorizontalOptions="Fill"
+				IsVisible="{Binding Source={x:Reference Root}, Path=ShowBackgroundImage}"
+				Style="{StaticResource DashboardItemTemplateImageStyle}" />
+
+            <StackLayout
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				Orientation="Vertical"
+				Spacing="10">
+                
+                <Grid>
+
+                    <BoxView
+						CornerRadius="{OnIdiom Phone=30, Tablet=33}"
+						Style="{StaticResource DashboardItemTemplateShape}"
+						BackgroundColor="{Binding BackgroundColor}"
+						VerticalOptions="Center"
+						HorizontalOptions="Center"
+						IsVisible="{Binding Source={x:Reference Root}, Path=ShowiconColoredCircleBackground}" />
+
+                    <Label
+						Text="{ Binding Icon }"
+						TextColor="{ StaticResource DashboardIconColor }"
+						Style="{ DynamicResource DashboardItemTemplateIcon }"
+						HorizontalTextAlignment="Center"
+						VerticalOptions="Center"
+						HorizontalOptions="Center" />
+
+                    <local:Badge
+						Style="{ StaticResource DashboardBadgeStyle }"
+						Text="{ Binding Badge }"
+						TextColor="#FFF"
+						BackgroundColor="{ DynamicResource OkColor }"
+						AutoHide="true"
+						HorizontalOptions="Center"
+						VerticalOptions="Start"
+						TranslationX="20"
+						TranslationY="-8" />	
+                    
+                </Grid>
+
+                <Label
+					Text="{Binding Name}"
+					TextColor="{Binding Source={x:Reference Root}, Path=TextColor}"
+					HorizontalTextAlignment="Center"
+					HorizontalOptions="Center"
+					FontSize="{ grial:OnOrientationDouble
+                        PortraitPhone=16,
+                        LandscapePhone=16,
+                        PortraitTablet=18,
+                        LandscapeTablet=18 }">
+
+                </Label>
+            </StackLayout>
+
+        </Grid>
+    </ContentView.Content>
+</local:DashboardItemTemplateBase>

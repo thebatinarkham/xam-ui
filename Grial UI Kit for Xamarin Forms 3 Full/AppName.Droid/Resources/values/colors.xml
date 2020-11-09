@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	Colors in this file are automatically synchronized against the colors in the Current
+	Theme XAML file by build task. Please, do not modify colors manually.
+-->
+<resources>
+	<color name="AccentColor">#FFFCBF00</color>
+	<color name="ComplementColor">#FFFFC203</color>
+	<color name="BaseTextColor">#FFC8C8D4</color>
+	<color name="ListViewSelectedItemBackgroundColor">#11FFFFFF</color>
+	<color name="SplashBackgroundColor">#FFFCBF00</color>
+    <color name="NavigationBarTextColor">#FFFFFFFF</color>
+</resources>

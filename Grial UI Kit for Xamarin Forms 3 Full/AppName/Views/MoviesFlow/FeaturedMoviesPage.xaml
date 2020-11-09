@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.FeaturedMoviesPage"> 
+    <ContentPage.Behaviors>
+        <grial:AnimatedBackgroundColor
+			IsSymmetric="true"
+			Start="{ Binding CurrentItem.Color, Source={x:Reference carousel} }"
+			End="{ Binding NextItem.Color, Source={x:Reference carousel} }"
+			Progress="{ Binding ScrollProgress, Source={x:Reference carousel} }" />
+    </ContentPage.Behaviors>
+
+    <ContentPage.Content>
+        <Grid>
+            <grial:Effects.BackgroundGradient>
+                <grial:RadialGradient
+					Radius="300"
+					RadiusType="Absolute"
+					CenterX="0.2"
+					CenterY="0.2">
+                    <grial:GradientColor
+						Color="#11000000"
+						Position="0" />
+                    <grial:GradientColor
+						Color="#33000000"
+						Position="0.6" />
+                    <grial:GradientColor
+						Color="#66000000"
+						Position="1" />
+                </grial:RadialGradient>
+            </grial:Effects.BackgroundGradient>
+            
+            <!-- FIXED BACKGROUND IMAGE -->
+            <Image
+				Style="{ StaticResource MainMenuBackgroundImageStyle }" />
+            
+            <local:ExtendedCarouselViewControl
+				x:Name="carousel"
+				ShowIndicators="false"
+				VerticalOptions="FillAndExpand"
+				ItemsSource="{ Binding Movies }"
+				InterPageSpacing="0"
+				Position="{ Binding Position, Mode=TwoWay }"
+				Orientation="Horizontal">
+                <local:ExtendedCarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:FeaturedMovieItemTemplate />
+                    </DataTemplate>                    
+                </local:ExtendedCarouselViewControl.ItemTemplate> 
+            </local:ExtendedCarouselViewControl>
+
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

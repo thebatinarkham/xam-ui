@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.NavigationListWithIconsItemTemplate" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName">
+
+    <Grid
+		ColumnSpacing="20"
+		RowSpacing="0">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+				Width="10" />
+            <ColumnDefinition
+				Width="Auto" />
+            <ColumnDefinition
+				Width="*" />
+            <ColumnDefinition
+				Width="65" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="*" />
+            <RowDefinition
+				Height="1" />
+        </Grid.RowDefinitions>
+
+        <!-- BAR -->
+        <BoxView
+			Grid.Column="0"
+			Grid.Row="0"
+			BackgroundColor="{ Binding BackgroundColor }"
+			WidthRequest="10"
+			HorizontalOptions="Start" />
+
+        <!-- ICON -->
+        <Label
+			Grid.Column="1"
+			Grid.Row="0"
+			Text="{ Binding Icon }"
+			Style="{ StaticResource FontIcon }"
+			TextColor="{ Binding BackgroundColor }"
+			VerticalOptions="Center"
+			HorizontalOptions="Start">
+                <Label.FontSize>
+                    <OnIdiom
+					x:TypeArguments="x:Double"
+					Phone="30"
+					Tablet="40" />
+                </Label.FontSize>
+        </Label>
+
+        <!-- NAME -->
+        <Label
+			Grid.Column="2"
+			Grid.Row="0"
+			Text="{ Binding Name }"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="Center"
+			FontSize="18" />
+
+        <!-- ITEM COUNT -->
+        <local:Badge
+			Grid.Column="3"
+			Grid.Row="0"
+			Text="{ Binding ItemCount }"
+			TextColor="#FFF"
+			BackgroundColor="{ DynamicResource CategoriesListIconColor }"
+			VerticalOptions="Center"
+			HorizontalOptions="Start"
+			TranslationY="2"
+			Margin="0" />
+
+        <!-- CHEVRON -->
+        <Label
+			Grid.Column="3"
+			Grid.Row="0"
+			WidthRequest="20"
+			TextColor="{ Binding BackgroundColor }"
+			HorizontalOptions="End"
+			Style="{ StaticResource NavigationListWithIconsItemTemplateChevronStyle }" />
+
+        <!-- BOTTOM SEPARATOR LINE -->
+        <BoxView
+			Grid.Column="0"
+			Grid.ColumnSpan="4"
+			Grid.Row="1"
+			BackgroundColor="{ Binding BackgroundColor }"
+			HeightRequest="1"
+			VerticalOptions="End"
+			Opacity=".5" />
+    </Grid>
+</ContentView>

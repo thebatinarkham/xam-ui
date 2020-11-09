@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.NavigationCardsListItemTemplate" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core">
+    <grial:CardView
+		BackgroundColor="{ DynamicResource BasePageColor }"
+		ColumnSpacing="20"
+		Margin="15,6"
+		grial:Effects.BackgroundGradient="{ DynamicResource DashboardCardItemTemplateGradient }">
+        <grial:CardView.RowDefinitions>
+            <RowDefinition
+				Height="*" />
+            <RowDefinition
+				Height="*" />
+        </grial:CardView.RowDefinitions>
+
+        <grial:CardView.ColumnDefinitions>
+            <ColumnDefinition
+				Width="{ grial:OnOrientationDouble 
+                Default=80,
+                PortraitTablet=110,
+                LandscapeTablet=110 }" />
+            <ColumnDefinition
+				Width="*" />
+        </grial:CardView.ColumnDefinitions>
+
+        <!-- BACKGROUND COLOR -->
+        <BoxView
+			Grid.Row="0"
+			Grid.RowSpan="2"
+			Grid.Column="0"
+			BackgroundColor="{ Binding BackgroundColor }" />
+        
+        <!-- BACKGROUND CIRCLE -->
+        <BoxView
+			Grid.Row="0"
+			Grid.RowSpan="2"
+			Grid.Column="0"
+			grial:Effects.CornerRadius="{ 
+                grial:OnOrientationDouble 
+                    Default=28,
+                    PortraitTablet=33,
+                    LandscapeTablet=33 
+            }"
+			WidthRequest="{ 
+                grial:OnOrientationDouble 
+                    Default=56,
+                    PortraitTablet=66,
+                    LandscapeTablet=66 
+            }"
+			HeightRequest="{ 
+                grial:OnOrientationDouble 
+                    Default=56,
+                    PortraitTablet=66,
+                    LandscapeTablet=66 
+            }"
+			BackgroundColor="#33000000"
+			VerticalOptions="Center"
+			HorizontalOptions="Center" />
+        
+        <!-- ICON -->
+        <Label
+			Grid.Row="0"
+			Grid.RowSpan="2"
+			Grid.Column="0"
+			Text="{ Binding Icon }"
+			FontSize="{
+                grial:OnOrientationDouble 
+                    Default=27,
+                    PortraitTablet=32,
+                    LandscapeTablet=32 
+            }"
+			TextColor="White"
+			Style="{ StaticResource FontIcon }"
+			VerticalTextAlignment="Center"
+			HorizontalOptions="Center" />
+
+        <!-- CATEGORY -->
+        <Label
+			Grid.Row="0"
+			Grid.Column="1"
+			Text="{ Binding Name }"
+			TextColor="{ DynamicResource BaseTextColor }"
+			VerticalTextAlignment="End" />
+
+        <!-- ITEM COUNT -->
+        <Label
+			Grid.Row="1"
+			Grid.Column="1"
+			Text="{ Binding ItemCount, StringFormat='{}{0:F0} items'} }"
+			FontAttributes="Italic"
+			FontSize="14"
+			Opacity=".5"
+			VerticalTextAlignment="Start"
+			TextColor="{ DynamicResource BaseTextColor }" />
+
+        <!-- CHEVRON -->
+        <Label
+			Grid.Row="0"
+			Grid.RowSpan="2"
+			Grid.Column="1"
+			WidthRequest="20"
+			HorizontalOptions="End"
+			TextColor="{ Binding BackgroundColor }"
+			Style="{ DynamicResource CardsListItemTemplateChevronStyle }" />
+        
+    </grial:CardView>
+</ContentView>

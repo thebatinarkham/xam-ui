@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.TabPage"
+	Title="{ grial:Translate PageTitleTab }"
+	BackgroundColor="{DynamicResource BaseTabbedPageColor}">
+
+    <TabbedPage.Children>
+        <ContentPage
+			Title="Page 1"
+			Icon="tabs_icon.png">
+            <ContentPage.Content>
+                <Grid>
+                    <Image
+						Grid.Row="0"
+						VerticalOptions="Center"
+						HorizontalOptions="Center"
+						Source="https://s3-us-west-2.amazonaws.com/grial-images/v3.0/walkthrough_gradient_01.png" />
+                </Grid>
+            </ContentPage.Content>
+        </ContentPage>
+
+        <ContentPage
+			Title="Page 2"
+			Icon="tabs_icon.png">
+            <ContentPage.Content>
+                <Grid>
+                    <Image
+						Grid.Row="0"
+						VerticalOptions="Center"
+						HorizontalOptions="Center"
+						Source="https://s3-us-west-2.amazonaws.com/grial-images/v3.0/walkthrough_gradient_02.png" />
+                </Grid>
+            </ContentPage.Content>
+        </ContentPage>
+
+        <ContentPage
+			Title="Page 3"
+			Icon="tabs_icon.png">
+            <ContentPage.Content>
+                <Grid>
+                    <Image
+						Grid.Row="0"
+						VerticalOptions="Center"
+						HorizontalOptions="Center"
+						Source="https://s3-us-west-2.amazonaws.com/grial-images/v3.0/walkthrough_gradient_03.png" />
+                </Grid>
+            </ContentPage.Content>
+        </ContentPage>
+
+    </TabbedPage.Children>
+
+</TabbedPage>

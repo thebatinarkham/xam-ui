@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.SocialHeaderTemplate"
+	BackgroundColor="{ DynamicResource BasePageColor }">
+
+    <Grid
+		ColumnSpacing="10"
+		Margin="20,0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+				Width="Auto" />
+            <ColumnDefinition
+				Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="46" />
+        </Grid.RowDefinitions>
+
+        <Label
+			Grid.Column="0"
+			x:Name="HeaderIcon"
+			FontSize="18"
+			Style="{ DynamicResource SocialHeaderStyle }"
+			Text="{ x:Static local:GrialIconsFont.User }"
+			FontFamily="{ StaticResource IconsFontFamily }"
+			TranslationY="1" />
+            
+        <Label
+			Grid.Column="1"
+			x:Name="HeaderLabel"
+			Style="{ DynamicResource SocialHeaderStyle }"
+			Text="{ grial:Translate StringFriends }" />
+
+    </Grid>
+        
+</ContentView>

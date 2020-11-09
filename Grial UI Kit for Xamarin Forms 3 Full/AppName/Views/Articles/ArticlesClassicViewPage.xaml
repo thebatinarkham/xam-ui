@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.ArticlesClassicViewPage" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	Title="{ grial:Translate PageTitleArticlesClassicView }"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+    <ListView
+		CachingStrategy="RecycleElement"
+		SeparatorVisibility="Default"
+		ItemsSource="{ Binding List }"
+		ItemTapped="OnItemTapped"
+		HasUnevenRows="false"
+		RowHeight="140">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <local:ArticleClassicViewItemTemplate
+						Padding="{ StaticResource MainWrapperPadding }" />
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+</ContentPage>

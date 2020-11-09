@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	x:Class="AppName.SocialCardPage">
+    <ContentPage.Content>
+        <Grid>
+            
+            <grial:GrialNavigationBar
+				UseNavigationPageBarBackgroundColor="true"
+				UseNavigationPageBarBackgroundGradient="true" />
+            
+            <Grid
+				RowSpacing="0">   
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="120" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+                
+                <!-- CURVED MASK -->
+                <local:CurvedMask
+					MaskColor="{ DynamicResource BasePageColor }" />
+                
+                <!-- PAGE BG -->
+                <BoxView
+					Grid.Row="1"
+					BackgroundColor="{ DynamicResource BasePageColor }" />
+                
+                <!-- CONTENT -->
+                <ScrollView
+					Grid.Row="0"
+					Grid.RowSpan="2">   
+                    <Grid
+						RowSpacing="0"
+						Padding="0,0,0,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="250" />
+                            <RowDefinition
+								Height="140" />
+                            <RowDefinition
+								Height="450" />
+                        </Grid.RowDefinitions>
+                        
+                        <Grid
+							Margin="20">
+                            <!-- CARD -->
+                            <grial:CardView
+								Style="{ StaticResource ResponsiveLandscapeMarginStyle }"
+								HeightRequest="180"
+								VerticalOptions="End"
+								CornerRadius="5"
+								Grid.Row="0">
+                                <!-- Info -->
+                                <StackLayout
+									Padding="20"
+									VerticalOptions="End"
+									HorizontalOptions="Center">
+                                    <!-- Name -->
+                                    <Label
+										Text="{ Binding Profile.Name }"
+										FontSize="18"
+										Style="{ StaticResource LabelBoldStyle }"
+										HorizontalTextAlignment="Center" />
+                                    
+                                    <!-- Description -->
+                                    <Label
+										Text="{ Binding Profile.Description }"
+										HorizontalTextAlignment="Center" />
+                                    
+                                    <!-- Social -->
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition
+												Width="*" />
+                                            <ColumnDefinition
+												Width="*" />
+                                            <ColumnDefinition
+												Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <!-- Column 1 -->
+                                        <StackLayout
+											Grid.Column="0"
+											Spacing="0">
+                                            <Label
+												Text="1629"
+												Style="{ StaticResource LabelBoldStyle }"
+												TextColor="{ DynamicResource AccentColor }"
+												HorizontalTextAlignment="Center" />
+                                            
+                                            <Label
+												Text="PHOTOS"
+												FontSize="12"
+												HorizontalTextAlignment="Center" />
+                                        </StackLayout>
+                                        
+                                        <!-- Column 2 -->
+                                        <StackLayout
+											Grid.Column="1"
+											Spacing="0">   
+                                            <Label
+												Text="235"
+												Style="{ StaticResource LabelBoldStyle }"
+												TextColor="{ DynamicResource AccentColor }"
+												HorizontalTextAlignment="Center" />
+                                            <Label
+												Text="FOLLOWERS"
+												FontSize="12"
+												HorizontalTextAlignment="Center" />
+                                        </StackLayout>
+                                        
+                                        <!-- Column 3 -->
+                                        <StackLayout
+											Grid.Column="2"
+											Spacing="0">
+                                            <Label
+												Text="2963"
+												Style="{ StaticResource LabelBoldStyle }"
+												TextColor="{ DynamicResource AccentColor }"
+												HorizontalTextAlignment="Center" />
+                                            <Label
+												Text="FOLLOWING"
+												FontSize="12"
+												HorizontalTextAlignment="Center" />
+                                        </StackLayout>
+                                        
+                                    </Grid>
+                                </StackLayout>
+                            </grial:CardView>
+                        </Grid>
+                        
+                        <!-- AVATAR -->
+                        <Grid
+							Grid.Row="0"
+							HorizontalOptions="Center"
+							VerticalOptions="Start">
+                            <!-- Image -->
+                            <local:CircleCachedImage
+								Source="{ Binding Profile.Avatar }"
+								HeightRequest="100"
+								WidthRequest="100"
+								BorderColor="{ DynamicResource BasePageColor }"
+								BorderSize="{
+                                    OnPlatform 
+                                        Android=8, 
+                                        iOS=15 
+                                }" />
+
+                            <!-- Badge -->
+                            <local:Badge
+								Text="10+"
+								TextColor="{ DynamicResource InverseTextColor }"
+								BackgroundColor="#22c064"
+								HorizontalOptions="Center"
+								VerticalOptions="Start"
+								TranslationX="40" />
+                        </Grid>
+                        
+                        <!-- BG -->
+                        <BoxView
+							Grid.Row="1"
+							BackgroundColor="{ DynamicResource BasePageColor }" />
+                        
+                        <!-- CONTACTS -->
+                        <grial:Repeater
+							Grid.Row="1"
+							ScrollPadding="10"
+							ItemsSource="{ Binding Related.Friends }"
+							Orientation="Horizontal"
+							HeightRequest="130"
+							Spacing="30"
+							VerticalOptions="Center">
+                            <grial:Repeater.ItemTemplate>
+                                <DataTemplate>
+                                    <local:VerticalContactsItemTemplate />
+                                </DataTemplate>
+                            </grial:Repeater.ItemTemplate>
+                        </grial:Repeater>
+                        
+                        <!-- BG -->
+                        <BoxView
+							Grid.Row="2"
+							BackgroundColor="{ DynamicResource BasePageColor }" />
+                        
+                        <!-- IMAGE GALLERY GRID -->
+                        <grial:GridView
+							Grid.Row="2"
+							Padding="10,0"
+							ColumnSpacing="10"
+							RowSpacing="10"
+							VerticalOptions="Fill"
+							HeightRequest="400"
+							ColumnCount="3"
+							RowCount="3"
+							ItemsSource="{ Binding Related.Images }">
+                            <grial:GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <local:SocialGalleryImage
+										Image="{ Binding . }" />
+                                </DataTemplate>
+                            </grial:GridView.ItemTemplate>
+                        </grial:GridView>
+
+                    </Grid>
+                </ScrollView>
+            </Grid>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

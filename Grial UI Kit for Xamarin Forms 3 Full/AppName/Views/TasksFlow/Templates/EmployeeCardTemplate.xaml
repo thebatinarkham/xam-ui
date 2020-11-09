@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.EmployeeCardTemplate">
+    <ContentView.Content>
+        
+        <Grid
+			RowSpacing="0"
+			ColumnSpacing="0"
+			VerticalOptions="Center">
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="52" />
+                <RowDefinition
+					Height="48" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="80" />
+                <ColumnDefinition
+					Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <!--Avatar-->
+            <local:AvatarWithStatus
+				Grid.Row="0"
+				Grid.RowSpan="2"
+				HeightRequest="55"
+				WidthRequest="55"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				Source="{ Binding Avatar }"
+				Status="{ Binding Status }" />
+
+            <!--Name-->
+            <Label
+				Grid.Row="0"
+				Grid.Column="1"
+				Text="{ Binding Name }"
+				FontSize="20"
+				VerticalOptions="End" />
+
+            <!--Title-->
+            <Label
+				Grid.Row="1"
+				Grid.Column="1"
+				Margin="0,0,0,0"
+				Text="{ Binding Team, Converter={StaticResource ToUpperConverter} }"
+				FontSize="11"
+				VerticalOptions="Start" />
+            
+        </Grid>
+    </ContentView.Content>
+</ContentView>

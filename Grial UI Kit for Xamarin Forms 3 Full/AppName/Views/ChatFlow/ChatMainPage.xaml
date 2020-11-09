@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	x:Class="AppName.ChatMainPage"
+	BackgroundColor="Transparent"
+	Title="Chats &amp; Contacts"
+	grial:Effects.ApplyIOSSafeAreaAsPadding="Bottom">
+
+    <ContentPage.Resources>
+        <ResourceDictionary
+			Source="/Styles/TabControl/SegmentedTabResources.xaml" />
+        
+        <!-- CIRCLE BUTTONS FLAT -->
+        <Style
+			x:Key="FloatingActionButtonStyle"
+			TargetType="Button"
+			BasedOn="{ StaticResource CircleActionButtonFlatStyle }">
+            <Setter
+				Property="grial:Effects.Shadow"
+				Value="True" />
+            <Setter
+				Property="grial:Effects.ShadowSize"
+				Value="2" />
+            <Setter
+				Property="grial:Effects.ShadowIOSColor"
+				Value="#66000000" />
+            <Setter
+				Property="HorizontalOptions"
+				Value="End" />
+            <Setter
+				Property="VerticalOptions"
+				Value="End" />
+            <Setter
+				Property="FontFamily"
+				Value="{ StaticResource IconsFontFamily }" />
+            <Setter
+				Property="Margin"
+				Value="20" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <!-- TABS -->
+        <grial:TabControl
+			Style="{ StaticResource SegmentedTabStyle }">
+            <grial:TabItem
+				Text="{ grial:Translate StringMessages }">
+                <ListView
+					x:Name="conversations"
+					ItemsSource="{ Binding Conversations }"
+					RowHeight="100"
+					HasUnevenRows="false"
+					CachingStrategy="RecycleElement"
+					ItemTapped="OnMessageTapped"
+					BackgroundColor="{ DynamicResource BasePageColor }">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <local:ChatPreviewItemTemplate />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </grial:TabItem>
+            
+            <grial:TabItem
+				Text="{ grial:Translate StringContacts }">
+                <Grid>
+                    <ListView
+						x:Name="contacts"
+						ItemsSource="{ Binding Contacts }"
+						RowHeight="76"
+						HasUnevenRows="false"
+						CachingStrategy="RecycleElement"
+						ItemTapped="OnContactTapped"
+						BackgroundColor="{ DynamicResource BasePageColor }">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <local:ContactItemTemplate />
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    
+                    <!-- FAB ADD NEW CONTACT -->
+                    <Button
+						Text="{ x:Static local:GrialIconsFont.Plus }"
+						Style="{ StaticResource FloatingActionButtonStyle }"
+						Clicked="OnAddContactClicked" />
+                </Grid>
+            </grial:TabItem>
+        </grial:TabControl>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.ArticleVariantItemTemplate"
+	Padding="10">
+
+        <!-- Article likes -->
+        <Grid
+		ColumnSpacing="0"
+		RowSpacing="10"
+		Padding="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+				Height="Auto" />
+                <RowDefinition
+				Height="*" />
+                <RowDefinition
+				Height="Auto" />
+                <RowDefinition
+				Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Card Header -->
+            <StackLayout
+			Grid.Row="0"
+			Orientation="Horizontal"
+			Spacing="10">
+
+                <!-- Avatar -->
+                <local:CircleCachedImage
+				Source="{ Binding Avatar }"
+				Style="{ StaticResource AvatarSmall }"
+				HorizontalOptions="Start" />
+
+                <!-- Author -->
+                <Label
+				Text="{ Binding Author }"
+				VerticalTextAlignment="Center"
+				Style="{ StaticResource LabelBoldStyle }"
+				TextColor="{ DynamicResource AccentColor }"
+				HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <!-- Card Body -->
+
+
+            <!-- Card article image -->
+            <ffimageloading:CachedImage
+			Grid.Row="1"
+			FadeAnimationEnabled="true"
+			Source="{ Binding BackgroundImage }"
+			Aspect="AspectFill"
+			VerticalOptions="StartAndExpand"
+			HeightRequest="160" />
+
+            <!-- Card title -->
+            <Label
+			Grid.Row="2"
+			Text="{ Binding Title }"
+			TextColor="{ DynamicResource BaseTextColor }"
+			HorizontalTextAlignment="Start" />
+
+            <!-- Card Footer -->
+            <Grid
+			Grid.Row="3"
+			VerticalOptions="End"
+			ColumnSpacing="6">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+					Width="*" />
+                    <ColumnDefinition
+					Width="Auto" />
+                    <ColumnDefinition
+					Width="Auto" />
+                    <ColumnDefinition
+					Width="Auto" />
+                    <ColumnDefinition
+					Width="Auto" />
+                    <ColumnDefinition
+					Width="Auto" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- Article section -->
+                <Label
+				Grid.Column="0"
+				FontSize="14"
+				Text="{ Binding Section }"
+				TextColor="{ DynamicResource BaseTextColor }"
+				Style="{ StaticResource LabelBoldStyle }"
+				LineBreakMode="TailTruncation"
+				VerticalOptions="End" />
+
+                <!-- Article date -->
+                <Label
+				Grid.Column="1"
+				FontSize="14"
+				Text="{ Binding When }"
+				TextColor="{ DynamicResource BaseTextColor }"
+				LineBreakMode="TailTruncation"
+				VerticalOptions="End" />
+
+                <!-- Article followers -->
+
+                <!---Icon -->
+                <Label
+				Grid.Column="2"
+				Text="{ x:Static local:GrialIconsFont.Users } "
+				FontSize="14"
+				TextColor="{ DynamicResource AccentColor }"
+				Style="{ StaticResource FontIcon }"
+				VerticalOptions="End" />
+
+                <!---Followers -->
+                <Label
+				Grid.Column="3"
+				Text="{ Binding Followers }"
+				FontSize="14"
+				TextColor="{ DynamicResource AccentColor }"
+				LineBreakMode="TailTruncation"
+				VerticalOptions="End" />
+
+                <!-- Article likes -->
+                <!---Icon -->
+                <Label
+				Grid.Column="4"
+				Text="{ x:Static local:GrialIconsFont.Heart } "
+				FontSize="14"
+				TextColor="{ DynamicResource AccentColor }"
+				Style="{ StaticResource FontIcon }"
+				VerticalOptions="End" />
+
+                <!---Likes -->
+                <Label
+				Grid.Column="5"
+				Text="{ Binding Likes }"
+				FontSize="14"
+				TextColor="{ DynamicResource AccentColor }"
+				LineBreakMode="TailTruncation"
+				VerticalOptions="End" />
+            </Grid>
+
+        </Grid>
+
+</ContentView>

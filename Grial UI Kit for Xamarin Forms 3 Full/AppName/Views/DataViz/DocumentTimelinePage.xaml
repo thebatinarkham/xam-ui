@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.DocumentTimelinePage"
+	BackgroundColor="{ DynamicResource BasePageColor }"
+	Title="{ grial:Translate PageTitleDocumentTimeline }">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <grial:BoolMemberTemplateSelector
+				x:Key="Selector"
+				MemberName="IsInbound">
+                
+                <grial:BoolMemberTemplateSelector.TrueDataTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <local:DocumentTimelineRightItemTemplate />
+                        </ViewCell>
+                    </DataTemplate>
+                </grial:BoolMemberTemplateSelector.TrueDataTemplate>
+                
+                <grial:BoolMemberTemplateSelector.FalseDataTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <local:DocumentTimelineLeftItemTemplate />
+                        </ViewCell>
+                    </DataTemplate>
+                </grial:BoolMemberTemplateSelector.FalseDataTemplate>
+                
+            </grial:BoolMemberTemplateSelector>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ListView
+			CachingStrategy="RecycleElement"
+			ItemsSource="{ Binding DocumentTimelineList }"
+			SeparatorVisibility="None"
+			BackgroundColor="Transparent"
+			HasUnevenRows="true"
+			ItemTemplate="{ StaticResource Selector }"
+			VerticalOptions="FillAndExpand">
+        </ListView>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.VideoCarouselHighlightsPage"
+	NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:VideoPlayerResources />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources> 
+    
+    <ContentPage.Content>
+        <Grid>
+
+            <grial:VideoPlayer
+				Source="{ Binding BackgroundVideo }"
+				Style="{ StaticResource BackgroundVideoPlayerStyle }"
+				Margin="{ grial:OnOrientationThickness Landscape='-200,0', Portrait=0 }" />
+            
+            <!-- COLORED BACKGROUND -->
+            <BoxView
+				Opacity="{ OnPlatform iOS=0.7, Android=0.5 }">
+                <BoxView.Behaviors>
+                    <grial:AnimatedBackgroundColor
+						IsSymmetric="true"
+						Start="{ Binding CurrentItem.Color, Source={x:Reference carousel} }"
+						End="{ Binding NextItem.Color, Source={x:Reference carousel} }"
+						Progress="{ Binding ScrollProgress, Source={x:Reference carousel} }" />
+                </BoxView.Behaviors>
+            </BoxView>
+            
+            <!-- CONTENT -->
+            <Grid>
+                <grial:Effects.BackgroundGradient>
+                    <grial:RadialGradient
+						Radius="300"
+						RadiusType="Absolute"
+						CenterX="0.2"
+						CenterY="0">
+                        <grial:GradientColor
+							Color="#00000000"
+							Opacity="0" />
+                        <grial:GradientColor
+							Color="#11000000"
+							Opacity="0.3" />
+                        <grial:GradientColor
+							Color="#33000000"
+							Opacity="0.5" />
+                        <grial:GradientColor
+							Color="#66000000"
+							Opacity="0.7" />
+                    </grial:RadialGradient>
+                </grial:Effects.BackgroundGradient>
+       
+                <local:ExtendedCarouselViewControl
+					x:Name="carousel"
+					ShowIndicators="true"
+					VerticalOptions="FillAndExpand"
+					ItemsSource="{ Binding Highlights }"
+					IndicatorsTintColor="#989898"
+					CurrentPageIndicatorTintColor="White"
+					InterPageSpacing="0"
+					Orientation="Horizontal"
+					Margin="0,0,0,20">
+                    <local:ExtendedCarouselViewControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+								BackgroundColor="Transparent"
+								Padding="45,0">
+                                <StackLayout
+									Spacing="15"
+									VerticalOptions="Center">
+                                    <Label
+										FontSize="90"
+										Text="{ Binding Icon }"
+										Style="{ StaticResource FontIcon }"
+										TextColor="White"
+										VerticalOptions="Center"
+										HorizontalOptions="Center"
+										Margin="0,0,0,20" />
+                                    <Label
+										FontSize="28"
+										Style="{ StaticResource LabelBoldStyle }"
+										Text="{ Binding Title }"
+										VerticalOptions="Center"
+										TextColor="White"
+										HorizontalOptions="Center" />
+                                    <Label
+										FontSize="14"
+										Opacity="0.8"
+										Text="{ Binding Description }"
+										VerticalOptions="Center"
+										HorizontalOptions="Center"
+										TextColor="White"
+										HorizontalTextAlignment="Center" />
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>                    
+                    </local:ExtendedCarouselViewControl.ItemTemplate>
+                </local:ExtendedCarouselViewControl>
+            
+           </Grid>
+            
+            <!-- CLOSE ICON -->
+            <Label
+				Style="{StaticResource IconCloseLabelStyle}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnCloseButtonClicked" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

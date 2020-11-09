@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{13BA34AE-3082-42A2-9F8B-1F2DC1DCA48F}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppName.Droid</RootNamespace>
+    <AssemblyName>AppName.Droid</AssemblyName>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <MSBuildWarningsAsMessages>XA0106</MSBuildWarningsAsMessages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Microcharts.Forms">
+      <Version>0.8.5-pre</Version>
+    </PackageReference>
+    <PackageReference Include="Microcharts">
+      <Version>0.8.5-pre</Version>
+    </PackageReference>
+    <PackageReference Include="CarouselView.FormsPlugin">
+      <Version>5.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>1.2.0.223</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Svg">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.3.0.991211</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Forms">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\ExtendedCarouselViewRenderer.cs" />
+    <Compile Include="Renderers\ScrollViewRendererOrientationFix.cs" />
+    <Compile Include="Renderers\CirclePageIndicator.cs" />
+    <Compile Include="Renderers\CarouselViewRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Tabbar.axml" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\drawable\hamburguer_icon.png" />
+    <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable\loading_placeholder.png" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
+    <AndroidResource Include="Resources\drawable\splash_drawable.xml" />
+    <AndroidResource Include="Resources\drawable\splash.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\hamburguer_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\loading_placeholder.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\hamburguer_icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\loading_placeholder.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\hamburguer_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\loading_placeholder.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\splash.png" />
+    <AndroidResource Include="Resources\values\strings.xml" />
+    <AndroidResource Include="Resources\drawable\main_background_image.png" />
+    <AndroidResource Include="Resources\drawable\close_icon.png" />
+    <AndroidResource Include="Resources\drawable\bg_phone.png" />
+    <AndroidResource Include="Resources\drawable\bg_tablet.png" />
+    <AndroidResource Include="Resources\drawable\social_header_bg.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\bg_phone.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bg_tablet.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\friend_06.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\social_header_bg.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\user_01.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bg_phone.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\bg_tablet.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\social_header_bg.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bg_phone.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bg_tablet.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\friend_06.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\social_header_bg.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\user_01.png" />
+    <AndroidResource Include="Resources\drawable\device_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\device_white.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\device_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\device_white.png" />
+    <AndroidResource Include="Resources\values\bools.xml" />
+    <AndroidResource Include="Resources\drawable-xhdpi\friend_06.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\user_01.png" />
+    <AndroidResource Include="Resources\drawable\friend_06.png" />
+    <AndroidResource Include="Resources\drawable\user_01.png" />
+    <AndroidResource Include="Resources\drawable\tabs_icon.png" />
+    <AndroidResource Include="Resources\layout\horizontal_viewpager.xml" />
+    <AndroidResource Include="Resources\layout\vertical_viewpager.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Resources\raw\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppName\AppName.csproj">
+      <Project>{CDD035AB-E8E6-4822-8854-D5723E6F0A56}</Project>
+      <Name>AppName</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Droid\AppName.Core.Droid.csproj">
+      <Project>{8d932186-4a2a-4ea2-8e1b-aa39df3a7e61}</Project>
+      <Name>AppName.Core.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\AppName.Core.csproj">
+      <Project>{5d689ae9-cea5-491f-b196-ae4b6c9ba5c1}</Project>
+      <Name>AppName.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ionicons.ttf" />
+    <AndroidAsset Include="Assets\line-awesome.ttf" />
+    <AndroidAsset Include="Assets\SourceSansPro-Bold.ttf" />
+    <AndroidAsset Include="Assets\SourceSansPro-Regular.ttf" />
+    <AndroidAsset Include="Assets\grialiconsline.ttf" />
+    <AndroidAsset Include="Assets\grialiconsfill.ttf" />
+    <AndroidAsset Include="Assets\fa-brands-400.ttf" />
+    <AndroidAsset Include="Assets\fa-regular-400.ttf" />
+    <AndroidAsset Include="Assets\fa-solid-900.ttf" />
+    <AndroidAsset Include="Assets\materialdesignicons-webfont.ttf" />
+    <AndroidAsset Include="Assets\Billabong.ttf" />
+    <AndroidResource Include="Resources\values-es-rMX\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.WelcomePage" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	NavigationPage.HasNavigationBar="false"
+	Style="{ StaticResource MainMenuOrModalBackgroundStyle }"
+	Title="{ grial:Translate PageTitleWelcome }">
+
+    <!-- MAIN CONTAINER-->
+    <Grid
+		HorizontalOptions="FillAndExpand"
+		VerticalOptions="FillAndExpand">
+
+        <!---BACKGROUND IMAGE -->
+        <Image
+			Style="{ StaticResource MainMenuBackgroundImageStyle }" />
+
+        <Grid
+			grial:Effects.ApplyIOSSafeAreaAsPadding="Bottom"
+			grial:Effects.IOSSafeAreaBottomSize="15"
+			Padding="20,60,20,20"
+			Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="Auto" />
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="Auto" />
+            </Grid.RowDefinitions>
+
+            
+            <Grid
+				Grid.Row="0"
+				ColumnSpacing="0"
+				Padding="0"
+				Style="{ StaticResource BrandContainerStyle }">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="Auto" />
+                    <ColumnDefinition
+						Width="Auto" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- LOGO -->
+                <StackLayout
+					Grid.Column="1"
+					Orientation="Horizontal"
+					Spacing="10">
+                    
+                    <Label
+						Margin="10,0,0,0"
+						TextColor="{ DynamicResource InverseTextColor }"
+						FontSize="74"
+						Text="{ x:Static local:GrialIconsFont.LogoGrialSquare }"
+						Style="{StaticResource FontIcon}"
+						HorizontalOptions="Start"
+						VerticalTextAlignment="Center" />
+                    
+                    <StackLayout
+						Spacing="0"
+						VerticalOptions="Center">
+
+                        <Label
+							TextColor="{ DynamicResource InverseTextColor }"
+							FontSize="24"
+							Text="{ grial:Translate StringGrial }"
+							FontAttributes="Bold"
+							VerticalTextAlignment="Start" />
+
+                        <Label
+							TextColor="{ DynamicResource InverseTextColor }"
+							FontSize="24"
+							Text="{ grial:Translate StringUIKIT }"
+							VerticalTextAlignment="Start" />
+                        
+                    </StackLayout>
+                </StackLayout>
+
+            </Grid>
+
+
+
+            <!--CLAIM TEXT-->
+            <StackLayout
+				Grid.Row="1"
+				Spacing="10"
+				Orientation="Vertical"
+				VerticalOptions="Center"
+				TranslationY="-20"
+				Padding="{ grial:OnOrientationDouble
+                    Default=20,
+                    PortraitTablet=20,
+                    LandscapeTablet=20 }">
+
+                <Label
+					LineBreakMode="WordWrap"
+					Text="{ grial:Translate StringReadyMadeUIsForXamarin }"
+					TextColor="{ DynamicResource InverseTextColor }"
+					VerticalTextAlignment="Center"
+					FontAttributes="Bold"
+					FontSize="{ OnIdiom Phone=26, Tablet=36 }" />
+
+                <Label
+					LineBreakMode="WordWrap"
+					Text="{ grial:Translate LabelTakeYourAppToNextLevel }"
+					TextColor="{ DynamicResource InverseTextColor }"
+					VerticalTextAlignment="Center"
+					FontSize="{ OnIdiom Phone=17, Tablet=27 }"
+					IsVisible="{ grial:OnOrientationBool 
+                        Default=true,
+                        Landscape=false
+                    }" />
+
+                <!-- VERSION TAG -->
+                <local:Tag
+					BackgroundColor="#88000000"
+					FontSize="10"
+					HorizontalOptions="Start"
+					Text="Version 3.0"
+					Margin="-4,0" />
+            </StackLayout>
+            
+            <!--BUTTONS-->
+            <StackLayout
+				Grid.Row="2"
+				VerticalOptions="End"
+				HorizontalOptions="FillAndExpand"
+				Spacing="10">
+
+                <Button
+					Clicked="OnWhatsNew"
+					Style="{ StaticResource OutlineInverseButtonStyle }"
+					Text="{ grial:Translate TakeWalkThrough }"
+					VerticalOptions="EndAndExpand"
+					WidthRequest="{ grial:OnOrientationDouble
+                        LandscapeTablet=600 }"
+					HorizontalOptions="{ grial:OnOrientationLayoutOptions
+                        PortraitPhone=Fill,
+                        LandscapePhone=Fill,
+                        PortraitTablet=Fill,
+                        LandscapeTablet=Center }" />
+
+                <Button
+					Clicked="OnClose"
+					Style="{ StaticResource OutlineInverseButtonStyle }"
+					Text="{ grial:Translate StringSkip }"
+					VerticalOptions="EndAndExpand"
+					WidthRequest="{ grial:OnOrientationDouble
+                        LandscapeTablet=600 }"
+					HorizontalOptions="{ grial:OnOrientationLayoutOptions
+                        PortraitPhone=Fill,
+                        LandscapePhone=Fill,
+                        PortraitTablet=Fill,
+                        LandscapeTablet=Center }" />
+            
+            </StackLayout>
+
+        </Grid>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.AndroidTabResources">
+    <ControlTemplate
+		x:Key="TabItemTemplate">
+        <Grid>
+
+            <Grid
+				VerticalOptions="Center"
+				Margin="0,15"
+				RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- IMAGE ICON -->
+                <Image
+					Grid.Row="0"
+					VerticalOptions="Center"
+					HorizontalOptions="Center"
+					HeightRequest="24"
+					WidthRequest="24"
+					IsVisible="{ TemplateBinding CurrentIconImage, Converter={StaticResource IsNotNullConverter} }"
+					Source="{ TemplateBinding CurrentIconImage }">
+                    <Image.Triggers>
+                        <DataTrigger
+							TargetType="Image"
+							Binding="{ TemplateBinding IsSelected }"
+							Value="false">
+                            <Setter
+								Property="Opacity"
+								Value="0.7" />
+                        </DataTrigger>
+                    </Image.Triggers>
+                </Image>
+
+                <!-- FONT ICON -->
+                <Label
+					Grid.Row="0"
+					HorizontalOptions="Center"
+					IsVisible="{ TemplateBinding CurrentIconText, Converter={StaticResource IsNotEmptyStringConverter} }"
+					Text="{ TemplateBinding CurrentIconText }"
+					TextColor="{ TemplateBinding CurrentIconTextColor }"
+					FontSize="{ TemplateBinding IconTextFontSize }"
+					FontFamily="{ TemplateBinding IconTextFontFamily }" />
+
+                <!-- TEXT -->
+                <Label
+					Grid.Row="1"
+					HorizontalOptions="Center"
+					FontSize="{ TemplateBinding FontSize }"
+					IsVisible="{ TemplateBinding Text, Converter={ StaticResource IsNotEmptyStringConverter } }"
+					Text="{ TemplateBinding Text }"
+					TextColor="{ TemplateBinding CurrentTextColor }" />
+
+            </Grid>
+
+            <!-- SELECTED INDICATOR -->
+            <BoxView
+				HeightRequest="2"
+				BackgroundColor="{ DynamicResource AndroidSelectedBackgroundColor }"
+				IsVisible="{ TemplateBinding IsSelected }"
+				VerticalOptions="End" />
+
+            <!-- BADGE -->
+            <local:Badge
+				Scale=".6"
+				Text="{ TemplateBinding BadgeText }"
+				BackgroundColor="{ TemplateBinding BadgeBackgroundColor }"
+				TextColor="{ TemplateBinding BadgeTextColor }"
+				HorizontalOptions="Center"
+				VerticalOptions="Start"
+				TranslationX="12"
+				TranslationY="-2" />
+
+        </Grid>
+    </ControlTemplate>
+
+    <Style
+		x:Key="TabItemStyle"
+		TargetType="grial:TabItem">
+        <Setter
+			Property="FontSize"
+			Value="14" />
+        <Setter
+			Property="TextColor"
+			Value="{ DynamicResource AndroidTabItemDefaultTextColor }" />
+        <Setter
+			Property="TextColorSelected"
+			Value="{ DynamicResource AndroidTabItemSelectedTextColor }" />
+        <Setter
+			Property="IconTextFontFamily"
+			Value="{ StaticResource IconsFontFamily }" />
+        <Setter
+			Property="IconTextFontSize"
+			Value="24" />
+        <Setter
+			Property="IconTextColor"
+			Value="{ DynamicResource AndroidTabItemDefaultTextColor }" />
+        <Setter
+			Property="IconTextColorSelected"
+			Value="{ DynamicResource AndroidTabItemSelectedTextColor }" />
+        <Setter
+			Property="BadgeTextColor"
+			Value="White" />
+        <Setter
+			Property="BadgeBackgroundColor"
+			Value="Red" />
+    </Style>
+
+    <Style
+		x:Key="AndroidTabStyle"
+		TargetType="grial:TabControl">
+        <Setter
+			Property="TabItemStyle"
+			Value="{ StaticResource TabItemStyle }" />
+        <Setter
+			Property="TabItemControlTemplate"
+			Value="{ StaticResource TabItemTemplate }" />
+        <Setter
+			Property="TabStripBackgroundColor"
+			Value="#EE000000" />
+        <Setter
+			Property="TabContentBackgroundColor"
+			Value="#F5F5F5" />
+        <Setter
+			Property="AnimateTransition"
+			Value="True" />
+    </Style>
+
+</ResourceDictionary>

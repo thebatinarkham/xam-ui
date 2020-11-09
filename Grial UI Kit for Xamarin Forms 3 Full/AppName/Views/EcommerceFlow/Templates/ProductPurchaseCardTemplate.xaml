@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	x:Class="AppName.ProductPurchaseCardTemplate">
+    <ContentView.Content>
+        <Grid
+			HeightRequest="150"
+			ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="150" />
+                <ColumnDefinition
+					Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- PRODUCT IMAGE -->
+            <ffimageloading:CachedImage
+				FadeAnimationEnabled="true"
+				Source="{ Binding Product.Image }"
+				Aspect="AspectFill" />
+            
+            <!-- PRODUCT DATA -->
+            <Grid
+				Grid.Column="1"
+				Padding="16,16"
+				RowSpacing="4"
+				BackgroundColor="{ DynamicResource BasePageColor }">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- PRODUCT NAME -->
+                <Label
+					Margin="0,5,0,0"
+					Grid.Row="0"
+					Text="{ Binding Product.Name }"
+					FontSize="20"
+					HorizontalOptions="Start"
+					TextColor="{ DynamicResource BaseTextColor }" />
+                
+                <!-- MANUFACTURER -->
+                <Label
+					Grid.Row="1"
+					Text="{ Binding Product.Manufacturer, StringFormat='BY {0}' }"
+					FontSize="11"
+					HorizontalOptions="Start"
+					TextColor="{ DynamicResource AccentColor }" />
+
+                <!-- PRICE -->
+                <Label
+					Grid.Row="2"
+					Text="{ Binding Product.Price, StringFormat='$ {0:0.##.}' }"
+					FontSize="{ grial:OnOrientationDouble
+                        PortraitPhone=32,
+                        LandscapePhone=32,
+                        PortraitTablet=35,
+                        LandscapeTablet=35 }"
+					HorizontalOptions="Start"
+					TextColor="{ DynamicResource BaseTextColor }" />
+                
+                <!-- QUANTITY -->
+                <Label
+					Grid.Row="3"
+					Text="{ Binding Quantity, StringFormat='Quantity: {0}' }"
+					FontSize="10"
+					HorizontalOptions="Start"
+					TextColor="{ DynamicResource BaseTextColor }" />
+
+            </Grid>
+        </Grid>        
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	x:Class="AppName.TaskBrowserPage"
+	Title="{ grial:Translate PageTitleTaskBrowser }">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary
+			Source="/Styles/TabControl/DotTabResources.xaml" />
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid>
+            <!-- GRADIENT -->
+            <grial:GrialNavigationBar
+				UseNavigationPageBarBackgroundColor="true"
+				UseNavigationPageBarBackgroundGradient="true" />
+                 
+            <ScrollView
+				grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="170" />
+                        <RowDefinition
+							Height="*" />
+                    </Grid.RowDefinitions>
+                    
+                    <StackLayout
+						Grid.Row="0"
+						Padding="30,0"
+						Spacing="20"
+						HorizontalOptions="Start"
+						VerticalOptions="Center">
+                        <Label
+							Text="{ Binding Date }"
+							TextColor="{ DynamicResource OverImageTextColor }" />
+                        <Label
+							Text="{ grial:Translate AgendaTitle }"
+							FontSize="32"
+							TextColor="{ DynamicResource OverImageTextColor }" />
+                    </StackLayout>
+                    
+                    <grial:TabControl
+						Grid.Row="1"
+						Margin="20,0,0,14"
+						Style="{ StaticResource DotTabStyle }"
+						TabContentBackgroundColor="Transparent">
+                        
+                        <grial:TabItem
+							Text="{ grial:Translate StringWorkspaces }">
+                            
+                            <!-- CARDS -->
+                            <grial:Repeater
+								Margin="-20,0,0,0"
+								ItemsSource="{ Binding Workspaces }"
+								Orientation="Horizontal"
+								HeightRequest="320"
+								ItemSize="215"
+								Spacing="10"
+								ScrollBarVisibility="Never"
+								ScrollPadding="20,0,20,0">
+                                <grial:Repeater.ItemTemplate>
+                                    <DataTemplate>
+                                        <local:TaskBrowserCardItemTemplate
+											HeightRequest="320"
+											WidthRequest="215"
+											HorizontalOptions="Center" />
+                                    </DataTemplate>
+                                </grial:Repeater.ItemTemplate>
+
+                            </grial:Repeater>
+                            
+                        </grial:TabItem>
+                        
+                        <grial:TabItem
+							Text="{ grial:Translate StringProjects }">
+                            
+                            <!-- CARDS -->
+                            <grial:Repeater
+								Margin="-20,0,0,0"
+								ItemsSource="{ Binding Projects }"
+								Orientation="Horizontal"
+								HeightRequest="320"
+								ItemSize="215"
+								Spacing="10"
+								ScrollBarVisibility="Never"
+								ScrollPadding="20,0,20,0">
+                                <grial:Repeater.ItemTemplate>
+                                    <DataTemplate>
+                                        <local:TaskBrowserCardItemTemplate
+											HeightRequest="320"
+											WidthRequest="215"
+											HorizontalOptions="Center" />
+                                    </DataTemplate>
+                                </grial:Repeater.ItemTemplate>
+
+                            </grial:Repeater>
+
+                        </grial:TabItem>
+                        
+                    </grial:TabControl>
+                    
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

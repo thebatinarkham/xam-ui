@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+	BackgroundColor="{ DynamicResource BasePageColor }"
+	Title="{ Binding Product.Name }"
+	x:Class="AppName.ProductItemViewPage">
+    <ContentPage.Resources>
+        <ControlTemplate
+			x:Key="CheckboxHeartTemplate">
+            <Grid>
+                <Grid
+					x:Name="Unchecked">
+                    <Label
+						Opacity=".5"
+						Style="{ DynamicResource FontIcon }"
+						Text="{ x:Static local:GrialIconsFont.Heart }"
+						FontSize="{ TemplateBinding IconFontSize }"
+						TextColor="{ DynamicResource AccentColor }"
+						HorizontalOptions="Center"
+						VerticalOptions="Center" />
+                </Grid>
+
+                <Grid
+					x:Name="Checked">
+                    <Label
+						Style="{ DynamicResource FontIconFill }"
+						Text="{ x:Static local:GrialIconsFont.Heart }"
+						TextColor="{ DynamicResource AccentColor }"
+						FontSize="{ TemplateBinding IconFontSize }"
+						HorizontalOptions="Center"
+						VerticalOptions="Center" />
+                </Grid>
+            </Grid>
+            
+        </ControlTemplate>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid
+			RowSpacing="0"
+			VerticalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="60*" />
+                <RowDefinition
+					Height="40*" />
+                <RowDefinition
+					Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!--PRODUCT IMAGE-->
+            <ffimageloading:CachedImage
+				Grid.Row="0"
+				FadeAnimationEnabled="true"
+				Source="{ Binding Product.Image }"
+				Aspect="AspectFill">
+                <ffimageloading:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnImageTapped" />
+                </ffimageloading:CachedImage.GestureRecognizers>
+            </ffimageloading:CachedImage>
+
+            <!-- FAVORITE ICON -->
+            <grial:Checkbox
+				Grid.Row="0"
+				IconFontSize="{ 
+                    grial:OnOrientationDouble 
+                        Default=28, 
+                        PortraitPhone=28,
+                        LandscapePhone=28,
+                        PortraitTablet=38,
+                        LandscapeTablet=32 
+                }"
+				ControlTemplate="{ StaticResource CheckboxHeartTemplate }"
+				IsChecked="{ Binding IsFavorite, Mode=TwoWay }"
+				VerticalOptions="Start"
+				HorizontalOptions="End"
+				Margin="20,15,20,0"
+				x:Name="checkbox">
+                <grial:Checkbox.Triggers>
+                    <EventTrigger
+						Event="IsCheckedChanged">
+                        <xamanimation:BeginAnimation>
+                            <xamanimation:BeginAnimation.Animation>    
+                                <xamanimation:HeartAnimation
+									Duration="1000"
+									Target="{ x:Reference checkbox }" />
+                            </xamanimation:BeginAnimation.Animation>    
+                        </xamanimation:BeginAnimation>
+                    </EventTrigger>
+                </grial:Checkbox.Triggers>
+                
+            </grial:Checkbox>
+
+            <!-- PRODUCT INFO -->
+            <Grid
+				Grid.Row="1"
+				Margin="20,15,20,0"
+				VerticalOptions="StartAndExpand"
+				RowSpacing="5"
+				grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- PRICE -->
+                <Label
+					Grid.Row="0"
+					Grid.RowSpan="2"
+					Text="{ Binding Product.Price }"
+					FontSize="{ 
+                        grial:OnOrientationDouble
+                            PortraitPhone=30,
+                            LandscapePhone=30,
+                            PortraitTablet=40,
+                            LandscapeTablet=40 
+                    }"
+					HorizontalOptions="End"
+					TextColor="{ DynamicResource BaseTextColor }"
+					VerticalTextAlignment="Center" />
+
+                <!-- PRODUCT NAME -->
+                <Label
+					Grid.Row="0"
+					Text="{ Binding Product.Name }"
+					FontSize="{ grial:OnOrientationDouble 
+                        PortraitPhone=18,
+                        LandscapePhone=18,
+                        PortraitTablet=28,
+                        LandscapeTablet=28 }"
+					Style="{ StaticResource LabelBoldStyle }"
+					HorizontalOptions="Start"
+					TextColor="{ DynamicResource BaseTextColor }" />
+                
+                <!-- MANUFACTURER -->
+                <Label
+					Grid.Row="1"
+					Text="{ Binding Product.Manufacturer, StringFormat='BY {0:F0}'} }"
+					FontSize="{ grial:OnOrientationDouble
+                        PortraitPhone=10,
+                        LandscapePhone=10,
+                        PortraitTablet=16,
+                        LandscapeTablet=16 }"
+					HorizontalOptions="Start"
+					TextColor="{ DynamicResource AccentColor }" />
+                
+                <!-- DESCRIPTION -->
+                <ScrollView
+					Grid.Row="2"
+					Padding="0,10,0,0">
+                    <StackLayout
+						Spacing="15">
+                        <Label
+							Text="{ Binding Product.Description }"
+							HorizontalOptions="Fill"
+							TextColor="{ DynamicResource BaseTextColor }"
+							FontSize="{ 
+                                grial:OnOrientationDouble
+                                    PortraitPhone=15,
+                                    LandscapePhone=15,
+                                    PortraitTablet=18,
+                                    LandscapeTablet=18 
+                            }" />
+                        
+                        <BoxView
+							Style="{ DynamicResource BrandNameOrnamentStyle }"
+							BackgroundColor="{ DynamicResource AccentColor }" />
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+
+            <!---BUY BUTTON -->
+            <Button
+				Grid.Row="2"
+				Margin="20,10,20,20"
+				Style="{ StaticResource PrimaryActionButtonStyle }"
+				Text="{ grial:Translate Key=ButtonAddToCart }"
+				WidthRequest="{ 
+                    grial:OnOrientationDouble
+                        LandscapePhone=200,
+                        LandscapeTablet=400 
+                }"
+				HorizontalOptions="{ 
+                    grial:OnOrientationLayoutOptions
+                        PortraitPhone=Fill,
+                        LandscapePhone=Center,
+                        PortraitTablet=Fill,
+                        LandscapeTablet=Center 
+                }" />
+    
+        </Grid>    
+    </ContentPage.Content>
+</ContentPage>

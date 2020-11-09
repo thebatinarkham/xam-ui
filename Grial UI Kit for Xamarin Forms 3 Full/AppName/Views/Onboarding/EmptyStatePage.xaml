@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.EmptyStatePage" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	Title="{ grial:Translate PageTitleEmptyState }"
+	BackgroundColor="{DynamicResource BasePageColor}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="*" />
+            <RowDefinition
+				Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid
+			Grid.Row="0"
+			VerticalOptions="Fill"
+			HorizontalOptions="Center">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height=".75*" />
+                <RowDefinition
+					Height=".25*" />
+            </Grid.RowDefinitions>
+            
+            <!--ICON BACKGROUND-->
+            <BoxView
+				Grid.Row="0"
+				BackgroundColor="{ DynamicResource ComplementColor }"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				HeightRequest="100"
+				WidthRequest="100"
+				CornerRadius="50"
+				Opacity="0.1"
+				Scale="{ 
+                    grial:OnOrientationDouble
+                        Default=2.2,
+                        LandscapePhone=1.2,
+                        LandscapeTablet=1.8,
+                }" />
+
+            <!--ICON BACKGROUND-->
+            <BoxView
+				Grid.Row="0"
+				BackgroundColor="{ DynamicResource ComplementColor }"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				HeightRequest="100"
+				WidthRequest="100"
+				CornerRadius="50"
+				Opacity="0.1"
+				Scale="{ 
+                    grial:OnOrientationDouble
+                        Default=1.4,
+                        LandscapePhone=.8,
+                        LandscapeTablet=1.1,
+                }" />    
+
+            <!--ICON-->
+            <Label
+				Grid.Row="0"
+				Text="{ x:Static local:GrialIconsFont.Settings }"
+				Style="{ StaticResource FontIcon }"
+				FontSize="{ 
+                    grial:OnOrientationInt
+                        Default=90,
+                        LandscapePhone=50,
+                        LandscapeTablet=80,
+                }"
+				HorizontalTextAlignment="Center"
+				TextColor="{ DynamicResource ComplementColor }"
+				VerticalOptions="Center"
+				HorizontalOptions="Center" />
+                
+            <!--TEXT -->
+            <StackLayout
+				Grid.Row="1"
+				VerticalOptions="Start"
+				Padding="60,0"
+				Spacing="5">
+                <Label
+					HorizontalTextAlignment="Center"
+					HorizontalOptions="Center"
+					Text="{ grial:Translate PageTitleEmptyState }"
+					FontSize="24"
+					Style="{ StaticResource LabelBoldStyle }"
+					TextColor="{ DynamicResource BaseTextColor }" />
+                
+                <Label
+					HorizontalTextAlignment="Center"
+					Opacity="0.8"
+					Text="{ grial:Translate LabelThereIsNothingHere }"
+					FontSize="18"
+					TextColor="{ DynamicResource BaseTextColor }" />
+            </StackLayout>
+
+        </Grid>
+
+        <!--BUTTON-->
+        <Button
+			Grid.Row="1"
+			Style="{ StaticResource PrimaryActionButtonStyle }"
+			BackgroundColor="{ DynamicResource ComplementColor }"
+			VerticalOptions="End"
+			Text="{ grial:Translate StringDone }"
+			Margin="{ 
+                grial:OnOrientationThickness
+                    Portrait='20,0,20,20',
+                    Landscape='20,0,20,20'
+            }"
+			Clicked="OnCloseButtonClicked"
+			WidthRequest="{ 
+                grial:OnOrientationDouble
+                    LandscapePhone=200,
+                    LandscapeTablet=400 
+            }"
+			HorizontalOptions="{ 
+                grial:OnOrientationLayoutOptions
+                    PortraitPhone=Fill,
+                    LandscapePhone=Center,
+                    PortraitTablet=Fill,
+                    LandscapeTablet=Center 
+            }" />
+
+    </Grid>
+</ContentPage>

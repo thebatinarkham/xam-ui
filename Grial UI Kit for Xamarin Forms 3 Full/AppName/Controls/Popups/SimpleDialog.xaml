@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+	x:Class="AppName.SimpleDialog"
+	BackgroundColor="{ DynamicResource DialogsShimBackgroundColor }"
+	CloseWhenBackgroundIsClicked="{StaticResource DialogsCloseWhenBackgroundIsClicked}">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:DialogsResources />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <Grid
+		Margin="20"
+		Style="{ StaticResource BlurredShadow }"
+		VerticalOptions="{ DynamicResource DialogsVerticalPositioning }">
+        <Grid
+			RowSpacing="0"
+			grial:Effects.CornerRadius="{ DynamicResource DialogsCornerRadius }"
+			grial:Effects.BackgroundGradient="{ DynamicResource SimpleDialogBodyGradient }"
+			BackgroundColor="{ DynamicResource BasePageColor }">
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="44" />
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="64" />
+            </Grid.RowDefinitions>
+
+            <!--TITLE AND ICON-->
+            <Grid
+				Grid.Row="0"
+				BackgroundColor="{ DynamicResource ComplementColor }"
+				Padding="14,0"
+				grial:Effects.BackgroundGradient="{DynamicResource SimpleDialogTitleGradient }">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="Auto" />
+                    <ColumnDefinition
+						Width="Auto" />
+                    <ColumnDefinition
+						Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- ICON -->
+                <Label
+					Grid.Column="0"
+					TextColor="{ DynamicResource InverseTextColor }"
+					Text="{ x:Static local:GrialIconsFont.MessageSquare }"
+					Style="{ StaticResource FontIcon}"
+					VerticalTextAlignment="Center"
+					FontSize="{ StaticResource DialogsIconsSize }"
+					HorizontalTextAlignment="Start" />
+
+                <!-- TITLE -->
+                <Label
+					Grid.Column="1"
+					Text="App Reminder"
+					TextColor="{ DynamicResource InverseTextColor }"
+					FontSize="{ StaticResource DialogsTitleFontSize }"
+					VerticalTextAlignment="Center"
+					HorizontalTextAlignment="Start" />
+
+                <!-- ICON CLOSE -->
+                <Label
+					Grid.Column="2"
+					Margin="0"
+					FontSize="{ StaticResource DialogsIconsSize }"
+					TextColor="{ DynamicResource InverseTextColor }"
+					Text="{ x:Static local:GrialIconsFont.CloseCircle }"
+					Style="{ StaticResource FontIconFill }"
+					VerticalTextAlignment="Center"
+					HorizontalTextAlignment="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+							Tapped="OnClose" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </Grid>
+
+            <!-- CONTENT -->
+            <StackLayout
+				Margin="30"
+				Grid.Row="1">
+                <!-- BODY -->
+                <Label
+					FontSize="{ StaticResource DialogsBodyFontSize }"
+					HorizontalTextAlignment="Center"
+					Text="This is a label body text."
+					TextColor="{ DynamicResource BaseTextColor }" />
+            </StackLayout>
+
+            <!-- FOOTER -->
+            <FlexLayout
+				Margin="20,0"
+				Grid.Row="2"
+				JustifyContent="Center">
+                <Button
+					Style="{ StaticResource DialogPrimaryActionButtonStyle }"
+					Text="OK"
+					Clicked="OnClose" />
+            </FlexLayout>
+
+        </Grid>
+
+    </Grid>
+
+</pages:PopupPage>

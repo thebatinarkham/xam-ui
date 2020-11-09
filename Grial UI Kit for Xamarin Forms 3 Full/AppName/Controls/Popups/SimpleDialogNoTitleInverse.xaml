@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+	x:Class="AppName.SimpleDialogNoTitleInverse"
+	BackgroundColor="{DynamicResource DialogsShimBackgroundColor}"
+	CloseWhenBackgroundIsClicked="{StaticResource DialogsCloseWhenBackgroundIsClicked}">
+
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:DialogsResources />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <Grid
+		Margin="20"
+		Style="{StaticResource BlurredShadow}"
+		VerticalOptions="{DynamicResource DialogsVerticalPositioning}">
+        <Grid
+			RowSpacing="0"
+			grial:Effects.CornerRadius="{StaticResource DialogsCornerRadius}"
+			grial:Effects.BackgroundGradient="{DynamicResource SimpleDialogBodyInverseGradient}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="44" />
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="64" />
+            </Grid.RowDefinitions>
+
+            <!--TITLE AND ICON-->
+            <Grid
+				Grid.Row="0"
+				BackgroundColor="Transparent"
+				Padding="14,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="Auto" />
+                    <ColumnDefinition
+						Width="Auto" />
+                    <ColumnDefinition
+						Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- ICON CLOSE -->
+                <Label
+					Grid.Column="2"
+					Margin="0"
+					FontSize="{StaticResource DialogsIconsSize}"
+					TextColor="{DynamicResource OverImageTextColor}"
+					Text="{x:Static local:GrialIconsFont.CloseCircle}"
+					Style="{StaticResource FontIconFill}"
+					VerticalTextAlignment="Center"
+					HorizontalTextAlignment="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+							Tapped="OnClose" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+
+            <!-- CONTENT -->
+            <StackLayout
+				Margin="30,0,30,30"
+				Grid.Row="1"
+				Spacing="30">
+
+                <Grid
+					ColumnSpacing="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="Auto" />
+                        <ColumnDefinition
+							Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+						Grid.Row="0"
+						Grid.Column="0"
+						Text="{x:Static local:GrialIconsFont.MessageSquare}"
+						TextColor="{DynamicResource OverImageTextColor}"
+						Style="{StaticResource FontIcon}"
+						VerticalTextAlignment="Center"
+						FontSize="24" />
+
+                    <Label
+						Grid.Row="0"
+						Grid.Column="1"
+						Text="Simple Dialog No Title"
+						TextColor="{ DynamicResource OverImageTextColor }"
+						FontSize="{
+                                OnPlatform 
+                                    iOS=24,
+                                    Android=22, 
+                            }"
+						Style="{ StaticResource LabelBoldStyle }"
+						LineBreakMode="TailTruncation" />
+
+                </Grid>
+
+                <!-- BODY -->
+                <Label
+					FontSize="{StaticResource DialogsBodyFontSize}"
+					HorizontalTextAlignment="Center"
+					Text="Use this dialog to provide feedback on users actions. It can be used to confirm actions."
+					TextColor="{DynamicResource OverImageTextColor}" />
+            </StackLayout>
+
+            <!--FOOTER-->
+            <FlexLayout
+				Margin="20,0"
+				Grid.Row="2"
+				JustifyContent="Center">
+                <Button
+					Style="{StaticResource DialogOutlineInverseButtonStyle}"
+					Text="Close"
+					Clicked="OnClose" />
+
+            </FlexLayout>
+
+        </Grid>
+    </Grid>
+</pages:PopupPage>

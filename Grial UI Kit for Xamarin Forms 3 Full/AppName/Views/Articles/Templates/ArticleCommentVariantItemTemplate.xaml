@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.ArticleCommentVariantItemTemplate">
+
+    <ContentView.Content>
+        <Grid
+			RowSpacing="0"
+			VerticalOptions="Center"
+			ColumnSpacing="15"
+			Padding="20,5,20,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="60" />
+                <ColumnDefinition
+					Width="*" />
+                <ColumnDefinition
+					Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="25" />
+                <RowDefinition
+					Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- AVATAR -->
+            <local:CircleCachedImage
+				Grid.Row="0"
+				Grid.Column="0"
+				Grid.RowSpan="2"
+				HeightRequest="40"
+				WidthRequest="40"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				Source="{ Binding From.Avatar }"
+				Style="{ StaticResource Avatar }" />
+
+            <!-- NAME -->
+            <Label
+				Grid.Row="0"
+				Grid.Column="1"
+				Text="{ Binding From.Name }"
+				Style="{ StaticResource LabelBoldStyle }"
+				VerticalOptions="Center" />
+
+            <!-- MESSAGE -->
+            <Label
+				Grid.Row="1"
+				Grid.Column="1"
+				Grid.ColumnSpan="2"
+				Text="{ Binding Body }"
+				VerticalOptions="Start" />
+
+            <!-- TIME -->
+            <Label
+				Grid.Row="0"
+				Grid.Column="2"
+				Text="{ Binding When }"
+				Opacity=".5"
+				VerticalOptions="Center"
+				HorizontalOptions="Center" />
+            
+        </Grid>
+
+    </ContentView.Content>   
+</ContentView>

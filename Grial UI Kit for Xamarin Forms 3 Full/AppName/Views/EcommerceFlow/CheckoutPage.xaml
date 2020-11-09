@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+	x:Class="AppName.CheckoutPage"
+	Title="{ grial:Translate Key=PageTitleCheckout }" xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xamanimation:StoryBoard
+				x:Key="Anim">
+
+                <xamanimation:FadeInAnimation
+					Target="{ x:Reference detail }"
+					Duration="100" />
+
+                <xamanimation:FadeInAnimation
+					Target="{ x:Reference options }"
+					Duration="200" />
+
+                <xamanimation:FadeInAnimation
+					Target="{ x:Reference total }"
+					Duration="300" />
+
+                <xamanimation:FadeInAnimation
+					Target="{ x:Reference address }"
+					Duration="400" />
+
+                <xamanimation:FadeInAnimation
+					Target="{ x:Reference payment }"
+					Duration="500" />
+
+                <xamanimation:FadeInAnimation
+					Target="{ x:Reference confirm }"
+					Duration="600" />
+
+            </xamanimation:StoryBoard>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Triggers>
+        <EventTrigger
+			Event="Appearing">
+            <xamanimation:BeginAnimation
+				Animation="{ StaticResource Anim }" />
+        </EventTrigger>
+    </ContentPage.Triggers>
+    
+    <ContentPage.Content>
+    
+        <Grid
+			RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <grial:GrialNavigationBar
+				UseNavigationPageBarBackgroundColor="true"
+				UseNavigationPageBarBackgroundGradient="true" />
+
+            <Grid
+				Grid.RowSpan="2"
+				RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="95" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+                
+                <!-- CURVED MASK -->
+                <local:CurvedMask
+					MaskColor="{ DynamicResource MainWrapperBackgroundColor }" />
+                
+                <BoxView
+					Grid.Row="1"
+					BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }" />
+                
+                <ScrollView
+					Grid.RowSpan="2"
+					Padding="0,0,0,80">
+                    <StackLayout
+						Style="{ StaticResource ResponsiveLandscapeMarginStyle }"
+						Padding="20"
+						Spacing="16">
+
+                         <!-- PRODUCT DETAIL HEADER -->
+                        <grial:CardView
+							x:Name="detail"
+							Opacity="0">
+                            <local:ProductPurchaseCardTemplate />
+                        </grial:CardView>
+
+                        <grial:CardView
+							x:Name="options"
+							Opacity="0">
+                            <grial:Repeater
+								x:Name="ShippingOptionsRepeater"
+								BackgroundColor="{ DynamicResource BasePageColor }"
+								Padding="18,20"
+								ScrollPadding="0"
+								ItemsSource="{ Binding ShippingOptions }"
+								ScrollBarVisibility="Never"
+								Spacing="0"
+								SelectionMode="Single"
+								InitialSelection="First"
+								Orientation="Vertical"
+								ItemSize="36"
+								SelectedItem="{ Binding OptionSelected, Mode=TwoWay }">
+                                <grial:Repeater.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid
+											ColumnSpacing="10">
+                                        
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition
+													Width="Auto" />
+                                                <ColumnDefinition
+													Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                        
+                                            <grial:Checkbox
+												IsChecked="false"
+												HorizontalOptions="Start"
+												InputTransparent="true" />
+                                        
+                                            <Label
+												Grid.Column="1"
+												VerticalOptions="Center">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span
+															Text="{ Binding Option }"
+															Style="{ DynamicResource SpanBoldStyle }" />
+                                                        
+                                                        <Span
+															Style="{ DynamicResource DefaultSpanStyle }"
+															Text="{ Binding Description, StringFormat='  ({0:F0})  ' }"
+															FontSize="14" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </Grid>
+                                    
+                                    </DataTemplate>
+                                </grial:Repeater.ItemTemplate>
+                            
+                                <grial:Repeater.SelectedItemTemplate>
+                                    <DataTemplate>
+                                        <Grid
+											ColumnSpacing="10">
+                                        
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition
+													Width="Auto" />
+                                                <ColumnDefinition
+													Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                        
+                                            <grial:Checkbox
+												IsChecked="true"
+												HorizontalOptions="Start"
+												InputTransparent="true" />
+                                        
+                                            <Label
+												Grid.Column="1"
+												VerticalOptions="Center">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span
+															Text="{ Binding Option }"
+															Style="{ StaticResource SpanBoldStyle }" />
+                                                        
+                                                        <Span
+															Style="{ DynamicResource DefaultSpanStyle }"
+															Text="{ Binding Description, StringFormat='  ({0:F0})  ' }"
+															FontSize="14" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </Grid>
+                                    </DataTemplate>
+                                </grial:Repeater.SelectedItemTemplate>
+                                
+                            </grial:Repeater>
+                        </grial:CardView>
+                        
+                        <!-- TOTAL -->
+                        <grial:CardView
+							x:Name="total"
+							Opacity="0"
+							Padding="24">
+
+                            <Label
+								Text="{ grial:Translate StringTotal }"
+								TextColor="{ DynamicResource AccentColor }"
+								FontSize="20"
+								HorizontalOptions="Start" />
+                            
+                            <Label
+								HorizontalOptions="End"
+								Text="{ Binding Total, StringFormat='$ {0:0.##}' } }"
+								TextColor="{ DynamicResource AccentColor }"
+								FontSize="24"
+								Style="{ StaticResource LabelBoldStyle }" />
+                        </grial:CardView>
+
+                        <!-- SHIPPING ADDRESS -->
+                        <grial:CardView
+							x:Name="address"
+							Opacity="0"
+							Padding="24"
+							ColumnSpacing="12">
+                            <grial:CardView.ColumnDefinitions>
+                                <ColumnDefinition
+									Width="Auto" />
+                                <ColumnDefinition
+									Width="*" />
+                                <ColumnDefinition
+									Width="70" />
+                            </grial:CardView.ColumnDefinitions>
+
+                            <grial:CardView.RowDefinitions>
+                                <RowDefinition
+									Height="30" />
+                                <RowDefinition
+									Height="Auto" />
+                            </grial:CardView.RowDefinitions>
+
+                             <!-- ICON -->
+                            <Label
+								Grid.Row="0"
+								Grid.Column="0"
+								Text="{ x:Static local:GrialIconsFont.Truck }"
+								FontSize="24"
+								Style="{ StaticResource FontIcon }"
+								VerticalOptions="Center" />
+
+                            <!-- SHIPPING ADDRESS -->
+                            <Label
+								Grid.Row="0"
+								Grid.Column="1"
+								Style="{ StaticResource LabelBoldStyle }"
+								Text="{ grial:Translate ShippingAddress }"
+								VerticalOptions="Center" />
+
+                            <!-- BUTTON -->
+                            <Button
+								Grid.Row="0"
+								Grid.Column="2"
+								Text="{ grial:Translate StringEdit }"
+								TextColor="{ DynamicResource ComplementColor }"
+								BackgroundColor="Transparent"
+								VerticalOptions="Center"
+								Padding="0" />
+
+                            <!-- SHIPPING ADDRESS DATA -->
+                            <Label
+								Grid.Row="1"
+								Grid.Column="0"
+								Grid.ColumnSpan="2"
+								Text="{ Binding ShippingAddress }" />
+                        </grial:CardView>
+
+                        <!-- PAYMENT METHOD -->
+                        <grial:CardView
+							x:Name="payment"
+							Opacity="0"
+							Padding="24"
+							ColumnSpacing="12">
+                            <grial:CardView.ColumnDefinitions>
+                                <ColumnDefinition
+									Width="Auto" />
+                                <ColumnDefinition
+									Width="*" />
+                                <ColumnDefinition
+									Width="70" />
+                            </grial:CardView.ColumnDefinitions>
+
+                            <grial:CardView.RowDefinitions>
+                                <RowDefinition
+									Height="30" />
+                                <RowDefinition
+									Height="Auto" />
+                            </grial:CardView.RowDefinitions>
+
+                             <!-- ICON -->
+                            <Label
+								Grid.Row="0"
+								Grid.Column="0"
+								Text="{ x:Static local:GrialIconsFont.CardVisa }"
+								FontSize="24"
+								Style="{ StaticResource FontIcon }"
+								VerticalOptions="Center" />
+
+                            <!-- PAYMENT METHOD -->
+                            <Label
+								Grid.Row="0"
+								Grid.Column="1"
+								Style="{ StaticResource LabelBoldStyle }"
+								Text="{ grial:Translate PaymentMethod }"
+								VerticalOptions="Center" />
+
+                            <!-- BUTTON -->
+                            <Button
+								Grid.Row="0"
+								Grid.Column="2"
+								Text="Edit"
+								TextColor="{ DynamicResource ComplementColor }"
+								BackgroundColor="Transparent"
+								VerticalOptions="Center"
+								Padding="0" />
+
+                            <!-- SHIPPING ADDRESS DATA -->
+                            <Label
+								Grid.Row="1"
+								Grid.Column="0"
+								Grid.ColumnSpan="2"
+								Text="{ Binding PaymentMethod }" />
+                        </grial:CardView>
+                        
+                    </StackLayout>
+                
+                </ScrollView>
+                
+            </Grid>
+            
+            <Grid
+				Style="{ StaticResource ResponsiveLandscapeMarginStyle }"
+				Grid.Row="1"
+				BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+                <!-- SCROLLVIEW BOTTOM GRADIENT MASK -->
+                <BoxView
+					VerticalOptions="Start"
+					Style="{ DynamicResource ScrollViewBottomGradientMaskStyle }" />
+            
+                <!-- BUTTON -->
+                <Button
+					x:Name="confirm"
+					Opacity="0"
+					Margin="20,0,20,20"
+					Text="{ grial:Translate ConfirmOrder }"
+					Style="{ StaticResource PrimaryActionButtonStyle }"
+					Clicked="OnConfirm" />
+            
+            </Grid>
+    
+        </Grid>
+
+    </ContentPage.Content>
+    
+</ContentPage>

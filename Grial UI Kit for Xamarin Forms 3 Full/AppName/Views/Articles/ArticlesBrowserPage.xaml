@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+	Title="{ grial:Translate Key=PageTitleArticlesBrowser }"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }"
+	x:Class="AppName.ArticlesBrowserPage">
+    
+    <ContentPage.Content>
+        
+        <ScrollView>
+            
+            <Grid
+				RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="300" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+                
+                <local:ExtendedCarouselViewControl
+					HeightRequest="300"
+					ShowIndicators="true"
+					Margin="0"
+					VerticalOptions="Center"
+					IndicatorsTintColor="{ DynamicResource TranslucidBlack }"
+					CurrentPageIndicatorTintColor="{ DynamicResource BaseTextColor }"
+					ItemsSource="{ Binding Articles }">
+                    <cv:CarouselViewControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:ArticlesBrowserHeaderItemTemplate />
+                        </DataTemplate>
+                    </cv:CarouselViewControl.ItemTemplate>
+                </local:ExtendedCarouselViewControl>
+                
+                <StackLayout
+					Grid.Row="1"
+					grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                    <!-- CARDS -->
+                    <grial:Repeater
+						Padding="0"
+						ItemsSource="{ Binding Articles }"
+						Orientation="Horizontal"
+						HeightRequest="324"
+						Spacing="0"
+						VerticalOptions="End"
+						ScrollBarVisibility="Never"
+						ScrollPadding="10,0,10,0">
+                        <grial:Repeater.ItemTemplate>
+                            <DataTemplate>
+                                <local:ArticleBrowserCardItemTemplate
+									Padding="10,0,10,20"
+									WidthRequest="200" />
+                            </DataTemplate>
+                        </grial:Repeater.ItemTemplate>
+
+                    </grial:Repeater>
+                    
+                    
+                    <!-- CARDS -->
+                    <grial:Repeater
+						Padding="0"
+						ItemsSource="{ Binding Related }"
+						Orientation="Horizontal"
+						HeightRequest="324"
+						WidthRequest="200"
+						Spacing="0"
+						VerticalOptions="End"
+						ScrollBarVisibility="Never"
+						ScrollPadding="10,0,10,0">
+                        <grial:Repeater.ItemTemplate>
+                            <DataTemplate>
+                                <local:ArticleBrowserCardItemTemplate
+									Padding="10,0,10,20"
+									WidthRequest="200" />
+                            </DataTemplate>
+                        </grial:Repeater.ItemTemplate>
+
+                    </grial:Repeater>
+                
+                </StackLayout>
+                    
+            </Grid>
+            
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

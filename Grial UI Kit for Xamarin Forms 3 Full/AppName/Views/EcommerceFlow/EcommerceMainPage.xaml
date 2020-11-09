@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	BackgroundColor="Transparent"
+	Title="{ grial:Translate Key=PageTitleEcommerceMain }"
+	x:Class="AppName.EcommerceMainPage">
+    <ContentPage.Content>
+        <Grid
+			RowSpacing="0">
+            <!-- OVERLAPPED CONTENT -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+                
+                <!-- SEARCH BAR -->
+                <Grid
+					ColumnSpacing="18"
+					Margin="18"
+					grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="44" />
+                    </Grid.RowDefinitions>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="*" />
+                        <ColumnDefinition
+							Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                        
+                    <BoxView
+						BackgroundColor="{ DynamicResource TranslucidWhite }"
+						CornerRadius="{ DynamicResource BaseButtonCornerRadius }"
+						Margin="0,0,-8,0" />
+                    
+                    <SearchBar
+						CancelButtonColor="White"
+						Grid.Row="0"
+						BackgroundColor="Transparent"
+						TextColor="{ DynamicResource InverseTextColor }"
+						Style="{ StaticResource TranslucidSearchBarStyle }"
+						grial:SearchBarProperties.Placeholder="Search" />
+                    
+                    <!-- ICON -->
+                    <Label
+						Grid.Column="1"
+						Grid.Row="0"
+						VerticalOptions="Center"
+						FontSize="24"
+						TextColor="{DynamicResource OverImageTextColor}"
+						Text="{x:Static local:GrialIconsFont.Sliders}"
+						Style="{StaticResource FontIcon}" />
+                </Grid>
+
+                <!-- SCROLLING AREA -->
+                <ScrollView
+					Padding="0,0,0,30"
+					Grid.Row="1"
+					BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }"
+					grial:Effects.IgnoreIOSSafeAreaOnScrollView="All">
+
+                    <Grid
+						RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="244" />
+                            <RowDefinition
+								Height="*" />
+                        </Grid.RowDefinitions>
+                        
+                        <!-- CAROUSEL -->
+                        <local:ExtendedCarouselViewControl
+							BackgroundColor="#E9E9E9"
+							ShowIndicators="true"
+							Margin="0"
+							IndicatorsTintColor="{ DynamicResource BasePageColor }"
+							CurrentPageIndicatorTintColor="{ DynamicResource BaseTextColor }"
+							ItemsSource="{ Binding HighlightedProducts }"
+							Grid.Row="0">
+                            
+                            <cv:CarouselViewControl.ItemTemplate>
+                                <DataTemplate>
+                                    <local:ProductGalleryItemTemplate />
+                                </DataTemplate>
+                            </cv:CarouselViewControl.ItemTemplate>
+                            
+                        </local:ExtendedCarouselViewControl>
+                        
+                        <!-- BANNER -->
+                        <Frame
+							InputTransparent="true"
+							IsVisible="{ Binding Banner, Converter={ StaticResource IsNotEmptyStringConverter } }"
+							VerticalOptions="Start"
+							HorizontalOptions="Center"
+							WidthRequest="210"
+							HeightRequest="64"
+							BorderColor="{ DynamicResource BaseSeparatorColor }"
+							CornerRadius="0"
+							BackgroundColor="Transparent"
+							HasShadow="false"
+							Padding="0"
+							Margin="0,20,0,0">
+                            <Label
+								Text="{ Binding Banner, Converter={ StaticResource ToUpperConverter } }"
+								TextColor="{ DynamicResource BaseSeparatorColor }"
+								HorizontalTextAlignment="Center"
+								VerticalTextAlignment="Center" />
+                        </Frame>
+                                                
+                        
+                        <!-- PRODUCTS CATEGORIES -->
+                        <grial:Repeater
+							Margin="0,10,0,0"
+							Grid.Row="1"
+							ItemsSource="{ Binding Categories }"
+							Orientation="Vertical"
+							ScrollBarVisibility="Never"
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                        
+                            <grial:Repeater.ItemSize>
+                                <OnIdiom
+									x:TypeArguments="x:Double"
+									Phone="380"
+									Tablet="430" />
+                            </grial:Repeater.ItemSize>
+                            
+                            <grial:Repeater.ItemTemplate>
+                                <DataTemplate>
+                                    <!-- PRODUCTS CATEGORY -->
+                                    <Grid
+										RowSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition
+												Height="Auto" />
+                                            <RowDefinition
+												Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Label
+											Margin="22,22,22,10"
+											Grid.Row="0"
+											FontSize="22"
+											Text="{ Binding Name }"
+											Style="{ StaticResource DashboardMultipleScrollItemTitleStyle }" />
+                                            
+                                        <!-- PRODUCTS LIST -->
+                                        <grial:Repeater
+											Grid.Row="1"
+											ScrollPadding="16,10"
+											ItemsSource="{ Binding Content }"
+											ScrollBarVisibility="Never"
+											Spacing="12"
+											HeightRequest="{
+                                                OnPlatform 
+                                                    iOS=330,
+                                                    Android=340, 
+                                            }">
+                                            
+                                            <grial:Repeater.ItemSize>
+                                                <OnIdiom
+													x:TypeArguments="x:Double"
+													Phone="190"
+													Tablet="260" />
+                                            </grial:Repeater.ItemSize>
+                                            
+                                            <grial:Repeater.ItemTemplate>
+                                                <DataTemplate>
+                                                    <!-- PRODUCT ITEM TEMPLATE -->
+                                                    <local:ProductCardItemTemplate />
+                                                </DataTemplate>
+                                            </grial:Repeater.ItemTemplate>
+                                        </grial:Repeater>
+                                    </Grid>
+                                </DataTemplate>
+                            </grial:Repeater.ItemTemplate>
+                            
+                        </grial:Repeater>
+                        
+                    </Grid>
+                </ScrollView>
+            </Grid>
+        </Grid>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

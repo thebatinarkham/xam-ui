@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.AddContactPage"
+	Title="{ Binding Title }">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <grial:BooleanToObjectConverter
+				x:Key="ColumSpanConverter"
+				x:TypeArguments="x:Int32"
+				TrueValue="1"
+				FalseValue="2" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        
+        <Grid
+			RowSpacing="0"
+			BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <ScrollView
+				Padding="20,20,20,30"
+				Grid.Row="0"
+				Grid.RowSpan="2"
+				Margin="0,0,0,40">
+                <Grid
+					Style="{ StaticResource ResponsiveLandscapeMarginStyle }"
+					RowSpacing="20">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="44" />
+                        <RowDefinition
+							Height="44" />
+                        <RowDefinition
+							Height="44" />
+                        <RowDefinition
+							Height="44" />
+                        <RowDefinition
+							Height="44" />
+                        <RowDefinition
+							Height="44" />
+                        <RowDefinition
+							Height="44" /> 
+                        <RowDefinition
+							Height="44" />
+                        <RowDefinition
+							Height="200" />
+                    </Grid.RowDefinitions>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="*" />
+                        <ColumnDefinition
+							Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--IMAGE (edit contact)-->
+                    <Grid
+						Grid.Column="1"
+						Grid.RowSpan="2"
+						Margin="10,0"
+						IsVisible="{ Binding IsEdit }"
+						HorizontalOptions="Start"
+						VerticalOptions="Center">
+                        <local:CircleCachedImage
+							Source="{ Binding Contact.Avatar }"
+							WidthRequest="80"
+							HeightRequest="80" />
+
+                        <Button
+							FontSize="42"
+							Text="{ x:Static local:GrialIconsFont.Camera }"
+							FontFamily="{ StaticResource IconsFontFamily }"
+							BackgroundColor="Transparent"
+							TextColor="{ DynamicResource OverImageTextColor }"
+							Clicked="OnImage" />
+                    </Grid>
+                    
+                    <!--IMAGE (new contact)-->
+                    <Button
+						Grid.Column="1"
+						Grid.RowSpan="2"
+						Margin="20,0"
+						HorizontalOptions="Start"
+						VerticalOptions="Center"
+						IsVisible="{ Binding IsEdit, Converter={StaticResource NegateBooleanConverter} }"
+						WidthRequest="60"
+						HeightRequest="60"
+						CornerRadius="30"
+						FontSize="32"
+						Text="{ x:Static local:GrialIconsFont.Camera }"
+						FontFamily="{ StaticResource IconsFontFamily }"
+						Style="{ StaticResource PrimaryActionButtonStyle }"
+						Clicked="OnImage" />
+                    
+                    <!--NAME ENTRY-->
+                    <Entry
+						Grid.Column="0"
+						Placeholder="Full Name"
+						Text="{ Binding Contact.Name, Mode=TwoWay }" />
+
+                    <!-- ORGANIZATION -->
+                    <Entry
+						Grid.Column="0"
+						Grid.Row="1"
+						HeightRequest="40"
+						Placeholder="Organization"
+						Text="{ Binding Contact.Organization, Mode=TwoWay }" /> 
+                    
+                    <!--ADDRESS LINE 1-->
+                    <Entry
+						Grid.Row="2"
+						Grid.ColumnSpan="2"
+						Placeholder="{ grial:Translate StringAddress1 }"
+						Text="{ Binding Contact.Address1, Mode=TwoWay }" />
+
+                    <!-- ADDRESS LINE 2 -->
+                    <Entry
+						Grid.Row="3"
+						Grid.ColumnSpan="2"
+						Placeholder="{ grial:Translate StringAddress2 }"
+						Text="{ Binding Contact.Address2, Mode=TwoWay }" />
+                    
+                    <!-- COUNTRY -->
+                    <Entry
+						Grid.Row="4"
+						Grid.ColumnSpan="2"
+						Placeholder="Country"
+						Text="{ Binding Contact.Country, Mode=TwoWay }" />
+                    
+                    <Grid
+						Grid.Row="5"
+						Grid.ColumnSpan="2"
+						RowSpacing="20"
+						ColumnSpacing="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- CITY CITY -->
+                        <Entry
+							Grid.Column="0"
+							Placeholder="{ grial:Translate StringCity }"
+							Text="{ Binding Contact.City, Mode=TwoWay }" />
+
+                        <!--ZIP CODE ENTRY-->
+                        <Entry
+							Grid.Column="1"
+							Placeholder="{ grial:Translate StringZipCode }"
+							Text="{ Binding Contact.Zip, Mode=TwoWay }" />
+                        
+                    </Grid> 
+                    
+                    <Grid
+						Grid.Row="6"
+						Grid.ColumnSpan="2"
+						RowSpacing="0"
+						ColumnSpacing="20">
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="60" />
+                            <ColumnDefinition
+								Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- PREFIX -->
+                        <Entry
+							Grid.Column="0"
+							Placeholder="+1"
+							Text="{ Binding PhoneCode, Mode=TwoWay }" />
+
+                        <!-- NUMBER -->
+                        <Entry
+							Grid.Column="1"
+							Placeholder="999-9999 9999"
+							Text="{ Binding Phone, Mode=TwoWay }" />
+                        
+                    </Grid>
+                    
+                    <!--EMAIL-->
+                    <Entry
+						Grid.Row="7"
+						Grid.ColumnSpan="2"
+						Placeholder="{ grial:Translate StringEmail }"
+						Text="{ Binding Contact.Email, Mode=TwoWay }" />
+                    
+                    <!-- NOTES -->
+                    <Editor
+						Grid.Row="8"
+						Grid.ColumnSpan="2"
+						grial:EditorProperties.Placeholder="Notes"
+						Text="{ Binding Contact.Notes, Mode=TwoWay }"
+						Margin="0,0,0,30" />
+                    
+                </Grid>
+            </ScrollView>
+            
+            <Grid
+				Grid.Row="1"
+				Style="{ StaticResource ResponsiveLandscapeMarginStyle }"
+				BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+                 <!-- SCROLLVIEW BOTTOM GRADIENT MASK -->
+                <BoxView
+					VerticalOptions="Start"
+					Style="{ DynamicResource ScrollViewBottomGradientMaskStyle }" />
+            
+                <Button
+					Margin="20,0,20,20"
+					Text="{ grial:Translate StringSave }"
+					Style="{ StaticResource PrimaryActionButtonStyle }"
+					Clicked="OnSave"
+					WidthRequest="{ 
+                        grial:OnOrientationDouble
+                            LandscapePhone=200,
+                            LandscapeTablet=400 
+                    }"
+					HorizontalOptions="{ 
+                        grial:OnOrientationLayoutOptions
+                            PortraitPhone=Fill,
+                            LandscapePhone=Center,
+                            PortraitTablet=Fill,
+                            LandscapeTablet=Center 
+                    }" />
+            </Grid>
+        </Grid>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

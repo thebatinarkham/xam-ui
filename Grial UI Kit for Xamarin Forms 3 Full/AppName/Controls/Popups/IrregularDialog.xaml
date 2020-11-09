@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+	x:Class="AppName.IrregularDialog"
+	CloseWhenBackgroundIsClicked="{ StaticResource DialogsCloseWhenBackgroundIsClicked }"
+	BackgroundColor="{ DynamicResource DialogsShimBackgroundColor }">
+
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:DialogsResources />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <Grid
+		VerticalOptions="{ StaticResource DialogsVerticalPositioning }">
+        <Grid
+			Margin="{ 
+                grial:OnOrientationThickness
+                    Portrait='20,40,20,20',
+                    Landscape='100,40,100,20' 
+            }"
+			RowSpacing="0"
+			grial:Effects.CornerRadius="{ StaticResource DialogsCornerRadius }"
+			grial:Effects.BackgroundGradient="{ DynamicResource SimpleDialogBodyGradient }"
+			BackgroundColor="{ DynamicResource BasePageColor }">
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="44" />
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="{
+                    grial:OnOrientationDouble
+                            Portrait=64,
+                            Landscape=44
+                    }" />
+            </Grid.RowDefinitions>
+
+            <ScrollView
+				Grid.Row="1">
+
+
+                <StackLayout
+					Spacing="20"
+					Margin="30,0,30,30">
+
+                    <Label
+						HorizontalTextAlignment="Center"
+						Text="You have been rated!"
+						TextColor="{ DynamicResource BaseTextColor }"
+						Style="{ StaticResource LabelBoldStyle }"
+						FontSize="{ 
+                        grial:OnOrientationDouble
+                            Default=24,
+                            Landscape=20 
+                    }"
+						Margin="0,10,0,0">
+                    </Label>
+
+                    <Label
+						FontSize="{ StaticResource DialogsBodyFontSize }"
+						HorizontalTextAlignment="Center"
+						Text="Felicidades! 
+Recibiste 4 de 5 estrellas. 
+Sigue así!"
+						TextColor="{ DynamicResource BaseTextColor }" />
+
+                    <!-- RATING -->
+                    <local:Rating
+						VerticalOptions="Center"
+						HorizontalOptions="Center"
+						Max="5"
+						Value="4.5" />
+                </StackLayout>
+            </ScrollView>
+
+            <!--FOOTER-->
+            <FlexLayout
+				Margin="20,0"
+				Grid.Row="2"
+				JustifyContent="Center">
+                <Button
+					Style="{ StaticResource DialogPrimaryActionButtonStyle }"
+					Text="Close"
+					Clicked="OnClose" />
+
+            </FlexLayout>
+
+        </Grid>
+
+        <!-- AVATAR -->
+        <local:CircleCachedImage
+			BorderSize="4"
+			BorderColor="{ DynamicResource BasePageColor }"
+			Source="https://s3-us-west-2.amazonaws.com/grial-images/v3.0/user_03.png"
+			WidthRequest="86"
+			HeightRequest="86"
+			Style="{ StaticResource AvatarXSmall }"
+			VerticalOptions="Start" />
+
+    </Grid>
+
+</pages:PopupPage>

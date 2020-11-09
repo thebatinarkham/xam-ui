@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.DocumentTimelineRightItemTemplate">
+
+    <Grid
+		ColumnSpacing="0"
+		RowSpacing="0"
+		VerticalOptions="StartAndExpand">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+				Width="*" />
+            <ColumnDefinition
+				Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid
+			Grid.Column="0"
+			ColumnSpacing="0"
+			RowSpacing="0"
+			VerticalOptions="CenterAndExpand"
+			Margin="0,0,40,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="*" />
+            </Grid.RowDefinitions>
+
+             <!-- AUTHOR -->
+            <Label
+				Grid.Row="0"
+				TextColor="{ DynamicResource BaseTextColor }"
+				VerticalOptions="End"
+				HorizontalOptions="End"
+				FontSize="12"
+				Text="{ Binding Author, StringFormat='By {0:F0}'} }" />
+
+            <!-- DATE -->
+            <Label
+				Grid.Row="1"
+				VerticalOptions="Start"
+				HorizontalOptions="End"
+				TextColor="{ DynamicResource BaseTextColor }"
+				FontSize="12"
+				Text="{ Binding When }" />
+        </Grid>
+
+        <!-- BALOON -->
+        <Grid
+			Grid.Row="0"
+			Grid.Column="1"
+			Padding="10"
+			ColumnSpacing="0"
+			VerticalOptions="CenterAndExpand"
+			HorizontalOptions="Start"
+			Margin="6,10,10,10">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="26" />
+                <ColumnDefinition
+					Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <BoxView
+				Grid.Column="1"
+				Style="{ StaticResource DocumentTimelineBubbleStyle }"
+				BackgroundColor="{ DynamicResource ComplementColor }" />
+
+            <Label
+				Grid.Column="1"
+				Margin="10"
+				TextColor="{ DynamicResource ChatLeftTextColor }"
+				FontSize="14"
+				Text="{ Binding Title }" />
+
+            <Label
+				Grid.Row="0"
+				Grid.Column="0"
+				HorizontalOptions="Center"
+				Text="{ x:Static local:GrialIconsFont.ShapeArrowLeft }"
+				TranslationX="11"
+				TextColor="{ DynamicResource ComplementColor }"
+				Style="{ StaticResource FontIconFill }"
+				FontSize="26" />
+        </Grid>
+    
+        <!--CONNECTION LINE-->
+        <AbsoluteLayout
+			Grid.Column="0"
+			Grid.Row="0"
+			Grid.ColumnSpan="2">
+            <BoxView
+				AbsoluteLayout.LayoutFlags="XProportional, HeightProportional"
+				AbsoluteLayout.LayoutBounds=".5,0,3,1.09"
+				WidthRequest="2"
+				VerticalOptions="Fill"
+				HorizontalOptions="FillAndExpand"
+				BackgroundColor="{ DynamicResource AccentColor }" />
+        </AbsoluteLayout>
+        
+        <!-- ICON BACKGROUND -->
+        <BoxView
+			Grid.Column="0"
+			Grid.Row="0"
+			Grid.ColumnSpan="2"
+			Style="{ StaticResource DocumentTimelineBulletStyle }"
+			BackgroundColor="{ DynamicResource AccentColor }"
+			VerticalOptions="Center"
+			HorizontalOptions="Center" />
+
+
+        <!-- ICON -->
+        <Label
+			Grid.Column="0"
+			Grid.Row="0"
+			Grid.ColumnSpan="2"
+			FontSize="20"
+			Text="{ Binding Icon }"
+			Style="{ StaticResource FontIcon }"
+			TextColor="White"
+			VerticalOptions="Center"
+			HorizontalOptions="Center" />
+
+    </Grid>
+
+</ContentView>

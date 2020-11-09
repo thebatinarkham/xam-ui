@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.MoviesSectionTemplate">
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="46" />
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom
+							x:TypeArguments="GridLength"
+							Phone="134"
+							Tablet="268" />
+                    </RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label
+				Grid.Row="0"
+				Text="{ Binding Title }"
+				Style="{ StaticResource DashboardMultipleScrollItemTitleStyle }" />
+
+            <grial:Repeater
+				Grid.Row="1"
+				ScrollPadding="10,0"
+				ItemsSource="{ Binding Movies }"
+				ScrollBarVisibility="Never"
+				Spacing="10">
+                <grial:Repeater.ItemSize>
+                    <OnIdiom
+						x:TypeArguments="x:Double"
+						Phone="81"
+						Tablet="162" />
+                </grial:Repeater.ItemSize>
+
+                <grial:Repeater.ItemTemplate>
+                    <DataTemplate>
+                        <local:MoviesSectionItemTemplate />
+                    </DataTemplate>
+                </grial:Repeater.ItemTemplate>
+
+            </grial:Repeater>
+
+        </Grid>
+
+    </ContentView.Content>
+
+</ContentView>

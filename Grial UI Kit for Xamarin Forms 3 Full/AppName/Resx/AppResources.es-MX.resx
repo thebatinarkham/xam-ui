@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="StringGrial" xml:space="preserve">
+    <value>Binaria</value>
+  </data>
+  <data name="StringUIKIT" xml:space="preserve">
+    <value>Wallet</value>
+  </data>
+  <data name="StringColon" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="StringNew" xml:space="preserve">
+    <value>NEW</value>
+  </data>
+  <data name="StringOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="StringSave" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="StringCompare" xml:space="preserve">
+    <value>Comparar</value>
+  </data>
+  <data name="StringShare" xml:space="preserve">
+    <value>Compartir</value>
+  </data>
+  <data name="StringBuy" xml:space="preserve">
+    <value>Comprar</value>
+  </data>
+  <data name="StringUsername" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="StringName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="StringLastName" xml:space="preserve">
+    <value>Ultimo Nombre</value>
+  </data>
+  <data name="StringCardNumber" xml:space="preserve">
+    <value>Número de tarjeta</value>
+  </data>
+  <data name="StringCVC" xml:space="preserve">
+    <value>CVC</value>
+  </data>
+  <data name="StringExpirationDate" xml:space="preserve">
+    <value>Fecha de expiración</value>
+  </data>
+  <data name="StringAddress" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="StringAddress1" xml:space="preserve">
+    <value>Dirección linea 1</value>
+  </data>
+  <data name="StringAddress2" xml:space="preserve">
+    <value>Dirección linea 2</value>
+  </data>
+  <data name="StringCity" xml:space="preserve">
+    <value>Ciudad</value>
+  </data>
+  <data name="StringState" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="StringZipCode" xml:space="preserve">
+    <value>Código Postal</value>
+  </data>
+  <data name="StringCountry" xml:space="preserve">
+    <value>Pais</value>
+  </data>
+  <data name="StringNotes" xml:space="preserve">
+    <value>Notas</value>
+  </data>
+  <data name="StringEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="StringExplore" xml:space="preserve">
+    <value>Explorar</value>
+  </data>
+  <data name="StringPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="StringSignUp" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="StringLogin" xml:space="preserve">
+    <value>Inicio de Sesión</value>
+  </data>
+  <data name="StringWelcomeToGrial" xml:space="preserve">
+    <value>Bienvenido a Binaria</value>
+  </data>
+  <data name="StringTwitter" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="StringFacebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="StringSend" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="StringDone" xml:space="preserve">
+    <value>Hecho</value>
+  </data>
+  <data name="StringConfirmation" xml:space="preserve">
+    <value>Confirmación</value>
+  </data>
+  <data name="StringError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="StringNotification" xml:space="preserve">
+    <value>Notificación</value>
+  </data>
+  <data name="StringSuccess" xml:space="preserve">
+    <value>Satisfactorio</value>
+  </data>
+  <data name="StringWarning" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="StringScreens" xml:space="preserve">
+    <value>pantallas</value>
+  </data>
+  <data name="StringCategorySocial" xml:space="preserve">
+    <value>Perfil Social</value>
+  </data>
+  <data name="StringCategoryArticles" xml:space="preserve">
+    <value>Articulos</value>
+  </data>
+  <data name="StringCategoryDashboards" xml:space="preserve">
+    <value>Tableros</value>
+  </data>
+  <data name="StringCategoryNavigation" xml:space="preserve">
+    <value>Navegación</value>
+  </data>
+  <data name="StringCategoryLogins" xml:space="preserve">
+    <value>Inicios de sesión</value>
+  </data>
+  <data name="StringCategoryForms" xml:space="preserve">
+    <value>Formularios</value>
+  </data>
+  <data name="StringCategoryECommerce" xml:space="preserve">
+    <value>Comercio Electrónico</value>
+  </data>
+  <data name="StringCategoryWalkthroughs" xml:space="preserve">
+    <value>Tutoriales</value>
+  </data>
+  <data name="StringCategoryOnboarding" xml:space="preserve">
+    <value>Incorporaciones</value>
+  </data>
+  <data name="StringCategoryMessages" xml:space="preserve">
+    <value>Mensajes</value>
+  </data>
+  <data name="StringCategoryTheme" xml:space="preserve">
+    <value>Temas</value>
+  </data>
+  <data name="StringCategoryDataViz" xml:space="preserve">
+    <value>Tableros de datos</value>
+  </data>
+  <data name="StringClareJapi" xml:space="preserve">
+    <value>Clare japi</value>
+  </data>
+  <data name="StringRobertStainford" xml:space="preserve">
+    <value>Roberto Carlos</value>
+  </data>
+  <data name="StringNext" xml:space="preserve">
+    <value>Siguiente</value>
+  </data>
+  <data name="StringPrevious" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="StringFinish" xml:space="preserve">
+    <value>Finalizar</value>
+  </data>
+  <data name="StringLinkedin" xml:space="preserve">
+    <value>Linkedin</value>
+  </data>
+  <data name="StringContact" xml:space="preserve">
+    <value>Contacto</value>
+  </data>
+  <data name="StringContactUs" xml:space="preserve">
+    <value>Contactanos</value>
+  </data>
+  <data name="StringEditContact" xml:space="preserve">
+    <value>Editar Contacto</value>
+  </data>
+  <data name="StringNewContact" xml:space="preserve">
+    <value>Agregar contacto</value>
+  </data>
+  <data name="StringLoading" xml:space="preserve">
+    <value>Cargando...</value>
+  </data>
+  <data name="StringSkip" xml:space="preserve">
+    <value>Saltar</value>
+  </data>
+  <data name="StringSaveChanges" xml:space="preserve">
+    <value>Guardar Cambios</value>
+  </data>
+  <data name="StringBatmanChoice" xml:space="preserve">
+    <value>Selección</value>
+  </data>
+  <data name="StringExtraSoftUIFlavor" xml:space="preserve">
+    <value>Sabor extra</value>
+  </data>
+  <data name="StringImpressYourBoss" xml:space="preserve">
+    <value>Impresiona a tu jefe</value>
+  </data>
+  <data name="StringIcons" xml:space="preserve">
+    <value>Iconos</value>
+  </data>
+  <data name="StringContextActionTapped" xml:space="preserve">
+    <value>{0} tocado</value>
+  </data>
+  <data name="StringTappedOnContextAction" xml:space="preserve">
+    <value>toco sobre {0}</value>
+  </data>
+  <data name="StringMessageTapped" xml:space="preserve">
+    <value>Mensaje tocado</value>
+  </data>
+  <data name="StringButtonTapped" xml:space="preserve">
+    <value>Botón tocado</value>
+  </data>
+  <data name="StringTappedOnAuthorMessage" xml:space="preserve">
+    <value>toco sobre {0}</value>
+  </data>
+  <data name="StringMoreFrom" xml:space="preserve">
+    <value>Más desde {0}</value>
+  </data>
+  <data name="StringLastMonth" xml:space="preserve">
+    <value>Ultimo Mes</value>
+  </data>
+  <data name="StringLastYear" xml:space="preserve">
+    <value>Ultimo Año</value>
+  </data>
+  <data name="StringLastWeek" xml:space="preserve">
+    <value>Ultima Semana</value>
+  </data>
+  <data name="StringRelatedNews" xml:space="preserve">
+    <value>Noticias relacionadas</value>
+  </data>
+  <data name="StringAll" xml:space="preserve">
+    <value>Todo</value>
+  </data>
+  <data name="StringInTransit" xml:space="preserve">
+    <value>En Tránsito</value>
+  </data>
+  <data name="StringClosed" xml:space="preserve">
+    <value>Cerrado</value>
+  </data>
+  <data name="StringClose" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="StringOpen" xml:space="preserve">
+    <value>Abierto</value>
+  </data>
+  <data name="StringScore" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="RemainingTasks" xml:space="preserve">
+    <value>{0} tareas pendientes</value>
+  </data>
+  <data name="AgendaTitle" xml:space="preserve">
+    <value>Tu agenda para esta semana</value>
+  </data>
+  <data name="CompletedTasks" xml:space="preserve">
+    <value>Tareas Completadas</value>
+  </data>
+  <data name="StringWorkspaces" xml:space="preserve">
+    <value>Espacios de trabajo</value>
+  </data>
+  <data name="StringProjects" xml:space="preserve">
+    <value>Proyectos</value>
+  </data>
+  <data name="StringDetails" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="PageTitleParallaxHeaderArticle" xml:space="preserve">
+    <value>Articulo con encabezado</value>
+  </data>
+  <data name="PageTitleCardArticle" xml:space="preserve">
+    <value>Articulo en tarjeta</value>
+  </data>
+  <data name="PageTitleCurvedHeaderArticle" xml:space="preserve">
+    <value>Articulo con cabecera curva</value>
+  </data>
+  <data name="PageTitleArticlesClassicView" xml:space="preserve">
+    <value>Vista clásica de articulos</value>
+  </data>
+  <data name="PageTitleArticlesFeed" xml:space="preserve">
+    <value>Feed de articulos</value>
+  </data>
+  <data name="PageTitleArticlesList" xml:space="preserve">
+    <value>Lista de articulos</value>
+  </data>
+  <data name="PageTitleArticlesListVariant" xml:space="preserve">
+    <value>Lista variante de articulos</value>
+  </data>
+  <data name="PageTitleArticlesColumns" xml:space="preserve">
+    <value>Columnas de articulos</value>
+  </data>
+  <data name="PageTitleArticleDetail" xml:space="preserve">
+    <value>Detalle de articulo</value>
+  </data>
+  <data name="PageTitleDashboardCards" xml:space="preserve">
+    <value>Tableros con tarjetas</value>
+  </data>
+  <data name="PageTitleFlatDashboard" xml:space="preserve">
+    <value>Tablero plano</value>
+  </data>
+  <data name="PageTitleDashboardMultipleTiles" xml:space="preserve">
+    <value>Multiples fichas</value>
+  </data>
+  <data name="PageTitleIconsDashboard" xml:space="preserve">
+    <value>Tablero de iconos</value>
+  </data>
+  <data name="PageTitleImagesDashboard" xml:space="preserve">
+    <value>Tablero de impagenes</value>
+  </data>
+  <data name="RoundedLabelCast" xml:space="preserve">
+    <value>ACTORES</value>
+  </data>
+  <data name="RoundedLabelDirector" xml:space="preserve">
+    <value>DIRECTOR</value>
+  </data>
+  <data name="AlertTitleMovieTapped" xml:space="preserve">
+    <value>Clic en pelicula</value>
+  </data>
+  <data name="AlertMessageMovieShouldPlayMovieNow" xml:space="preserve">
+    <value>Debes reproducir la pelicula ahora</value>
+  </data>
+  <data name="SampleDashboardGrialMovies" xml:space="preserve">
+    <value>Página principal de peliculas</value>
+  </data>
+  <data name="ButtonPlayMovie" xml:space="preserve">
+    <value>Reproducir Pelicula</value>
+  </data>
+  <data name="PageTitleChatMain" xml:space="preserve">
+    <value>Página de Chat</value>
+  </data>
+  <data name="PageTitleChatMessages" xml:space="preserve">
+    <value>Flujo de mensajes de char</value>
+  </data>
+  <data name="PageTitleAddContact" xml:space="preserve">
+    <value>Agregar contacto</value>
+  </data>
+  <data name="PageTitleContactDetail" xml:space="preserve">
+    <value>Flujo detalle de página de contacto</value>
+  </data>
+  <data name="PageTitleContactSimpleDetail" xml:space="preserve">
+    <value>Detalle simple de contacto</value>
+  </data>
+  <data name="PageTitleDocumentTimeline" xml:space="preserve">
+    <value>Cronograma del documento</value>
+  </data>
+  <data name="PageTitleProfile" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="SampleUserProfile" xml:space="preserve">
+    <value>Perfil de usuario</value>
+  </data>
+  <data name="PageTitleSocial" xml:space="preserve">
+    <value>Social</value>
+  </data>
+  <data name="PageTitleSocialVariant" xml:space="preserve">
+    <value>Variante social</value>
+  </data>
+  <data name="PageTitleSocialCard" xml:space="preserve">
+    <value>Tarjeta social</value>
+  </data>
+  <data name="PageTitleTimeline" xml:space="preserve">
+    <value>Linea de tiempo</value>
+  </data>
+  <data name="PageTitleSocialGalleryImagePreview" xml:space="preserve">
+    <value>Vista previa de imágen</value>
+  </data>
+  <data name="StringFriends" xml:space="preserve">
+    <value>AMIGOS</value>
+  </data>
+  <data name="StringPhotos" xml:space="preserve">
+    <value>FOTOS</value>
+  </data>
+  <data name="PageTitleCheckout" xml:space="preserve">
+    <value>Página de pago</value>
+  </data>
+  <data name="PageTitleEcommerceMain" xml:space="preserve">
+    <value>Página principal de flujo de comercio electrónico</value>
+  </data>
+  <data name="PageTitleOrderConfirmation" xml:space="preserve">
+    <value>Confirmación de orden</value>
+  </data>
+  <data name="PageTitleProductDetail" xml:space="preserve">
+    <value>Detalle de producto</value>
+  </data>
+  <data name="ButtonAddToCart" xml:space="preserve">
+    <value>Agregar a carrito</value>
+  </data>
+  <data name="PageTitleProductsCatalog" xml:space="preserve">
+    <value>Catálogo de productos</value>
+  </data>
+  <data name="PageTitleProductItemFullScreen" xml:space="preserve">
+    <value>Pantalla completa del producto</value>
+  </data>
+  <data name="PageTitleProductImageFullScreen" xml:space="preserve">
+    <value>Pantalla completa del producto</value>
+  </data>
+  <data name="SampleProductFullscreen" xml:space="preserve">
+    <value>Pantalla completa de productos</value>
+  </data>
+  <data name="PageTitleProductOrder" xml:space="preserve">
+    <value>Orden del producto</value>
+  </data>
+  <data name="PageTitleProductsGrid" xml:space="preserve">
+    <value>Lista de productos</value>
+  </data>
+  <data name="PageTitleProductsGridVariant" xml:space="preserve">
+    <value>Lista de productos variante</value>
+  </data>
+  <data name="BannerTitle25DiscOff" xml:space="preserve">
+    <value>25% de descuento</value>
+  </data>
+  <data name="BannerBodyEnjoyItNow" xml:space="preserve">
+    <value>Disfrutalo ahora</value>
+  </data>
+  <data name="PageTitleProductItemView" xml:space="preserve">
+    <value>Vista del elemento del producto</value>
+  </data>
+  <data name="SampleProductItemView" xml:space="preserve">
+    <value>Vista por producto</value>
+  </data>
+  <data name="SampleProductCarousel" xml:space="preserve">
+    <value>Carrusel de productos</value>
+  </data>
+  <data name="PageTitleProductsCarousel" xml:space="preserve">
+    <value>Carrusel de productos</value>
+  </data>
+  <data name="PageTitleTabbedLogin" xml:space="preserve">
+    <value>Inicio de sesión con tab</value>
+  </data>
+  <data name="PageTitleFullBackgroundLogin" xml:space="preserve">
+    <value>Acceso con fondo completo</value>
+  </data>
+  <data name="PageTitleFullBackgroundSignup" xml:space="preserve">
+    <value>Registro con fondo completo</value>
+  </data>
+  <data name="PageTitleOrganizationForm" xml:space="preserve">
+    <value>Formulario organizacional</value>
+  </data>
+  <data name="PageTitleSimpleLogin" xml:space="preserve">
+    <value>Inicio de sesión simple</value>
+  </data>
+  <data name="PageTitleSimpleSignUp" xml:space="preserve">
+    <value>Registro simple</value>
+  </data>
+  <data name="PageTitlePasswordRecovery" xml:space="preserve">
+    <value>Recuperación de contraseña</value>
+  </data>
+  <data name="PageTitleLogin" xml:space="preserve">
+    <value>Inicio de Sesión</value>
+  </data>
+  <data name="PageTitleSignUp" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="LabelUseCredentialsToLogin" xml:space="preserve">
+    <value>Usa tus credenciales para iniciar sesión</value>
+  </data>
+  <data name="LabelOrConnectWith" xml:space="preserve">
+    <value>O conectar con</value>
+  </data>
+  <data name="LabelForgotYourPassword" xml:space="preserve">
+    <value>Olvidó su contraseña?</value>
+  </data>
+  <data name="LabelForgotYourPasswordExplained" xml:space="preserve">
+    <value>Introduzca su correo y lo recuperaremos por usted</value>
+  </data>
+  <data name="ErrorPleaseEnterValidEmail" xml:space="preserve">
+    <value>Introduce un email válido</value>
+  </data>
+  <data name="LabelLoginOrRegisterUsinMailOrPass" xml:space="preserve">
+    <value>Logeo o registro con email y password</value>
+  </data>
+  <data name="LabelRegisterNow" xml:space="preserve">
+    <value>Registrarse ahora</value>
+  </data>
+  <data name="LabelRegisterNowAndEnjoy" xml:space="preserve">
+    <value>Registrarse ahora y disfrutar de la demo</value>
+  </data>
+  <data name="LabelPasswordsDoNotMatch" xml:space="preserve">
+    <value>Passwords no coinciden</value>
+  </data>
+  <data name="LabelRepeatPassword" xml:space="preserve">
+    <value>Repetir Password</value>
+  </data>
+  <data name="ButtonAlreadyUserLoginNow" xml:space="preserve">
+    <value>Ya eres usuario? Inicia ahora</value>
+  </data>
+  <data name="PageTitlePopups" xml:space="preserve">
+    <value>Popups y flotantes</value>
+  </data>
+  <data name="PageTitleChatTimeline" xml:space="preserve">
+    <value>Linea de tiempo de chat</value>
+  </data>
+  <data name="PageTitleRecentChatList" xml:space="preserve">
+    <value>Lista de chat reciente</value>
+  </data>
+  <data name="PageTitleMessagesList" xml:space="preserve">
+    <value>Lista de mensajes</value>
+  </data>
+  <data name="PageTitleChatMessagesList" xml:space="preserve">
+    <value>Lista de mensajes de chat</value>
+  </data>
+  <data name="LabelThereIsNothingHere" xml:space="preserve">
+    <value>No hay nada aqui mi amigo</value>
+  </data>
+  <data name="PageTitleNavigationCardsDescriptionList" xml:space="preserve">
+    <value>Lista de tarjetas con descripción</value>
+  </data>
+  <data name="PageTitleMoviesMain" xml:space="preserve">
+    <value>Peliculas Vip</value>
+  </data>
+  <data name="PageTitleFeaturedMovies" xml:space="preserve">
+    <value>Peliculas destacadas</value>
+  </data>
+  <data name="PageTitleMovieDetail" xml:space="preserve">
+    <value>Detalle de peliculas</value>
+  </data>
+  <data name="PageTitleArticlesBrowser" xml:space="preserve">
+    <value>Explorador de articulos</value>
+  </data>
+  <data name="PageTitleDashboardCarousel" xml:space="preserve">
+    <value>Tableros con carrusel</value>
+  </data>
+  <data name="PageTitleMainMenu" xml:space="preserve">
+    <value>Menú Principal</value>
+  </data>
+  <data name="PageTitleNavigationCardsList" xml:space="preserve">
+    <value>Lista de tarjetas</value>
+  </data>
+  <data name="PageTitleNavigationFlatList" xml:space="preserve">
+    <value>Lista plana</value>
+  </data>
+  <data name="PageTitleNavigationListWithIcons" xml:space="preserve">
+    <value>Lista con iconos</value>
+  </data>
+  <data name="PageTitleNavigationListWithImages" xml:space="preserve">
+    <value>Lista con imágenes</value>
+  </data>
+  <data name="PageTitleEmptyState" xml:space="preserve">
+    <value>Estado vacio</value>
+  </data>
+  <data name="PageTitleNotifications" xml:space="preserve">
+    <value>Notificaciones</value>
+  </data>
+  <data name="StringReadyMadeUIsForXamarin" xml:space="preserve">
+    <value>UI en Xamarin</value>
+  </data>
+  <data name="PageTitleWelcome" xml:space="preserve">
+    <value>Página de bienvenida</value>
+  </data>
+  <data name="LabelTakeYourAppToNextLevel" xml:space="preserve">
+    <value>Lleva tu app al siguiente nivel</value>
+  </data>
+  <data name="LabelWelcomeToGrialStarter" xml:space="preserve">
+    <value>Bienvenido a Binaria</value>
+  </data>
+  <data name="LabelWelcomeToGrialStarterDescription" xml:space="preserve">
+    <value>Estas listo para iniciar</value>
+  </data>
+  <data name="TakeWalkThrough" xml:space="preserve">
+    <value>Tomar tour</value>
+  </data>
+  <data name="PageTitleVideoCarouselHighlights" xml:space="preserve">
+    <value>Carrurel de video</value>
+  </data>
+  <data name="PageTitleWalkthroughGradient" xml:space="preserve">
+    <value>Tutorial gradiente</value>
+  </data>
+  <data name="PageTitleWalkthroughIllustration" xml:space="preserve">
+    <value>Tutorial con ilustraciones</value>
+  </data>
+  <data name="PageTitleWalkthroughImage" xml:space="preserve">
+    <value>Tutorial con impagenes</value>
+  </data>
+  <data name="PageTitleWalkthroughMinimal" xml:space="preserve">
+    <value>Tutorial minimalista</value>
+  </data>
+  <data name="PageTitleWalkthroughFlat" xml:space="preserve">
+    <value>Tutorial plano</value>
+  </data>
+  <data name="PageTitleWalkthrough" xml:space="preserve">
+    <value>Tutorial</value>
+  </data>
+  <data name="PageTitleWalkthroughVariant" xml:space="preserve">
+    <value>Tutorial</value>
+  </data>
+  <data name="SampleTitleWalkthrough" xml:space="preserve">
+    <value>Tutoriales</value>
+  </data>
+  <data name="SampleTitleWalkthroughFlat" xml:space="preserve">
+    <value>Tutorial plano</value>
+  </data>
+  <data name="SampleTitleWalkthroughVariant" xml:space="preserve">
+    <value>Variante de tutorial</value>
+  </data>
+  <data name="WalkthroughHeaderLearn" xml:space="preserve">
+    <value>Aprender</value>
+  </data>
+  <data name="WalkthroughHeaderSaveTime" xml:space="preserve">
+    <value>Guardar Tiempo</value>
+  </data>
+  <data name="WalkthroughHeaderWelcome" xml:space="preserve">
+    <value>Bienvenido</value>
+  </data>
+  <data name="WalkthroughTextLearn" xml:space="preserve">
+    <value>Muchos ejemplos de pantalla</value>
+  </data>
+  <data name="WalkthroughTextSaveTime" xml:space="preserve">
+    <value>Enfocate en el negocio, no el diseño</value>
+  </data>
+  <data name="WalkthroughTextWelcome" xml:space="preserve">
+    <value>a un mundo nuevo de posibilidades con binaria</value>
+  </data>
+  <data name="PageTitleThemeOverview" xml:space="preserve">
+    <value>Página de temas</value>
+  </data>
+  <data name="StringAnimation" xml:space="preserve">
+    <value>Animación</value>
+  </data>
+  <data name="PageTitleTabControlCustomSample" xml:space="preserve">
+    <value>Control tab</value>
+  </data>
+  <data name="PageTitleTabControlAndroidSample" xml:space="preserve">
+    <value>Control tab de android</value>
+  </data>
+  <data name="PageTitleTabControliOSSample" xml:space="preserve">
+    <value>Control tab iOS</value>
+  </data>
+  <data name="PageTitleTabControlBottomPlacementSample" xml:space="preserve">
+    <value>Control tab de android inferior</value>
+  </data>
+  <data name="PageTitleTab" xml:space="preserve">
+    <value>Página con tab</value>
+  </data>
+  <data name="SampleTitleThemeDemoSettings" xml:space="preserve">
+    <value>Temas</value>
+  </data>
+  <data name="PageTitleAbout" xml:space="preserve">
+    <value>Acerca De Genérico</value>
+  </data>
+  <data name="PageTitleGenericAbout" xml:space="preserve">
+    <value>Página acerca de genérica</value>
+  </data>
+  <data name="PageTitleRichAbout" xml:space="preserve">
+    <value>Página acerca de</value>
+  </data>
+  <data name="PageTitleCustomSettings" xml:space="preserve">
+    <value>Página de configuraciones</value>
+  </data>
+  <data name="PageTitleCustomActivityIndicator" xml:space="preserve">
+    <value>Indicador de actividad personalizado</value>
+  </data>
+  <data name="PageTitleResponsiveHelpers" xml:space="preserve">
+    <value>Auxiliares responsivos</value>
+  </data>
+  <data name="PageTitleNativeControls" xml:space="preserve">
+    <value>Controles nativos</value>
+  </data>
+  <data name="PageTitleCustomRenderers" xml:space="preserve">
+    <value>Renderizadores personalizados</value>
+  </data>
+  <data name="PageTitleCommonViews" xml:space="preserve">
+    <value>Vistas comúnes</value>
+  </data>
+  <data name="PageTitleSettings" xml:space="preserve">
+    <value>Página de configuración</value>
+  </data>
+  <data name="LabelDisplayGlobalIssues" xml:space="preserve">
+    <value>Mostrar issues</value>
+  </data>
+  <data name="LabelClearImageCache" xml:space="preserve">
+    <value>Borrar cache de impagen</value>
+  </data>
+  <data name="LabelActivityIndicators" xml:space="preserve">
+    <value>Indicadores</value>
+  </data>
+  <data name="LabelButtons" xml:space="preserve">
+    <value>Botones</value>
+  </data>
+  <data name="LabelFrames" xml:space="preserve">
+    <value>Recuadros</value>
+  </data>
+  <data name="LabelThisIsAFrameDescription" xml:space="preserve">
+    <value>Este es un cuadro con un control de etiqueta</value>
+  </data>
+  <data name="LabelEntriesAndEditors" xml:space="preserve">
+    <value>Entradas y Editores</value>
+  </data>
+  <data name="LabelPlaceholderEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EditorSampleText" xml:space="preserve">
+    <value>Editor de multiples lineas</value>
+  </data>
+  <data name="LabelSliders" xml:space="preserve">
+    <value>Sliders</value>
+  </data>
+  <data name="LabelProgressBars" xml:space="preserve">
+    <value>Barras de Progreso</value>
+  </data>
+  <data name="LabelSwitches" xml:space="preserve">
+    <value>Switches</value>
+  </data>
+  <data name="LabelPickers" xml:space="preserve">
+    <value>Pickers</value>
+  </data>
+  <data name="PickerTitleSample" xml:space="preserve">
+    <value>Soy un recolector</value>
+  </data>
+  <data name="LabelListViewAndSearchBar" xml:space="preserve">
+    <value>Listas y Busquedas</value>
+  </data>
+  <data name="SearchBarPlaceholderSearchForAName" xml:space="preserve">
+    <value>Buscar por nombre</value>
+  </data>
+  <data name="ButtonDefault" xml:space="preserve">
+    <value>Predeterminado</value>
+  </data>
+  <data name="ButtonPrimaryAction" xml:space="preserve">
+    <value>Acción Primaria</value>
+  </data>
+  <data name="ButtonSecondaryAction" xml:space="preserve">
+    <value>Acción Secundara</value>
+  </data>
+  <data name="ButtonSave" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="ButtonDelete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="ButtonMore" xml:space="preserve">
+    <value>Mas</value>
+  </data>
+  <data name="ButtonAddComment" xml:space="preserve">
+    <value>Agregar comentario</value>
+  </data>
+  <data name="LabelArtinaButtons" xml:space="preserve">
+    <value>Botones</value>
+  </data>
+  <data name="LabelCircleImages" xml:space="preserve">
+    <value>Imagenes Circulares</value>
+  </data>
+  <data name="LabelArtinaEntry" xml:space="preserve">
+    <value>Entrada</value>
+  </data>
+  <data name="LabelValidationEntryErrorStyle" xml:space="preserve">
+    <value>Estilo de error de validación de entrada</value>
+  </data>
+  <data name="StringSomethingWrongHere" xml:space="preserve">
+    <value>Algo mal aqui</value>
+  </data>
+  <data name="ValidationErrorEnterRequiredInfo" xml:space="preserve">
+    <value>Introduzca información requerida</value>
+  </data>
+  <data name="ValidationWarningOops" xml:space="preserve">
+    <value>Advertencia amistosa</value>
+  </data>
+  <data name="StringYourAccount" xml:space="preserve">
+    <value>Tu Cuenta</value>
+  </data>
+  <data name="StringConnectYourAccount" xml:space="preserve">
+    <value>Conecta tu cuenta</value>
+  </data>
+  <data name="ImageCellDetailDaysLoggedIn" xml:space="preserve">
+    <value>50 dias logeado</value>
+  </data>
+  <data name="EntryCellSampleEmail" xml:space="preserve">
+    <value>correo@dominio.com</value>
+  </data>
+  <data name="EntryCellPlaceholderPhoneNumber" xml:space="preserve">
+    <value>Número de teléfono</value>
+  </data>
+  <data name="LabelBrandBlock" xml:space="preserve">
+    <value>Marca</value>
+  </data>
+  <data name="LabelBadge" xml:space="preserve">
+    <value>Bolsa</value>
+  </data>
+  <data name="LabelRoundedLabel" xml:space="preserve">
+    <value>Etiqueta Redonda</value>
+  </data>
+  <data name="RoundedLabelTextSample" xml:space="preserve">
+    <value>Etiqueta redondeada</value>
+  </data>
+  <data name="LabelAboutUsText" xml:space="preserve">
+    <value>Arquetipo para binaria technologies en xamarin para forms multiplataforma</value>
+  </data>
+  <data name="OurHistoryString" xml:space="preserve">
+    <value>Nuestra historia</value>
+  </data>
+  <data name="OurHistoryStringLongText" xml:space="preserve">
+    <value>Como socios del mejor IDE de la historia, estamos comprometidos a ofrecer productos de alta calidad que realmente ayuden a los desarrolladores a lograr lo mejor.</value>
+  </data>
+  <data name="LabelWeAreATeamOfPassionate" xml:space="preserve">
+    <value>Equipo de apasionados diseñadores</value>
+  </data>
+  <data name="LabelOurProducts" xml:space="preserve">
+    <value>Nuestros productos</value>
+  </data>
+  <data name="LabelOurProductsLongText" xml:space="preserve">
+    <value>Interfaces unificadas multiplataforma</value>
+  </data>
+  <data name="LabelSpecialThanks" xml:space="preserve">
+    <value>Agradecimiento especial</value>
+  </data>
+  <data name="LabelCredits" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="TabItemTextFriends" xml:space="preserve">
+    <value>Amigos</value>
+  </data>
+  <data name="StringHelloClare" xml:space="preserve">
+    <value>Hola Clare!</value>
+  </data>
+  <data name="StringNoPendingTasksToday" xml:space="preserve">
+    <value>No tienes tareas pendientes por ahora</value>
+  </data>
+  <data name="ButtonDeleteAccount" xml:space="preserve">
+    <value>Eliminar Cuenta</value>
+  </data>
+  <data name="PageTitleEmployeePerformanceDashboard" xml:space="preserve">
+    <value>Panel de rendimiento del empleado</value>
+  </data>
+  <data name="PageTitleEmployeeProfileDashboard" xml:space="preserve">
+    <value>Detalles de perfil de empleado</value>
+  </data>
+  <data name="PageTitlePerformanceDashboard" xml:space="preserve">
+    <value>Tablero principal de desempeño</value>
+  </data>
+  <data name="PageTitlePerformanceDashboardMain" xml:space="preserve">
+    <value>Tablero de desempeño</value>
+  </data>
+  <data name="PageTitleShippingDetail" xml:space="preserve">
+    <value>Detalle de compra</value>
+  </data>
+  <data name="PageTitleTaskBrowser" xml:space="preserve">
+    <value>Explorador de tareas</value>
+  </data>
+  <data name="PageTitleTaskOverview" xml:space="preserve">
+    <value>Resúmen de tareas</value>
+  </data>
+  <data name="PageTitleEmployeeForm" xml:space="preserve">
+    <value>Página de formulario de empleado</value>
+  </data>
+  <data name="FlowTitleEcommerce" xml:space="preserve">
+    <value>Flujo de comercio electrónico</value>
+  </data>
+  <data name="FlowTitleTasks" xml:space="preserve">
+    <value>Flujo de tareas</value>
+  </data>
+  <data name="FlowTitleMovies" xml:space="preserve">
+    <value>Flujo de peliculas</value>
+  </data>
+  <data name="FlowTitleMessages" xml:space="preserve">
+    <value>Flujo de mensajes</value>
+  </data>
+  <data name="RichAboutPageDescriptionString" xml:space="preserve">
+    <value>somos los mas solicitados en el área</value>
+  </data>
+  <data name="RichAboutPageTestimonial1String" xml:space="preserve">
+    <value>Nuestro equipo es increible</value>
+  </data>
+  <data name="RichAboutPageTestimonial2String" xml:space="preserve">
+    <value>El equipo hizo un fantastico trabajo</value>
+  </data>
+  <data name="RichAboutPageMissionString" xml:space="preserve">
+    <value>Equipo de diseñadores mision 2</value>
+  </data>
+  <data name="RichAboutPageMission2String" xml:space="preserve">
+    <value>Equio de diseñadore mision 1</value>
+  </data>
+  <data name="RichAboutPageFollowUs" xml:space="preserve">
+    <value>Siguenos en:</value>
+  </data>
+  <data name="RichAboutPageEagerToHear" xml:space="preserve">
+    <value>si deseas mantener contacto solo dinos hola y te buscaremos</value>
+  </data>
+  <data name="StringAboutUs" xml:space="preserve">
+    <value>Acerca de nosotros</value>
+  </data>
+  <data name="StringOurMission" xml:space="preserve">
+    <value>Nuestra Misión</value>
+  </data>
+  <data name="StringOurTeam" xml:space="preserve">
+    <value>Nuestro Equipo</value>
+  </data>
+  <data name="MovieDetails" xml:space="preserve">
+    <value>Detalles de peliculas</value>
+  </data>
+  <data name="TeamMember" xml:space="preserve">
+    <value>Miembro de equipo</value>
+  </data>
+  <data name="TasksPerformance" xml:space="preserve">
+    <value>Desempeño de tareas</value>
+  </data>
+  <data name="StringTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="ShippingAddress" xml:space="preserve">
+    <value>Dirección de entrega</value>
+  </data>
+  <data name="PaymentMethod" xml:space="preserve">
+    <value>Método de pago</value>
+  </data>
+  <data name="BuyIt" xml:space="preserve">
+    <value>Comprarlo</value>
+  </data>
+  <data name="StringSubtotal" xml:space="preserve">
+    <value>Subtotal</value>
+  </data>
+  <data name="DeleteItem" xml:space="preserve">
+    <value>Eliminar elemento</value>
+  </data>
+  <data name="OrderWithGift" xml:space="preserve">
+    <value>Esta orden contiene un regalo</value>
+  </data>
+  <data name="RelatedProducts" xml:space="preserve">
+    <value>Productos relacionados</value>
+  </data>
+  <data name="SeeMoreComments" xml:space="preserve">
+    <value>Ver más comentarios</value>
+  </data>
+  <data name="SeeLessComments" xml:space="preserve">
+    <value>Ver menos comentarios</value>
+  </data>
+  <data name="ProceedToCheckout" xml:space="preserve">
+    <value>Proceder al pago</value>
+  </data>
+  <data name="ConfirmOrder" xml:space="preserve">
+    <value>Confirmar orden</value>
+  </data>
+  <data name="OrderPlacedNotification" xml:space="preserve">
+    <value>Tu orden se colocó satisfactoriamente</value>
+  </data>
+  <data name="StringContacts" xml:space="preserve">
+    <value>Contacto</value>
+  </data>
+  <data name="StringMessages" xml:space="preserve">
+    <value>Mensajes</value>
+  </data>
+  <data name="TypeYourMessage" xml:space="preserve">
+    <value>Escribe tu mensaje...</value>
+  </data>
+  <data name="StringEdit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="StringHome" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="StringMobile" xml:space="preserve">
+    <value>Movil</value>
+  </data>
+  <data name="StringMessage" xml:space="preserve">
+    <value>Mensaje</value>
+  </data>
+  <data name="PageTitleWelcomeStarter" xml:space="preserve">
+    <value>Bienvenida inicial</value>
+  </data>
+  <data name="StringRetry" xml:space="preserve">
+    <value>Intentar</value>
+  </data>
+</root>

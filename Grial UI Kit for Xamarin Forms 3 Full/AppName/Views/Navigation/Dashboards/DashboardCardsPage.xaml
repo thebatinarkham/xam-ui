@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.DashboardCardsPage" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	Title="{ grial:Translate PageTitleDashboardCards }"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+
+    <ScrollView>
+        <grial:GridView
+			Margin="0"
+			ColumnSpacing="0"
+			RowSpacing="0"
+			Padding="2"
+			ColumnCount="{
+                grial:OnOrientationInt 
+                    PortraitPhone=2,
+                    LandscapePhone=3,
+
+                    PortraitTablet=3,
+                    LandscapeTablet=4,
+                
+                    PortraitDesktop=4,
+                    LandscapeDesktop=4
+            }"
+			VerticalOptions="FillAndExpand"
+			ItemsSource="{ Binding Items }">
+            <grial:GridView.ItemTemplate>
+                <DataTemplate>
+                    <local:DashboardCardItemTemplate
+						HeightRequest="296" />
+                </DataTemplate>
+            </grial:GridView.ItemTemplate>
+        </grial:GridView>
+    </ScrollView>
+</ContentPage>

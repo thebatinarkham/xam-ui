@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NavigationPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.ChatNavigationPage"
+	grial:GrialNavigationPage.BarBackgroundHeight="600"
+	grial:GrialNavigationPage.BarBackground="{ DynamicResource FlowsNavigationBarGradient }"
+	grial:GrialNavigationPage.TitleFontFamily="{ StaticResource FancyFontFamily }"
+	grial:GrialNavigationPage.TitleFontSize="24"
+	grial:GrialNavigationPage.AndroidTitleBaselineCorrection="20">
+    <NavigationPage.ToolbarItems>
+        <ToolbarItem
+			Icon="close_icon.png"
+			Clicked="OnClose" />
+    </NavigationPage.ToolbarItems>
+</NavigationPage>

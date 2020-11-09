@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A0ED783F-0EFD-41C0-8025-D29217345730}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{a52b8a63-bc84-4b47-910d-692533484892}</TemplateGuid>
+    <OutputType>Library</OutputType>
+    <LangVersion>8.0</LangVersion>
+    <AssemblyName>AppName.Core.iOS</AssemblyName>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>AppName.Core</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AppName\Core\Appearance.cs" />
+    <Compile Include="AppName\Core\ApplyIOSSafeAreaAsPaddingEffect.cs" />
+    <Compile Include="AppName\Core\BackgroundGradientEffect.cs" />
+    <Compile Include="AppName\Core\CornerRadiusEffect.cs" />
+    <Compile Include="AppName\Core\CultureHelper.cs" />
+    <Compile Include="AppName\Core\CultureService.cs" />
+    <Compile Include="AppName\Core\CultureServiceLocator.cs" />
+    <Compile Include="AppName\Core\DatePickerRenderer.cs" />
+    <Compile Include="AppName\Core\DeviceOrientationImpl.cs" />
+    <Compile Include="AppName\Core\DeviceOrientationLocator.cs" />
+    <Compile Include="AppName\Core\EditorRenderer.cs" />
+    <Compile Include="AppName\Core\EntryCellRenderer.cs" />
+    <Compile Include="AppName\Core\EntryRenderer.cs" />
+    <Compile Include="AppName\Core\FormsVideoPlayerRenderer.cs" />
+    <Compile Include="AppName\Core\GradientFactory.cs" />
+    <Compile Include="AppName\Core\GrialKit.cs" />
+    <Compile Include="AppName\Core\GrialNavigationBarRenderer.cs" />
+    <Compile Include="AppName\Core\GrialNavigationPageRenderer.cs" />
+    <Compile Include="AppName\Core\IgnoreIOSSafeAreaOnScrollViewEffect.cs" />
+    <Compile Include="AppName\Core\ImageCellRenderer.cs" />
+    <Compile Include="AppName\Core\iOSVideoView.cs" />
+    <Compile Include="AppName\Core\LayoutDirectionService.cs" />
+    <Compile Include="AppName\Core\LayoutDirectionServiceLocator.cs" />
+    <Compile Include="AppName\Core\LongPressEffect.cs" />
+    <Compile Include="AppName\Core\NavigationRtlAwareRenderer.cs" />
+    <Compile Include="AppName\Core\PageRenderer.cs" />
+    <Compile Include="AppName\Core\PhoneMasterDetailRtlAwareRenderer.cs" />
+    <Compile Include="AppName\Core\PickerRenderer.cs" />
+    <Compile Include="AppName\Core\PickerRendererHelper.cs" />
+    <Compile Include="AppName\Core\SearchBarRenderer.cs" />
+    <Compile Include="AppName\Core\ShadowEffect.cs" />
+    <Compile Include="AppName\Core\StripedListViewRenderer.cs" />
+    <Compile Include="AppName\Core\SwitchCellRenderer.cs" />
+    <Compile Include="AppName\Core\TabbedPageRtlAwareRenderer.cs" />
+    <Compile Include="AppName\Core\TableRenderer.cs" />
+    <Compile Include="AppName\Core\TextCellRenderer.cs" />
+    <Compile Include="AppName\Core\ThemeColorsBase.cs" />
+    <Compile Include="AppName\Core\TimePickerRenderer.cs" />
+    <Compile Include="AppName\Core\ViewCellRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.3.0.991211</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\AppName.Core.csproj">
+      <Project>{5D689AE9-CEA5-491F-B196-AE4B6C9BA5C1}</Project>
+      <Name>AppName.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

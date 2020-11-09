@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.ContactDetailItemTemplate">
+    
+    <ContentView.Content>
+        <Grid
+			VerticalOptions="Center"
+			Padding="26,16"> 
+            <!-- LABEL -->
+            <Label
+				Grid.Row="0"
+				FontSize="13"
+				Text="{ Binding Label }" />
+            
+            <!-- VALUE -->
+            <Label
+				Grid.Row="1"
+				FontSize="14"
+				Style="{ StaticResource LabelBoldStyle }"
+				Text="{ Binding Value }" />
+        </Grid>
+    </ContentView.Content>
+    
+</ContentView>

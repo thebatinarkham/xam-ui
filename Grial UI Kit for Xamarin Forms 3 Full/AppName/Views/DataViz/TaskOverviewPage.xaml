@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.TaskOverviewPage"
+	Title="{ grial:Translate PageTitleTaskOverview }"> 
+    <ContentPage.Content>
+        <Grid
+			RowSpacing="0"
+			grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="50" />
+                <RowDefinition
+					Height="Auto" />
+                <RowDefinition
+					Height="*" />
+            </Grid.RowDefinitions>
+            
+            <!-- TITLE -->
+            <Label
+				Grid.Row="0"
+				Margin="20,0"
+				Text="{ Binding Period }"
+				FontSize="16"
+				VerticalOptions="Center"
+				HorizontalOptions="Start"
+				TextColor="{ DynamicResource AccentColor }" />
+            
+            <!-- BG -->
+            <BoxView
+				Grid.Row="1"
+				HeightRequest="210"
+				IsVisible="{ grial:OnOrientationBool Portrait=true, Landscape=false }"
+				BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }" />
+            
+            <!-- CARDS -->
+            <Grid
+				IsVisible="{ grial:OnOrientationBool Portrait=true, Landscape=false }"
+				Grid.Row="1"
+				Padding="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="*" />
+                    <ColumnDefinition
+						Width="*" />
+                    <ColumnDefinition
+						Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <local:TaskOverviewCardItemTemplate
+					BindingContext="{ Binding Urgent }"
+					Grid.Column="0" />
+                
+                <local:TaskOverviewCardItemTemplate
+					BindingContext="{ Binding Maintenance }"
+					Grid.Column="1" />
+                
+                <local:TaskOverviewCardItemTemplate
+					BindingContext="{ Binding Closed }"
+					Grid.Column="2" />
+            </Grid>
+            
+            <ListView
+				Grid.Row="2"
+				ItemsSource="{ Binding People }"
+				SeparatorVisibility="None"
+				RowHeight="60"
+				HasUnevenRows="false"
+				CachingStrategy="RecycleElement"
+				VerticalOptions="FillAndExpand">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <local:TasksOverviewListItemTemplate />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

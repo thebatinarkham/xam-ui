@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.ArticlesListPage" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	Title="{ grial:Translate PageTitleArticlesList }">
+
+    <ListView
+		SeparatorVisibility="None"
+		SeparatorColor="{ DynamicResource ListViewSeparatorColor }"
+		ItemsSource="{ Binding List }"
+		RowHeight="240"
+		ItemTapped="OnItemTapped"
+		CachingStrategy="RecycleElement"
+		HasUnevenRows="false">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <local:ArticleItemTemplate />
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>

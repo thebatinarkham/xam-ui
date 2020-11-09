@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	WidthRequest="{ StaticResource BadgeSize }"
+	HeightRequest="{ StaticResource BadgeSize }"
+	x:Class="AppName.Badge">
+    <ContentView.Content>
+        <Grid>
+            <BoxView
+				x:Name="BadgeShape"
+				CornerRadius="{ StaticResource BadgeCornerRadius }" />
+            
+            <Label
+				x:Name="LabelText"
+				HorizontalOptions="Center"
+				VerticalOptions="Center"
+				FontSize="{ StaticResource BadgeFontSize }"
+				Style="{ StaticResource LabelBoldStyle }"
+				Text="1" />
+        </Grid>
+	</ContentView.Content>
+</ContentView>

@@ -1,0 +1,336 @@
+{
+  "ChatMainPage.xaml": {
+    "Contacts": [
+      {
+        "$id": "flow-messages-contact-1",
+        "Name": "Jaco Morrison",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_04.png",
+        "City": "New York",
+        "Status": "Offline",
+        "Address1": "05673 Brisa Cape",
+        "Address2": "4618 Skiles Vista",
+        "Phone": "(+352) 621-7040 4940",
+        "Email": "rjoplin@BINARIA.com",
+        "Organization": "BINARIA",
+        "Country": "USA",
+        "Zip": "WY 96078",
+        "Notes": "UX/UI Designer with a BA in Motion Design.",
+        "LastSeen": "last seen within a week"
+      },
+      {
+        "$id": "flow-messages-contact-2",
+        "Name": "Margaret Whites",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_05.png",
+        "City": "Orlando",
+        "Status": "Online",
+        "Address1": "05673 Brisa Cape",
+        "Address2": "4618 Skiles Vista",
+        "Phone": "(+352) 621-7040 4940",
+        "Email": "rjoplin@BINARIA.com",
+        "Organization": "BINARIA",
+        "Country": "USA",
+        "Zip": "WY 96078",
+        "Notes": "UX/UI Designer with a BA in Motion Design.",
+        "LastSeen": "last seen recently"
+      },
+      {
+        "$id": "flow-messages-contact-3",
+        "Name": "Donald Davies",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png",
+        "City": "New Hampshire",
+        "Status": "Away",
+        "Address1": "05673 Brisa Cape",
+        "Address2": "4618 Skiles Vista",
+        "Phone": "(+352) 621-7040 4940",
+        "Email": "rjoplin@BINARIA.com",
+        "Organization": "BINARIA",
+        "Country": "USA",
+        "Zip": "WY 96078",
+        "Notes": "UX/UI Designer with a BA in Motion Design.",
+        "LastSeen": "last within a day"
+      },
+      {
+        "$id": "flow-messages-contact-4",
+        "Name": "Janis Spector",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_02.png",
+        "City": "Nebraska",
+        "Status": "Online",
+        "Address1": "05673 Brisa Cape",
+        "Address2": "4618 Skiles Vista",
+        "Phone": "(+352) 621-7040 4940",
+        "Email": "rjoplin@BINARIA.com",
+        "Organization": "BINARIA",
+        "Country": "USA",
+        "Zip": "WY 96078",
+        "Notes": "UX/UI Designer with a BA in Motion Design.",
+        "LastSeen": "last seen recently"
+      },
+      {
+        "$id": "flow-messages-contact-5",
+        "Name": "Skyler Harrisson",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_06.png",
+        "City": "Nebraska",
+        "Status": "Offline",
+        "Address1": "05673 Brisa Cape",
+        "Address2": "4618 Skiles Vista",
+        "Phone": "(+352) 621-7040 4940",
+        "Email": "rjoplin@BINARIA.com",
+        "Organization": "BINARIA",
+        "Country": "USA",
+        "Zip": "WY 96078",
+        "Notes": "UX/UI Designer with a BA in Motion Design.",
+        "LastSeen": "last seen last month"
+      },
+      {
+        "$id": "flow-messages-contact-6",
+        "Name": "Regina Joplin",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png",
+        "City": "San Francisco",
+        "Status": "Busy",
+        "Address1": "05673 Brisa Cape",
+        "Address2": "4618 Skiles Vista",
+        "Phone": "(+352) 621-7040 4940",
+        "Email": "rjoplin@BINARIA.com",
+        "Organization": "BINARIA",
+        "Country": "USA",
+        "Zip": "WY 96078",
+        "Notes": "UX/UI Designer with a BA in Motion Design.",
+        "LastSeen": "last seen recently"
+      },
+      {
+        "$id": "flow-messages-contact-7",
+        "Name": "Pat Davies",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_07.png",
+        "City": "San Francisco",
+        "Status": "Online",
+        "Address1": "05673 Brisa Cape",
+        "Address2": "4618 Skiles Vista",
+        "Phone": "(+352) 621-7040 4940",
+        "Email": "rjoplin@BINARIA.com",
+        "Organization": "BINARIA",
+        "Country": "USA",
+        "Zip": "WY 96078",
+        "Notes": "UX/UI Designer with a BA in Motion Design.",
+        "LastSeen": "last seen recently"
+      }
+    ],
+    "Conversations": [
+      {
+        "$id": "flow-messages-conversation-1",
+        "From": {
+          "$ref": "flow-messages-contact-4"
+        },
+        "Messages": [
+          {
+            "$id": "flow-messages-preview-1",
+            "When": "July 7",
+            "Text": "Hey buddy :), what's up? I\"m currently working on this amazing stuff called Grial. Have you heard about it? You shoud give it a try....it really rocks!!!!!.",
+            "IsIncoming": true
+          },
+          {
+            "When": "July 7",
+            "Text": "You should give it a try!",
+            "IsIncoming": true
+          },
+          {
+            "When": "",
+            "Text": "Wooow! Didn\"t know this exist!! Really cool stuff!",
+            "IsIncoming": false
+          },
+          {
+            "When": "July 7",
+            "Text": "I was wondering if something like this existed. This will save hundred of hours. I rather be skateboarding with my friends instead of compiling every little visual change. Thanks for sharing!",
+            "IsIncoming": false
+          },
+          {
+            "When": "July 7",
+            "Text": "No problem! I hope you can find it useful. It really makes the difference to me.",
+            "IsIncoming": true
+          },
+          {
+            "When": "July 7",
+            "Text": "Ok thanks and thanks again!! This is really awesome",
+            "IsIncoming": false
+          }
+        ],
+        "Preview": {
+          "$ref": "flow-messages-preview-1"
+        }
+      },
+      {
+        "$id": "flow-messages-conversation-2",
+        "From": {
+          "$ref": "flow-messages-contact-5"
+        },
+        "Messages": [
+          {
+            "$id": "flow-messages-preview-2",
+            "When": "30s",
+            "Text": "Hey buddy :), what's up? I\"m currently working on this amazing stuff called Grial. Have you heard about it? You shoud give it a try....it really rocks!!!!!.",
+            "IsIncoming": true
+          },
+          {
+            "When": "Now",
+            "Text": "Indeed.",
+            "IsIncoming": false
+          }
+        ],
+        "Preview": {
+          "$ref": "flow-messages-preview-2"
+        }
+      },
+      {
+        "$id": "flow-messages-conversation-3",
+        "From": {
+          "$ref": "flow-messages-contact-2"
+        },
+        "Messages": [
+          {
+            "$id": "flow-messages-preview-3",
+            "When": "50s",
+            "Text": "Hello there my friend, how is it going?",
+            "IsIncoming": true
+          },
+          {
+            "When": "",
+            "Text": "Great! C u later tonight at Gillian party, right?",
+            "IsIncoming": false
+          },
+          {
+            "When": "Now",
+            "Text": "For sure! See you later :)",
+            "IsIncoming": true
+          }
+        ],
+        "Preview": {
+          "$ref": "flow-messages-preview-3"
+        }
+      },
+      {
+        "$id": "flow-messages-conversation-4",
+        "From": {
+          "$ref": "flow-messages-contact-6"
+        },
+        "Messages": [
+          {
+            "$id": "flow-messages-preview-4",
+            "When": "2hs",
+            "Text": "Hey check this out!",
+            "IsIncoming": true
+          },
+          {
+            "When": "2hs",
+            "Text": "What? I was wondering...",
+            "IsIncoming": false
+          }
+        ],
+        "Preview": {
+          "$ref": "flow-messages-preview-4"
+        }
+      },
+      {
+        "$id": "flow-messages-conversation-5",
+        "From": {
+          "$ref": "flow-messages-contact-3"
+        },
+        "Messages": [
+          {
+            "$id": "flow-messages-preview-5",
+            "When": "1 day",
+            "Text": "C u later tonight at Gillian Japi party, right?",
+            "IsIncoming": true
+          },
+          {
+            "When": "1 day",
+            "Text": "Yeah, I won't miss that :)",
+            "IsIncoming": false
+          }
+        ],
+        "Preview": {
+          "$ref": "flow-messages-preview-5"
+        }
+      },
+      {
+        "$id": "flow-messages-conversation-6",
+        "From": {
+          "$ref": "flow-messages-contact-1"
+        },
+        "Messages": [
+          {
+            "$id": "flow-messages-preview-6",
+            "When": "1 day",
+            "Text": "Three sad tigers eat wheat in a wheat field",
+            "IsIncoming": true
+          },
+          {
+            "When": "1 day",
+            "Text": "are you alright??",
+            "IsIncoming": false
+          }
+        ],
+        "Preview": {
+          "$ref": "flow-messages-preview-6"
+        }
+      }
+    ]
+  },
+  "ChatMessagesPage.xaml": {
+    "Conversation": {
+      "$ref": "flow-messages-conversation-1"
+    }
+  },
+  "ContactDetailPage.xaml": {
+    "Contact": {
+      "$ref": "flow-messages-contact-6"
+    },
+    "Values": [
+      {
+        "Label": "Name",
+        "Value": "Regina Joplin"
+      },
+      {
+        "Label": "Address 1",
+        "Value": "05673 Brisa Cape"
+      },
+      {
+        "Label": "Address 2",
+        "Value": "4618 Skiles Vista"
+      },
+      {
+        "Label": "Phone Number",
+        "Value": "(+352) 621-7040 4940"
+      },
+      {
+        "Label": "Email",
+        "Value": "rjoplin@BINARIA.com"
+      },
+      {
+        "Label": "Organization",
+        "Value": "BINARIA"
+      },
+      {
+        "Label": "Country",
+        "Value": "USA"
+      },
+      {
+        "Label": "City",
+        "Value": "San Francisco"
+      },
+      {
+        "Label": "ZIP",
+        "Value": "WY 96078"
+      },
+      {
+        "Label": "Notes",
+        "Value": "UX/UI Designer with a BA in Motion Design."
+      }
+    ]
+  },
+  "AddContactPage.xaml": {
+    "Title": "New contact",
+    "IsEdit": false,
+    "Contact": {
+      "$ref": "flow-messages-contact-6"
+    }
+  }
+}

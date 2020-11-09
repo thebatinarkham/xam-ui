@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.MoviesMainPage"
+	BackgroundColor="{ DynamicResource BasePageColor }" xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Double
+				x:Key="SmallHeaderHorizontalAnimationThreshold">270</x:Double>
+            <x:Double
+				x:Key="CarouselHeightStopsChangingWhenScrollIs">240</x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="Auto" />
+                <RowDefinition
+					Height="*" />
+            </Grid.RowDefinitions>
+
+            <ScrollView
+				x:Name="scrollView"
+				VerticalScrollBarVisibility="Never"
+				Grid.RowSpan="2"
+				grial:Effects.IgnoreIOSSafeAreaOnScrollView="Top,Left,Right">
+                <VisualElement.Behaviors>
+                    <grial:ScrollViewScrollBehavior
+						x:Name="scroll" />
+                </VisualElement.Behaviors> 
+                
+                <Grid
+					grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                    <!-- Handles tap when page is on the initial state -->
+                    <BoxView
+						HeightRequest="480"
+						BackgroundColor="Transparent"
+						VerticalOptions="Start">
+                        <BoxView.GestureRecognizers>
+                            <TapGestureRecognizer
+								Tapped="OnFeatured" />
+                         </BoxView.GestureRecognizers>
+                    </BoxView>
+                    
+                    <grial:Repeater
+						Margin="0,480,0,10"
+						ItemsSource="{ Binding Sections }"
+						Orientation="Vertical">
+                    
+                        <grial:Repeater.ItemSize>
+                            <OnIdiom
+								x:TypeArguments="x:Double"
+								Phone="180"
+								Tablet="314" />
+                        </grial:Repeater.ItemSize>
+                        
+                        <grial:Repeater.ItemTemplate>
+                            <DataTemplate>
+                                <local:MoviesSectionTemplate />
+                            </DataTemplate>
+                        </grial:Repeater.ItemTemplate>
+                        
+                    </grial:Repeater>
+                </Grid>
+            </ScrollView>
+            
+            <!-- Carousel goes outside the scrollview as its position is fixed -->
+            <local:ExtendedCarouselViewControl
+				HeightRequest="460"
+				Grid.Row="0"
+				Position="{ Binding Featured.Position, Mode=TwoWay }"
+				VerticalOptions="Start"
+				Margin="0,0,0,-30"
+				CurrentPageIndicatorTintColor="{ DynamicResource OverImageTextColor }"
+				IndicatorsTintColor="{ DynamicResource BaseTextColor }"
+				ItemsSource="{ Binding Featured.Movies }"
+				Style="{ StaticResource BlurredShadow }"
+				grial:Effects.ShadowIOSColor="#BB000000"
+				InputTransparent="true"
+				ShowIndicators="false">
+                <VisualElement.Behaviors>
+                    
+                    <!-- Keeps the carousel on top -->
+                    <grial:AnimatedTranslationY
+						Easing="Linear"
+						Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+						ProgressStart="0"
+						ProgressEnd="{ StaticResource CarouselHeightStopsChangingWhenScrollIs }"
+						Start="0"
+						MultiplyValue="-1"
+						End="{ StaticResource CarouselHeightStopsChangingWhenScrollIs }" />
+                    
+                    <!-- Make the carousel receive user inputs when it's small and behaves as a carousel -->
+                    <grial:AnimatedInputTransparent
+						Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+						Threshold="{ StaticResource CarouselHeightStopsChangingWhenScrollIs }"
+						ValueBeforeThreshold="true" /> 
+
+                    <!-- Make the carousel show dot indicators when behaves as a carousel -->
+                    <grial:AnimatedCustomBooleanProperty
+						Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+						Threshold="{ StaticResource CarouselHeightStopsChangingWhenScrollIs }"
+						TargetProperty="{ x:Static cv:CarouselViewControl.ShowIndicatorsProperty }" /> 
+                    
+                    <grial:AnimatedCustomBooleanProperty
+						Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+						Threshold="{ StaticResource CarouselHeightStopsChangingWhenScrollIs }"
+						TargetProperty="{ x:Static grial:Effects.ShadowProperty }" /> 
+                    
+                </VisualElement.Behaviors>
+                
+                <cv:CarouselViewControl.ItemTemplate>
+
+                    <!-- Featured movie template -->
+                    <DataTemplate>
+                        <Grid
+							IsClippedToBounds="{ 
+                                OnPlatform
+                                    iOS=true
+                            }">
+                            <Grid.RowDefinitions>
+                                <RowDefinition
+									Height="Auto" />
+                                <RowDefinition
+									Height="*" />
+                            </Grid.RowDefinitions>
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+									Width=".5*" />
+                                <ColumnDefinition
+									Width=".5*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <Grid.Resources>
+                                <ResourceDictionary>
+                                    <xamanimation:FadeToAnimation
+										x:Key="TextsFadeIn"
+										Target="{x:Reference Texts}"
+										Duration="150"
+										Opacity="1" />
+                                    <xamanimation:FadeToAnimation
+										x:Key="TextsFadeOut"
+										Target="{x:Reference Texts}"
+										Duration="150"
+										Opacity="0" />
+                                </ResourceDictionary>
+                            </Grid.Resources>
+                            
+                            <!-- Used to save the space of the navigation bar -->
+                            <grial:GrialNavigationBar
+								Grid.Row="0"
+								Grid.ColumnSpan="2" />
+
+                            <!-- BACKGROUND IMAGE -->
+                            <Grid
+								Grid.ColumnSpan="2"
+								Grid.RowSpan="2"
+								Grid.Row="0"
+								Margin="0,0,0,30"
+								IsClippedToBounds="true"
+								AnchorY="0">
+                                <VisualElement.Behaviors>    
+                                    <grial:AnimatedScale
+										Easing="Linear"
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										ProgressStart="0"
+										ProgressEnd="{ StaticResource CarouselHeightStopsChangingWhenScrollIs }"
+										Start="1"
+										End="1.2" /> 
+                                    <grial:AnimatedTranslationY
+										Easing="Linear"
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										ProgressStart="0"
+										ProgressEnd="{ StaticResource CarouselHeightStopsChangingWhenScrollIs }"
+										Start="-20"
+										MultiplyValue="1"
+										End="180" />       
+                                </VisualElement.Behaviors>
+                                
+                                <ffimageloading:CachedImage
+									x:Name="BackgroundImage"
+									Aspect="AspectFill"
+									VerticalOptions="FillAndExpand"
+									Source="{ Binding BackgroundImage }"
+									BackgroundColor="{ Binding Color }"
+									Style="{ StaticResource NoPlaceholderImageStyle }">
+                                    <ffimageloading:CachedImage.Transformations>
+                                        <fftransformations:GrayscaleTransformation />
+                                    </ffimageloading:CachedImage.Transformations>
+                                </ffimageloading:CachedImage>  
+
+                                <BoxView>
+                                    <grial:Effects.BackgroundGradient>
+                                        <grial:LinearGradient
+											Angle="150">
+                                            <grial:GradientColor
+												Color="Black"
+												Opacity="0.0"
+												Position="0" />
+                                            <grial:GradientColor
+												Color="Black"
+												Opacity="0.95"
+												Position="0.9" />
+                                        </grial:LinearGradient>
+                                    </grial:Effects.BackgroundGradient>
+                                </BoxView>
+
+                                <BoxView> 
+                                    <grial:Effects.BackgroundGradient>
+                                        <grial:LinearGradient
+											Angle="135">
+                                            <grial:GradientColor
+												Color="{ Binding BackgroundColor, Source={x:Reference BackgroundImage} }"
+												Opacity="1"
+												Position="0" />
+                                            <grial:GradientColor
+												Color="{ Binding BackgroundColor, Source={x:Reference BackgroundImage} }"
+												Opacity="0.8"
+												Position="0.4" />
+                                            <grial:GradientColor
+												Color="{ Binding BackgroundColor, Source={x:Reference BackgroundImage} }"
+												Opacity="0.2"
+												Position="1" />
+                                        </grial:LinearGradient>
+                                    </grial:Effects.BackgroundGradient>                                    
+                                </BoxView>
+                                
+                            </Grid>
+                            
+                            <StackLayout
+								Grid.Row="1"
+								Grid.ColumnSpan="2"
+								Margin="{
+                                    grial:OnOrientationThickness
+                                        Landscape='0',
+                                        Portrait='0,-30,0,0'
+                                }"
+								VerticalOptions="Start"
+								HorizontalOptions="Center">
+                                <VisualElement.Behaviors>
+                                    <!-- Hide original title -->
+                                    <grial:AnimatedOpacity
+										Easing="CubicIn"
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										ProgressStart="0"
+										ProgressEnd="60"
+										Start="1"
+										MultiplyValue="1"
+										End="0" />
+                                    <grial:AnimatedTranslationY
+										Easing="Linear"
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										ProgressStart="0"
+										ProgressEnd="60"
+										Start="0"
+										MultiplyValue="1"
+										End="60" />         
+                                </VisualElement.Behaviors>
+
+                                <Label
+									FontSize="20"
+									TextColor="{ DynamicResource OverImageTextColor }"
+									Text="{ Binding Name }"
+									HorizontalOptions="Center"
+									Style="{ StaticResource LabelBoldStyle }" />
+                                
+                                <Label
+									FontSize="14"
+									TextColor="{ DynamicResource OverImageTextColor }"
+									Text="{ Binding Year }"
+									FontAttributes="Italic"
+									HorizontalOptions="Center" />
+                            </StackLayout>
+                        
+                            <!--MOVIE POSTER-->
+                            <Grid
+								Grid.Row="1"
+								Grid.ColumnSpan="2"
+								VerticalOptions="EndAndExpand"
+								HorizontalOptions="Center"
+								WidthRequest="200"
+								HeightRequest="310"
+								Margin="0,0,0,30"
+								x:Name="Poster"
+								Style="{ 
+                                    OnPlatform
+                                        iOS={ StaticResource BlurredShadow }
+                                }">
+                                <VisualElement.Behaviors>
+                                    <grial:AnimatedScale
+										Easing="SinOut"
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										ProgressStart="0"
+										ProgressEnd="{ StaticResource CarouselHeightStopsChangingWhenScrollIs }"
+										Start="1"
+										MultiplyValue="1"
+										End="0.45" />
+                                    <grial:AnimatedTranslationY
+										Easing="Linear"
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										ProgressStart="0"
+										ProgressEnd="{ StaticResource CarouselHeightStopsChangingWhenScrollIs }"
+										Start="0"
+										MultiplyValue="1"
+										End="75" />      
+                                    <grial:AnimatedTrigger
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										Threshold="{ StaticResource SmallHeaderHorizontalAnimationThreshold }">
+                                        <local:AnimationWrapper>
+                                            <local:TranslateXAnimation
+												Target="{ x:Reference Poster }"
+												Duration="150"
+												TranslateX="-110" />
+                                        </local:AnimationWrapper>
+                                    </grial:AnimatedTrigger>
+                                    
+                                    <grial:AnimatedTrigger
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										Threshold="{ StaticResource SmallHeaderHorizontalAnimationThreshold }"
+										TriggerBeforeThreshold="true">
+                                        <local:AnimationWrapper>
+                                            <local:TranslateXAnimation
+												Target="{x:Reference Poster}"
+												Duration="100"
+												TranslateX="0" />
+                                        </local:AnimationWrapper>
+                                    </grial:AnimatedTrigger>
+                                </VisualElement.Behaviors>
+                    
+                                <ffimageloading:CachedImage
+									Source="{ Binding PosterImage }"
+									Aspect="AspectFill"
+									grial:Effects.CornerRadius="4"
+									Style="{ 
+                                        OnPlatform
+                                            Android={ StaticResource BlurredShadow }
+                                    }">
+                                    <ffimageloading:CachedImage.HeightRequest>
+                                        <OnIdiom
+											x:TypeArguments="x:Double"
+											Phone="270"
+											Tablet="400" />
+                                    </ffimageloading:CachedImage.HeightRequest>
+                                    <ffimageloading:CachedImage.WidthRequest>
+                                        <OnIdiom
+											x:TypeArguments="x:Double"
+											Phone="130"
+											Tablet="200" />
+                                    </ffimageloading:CachedImage.WidthRequest>
+
+                                </ffimageloading:CachedImage>
+                                
+                            </Grid>
+                            
+                            <!--TITLE, DATE, DETAIL BUTTON-->
+                            <StackLayout
+								Grid.Row="1"
+								Grid.Column="1"
+								x:Name="Texts"
+								VerticalOptions="End"
+								HorizontalOptions="Start"
+								TranslationY="-65"
+								TranslationX="-30"
+								Opacity="0">
+                                <VisualElement.Behaviors>
+                                    
+                                    <grial:AnimatedTrigger
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										Threshold="{ StaticResource SmallHeaderHorizontalAnimationThreshold }">
+                                        <local:AnimationWrapper>
+                                            <xamanimation:FadeToAnimation
+												Target="{x:Reference Texts}"
+												Duration="150"
+												Opacity="1" />
+                                        </local:AnimationWrapper>
+                                    </grial:AnimatedTrigger>
+                                    
+                                    <grial:AnimatedTrigger
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										Threshold="{ StaticResource SmallHeaderHorizontalAnimationThreshold }">
+                                        <local:AnimationWrapper>
+                                            <local:TranslateXAnimation
+												Target="{x:Reference Texts}"
+												Duration="150"
+												TranslateX="-30" />
+                                        </local:AnimationWrapper>
+                                    </grial:AnimatedTrigger>
+                                    
+                                    <grial:AnimatedTrigger
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										Threshold="{ StaticResource SmallHeaderHorizontalAnimationThreshold }"
+										TriggerBeforeThreshold="true">
+                                        <local:AnimationWrapper>
+                                            <local:TranslateXAnimation
+												Target="{x:Reference Texts}"
+												Duration="100"
+												TranslateX="100" />
+                                        </local:AnimationWrapper>
+                                    </grial:AnimatedTrigger>
+                                    
+                                    <grial:AnimatedTrigger
+										Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+										Threshold="{ StaticResource SmallHeaderHorizontalAnimationThreshold }"
+										TriggerBeforeThreshold="true">
+                                        <local:AnimationWrapper>
+                                            <xamanimation:FadeToAnimation
+												Target="{ x:Reference Texts }"
+												Duration="100"
+												Opacity="0" />
+                                        </local:AnimationWrapper>
+                                    </grial:AnimatedTrigger>
+                            
+                                </VisualElement.Behaviors>
+                                
+                                <Label
+									FontSize="16"
+									TextColor="{ DynamicResource OverImageTextColor }"
+									Text="{ Binding Name }"
+									HorizontalOptions="Start"
+									Style="{ StaticResource LabelBoldStyle }" />
+                                
+                                <Label
+									FontSize="12"
+									TextColor="{ DynamicResource OverImageTextColor }"
+									Text="{ Binding Year }"
+									FontAttributes="Italic"
+									HorizontalOptions="Start" />
+                                
+                                <Button
+									Margin="0,10,0,0"
+									WidthRequest="120"
+									HeightRequest="34"
+									CornerRadius="17"
+									Text="{ grial:Translate MovieDetails }"
+									Clicked="OnFeatured"
+									BorderColor="{ DynamicResource OverImageTextColor }"
+									FontSize="11"
+									TextColor="{ DynamicResource OverImageTextColor }"
+									HorizontalOptions="Start"
+									Style="{ StaticResource OutlineButtonStyle }" />
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                
+                </cv:CarouselViewControl.ItemTemplate>
+            </local:ExtendedCarouselViewControl>
+                        
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

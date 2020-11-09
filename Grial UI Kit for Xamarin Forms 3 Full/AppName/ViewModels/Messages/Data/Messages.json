@@ -1,0 +1,281 @@
+{
+  "Char-Users": [
+    {
+      "From": {
+        "$id": "chat-user-1",
+        "Name": "Skyler Harrisson",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png"
+      }
+    },
+    {
+      "From": {
+        "$id": "chat-user-2",
+        "Name": "Janis Spector",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_02.png"
+      }
+    },
+    {
+      "From": {
+        "$id": "chat-user-3",
+        "Name": "Regina Joplin",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png"
+      }
+    },
+    {
+      "From": {
+        "$id": "chat-user-4",
+        "Name": "Jaco Morrison",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_04.png"
+      }
+    },
+    {
+      "From": {
+        "Name": "Margaret Whites",
+        "$id": "chat-user-5",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_05.png"
+      }
+    },
+    {
+      "From": {
+        "$id": "chat-user-6",
+        "Name": "Donald Davies",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_06.png"
+      }
+    },
+    {
+      "From": {
+        "$id": "chat-user-7",
+        "Name": "Al Pastorius",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_07.png"
+      }
+    }
+  ],
+  "Chats": {
+    "$id": "messages",
+    "Messages": [
+      {
+        "$id": "chat-message-1",
+        "From": {
+          "$ref": "chat-user-1"
+        },
+        "When": "July 7",
+        "Body": "Hey buddy :), what's up? I\"m currently working on this amazing stuff called Grial. Have you heard about it? You shoud give it a try....it really rocks!!!!!.",
+        "IsRead": true,
+        "IsInbound": true
+      },
+      {
+        "$id": "chat-message-2",
+        "From": {
+          "$ref": "chat-user-1"
+        },
+        "When": "July 7",
+        "Body": "You should give it a try!",
+        "IsRead": true,
+        "IsInbound": true
+      },
+      {
+        "$id": "chat-message-3",
+        "From": {
+          "$ref": "chat-user-2"
+        },
+        "When": "July 7",
+        "Body": "Wooow! Didn\"t know this exist!! Really cool stuff!",
+        "IsRead": false,
+        "IsInbound": false
+      },
+      {
+        "$id": "chat-message-4",
+        "From": {
+          "$ref": "chat-user-2"
+        },
+        "When": "July 7",
+        "Body": "I was wondering if something like this existed. This will save hundred of hours. I rather be skateboarding with my friends instead of compiling every little visual change. Thanks for sharing!",
+        "IsRead": false,
+        "IsInbound": false
+      },
+      {
+        "From": {
+          "$ref": "chat-user-1"
+        },
+        "When": "July 7",
+        "Body": "No problem! I hope you can find it useful. It really makes the difference to me.",
+        "IsRead": true,
+        "IsInbound": true
+      },
+      {
+        "From": {
+          "$ref": "chat-user-2"
+        },
+        "When": "July 7",
+        "Body": "Ok thanks and thanks again!! This is really awesome",
+        "IsRead": false,
+        "IsInbound": false
+      },
+      {
+        "From": {
+          "$ref": "chat-user-1"
+        },
+        "When": "July 7",
+        "Body": "Indeed.",
+        "IsRead": true,
+        "IsInbound": true
+      },
+      {
+        "From": {
+          "$ref": "chat-user-2"
+        },
+        "When": "July 7",
+        "Body": "C u later tonight at Gillian Japi party, right?",
+        "IsRead": false,
+        "IsInbound": false
+      },
+      {
+        "From": {
+          "$ref": "chat-user-1"
+        },
+        "When": "July 7",
+        "Body": "For sure! See you later :)",
+        "IsRead": true,
+        "IsInbound": true
+      }
+    ]
+  },
+  "ChatMessagesListPage.xaml": {
+    "$ref": "messages"
+  },
+  "ChatTimelinePage.xaml": {
+    "$ref": "messages"
+  },
+  "RecentChatListPage.xaml": {
+    "$ref": "messages"
+  },
+  "MessagesListPage.xaml": {
+    "Messages": [
+      {
+        "$id": "message-1",
+        "From": {
+          "$ref": "chat-user-1"
+        },
+        "Title": "Hey check this out!",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors.",
+        "HasAttachment": true,
+        "ThreadCount": 7,
+        "When": "July 7",
+        "IsStared": true,
+        "IsRead": true
+      },
+      {
+        "From": {
+          "$ref": "chat-user-2"
+        },
+        "Title": "Artina is awesome...you\"ll love it",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors.",
+        "HasAttachment": false,
+        "ThreadCount": 3,
+        "When": "Yesterday",
+        "IsStared": false,
+        "IsRead": true
+      },
+      {
+        "From": {
+          "$ref": "chat-user-3"
+        },
+        "Title": "Artina is awesome...you\"ll love it",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors.",
+        "HasAttachment": true,
+        "ThreadCount": 1,
+        "When": "July 7",
+        "IsStared": false,
+        "IsRead": false
+      },
+      {
+        "From": {
+          "$ref": "chat-user-4"
+        },
+        "Title": "Artina is awesome...you\"ll love it",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors.",
+        "HasAttachment": true,
+        "ThreadCount": 2,
+        "When": "July 7",
+        "IsStared": false,
+        "IsRead": false
+      },
+      {
+        "From": {
+          "$ref": "chat-user-5"
+        },
+        "Title": "Artina is awesome...you\"ll love it",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors.",
+        "HasAttachment": false,
+        "ThreadCount": 10,
+        "When": "3 minutes ago",
+        "IsStared": true,
+        "IsRead": false
+      },
+      {
+        "From": {
+          "$ref": "chat-user-6"
+        },
+        "Title": "Artina is awesome...you\"ll love it",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors.",
+        "HasAttachment": false,
+        "ThreadCount": 5,
+        "When": "July 7",
+        "IsStared": true,
+        "IsRead": true
+      },
+      {
+        "From": {
+          "$ref": "chat-user-7"
+        },
+        "Title": "Artina is awesome...you\"ll love it",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors.",
+        "HasAttachment": false,
+        "ThreadCount": 7,
+        "When": "July 7",
+        "IsStared": true,
+        "IsRead": false
+      }
+    ]
+  },
+  "NotificationsPage.xaml": {
+    "Notifications": [
+      {
+        "$id": "notification-1",
+        "Title": "Confirmation",
+        "Description": "Please confirm your email address",
+        "Type": 0
+      },
+      {
+        "$id": "notification-2",
+        "Title": "Error",
+        "Description": "Please confirm your email address",
+        "Type": 3
+      },
+      {
+        "$id": "notification-3",
+        "Title": "Warning",
+        "Description": "Can't reach your current location",
+        "Type": 4
+      },
+      {
+        "$id": "notification-4",
+        "Title": "Warning",
+        "Description": "Please contact support center",
+        "Type": 4
+      },
+      {
+        "$id": "notification-5",
+        "Title": "Notification",
+        "Description": "You have a new message",
+        "Type": 1
+      },
+      {
+        "$id": "notification-6",
+        "Title": "Success",
+        "Description": "You have a new follower",
+        "Type": 2
+      }
+    ]
+  }
+}

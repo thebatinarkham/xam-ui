@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.DashboardCarouselMaintemTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <grial:GreaterThanConverter
+				x:Key="ScaleConverter"
+				Threshold="90"
+				x:TypeArguments="x:Double"
+				TrueValue="1"
+				FalseValue="0.8" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <grial:CardView
+			CornerRadius="5"
+			x:Name="card">
+            <Grid
+				Scale="{Binding Height, Source={x:Reference card}, Converter={StaticResource ScaleConverter} }"
+				VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="45" />
+                    <RowDefinition
+						Height="22" />
+                    <RowDefinition
+						Height="8" />
+                </Grid.RowDefinitions>
+
+                <Label
+					Grid.Row="0"
+					FontSize="30"
+					VerticalTextAlignment="Center"
+					HorizontalTextAlignment="Center"
+					Text="{ Binding Icon }"
+					VerticalOptions="End"
+					FontFamily="{ DynamicResource IconsFontFamily }"
+					TextColor="{ DynamicResource ComplementColor }" />
+
+                <Label
+					Grid.Row="1"
+					Text="{ Binding Name }"
+					FontSize="14"
+					VerticalOptions="End"
+					HorizontalOptions="Center" />
+
+            </Grid>
+        </grial:CardView>
+    </ContentView.Content>
+
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer
+			Command="{ Binding TapCommand }" />
+    </ContentView.GestureRecognizers>
+
+</ContentView>

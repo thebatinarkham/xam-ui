@@ -1,0 +1,584 @@
+{
+  "PerformanceDashboardMainPage.xaml": {
+    "Periods": [
+      "Last Week",
+      "Last Month",
+      "Last Year"
+    ],
+    "SelectedPeriodData": {
+      "$ref": "PerformanceDashboardMainPage_LastWeek"
+    },
+    "ChartData": {
+      "LastWeek": {
+        "$id": "PerformanceDashboardMainPage_LastWeek",
+        "MaxValue": 30,
+        "Series": [
+          {
+            "Value": 10,
+            "Label": "Su"
+          },
+          {
+            "Value": 5,
+            "Label": "Mo"
+          },
+          {
+            "Value": 22,
+            "Label": "Tu"
+          },
+          {
+            "Value": 8,
+            "Label": "We"
+          },
+          {
+            "Value": 7,
+            "Label": "Th"
+          },
+          {
+            "Value": 10,
+            "Label": "Fr"
+          },
+          {
+            "Value": 14,
+            "Label": "Sa"
+          }
+        ]
+      },
+      "LastMonth": {
+        "MaxValue": 100,
+        "Series": [
+          {
+            "Value": 30,
+            "Label": "1"
+          },
+          {
+            "Value": 14,
+            "Label": "2"
+          },
+          {
+            "Value": 66,
+            "Label": "3"
+          },
+          {
+            "Value": 24,
+            "Label": "4"
+          },
+          {
+            "Value": 21,
+            "Label": "5"
+          },
+          {
+            "Value": 30,
+            "Label": "6"
+          },
+          {
+            "Value": 42,
+            "Label": "7"
+          },
+          {
+            "Value": 30,
+            "Label": "8"
+          },
+          {
+            "Value": 14,
+            "Label": "9"
+          },
+          {
+            "Value": 66,
+            "Label": "10"
+          },
+          {
+            "Value": 24,
+            "Label": "11"
+          },
+          {
+            "Value": 21,
+            "Label": "12"
+          },
+          {
+            "Value": 70,
+            "Label": "13"
+          },
+          {
+            "Value": 62,
+            "Label": "14"
+          },
+          {
+            "Value": 50,
+            "Label": "15"
+          },
+          {
+            "Value": 44,
+            "Label": "16"
+          },
+          {
+            "Value": 66,
+            "Label": "17"
+          },
+          {
+            "Value": 24,
+            "Label": "18"
+          },
+          {
+            "Value": 21,
+            "Label": "19"
+          },
+          {
+            "Value": 30,
+            "Label": "20"
+          },
+          {
+            "Value": 30,
+            "Label": "21"
+          },
+          {
+            "Value": 14,
+            "Label": "22"
+          },
+          {
+            "Value": 66,
+            "Label": "23"
+          },
+          {
+            "Value": 24,
+            "Label": "24"
+          },
+          {
+            "Value": 21,
+            "Label": "25"
+          },
+          {
+            "Value": 30,
+            "Label": "26"
+          },
+          {
+            "Value": 42,
+            "Label": "27"
+          },
+          {
+            "Value": 42,
+            "Label": "28"
+          },
+          {
+            "Value": 42,
+            "Label": "29"
+          },
+          {
+            "Value": 42,
+            "Label": "30"
+          }
+        ]
+      },
+      "LastYear": {
+        "MaxValue": 500,
+        "Series": [
+          {
+            "Value": 280,
+            "Label": "Jan"
+          },
+          {
+            "Value": 380,
+            "Label": "Feb"
+          },
+          {
+            "Value": 220,
+            "Label": "Mar"
+          },
+          {
+            "Value": 278,
+            "Label": "Apr"
+          },
+          {
+            "Value": 377,
+            "Label": "May"
+          },
+          {
+            "Value": 100,
+            "Label": "Jun"
+          },
+          {
+            "Value": 140,
+            "Label": "Jul"
+          },
+          {
+            "Value": 240,
+            "Label": "Ago"
+          },
+          {
+            "Value": 220,
+            "Label": "Sep"
+          },
+          {
+            "Value": 310,
+            "Label": "Oct"
+          },
+          {
+            "Value": 430,
+            "Label": "Nov"
+          },
+          {
+            "Value": 203,
+            "Label": "Dec"
+          }
+        ]
+      }
+    },
+    "TeamMembers": [
+      {
+        "$id": "flow-tasks-employee-1",
+        "Name": "Regina Joplin",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png",
+        "Status": "Online",
+        "Team": "Support",
+        "Open": 229,
+        "Closed": 22,
+        "Score": 64,
+        "ScoreLabel": "6.4",
+        "Tags": [
+          "Sales",
+          "Support",
+          "Customers",
+          "Michigan",
+          "Team Lead"
+        ]
+      },
+      {
+        "$id": "flow-tasks-employee-2",
+        "Name": "Donald Davies",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png",
+        "Status": "Away",
+        "Team": "IT",
+        "Open": 43,
+        "Closed": 12,
+        "Score": 67,
+        "ScoreLabel": "6.7",
+        "Tags": [
+          "Support",
+          "Programming"
+        ]
+      },
+      {
+        "$id": "flow-tasks-employee-3",
+        "Name": "Jaco Morrison",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_04.png",
+        "Status": "Busy",
+        "Team": "Marketing",
+        "Open": 112,
+        "Closed": 40,
+        "Score": 91,
+        "ScoreLabel": "9.1",
+        "Tags": [
+          "Sales",
+          "Support",
+          "Marketing",
+          "Design",
+          "Lead Generation",
+          "Washington"
+        ]
+      },
+      {
+        "$id": "flow-tasks-employee-4",
+        "Name": "Margaret Whites",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_05.png",
+        "Status": "Online",
+        "Team": "Support",
+        "Open": 229,
+        "Closed": 22,
+        "Score": 78,
+        "ScoreLabel": "8.8",
+        "Tags": [
+          "Sales",
+          "Design",
+          "Marketing",
+          "Growth Hacking",
+          "Team Lead"
+        ]
+      },
+      {
+        "$id": "flow-tasks-employee-5",
+        "Name": "Pat Davies",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_07.png",
+        "Status": "Offline",
+        "Team": "IT",
+        "Open": 43,
+        "Closed": 12,
+        "Score": 24,
+        "ScoreLabel": "2.4",
+        "Tags": [
+          "Support",
+          "Programming",
+          "Hardware",
+          "Network"
+        ]
+      },
+      {
+        "$id": "flow-tasks-employee-6",
+        "Name": "Janis Spector",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_02.png",
+        "Status": "Online",
+        "Team": "Sales",
+        "Open": 112,
+        "Closed": 40,
+        "Score": 80,
+        "ScoreLabel": "8.0",
+        "Tags": [
+          "Sales",
+          "Marketing",
+          "Design",
+          "Team Lead",
+          "User Experience"
+        ]
+      }
+    ],
+    "Metrics": [
+      {
+        "Name": "Open Tasks",
+        "Value": 244,
+        "ValueDifference": 1
+      },
+      {
+        "Name": "Day Services",
+        "Value": 129,
+        "ValueDifference": -1
+      },
+      {
+        "Name": "Active Users",
+        "Value": 190,
+        "ValueDifference": 1
+      },
+      {
+        "Name": "Recurrent Users",
+        "Value": 98,
+        "ValueDifference": 0
+      },
+      {
+        "Name": "Delayed Tasks",
+        "Value": 14,
+        "ValueDifference": 0
+      },
+      {
+        "Name": "Open Tasks",
+        "Value": 244,
+        "ValueDifference": 1
+      },
+      {
+        "Name": "Day Services",
+        "Value": 129,
+        "ValueDifference": -1
+      },
+      {
+        "Name": "Active Users",
+        "Value": 190,
+        "ValueDifference": 1
+      },
+      {
+        "Name": "Recurrent Users",
+        "Value": 98,
+        "ValueDifference": 0
+      },
+      {
+        "Name": "Delayed Tasks",
+        "Value": 14,
+        "ValueDifference": 0
+      }
+    ]
+  },
+  "EmployeePerformanceDashboardPage.xaml": {
+    "Employee": {
+      "$ref": "flow-tasks-employee-1"
+    },
+    "Periods": [
+      "Last Week",
+      "Last Month",
+      "Last Year"
+    ],
+    "SelectedPeriodData": {
+      "$ref": "EmployeePerformanceDashboardPage_LastWeek"
+    },
+    "TasksData": {
+      "LastWeek": {
+        "$id": "EmployeePerformanceDashboardPage_LastWeek",
+        "RingSeries": [
+          {
+            "Value": 50,
+            "ValueLabel": "50%",
+            "Label": "Completed",
+            "Color": "#50E3C2"
+          },
+          {
+            "Value": 40,
+            "ValueLabel": "40%",
+            "Label": "Open",
+            "Color": "#449BFF"
+          },
+          {
+            "Value": 78,
+            "ValueLabel": "78%",
+            "Label": "Awaiting",
+            "Color": "#DE047D"
+          }
+        ]
+      },
+      "LastMonth": {
+        "RingSeries": [
+          {
+            "Value": 70,
+            "ValueLabel": "70%",
+            "Label": "Completed",
+            "Color": "#50E3C2"
+          },
+          {
+            "Value": 30,
+            "ValueLabel": "30%",
+            "Label": "Open",
+            "Color": "#449BFF"
+          },
+          {
+            "Value": 70,
+            "ValueLabel": "70%",
+            "Label": "Awaiting",
+            "Color": "#DE047D"
+          }
+        ]
+      },
+      "LastYear": {
+        "RingSeries": [
+          {
+            "Value": 40,
+            "ValueLabel": "40%",
+            "Label": "Completed",
+            "Color": "#50E3C2"
+          },
+          {
+            "Value": 90,
+            "ValueLabel": "90%",
+            "Label": "Open",
+            "Color": "#449BFF"
+          },
+          {
+            "Value": 66,
+            "ValueLabel": "66%",
+            "Label": "Awaiting",
+            "Color": "#DE047D"
+          }
+        ]
+      }
+    },
+    "Performance": {
+      "MaxValue": 30,
+      "Series": [
+        {
+          "Value": 1,
+          "Label": "Su"
+        },
+        {
+          "Value": 5,
+          "Label": "Mo"
+        },
+        {
+          "Value": 12,
+          "Label": "Tu"
+        },
+        {
+          "Value": 11,
+          "Label": "We"
+        },
+        {
+          "Value": 17,
+          "Label": "Th"
+        },
+        {
+          "Value": 22,
+          "Label": "Fr"
+        },
+        {
+          "Value": 28,
+          "Label": "Sa"
+        }
+      ]
+    },
+    "Services": {
+      "MaxValue": 30,
+      "Series": [
+        {
+          "Value": 10,
+          "Label": "Su"
+        },
+        {
+          "Value": 5,
+          "Label": "Mo"
+        },
+        {
+          "Value": 22,
+          "Label": "Tu"
+        },
+        {
+          "Value": 8,
+          "Label": "We"
+        },
+        {
+          "Value": 7,
+          "Label": "Th"
+        },
+        {
+          "Value": 10,
+          "Label": "Fr"
+        },
+        {
+          "Value": 14,
+          "Label": "Sa"
+        }
+      ]
+    },
+    "WorkedHours": {
+      "MaxValue": 15,
+      "Series": [
+        {
+          "Value": 48,
+          "Label": "In Office",
+          "Color": "#518DD8"
+        },
+        {
+          "Value": 26,
+          "Label": "Extra Time",
+          "Color": "#84B4F0"
+        },
+        {
+          "Value": 15,
+          "Label": "Extra Time",
+          "Color": "#A2D3FF"
+        },
+        {
+          "Value": 12,
+          "Label": "From Home",
+          "Color": "#BFE1FF"
+        }
+      ]
+    }
+  },
+  "EmployeeProfileDashboardPage.xaml": {
+    "Employee": {
+      "$ref": "flow-tasks-employee-1"
+    },
+    "Notes": "Vivamus ac massa tellus. Suspendisse non ex accumsan, varius augue vel, dictum leo. Phasellus luctus nibh tortor, ac faucibus velit dapibus maximus. Suspendisse nec molestie leo, ac convallis magna. Etiam tincidunt eros orci, eget molestie nulla accumsan sed. \n\nDonec volutpat gravida sapien eget condimentum. Sed lobortis commodo ex vitae interdum. Sed sodales dignissim est et eleifend. Vestibulum ligula eros, consequat non fermentum vitae, eleifend tincidunt velit.",
+    "TeamMembers": [
+      {
+        "$ref": "flow-tasks-employee-1"
+      },
+      {
+        "$ref": "flow-tasks-employee-2"
+      },
+      {
+        "$ref": "flow-tasks-employee-3"
+      },
+      {
+        "$ref": "flow-tasks-employee-4"
+      },
+      {
+        "$ref": "flow-tasks-employee-5"
+      },
+      {
+        "$ref": "flow-tasks-employee-6"
+      }
+    ]
+  }
+}

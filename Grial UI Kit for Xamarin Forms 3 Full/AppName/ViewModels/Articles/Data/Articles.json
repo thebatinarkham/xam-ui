@@ -1,0 +1,313 @@
+{
+  "Articles": {
+    "$id": "articles",
+    "List": [
+      {
+        "$id": "article-1",
+        "Title": "United by friendship",
+        "Subtitle": "Friendship beyond everything",
+        "Body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et aliquet nunc.\nSed ultricies sed augue sit amet maximus. In vel tellus sed ipsum volutpat venenatis et sit amet diam. Suspendisse feugiat mollis nibh, in facilisis diam convallis sit amet.\n\nMaecenas lectus turpis, rhoncus et est at, lacinia placerat urna. Praesent malesuada consectetur justo, scelerisque fermentum enim lobortis ullamcorper. Duis commodo sit amet ligula vitae luctus. Nulla commodo ipsum a lorem efficitur luctus.",
+        "Section": "ACTUALITY",
+        "Author": "BINARIA",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/article_01.jpg",
+        "Quote": "Donec euismod nulla et sem lobortis ultrices. Cras id imperdiet metus. Sed congue luctus arcu.",
+        "QuoteAuthor": "Jaco Morrison",
+        "When": "JAN 6, 2017",
+        "Followers": "112",
+        "Likes": "2.1k"
+      },
+      {
+        "$id": "article-2",
+        "Title": "Olympic dream",
+        "Subtitle": "The way to the podium",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors. This is how we design a great article sample.",
+        "Section": "SPORTS",
+        "Author": "Donald Davies",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_02.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/article_02.jpg",
+        "Quote": "Donec euismod nulla et sem lobortis ultrices. Cras id imperdiet metus. Sed congue luctus arcu.",
+        "QuoteAuthor": "Donald Davies",
+        "When": "FEB 13, 2017",
+        "Followers": "340",
+        "Likes": "12K"
+      },
+      {
+        "$id": "article-3",
+        "Title": "Wheels of fortune",
+        "Subtitle": "And the wind cries mary",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors. This is how we design a great article sample.",
+        "Section": "FREE TIME",
+        "Author": "Regina Joplin",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/article_03.jpg",
+        "Quote": "Donec euismod nulla et sem lobortis ultrices. Cras id imperdiet metus. Sed congue luctus arcu.",
+        "QuoteAuthor": "Regina Joplin",
+        "When": "FEB 21, 2017",
+        "Followers": "120",
+        "Likes": "798"
+      },
+      {
+        "$id": "article-4",
+        "Title": "Last adventure",
+        "Subtitle": "The conquest of space",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors. This is how we design a great article sample.",
+        "Section": "SCIENCE",
+        "Author": "BINARIA",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_04.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/article_04.jpg",
+        "Quote": "Donec euismod nulla et sem lobortis ultrices. Cras id imperdiet metus. Sed congue luctus arcu.",
+        "QuoteAuthor": "Janis Spector",
+        "When": "MAR 9, 2017",
+        "Followers": "327",
+        "Likes": "921"
+      },
+      {
+        "$id": "article-5",
+        "Title": "Sweet leaf",
+        "Subtitle": "The rainforest newest hope",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors. This is how we design a great article sample.",
+        "Section": "NATURE",
+        "Author": "Margaret Whites",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_05.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/article_05.jpg",
+        "Quote": "Donec euismod nulla et sem lobortis ultrices. Cras id imperdiet metus. Sed congue luctus arcu.",
+        "QuoteAuthor": "Donald Davies",
+        "When": "JUN 17, 2015",
+        "Followers": "2K",
+        "Likes": "92"
+      },
+      {
+        "$id": "article-6",
+        "Title": "Smoke kills",
+        "Subtitle": "The war against tabacco",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors. This is how we design a great article sample.",
+        "Section": "HEALTH",
+        "Author": "Skyler Harrisson",
+        "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_06.png",
+        "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/article_06.jpg",
+        "Quote": "Donec euismod nulla et sem lobortis ultrices. Cras id imperdiet metus. Sed congue luctus arcu.",
+        "QuoteAuthor": "Skyler Harrisson",
+        "When": "JUN 12, 2017",
+        "Followers": "235",
+        "Likes": "4.7K"
+      }
+    ]
+  },
+  "ArticlesBrowserPage.xaml": {
+    "Articles": [
+      {
+        "$ref": "article-1"
+      },
+      {
+        "$ref": "article-3"
+      },
+      {
+        "$ref": "article-5"
+      }
+    ],
+    "Related": [
+      {
+        "$ref": "article-2"
+      },
+      {
+        "$ref": "article-4"
+      },
+      {
+        "$ref": "article-6"
+      }
+    ]
+  },
+  "ArticlesListPage.xaml": {
+    "$ref": "articles"
+  },
+  "ArticlesFeedPage.xaml": {
+    "$ref": "articles"
+  },
+  "ArticlesListVariantPage.xaml": {
+    "$ref": "articles"
+  },
+  "ArticlesClassicViewPage.xaml": {
+    "$ref": "articles"
+  },
+  "ArticlesColumnsPage.xaml": {
+    "Main": {
+      "Title": "Sweet leaf",
+      "Subtitle": "The rainforest newest hope",
+      "Body": "Whether you are starting with Xamarin or if you are more experienced, Grial will boost your development time by giving all you need to start with the right foot. Forget about endless hours browsing for an specific solution in Xamarin Forms, we’ve done that for you. In connection with this appellative of 'Whalebone whales,' it is of great leap of yer happiness leadership colors. This is how we design a great article sample.",
+      "BackgroundImage": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/article_05.jpg",
+      "When": "JUN 17, 2015"
+    },
+    "Secondary": {
+      "$ref": "articles"
+    }
+  },
+  "ArticleDetailPage.xaml": {
+    "Article": {
+      "$ref": "article-1"
+    },
+    "Comments": [
+      {
+        "$id": "article-comment-1",
+        "From": {
+          "Name": "Jaco Morrison",
+          "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_01.png"
+        },
+        "Title": "Artina is awesome...you\"ll love it",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors.",
+        "HasAttachment": true,
+        "ThreadCount": 2,
+        "When": "July 7",
+        "IsStared": false,
+        "IsRead": false
+      },
+      {
+        "$id": "article-comment-2",
+        "From": {
+          "Name": "Margaret Whites",
+          "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_02.png"
+        },
+        "Title": "Artina is awesome...you\"ll love it",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors.",
+        "HasAttachment": false,
+        "ThreadCount": 10,
+        "When": "3 minutes ago",
+        "IsStared": true,
+        "IsRead": false
+      },
+      {
+        "$id": "article-comment-3",
+        "From": {
+          "Name": "Donald Davies",
+          "Avatar": "https://s3-us-west-2.amazonaws.com/grial-images/v3.0/friend_03.png"
+        },
+        "Title": "Artina is awesome...you\"ll love it",
+        "Body": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors.",
+        "HasAttachment": false,
+        "ThreadCount": 5,
+        "When": "July 7",
+        "IsStared": true,
+        "IsRead": true
+      }
+    ]
+  },
+  "CardArticlePage.xaml": {
+    "Article": {
+      "$ref": "article-1"
+    },
+    "Gallery": [
+      {
+        "$ref": "article-5"
+      },
+      {
+        "$ref": "article-4"
+      },
+      {
+        "$ref": "article-3"
+      },
+      {
+        "$ref": "article-2"
+      }
+    ],
+    "Related": [
+      {
+        "$ref": "article-2"
+      },
+      {
+        "$ref": "article-3"
+      },
+      {
+        "$ref": "article-4"
+      },
+      {
+        "$ref": "article-5"
+      }
+    ],
+    "Comments": [
+      {
+        "$ref": "article-comment-1"
+      },
+      {
+        "$ref": "article-comment-2"
+      },
+      {
+        "$ref": "article-comment-3"
+      }
+    ]
+  },
+  "CurvedHeaderArticlePage.xaml": {
+    "Article": {
+      "$ref": "article-1"
+    },
+    "Related": [
+      {
+        "$ref": "article-2"
+      },
+      {
+        "$ref": "article-5"
+      }
+    ],
+    "Comments": [
+      {
+        "$ref": "article-comment-1"
+      },
+      {
+        "$ref": "article-comment-2"
+      },
+      {
+        "$ref": "article-comment-3"
+      }
+    ]
+  },
+  "ParallaxHeaderArticlePage.xaml": {
+    "Article": {
+      "$ref": "article-1"
+    },
+    "Related": [
+      {
+        "$ref": "article-2"
+      },
+      {
+        "$ref": "article-3"
+      },
+      {
+        "$ref": "article-4"
+      },
+      {
+        "$ref": "article-5"
+      },
+      {
+        "$ref": "article-6"
+      }
+    ],
+    "Cards": [
+      {
+        "$id": "article-card-1",
+        "Icon": "",
+        "Value": "3844",
+        "Description": "Km driven"
+      },
+      {
+        "Icon": "",
+        "Value": "14hr",
+        "Description": "Time spent"
+      },
+      {
+        "Icon": "",
+        "Value": "$235",
+        "Description": "Gas expense"
+      }
+    ],
+    "Comments": [
+      {
+        "$ref": "article-comment-1"
+      },
+      {
+        "$ref": "article-comment-2"
+      },
+      {
+        "$ref": "article-comment-3"
+      }
+    ]
+  }
+}

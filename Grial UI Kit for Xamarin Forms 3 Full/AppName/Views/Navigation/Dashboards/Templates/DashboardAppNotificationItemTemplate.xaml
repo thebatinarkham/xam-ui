@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<local:DashboardItemTemplateBase xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.DashboardAppNotificationItemTemplate"
+	x:Name="Root">
+
+    <ContentView.Content>
+        <Grid
+			ColumnSpacing="0"
+			RowSpacing="0"
+			Padding="0">
+
+            <!-- BACKGROUND -->
+            <BoxView
+				Grid.Row="0"
+				Grid.Column="0"
+				BackgroundColor="{ Binding BackgroundColor }"
+				Style="{ StaticResource DashboardAppNotificationItemTemplateStyle }" />
+
+            <!-- CONTENT -->
+            <Grid
+				Grid.Row="0"
+				Grid.Column="0"
+				VerticalOptions="FillAndExpand"
+				Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="50" />
+                    <ColumnDefinition
+						Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- TEXT -->
+                <Label
+					Grid.Row="0"
+					Grid.Column="1"
+					Margin="10"
+					TextColor="{Binding Source={x:Reference Root}, Path=TextColor}"
+					FontSize="14"
+					Text="{ Binding Body }" />
+
+                <!-- Avatar -->
+                <local:CircleCachedImage
+					Grid.Row="0"
+					Grid.Column="0"
+					BorderColor="{ Binding BackgroundColor }"
+					TranslationX="0"
+					TranslationY="0"
+					Source="{ Binding Avatar }"
+					HorizontalOptions="Start"
+					VerticalOptions="Start"
+					HeightRequest="{ 
+                        grial:OnOrientationDouble 
+                            Default=45,	
+                            PortraitTablet=50,
+                            LandscapeTablet=50 
+                        }"
+					WidthRequest="{ 
+                        grial:OnOrientationDouble 
+                            Default=45,
+                            PortraitTablet=50,
+                            LandscapeTablet=50 
+                        }" />
+                        
+                <Grid
+					Grid.Row="1"
+					Grid.Column="0"
+					Grid.ColumnSpan="2"
+					Padding="0">
+    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="*" />
+                        <ColumnDefinition
+							Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- TITLE -->
+                    <Label
+						Grid.Row="0"
+						Grid.Column="0"
+						Grid.ColumnSpan="2"
+						Text="{ Binding Title }"
+						TextColor="{Binding Source={x:Reference Root}, Path=TextColor}"
+						HorizontalTextAlignment="Start"
+						VerticalTextAlignment="Center"
+						VerticalOptions="End" />
+    
+                    <!-- ICON -->
+                    <Label
+						Grid.Row="0"
+						Grid.Column="1"
+						Text="{ Binding Icon }"
+						Style="{ StaticResource FontIcon }"
+						TextColor="{Binding Source={x:Reference Root}, Path=TextColor}"
+						FontSize="20"
+						HorizontalTextAlignment="End"
+						VerticalTextAlignment="Center"
+						VerticalOptions="End" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</local:DashboardItemTemplateBase>

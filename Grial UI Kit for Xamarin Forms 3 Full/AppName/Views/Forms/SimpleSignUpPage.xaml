@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName" xmlns:rtl="clr-namespace:AppName.Core"
+	x:Class="AppName.SimpleSignUpPage"
+	Title="{ grial:Translate PageTitleSimpleSignUp }"
+	NavigationPage.HasNavigationBar="False"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView
+				grial:Effects.IgnoreIOSSafeAreaOnScrollView="Left,Right,Top"
+				VerticalOptions="FillAndExpand"
+				Padding="{ StaticResource MainWrapperPadding }">
+                <!-- MAIN CONTAINER -->
+                <Grid
+					ColumnSpacing="0"
+					RowSpacing="0"
+					Style="{ StaticResource SimpleLoginFormsContentStyle }"
+					HorizontalOptions="Fill"
+					VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="Auto" />
+                        <RowDefinition
+							Height="*" />
+                        <RowDefinition
+							Height="Auto" />
+                    </Grid.RowDefinitions>
+                                        
+                    <!-- HEADER -->
+                    <StackLayout
+						Grid.Row="0"
+						Spacing="5"
+						Padding="0,20,0,0"
+						InputTransparent="true">
+                        <!-- LOGO -->
+                        <Grid
+							Grid.Row="1"
+							WidthRequest="60"
+							HeightRequest="60"
+							VerticalOptions="Center"
+							HorizontalOptions="Center">
+                            <BoxView
+								Style="{ StaticResource MainMenuOrModalBackgroundStyle }"
+								Opacity="1"
+								HorizontalOptions="Center"
+								WidthRequest="60" />
+
+                            <Label
+								TextColor="{ DynamicResource InverseTextColor }"
+								FontSize="42"
+								Text="{ x:Static local:GrialIconsFont.LogoGrial }"
+								Style="{ StaticResource FontIcon }"
+								HorizontalOptions="Center"
+								VerticalTextAlignment="Center" />
+                        </Grid>
+
+                        <!-- WELCOME TEXT -->
+                        <Label
+							Text="{ grial:Translate StringWelcomeToGrial }"
+							FontSize="{ 
+                                grial:OnOrientationDouble
+                                    PortraitPhone=22,
+                                    LandscapePhone=22,
+                                    PortraitTablet=28,
+                                    LandscapeTablet=28 
+                            }"
+							HorizontalOptions="Center"
+							TextColor="{ DynamicResource BaseTextColor }" />
+                        
+                        <!-- USE YOUR CREDENTIALS TEXT -->    
+                        <Label
+							Text="{ grial:Translate LabelUseCredentialsToLogin }"
+							HorizontalOptions="Center"
+							FontSize="{ 
+                                grial:OnOrientationDouble
+                                    PortraitPhone=15,
+                                    LandscapePhone=15,
+                                    PortraitTablet=18,
+                                    LandscapeTablet=18 
+                            }" />
+                    
+                        <!--SEPARATOR-->
+                        <BoxView
+							WidthRequest="80"
+							HeightRequest="1"
+							HorizontalOptions="Center"
+							VerticalOptions="End"
+							BackgroundColor="{ DynamicResource BaseTextColor }" />
+                    </StackLayout>
+            
+                    <!---FIELDS CONTAINER-->
+                    <Grid
+						Grid.Row="1"
+						RowSpacing="30"
+						ColumnSpacing="15"
+						Padding="0,20"
+						VerticalOptions="Center"
+						Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="Auto" />
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="Auto" />
+                            <RowDefinition
+								Height="Auto" />
+                            <RowDefinition
+								Height="Auto" />
+                            <RowDefinition
+								Height="Auto" />
+                        </Grid.RowDefinitions>
+                        
+                        <!-- ICON -->
+                        <Label
+							Grid.Column="0"
+							Grid.Row="0"
+							FontSize="24"
+							Text="{ x:Static local:GrialIconsFont.User }"
+							Style="{ StaticResource FontIcon }"
+							HorizontalTextAlignment="Center"
+							TextColor="{ DynamicResource ComplementColor }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center" />
+
+                        <!--NAME ENTRY-->
+                        <Entry
+							Grid.Column="1"
+							Grid.Row="0"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+							Placeholder="{ grial:Translate StringName }" />
+
+                        <!--LAST NAME ENTRY-->
+                        <Entry
+							Grid.Column="2"
+							Grid.Row="0"
+							Margin="6,0,0,0"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+							Placeholder="{ grial:Translate StringLastName }" />
+
+                        <!-- ICON -->
+                        <Label
+							Grid.Column="0"
+							Grid.Row="1"
+							FontSize="24"
+							Text="{ x:Static local:GrialIconsFont.MapPin }"
+							Style="{ StaticResource FontIcon }"
+							HorizontalTextAlignment="Center"
+							TextColor="{ DynamicResource ComplementColor }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center" />
+
+                        <!--ADDRESS ENTRY-->
+                        <Entry
+							Grid.Column="1"
+							Grid.ColumnSpan="2"
+							Grid.Row="1"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+							Placeholder="{ grial:Translate StringAddress }" />
+
+                        <!-- ICON -->
+                        <Label
+							Grid.Column="0"
+							Grid.Row="2"
+							FontSize="24"
+							Text="{ x:Static local:GrialIconsFont.Mail }"
+							Style="{ StaticResource FontIcon }"
+							HorizontalTextAlignment="Center"
+							TextColor="{ DynamicResource ComplementColor }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center" />
+
+                        <!--EMAIL ENTRY-->
+                        <Entry
+							Grid.Column="1"
+							Grid.ColumnSpan="2"
+							Grid.Row="2"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+							Placeholder="{ grial:Translate StringEmail }" />
+
+                        <!-- ICON -->
+                        <Label
+							Grid.Column="0"
+							Grid.Row="3"
+							FontSize="24"
+							Text="{ x:Static local:GrialIconsFont.Lock }"
+							Style="{ StaticResource FontIcon }"
+							HorizontalTextAlignment="Center"
+							TextColor="{ DynamicResource ComplementColor }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center" />
+
+                        <!--PASSWORD ENTRY-->
+                        <Entry
+							Grid.Column="1"
+							Grid.ColumnSpan="2"
+							Grid.Row="3"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+							Placeholder="{ grial:Translate StringPassword }" />
+                    
+                    </Grid>
+
+                    <!-- BUTTONS -->
+                    <StackLayout
+						Grid.Row="2"
+						Spacing="10"
+						HorizontalOptions="Fill"
+						VerticalOptions="End">
+                        <!-- SINGUP BUTTON -->
+                        <Button
+							Style="{ StaticResource PrimaryActionButtonStyle }"
+							VerticalOptions="End"
+							Text="{ grial:Translate StringSignUp }"
+							WidthRequest="{
+                                grial:OnOrientationDouble
+                                    LandscapePhone=200,
+                                    LandscapeTablet=400 
+                            }"
+							HorizontalOptions="{ 
+                                grial:OnOrientationLayoutOptions
+                                    PortraitPhone=Fill,
+                                    LandscapePhone=Center,
+                                    PortraitTablet=Fill,
+                                    LandscapeTablet=Center 
+                            }" />
+
+                        <!-- LOGIN BUTTON -->
+                        <Button
+							Style="{ StaticResource SecondaryActionButtonStyle }"
+							BackgroundColor="{ DynamicResource ComplementColor }"
+							VerticalOptions="End"
+							Text="{ grial:Translate StringLogin }"
+							WidthRequest="{ 
+                                grial:OnOrientationDouble
+                                    LandscapePhone=200,
+                                    LandscapeTablet=400
+                            }"
+							HorizontalOptions="{ 
+                                grial:OnOrientationLayoutOptions
+                                    PortraitPhone=Fill,
+                                    LandscapePhone=Center,
+                                    PortraitTablet=Fill,
+                                    LandscapeTablet=Center 
+                            }" />
+
+                    </StackLayout>
+                    
+                </Grid>
+
+            </ScrollView>
+            
+            <!-- CLOSE ICON -->
+            <Label
+				Style="{ StaticResource IconCloseLabelStyle }"
+				TextColor="{ DynamicResource BaseTextColor }">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnCloseButtonClicked" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+

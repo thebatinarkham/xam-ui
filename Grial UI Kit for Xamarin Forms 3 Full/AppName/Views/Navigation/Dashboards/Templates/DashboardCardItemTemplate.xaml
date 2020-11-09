@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.DashboardCardItemTemplate">
+
+    <grial:CardView
+		Margin="2"
+		BackgroundColor="{ Binding BackgroundColor }"
+		grial:Effects.BackgroundGradient="{ DynamicResource DashboardCardItemTemplateGradient }">
+        
+        <grial:CardView.RowDefinitions>
+            <RowDefinition
+				Height="75*" />
+            <RowDefinition
+				Height="Auto" />
+            <RowDefinition
+				Height="40*" />
+            <RowDefinition
+				Height="20" />
+            <RowDefinition
+				Height="10" />
+        </grial:CardView.RowDefinitions>
+
+        <!-- Card Background image -->
+        <ffimageloading:CachedImage
+			FadeAnimationEnabled="true"
+			DownsampleUseDipUnits="true"
+			DownsampleHeight="140"
+			Source="{ Binding BackgroundImage }"
+			Aspect="AspectFill"
+			HeightRequest="140" />
+        <!-- Avatar -->
+        <local:CircleCachedImage
+			BorderColor="{ Binding BackgroundColor }"
+			Grid.RowSpan="1"
+			Grid.Row="1"
+			TranslationY="{ 
+                grial:OnOrientationDouble 
+                    Default=-18,
+                    PortraitTablet=-30,
+                    LandscapeTablet=-30 
+                }"
+			Source="{ Binding Avatar }"
+			HorizontalOptions="Start"
+			HeightRequest="{ 
+                grial:OnOrientationDouble 
+                    Default=46,	
+                    PortraitTablet=60,
+                    LandscapeTablet=60 
+                }"
+			WidthRequest="{ 
+                grial:OnOrientationDouble 
+                    Default=46,
+                    PortraitTablet=60,
+                    LandscapeTablet=60 
+                }"
+			Margin="18,0" />
+
+        <StackLayout
+			Grid.Row="2"
+			Spacing="0">
+            <!-- Card title -->
+            <Label
+				Margin="20,0"
+				TextColor="{ DynamicResource OverImageTextColor }"
+				Text="{ Binding Title }"
+				FontSize="{ grial:OnOrientationDouble 
+                    Default=16,
+                    PortraitTablet=20,
+                    LandscapeTablet=20 }" />
+
+            <!-- Author -->
+            <Label
+				Grid.Row="3"
+				Margin="20,0"
+				TranslationY="0"
+				Text="{ Binding Author }"
+				TextColor="{ DynamicResource OverImageTextColor }"
+				Opacity=".5"
+				FontSize="{ grial:OnOrientationDouble 
+                    Default=14,
+                    PortraitTablet=16,
+                    LandscapeTablet=16
+                }" />	
+        
+        </StackLayout>
+
+        <!-- SECTION -->
+        <local:Tag
+			Grid.Row="0"
+			Grid.Column="0"
+			Margin="10"
+			Style="{ StaticResource TagLabelStyle }"
+			Text="{ Binding Section }"
+			HorizontalOptions="End"
+			VerticalOptions="Start" />
+
+        <StackLayout
+			Grid.Row="3"
+			Margin="15,0,15,0"
+			Orientation="Horizontal"
+			VerticalOptions="Center"
+			HorizontalOptions="End">
+            
+            <Label
+				Text="{ x:Static local:GrialIconsFont.Eye }"
+				Style="{ StaticResource FontIcon }"
+				TextColor="{ DynamicResource OverImageTextColor }"
+				FontSize="{ grial:OnOrientationDouble 
+                    Default=15,
+                    PortraitTablet=20,
+                    LandscapeTablet=20 }"
+				VerticalTextAlignment="Center"
+				HorizontalTextAlignment="End" />
+            <Label
+				Text="223"
+				TextColor="{ DynamicResource OverImageTextColor }"
+				FontSize="{ grial:OnOrientationDouble 
+                    Default=13,
+                    PortraitTablet=16,
+                    LandscapeTablet=16 }"
+				VerticalTextAlignment="Center" />
+        </StackLayout>
+
+    </grial:CardView>
+
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer
+			Tapped="OnCardTapped" />
+    </ContentView.GestureRecognizers>
+    
+</ContentView>

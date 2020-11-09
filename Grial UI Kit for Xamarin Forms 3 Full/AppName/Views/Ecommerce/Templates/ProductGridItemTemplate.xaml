@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.ProductGridItemTemplate"
+	HeightRequest="170">
+    
+    <View.GestureRecognizers>
+        <TapGestureRecognizer
+			Tapped="OnProductTapped" />
+    </View.GestureRecognizers>
+
+    <Grid
+		RowSpacing="0">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="*" />
+            <RowDefinition
+				Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <ffimageloading:CachedImage
+			FadeAnimationEnabled="true"
+			Source="{ Binding Image }"
+			Aspect="AspectFill" />
+
+        <StackLayout
+			Grid.Row="1"
+			Padding="0,10,0,10"
+			Spacing="0"
+			grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+            <Label
+				Text="{ Binding Manufacturer, StringFormat='BY {0:F0}'} }"
+				FontSize="{ grial:OnOrientationDouble
+                    PortraitPhone=9,
+                    LandscapePhone=9,
+                    PortraitTablet=10,
+                    LandscapeTablet=10 }"
+				HorizontalOptions="Start"
+				TextColor="{ DynamicResource AccentColor }" />
+
+            <Label
+				Text="{ Binding Name }"
+				FontSize="{ grial:OnOrientationDouble
+                    PortraitPhone=16,
+                    LandscapePhone=16,
+                    PortraitTablet=18,
+                    LandscapeTablet=18 }"
+				Style="{ StaticResource LabelBoldStyle }"
+				HorizontalOptions="Start"
+				TextColor="{ DynamicResource BaseTextColor }" />
+                    
+            <Label
+				Text="{ Binding Price }"
+				FontSize="{ grial:OnOrientationDouble
+                    PortraitPhone=15,
+                    LandscapePhone=15,
+                    PortraitTablet=17,
+                    LandscapeTablet=17 }"
+				HorizontalOptions="Start"
+				TextColor="{ DynamicResource BaseTextColor }" />
+        </StackLayout>
+
+    </Grid>
+     
+</ContentView>

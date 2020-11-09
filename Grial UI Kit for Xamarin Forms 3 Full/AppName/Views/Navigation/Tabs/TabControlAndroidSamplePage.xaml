@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.TabControlAndroidSamplePage"
+	Title="{ grial:Translate PageTitleTabControlAndroidSample }">
+    <ContentPage.Resources>
+        <ResourceDictionary
+			Source="/Styles/TabControl/AndroidTabResources.xaml" />
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid
+			BackgroundColor="{ DynamicResource AndroidTabStripBackgroundColor }">
+            <!-- TALL NAVIGATION BAR BACKGROUND -->
+            <grial:GrialNavigationBar
+				HeightRequestBeyondNativeBar="300"
+				UseNavigationPageBarBackgroundColor="true"
+				UseNavigationPageBarBackgroundGradient="true" />
+            
+            <grial:TabControl
+				TabStripPlacement="Top"
+				TabStripBackgroundColor="{ DynamicResource AndroidTabStripBackgroundColor }"
+				TabContentBackgroundColor="{ DynamicResource BasePageColor }"
+				Style="{ StaticResource AndroidTabStyle }">
+                
+                <!--FRIENDS TAB-->
+                <grial:TabItem
+					BadgeText="7"
+					IconText="{ x:Static local:GrialIconsFont.Users }"
+					Text="{ grial:Translate TabItemTextFriends }">
+                
+                    <!-- FRIENDS LIST -->
+                    <ListView
+						ItemsSource="{ Binding Social.Related.Friends }"
+						RowHeight="66"
+						SeparatorColor="{ DynamicResource ListViewSeparatorColor }">
+                
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <local:FriendItemTemplate />
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    
+                </grial:TabItem>
+                
+                <!--CHAT TIMELINE TAB-->
+                <grial:TabItem
+					IconText="{ x:Static local:GrialIconsFont.Clock }"
+					Text="{ grial:Translate PageTitleChatTimeline }">
+                
+                    <ListView
+						ItemsSource="{ Binding Chat.Messages }"
+						SeparatorVisibility="Default"
+						SeparatorColor="{ DynamicResource ListViewSeparatorColor }"
+						HasUnevenRows="false"
+						CachingStrategy="RecycleElement">
+                        
+                        <ListView.RowHeight>
+                            <OnIdiom
+								x:TypeArguments="x:Int32"
+								Phone="80"
+								Tablet="100" />
+                        </ListView.RowHeight>
+                        
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <local:RecentChatItemTemplate />
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                
+                    </ListView>
+                    
+                </grial:TabItem>
+            
+            </grial:TabControl>
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>

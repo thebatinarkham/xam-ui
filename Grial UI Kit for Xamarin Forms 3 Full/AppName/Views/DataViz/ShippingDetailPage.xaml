@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	x:Class="AppName.ShippingDetailPage"
+	BackgroundColor="{ DynamicResource BasePageColor }"
+	Title="{ grial:Translate PageTitleShippingDetail }">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary
+			Source="/Styles/TabControl/SegmentedTabResources.xaml" />
+        
+        <!-- Grid Styles -->
+        <Style
+			TargetType="grial:DataGrid">
+            <Setter
+				Property="SelectedBackgroundColor"
+				Value="#20BFE1FF" />
+            <Setter
+				Property="HeaderRowBackgroundColor"
+				Value="{ DynamicResource DataGridHeaderRowBackgroundColor }" />
+            <Setter
+				Property="BackgroundColor"
+				Value="{ DynamicResource DataGridBackgroundColor }" />
+            <Setter
+				Property="GridSeparatorVisibility"
+				Value="None" />
+            <Setter
+				Property="HeaderSeparatorVisibility"
+				Value="None" />
+        </Style>
+        
+        <!-- Column Styles -->
+        <Style
+			x:Key="BaseColumn"
+			TargetType="grial:DataGridColumn">
+            <Setter
+				Property="IsSortable"
+				Value="True" />
+            <Setter
+				Property="SortIconsFontFamily"
+				Value="{StaticResource IconsFontFamily}" />
+            <Setter
+				Property="DescendingSortIconText"
+				Value="{ x:Static local:GrialIconsFont.ChevronDown }" />
+            <Setter
+				Property="AscendingSortIconText"
+				Value="{ x:Static local:GrialIconsFont.ChevronUp }" />
+            <Setter
+				Property="ColumnWidth"
+				Value="0.1*" />
+            
+            <Setter
+				Property="HeaderTextColor"
+				Value="{ DynamicResource DataGridHeaderTextColor }" />
+            <Setter
+				Property="HeaderTextAlignment"
+				Value="Center" />
+            <Setter
+				Property="HeaderFontSize"
+				Value="14" />
+            <Setter
+				Property="HeaderFontFamily"
+				Value="{ StaticResource AppBoldFontFamily }" />
+            <Setter
+				Property="HeaderPadding"
+				Value="4,14" />
+            
+            <Setter
+				Property="CellTextColor"
+				Value="{ DynamicResource DataGridCellTextColor }" />
+            <Setter
+				Property="CellPadding"
+				Value="14" />
+            <Setter
+				Property="CellFontSize"
+				Value="14" />
+            <Setter
+				Property="CellTextAlignment"
+				Value="Center" />
+            <Setter
+				Property="CellVerticalAlignment"
+				Value="Center" />
+        </Style>
+        
+        <grial:LessThanConverter
+			Threshold="1"
+			x:Key="IncompleteConverter" />
+        <grial:GreaterThanOrEqualConverter
+			Threshold="1"
+			x:Key="CompleteConverter" />
+        
+        <Style
+			x:Key="IdColumn"
+			TargetType="grial:DataGridColumn"
+			BasedOn="{StaticResource BaseColumn}">
+            <Setter
+				Property="BindingPath"
+				Value="Id" />
+            <Setter
+				Property="HeaderText"
+				Value="Order ID" />
+            <Setter
+				Property="HeaderTextAlignment"
+				Value="Start" />
+            <Setter
+				Property="HeaderPadding"
+				Value="14" />
+            <Setter
+				Property="ColumnWidth"
+				Value="120" />
+
+            <Setter
+				Property="CellTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid
+							Grid.Row="0"
+							Grid.Column="0"
+							ColumnSpacing="10"
+							RowSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+									Width="Auto" />
+                                <ColumnDefinition
+									Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <!-- ICON -->
+                            <Label
+								FontSize="24"
+								VerticalOptions="Center"
+								HorizontalOptions="Center"
+								Text="{ x:Static local:GrialIconsFont.Truck }"
+								FontFamily="{ StaticResource IconsFontFamily }"
+								TextColor="#4A90E2"
+								IsVisible="{ Binding Progress, Converter={StaticResource IncompleteConverter} }" />
+                            
+                            <!-- COMPLETED -->
+                            <Label
+								FontSize="24"
+								VerticalOptions="Center"
+								HorizontalOptions="Center"
+								Text="{ x:Static local:GrialIconsFont.CheckCircle }"
+								FontFamily="{ StaticResource IconsFontFamily }"
+								TextColor="#7ED321"
+								IsVisible="{ Binding Progress, Converter={StaticResource CompleteConverter} }" />
+                            
+                            <!-- ID -->
+                            <Label
+								Grid.Column="1"
+								Style="{ StaticResource LabelBoldStyle }"
+								Text="{ Binding Id }"
+								VerticalOptions="Center" />
+                        </Grid>
+                    
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style
+			x:Key="ProgressColumn"
+			TargetType="grial:DataGridColumn"
+			BasedOn="{StaticResource BaseColumn}">
+            <Setter
+				Property="BindingPath"
+				Value="Progress" />
+            <Setter
+				Property="HeaderText"
+				Value="Progress" />
+            <Setter
+				Property="ColumnWidth"
+				Value="85" />
+            
+            <Setter
+				Property="CellTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <ProgressBar
+							Progress="{ Binding Progress }"
+							VerticalOptions="Center"
+							HorizontalOptions="Fill" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style
+			x:Key="TimeColumn"
+			TargetType="grial:DataGridColumn"
+			BasedOn="{StaticResource BaseColumn}">
+            <Setter
+				Property="BindingPath"
+				Value="Closed" />
+            <Setter
+				Property="HeaderText"
+				Value="Time" />
+            <Setter
+				Property="ColumnWidth"
+				Value="80" />
+            <Setter
+				Property="BindingPath"
+				Value="Time" />
+            <Setter
+				Property="CellTextAlignment"
+				Value="Center" />
+        </Style>
+        
+        <Style
+			x:Key="WeightColumn"
+			TargetType="grial:DataGridColumn"
+			BasedOn="{StaticResource BaseColumn}">
+            <Setter
+				Property="BindingPath"
+				Value="Score" />
+            <Setter
+				Property="HeaderText"
+				Value="Weight" />
+            <Setter
+				Property="ColumnWidth"
+				Value="70" />
+            <Setter
+				Property="BindingPath"
+				Value="Weight" />
+            <Setter
+				Property="StringFormat"
+				Value="{}{0} lb" />
+            <Setter
+				Property="CellTextAlignment"
+				Value="Start" />
+        </Style>
+        
+        <Style
+			x:Key="PriceColumn"
+			TargetType="grial:DataGridColumn"
+			BasedOn="{StaticResource BaseColumn}">
+            <Setter
+				Property="BindingPath"
+				Value="Score" />
+            <Setter
+				Property="HeaderText"
+				Value="Price" />
+            <Setter
+				Property="ColumnWidth"
+				Value="90" />
+            <Setter
+				Property="BindingPath"
+				Value="Price" />
+            <Setter
+				Property="StringFormat"
+				Value="{}${0:0.00}" />
+            <Setter
+				Property="CellTextAlignment"
+				Value="Start" />
+        </Style>
+        
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid>
+            <grial:GrialNavigationBar
+				UseNavigationPageBarBackgroundColor="true"
+				UseNavigationPageBarBackgroundGradient="true" />
+            
+            <BoxView
+				Margin="0,80,0,0"
+				BackgroundColor="{ DynamicResource BasePageColor }" />
+            <grial:TabControl
+				Style="{ StaticResource SegmentedTabStyle }">
+                
+                <!-- ALL TAB -->
+                <grial:TabItem
+					Text="{ grial:Translate Key=StringAll }">
+                    <Grid>
+                        
+                        <!-- Data Grid -->
+                        <grial:DataGrid
+							Padding="0,0,0,20"
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+							RowHeight="60"
+							SelectionMode="Row"
+							HorizontalOptions="CenterAndExpand"
+							VerticalOptions="FillAndExpand"
+							ItemsSource="{ Binding All }">
+                            <grial:DataGrid.ColumnDefinitions>
+                                <grial:DataGridColumn
+									Style="{ StaticResource IdColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource ProgressColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource TimeColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource WeightColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource PriceColumn }" />
+                            </grial:DataGrid.ColumnDefinitions>
+                        </grial:DataGrid>
+                        
+                             
+                    </Grid>
+                    
+                </grial:TabItem>
+                
+                <!-- IN TRANSIT TAB -->
+                <grial:TabItem
+					Text="{ grial:Translate Key=StringInTransit }">
+                    <Grid>
+                        
+                        <!-- Data Grid -->
+                        <grial:DataGrid
+							Padding="0,0,0,20"
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+							RowHeight="60"
+							SelectionMode="Row"
+							HorizontalOptions="CenterAndExpand"
+							VerticalOptions="FillAndExpand"
+							ItemsSource="{ Binding InTransit }">
+                            <grial:DataGrid.ColumnDefinitions>
+                                <grial:DataGridColumn
+									Style="{ StaticResource IdColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource ProgressColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource TimeColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource WeightColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource PriceColumn }" />
+                            </grial:DataGrid.ColumnDefinitions>
+                        </grial:DataGrid>
+                        
+                        
+                    </Grid>
+                </grial:TabItem>
+                
+                <!-- CLOSED TAB -->
+                <grial:TabItem
+					Text="{ grial:Translate Key=StringClosed }">
+                    <Grid>
+                        
+                        <!-- Data Grid -->
+                        <grial:DataGrid
+							Padding="0,0,0,20"
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+							RowHeight="60"
+							SelectionMode="Row"
+							HorizontalOptions="CenterAndExpand"
+							VerticalOptions="FillAndExpand"
+							ItemsSource="{ Binding Closed }">
+                            <grial:DataGrid.ColumnDefinitions>
+                                <grial:DataGridColumn
+									Style="{ StaticResource IdColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource ProgressColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource TimeColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource WeightColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource PriceColumn }" />
+                            </grial:DataGrid.ColumnDefinitions>
+                        </grial:DataGrid>
+                        
+                    </Grid>
+                </grial:TabItem>
+            </grial:TabControl>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

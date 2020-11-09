@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+	x:Class="AppName.FeaturedMovieItemTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:VideoPlayerResources />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <local:OneToManyConverter
+				x:Key="OneToManyConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources> 
+
+    <ContentView.Content>
+        
+        <local:ExtendedCarouselViewControl
+			x:Name="carousel"
+			ShowIndicators="false"
+			Orientation="Vertical"
+			VerticalOptions="FillAndExpand"
+			ItemsSource="{ Binding ., Converter={StaticResource OneToManyConverter}, ConverterParameter=2 }"
+			InterPageSpacing="0">
+            <cv:CarouselViewControl.ItemTemplate>
+                <grial:IntMemberTemplateSelector
+					MemberName="Position">
+
+                    <!-- CAROUSEL'S PAGE 0 -->
+                    <grial:IntMemberTemplateSelectorItem
+						Value="0">
+                        <DataTemplate>
+                            <!-- TODO: extra Grid as first element ignores BindingContext -->
+                            <Grid>
+                                <Grid
+									BindingContext="{ Binding Value }">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition
+											Height="Auto" />
+                                        <RowDefinition
+											Height="*" />
+                                        <RowDefinition
+											Height="75" />
+                                    </Grid.RowDefinitions>
+
+                                    <!--HEADER-->
+                                    <StackLayout
+										Grid.Row="0"
+										Margin="0,70,0,20">
+                                        <Label
+											VerticalOptions="Start"
+											HorizontalTextAlignment="Center"
+											FontSize="24"
+											Text="{ Binding Name }"
+											TextColor="{DynamicResource OverImageTextColor}"
+											Style="{StaticResource LabelBoldStyle}" />
+
+                                        <Label
+											VerticalOptions="Start"
+											HorizontalTextAlignment="Center"
+											FontSize="14"
+											FontAttributes="Italic"
+											Text="{ Binding Director }"
+											TextColor="{ DynamicResource OverImageTextColor }" />
+
+                                    </StackLayout>
+                                    
+                                    <!-- MOVIE POSTER -->
+                                    <Grid
+										Grid.Row="1"
+										VerticalOptions="Center"
+										HorizontalOptions="Center"
+										Style="{ StaticResource BlurredShadow }">
+                                        <ffimageloading:CachedImage
+											grial:Effects.CornerRadius="4"
+											HeightRequest="380"
+											WidthRequest="250"
+											Source="{ Binding PosterImage }"
+											Aspect="AspectFill" />
+                                    </Grid>
+                                    
+                                    <!-- ARROW -->
+                                    <Label
+										Text="{ x:Static local:GrialIconsFont.ChevronDown }"
+										FontFamily="{ StaticResource IconsFontFamily }"
+										Grid.Row="2"
+										HorizontalOptions="Center"
+										VerticalOptions="Center"
+										TextColor="{ DynamicResource OverImageTextColor }"
+										FontSize="30"
+										Margin="0,0,10,5">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer
+												Tapped="OnMoveToSecond" />
+                                        </Label.GestureRecognizers>
+                                        
+                                        <Label.Behaviors>
+                                            <grial:PulseLoop
+												IsRunning="true" />
+                                        </Label.Behaviors>
+                                    </Label>
+                                    
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </grial:IntMemberTemplateSelectorItem>
+            
+                    <!-- CAROUSEL'S PAGE 1 -->
+                    <grial:IntMemberTemplateSelectorItem
+						Value="1">
+                        <DataTemplate>
+                            <Grid>
+                                <Grid
+									BindingContext="{ Binding Value }"
+									RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition
+											Height="70*" />
+                                        <RowDefinition
+											Height="Auto" />
+                                        <RowDefinition
+											Height="120" />
+                                        <RowDefinition
+											Height="30*" />
+                                    </Grid.RowDefinitions>
+                                    
+                                    <!-- SECOND PAGE HEADER IMAGE -->
+                                    <Grid
+										Grid.Row="0">
+                                        <ffimageloading:CachedImage
+											Source="{ Binding BackdropImage }"
+											Aspect="AspectFill"
+											VerticalOptions="FillAndExpand">
+                                            <ffimageloading:CachedImage.Transformations>
+                                                <fftransformations:GrayscaleTransformation />
+                                            </ffimageloading:CachedImage.Transformations>
+                                        </ffimageloading:CachedImage>
+
+                                        <BoxView
+											InputTransparent="true"
+											VerticalOptions="FillAndExpand"
+											Opacity=".75">
+                                            <grial:Effects.BackgroundGradient>
+                                                <grial:LinearGradient
+													Angle="45">
+                                                    <grial:GradientColor
+														Color="#00000000"
+														Position="0" />
+                                                    <grial:GradientColor
+														Color="#CC000000"
+														Position="0.5" />
+                                                    <grial:GradientColor
+														Color="#DD000000"
+														Position="0.75" />
+                                                    <grial:GradientColor
+														Color="Black"
+														Position="1" />
+                                                </grial:LinearGradient>
+                                            </grial:Effects.BackgroundGradient>
+                                        </BoxView>
+                                        
+                                        <Button
+											Margin="0,10,0,0"
+											WidthRequest="120"
+											HeightRequest="40"
+											CornerRadius="20"
+											Text="Watch trailer"
+											BorderColor="{ DynamicResource OverImageTextColor }"
+											FontSize="15"
+											TextColor="{ DynamicResource OverImageTextColor }"
+											VerticalOptions="Center"
+											HorizontalOptions="Center"
+											Style="{ StaticResource OutlineButtonStyle }"
+											x:Name="Play"
+											BindingContext="{ Binding . }">
+                                             <Button.Behaviors>
+                                                <grial:FullScreenVideoBehavior
+													Source="{ Binding BindingContext.TrailerVideo, Source={x:Reference Play} }"
+													SkinTemplate="{ StaticResource VideoPlayerSkin }"
+													ErrorTemplate="{ StaticResource VideoPlayerErrorSkin }" />
+                                              </Button.Behaviors>
+                                        </Button>
+                                         
+                                    </Grid>
+            
+                                    <!-- OVERVIEW -->
+                                    <StackLayout
+										x:Name="overviewFooter"
+										Grid.Row="1"
+										Padding="32,20"
+										Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                                        <Label
+											Text="Overview"
+											FontSize="22"
+											TextColor="{DynamicResource OverImageTextColor}"
+											Style="{StaticResource LabelBoldStyle}" />
+
+                                        <Label
+											Text="{ Binding Overview }"
+											TextColor="{ DynamicResource OverImageTextColor }"
+											FontSize="14" />
+                                    </StackLayout>
+                                    
+                                    <!-- CHART AND GENRES -->
+                                    <BoxView
+										Grid.Row="2"
+										BackgroundColor="#22000000" />
+
+                                    <Grid
+										Grid.Row="2"
+										Padding="32,0"
+										HorizontalOptions="Center"
+										HeightRequest="120"
+										ColumnSpacing="8">
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition
+												Width="Auto" />
+                                            <ColumnDefinition
+												Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- RINGCHART -->
+                                        <local:RingChart
+											Grid.Row="0"
+											Grid.Column="0"
+											Value="{ Binding Rating }"
+											ValueColor="{ DynamicResource OkColor }"
+											IsAnimated="true"
+											RingChartValueLabelFontSize="16"
+											RingChartValueLabel="{ Binding RatingLabel }"
+											RingChartTextColor="{ DynamicResource OverImageTextColor }"
+											WidthRequest="78"
+											HeightRequest="78"
+											VerticalOptions="Center" />
+
+                                        <!-- GENRES -->
+                                        <grial:WrapPanel
+											Grid.Column="1"
+											ItemsSource="{ Binding Genres }"
+											VerticalOptions="Center">
+                                            <grial:WrapPanel.ItemTemplate>
+                                                <DataTemplate>
+                                                    <local:Tag
+														Margin="4,0"
+														VerticalOptions="Center"
+														TextColor="{ DynamicResource OverImageTextColor }"
+														BackgroundColor="#44000000"
+														CornerRadius="6"
+														Padding="6"
+														HeightRequest="-1"
+														Text="{ Binding ., Converter={StaticResource ToUpperConverter} }"
+														FontSize="{ grial:OnOrientationDouble 
+                                                            Default=10, 
+                                                            PortraitPhone=10,
+                                                            LandscapePhone=10,
+                                                            PortraitTablet=16,
+                                                            LandscapeTablet=16 
+                                                        }" />
+                                                </DataTemplate>
+                                            </grial:WrapPanel.ItemTemplate>
+                                        </grial:WrapPanel>
+                                    </Grid>
+                                    
+                                    <!-- CAST -->
+                                    <grial:WrapPanel
+										Grid.Row="3"
+										Padding="32,10,20,10"
+										VerticalOptions="Center"
+										ItemsSource="{ Binding Cast }"
+										Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                                        <grial:WrapPanel.ItemTemplate>
+                                            <DataTemplate>
+                                                <Label
+													Text="{ Binding Name }"
+													TextColor="{ DynamicResource OverImageTextColor }"
+													FontSize="{ 
+                                                        grial:OnOrientationDouble 
+                                                            Default=10, 
+                                                            PortraitPhone=12,
+                                                            LandscapePhone=12,
+                                                            PortraitTablet=18,
+                                                            LandscapeTablet=18 
+                                                    }" />
+                                            </DataTemplate>
+                                        </grial:WrapPanel.ItemTemplate>
+                                        <grial:WrapPanel.ItemSeparatorTemplate>
+                                            <DataTemplate>
+                                                <Label
+													Margin="0,0,6,0"
+													TextColor="{ DynamicResource OverImageTextColor }"
+													Text="{ grial:Translate StringColon }"
+													FontSize="{ 
+                                                        grial:OnOrientationDouble 
+                                                            Default=10, 
+                                                            PortraitPhone=12,
+                                                            LandscapePhone=12,
+                                                            PortraitTablet=18,
+                                                            LandscapeTablet=18 
+                                                        }" />
+                                            </DataTemplate>
+                                        </grial:WrapPanel.ItemSeparatorTemplate>
+
+                                        <Label
+											VerticalOptions="Center"
+											Text="CAST:  "
+											TextColor="{ DynamicResource OverImageTextColor }"
+											Style="{ StaticResource LabelBoldStyle }"
+											FontSize="{ 
+                                                grial:OnOrientationDouble 
+                                                    Default=10, 
+                                                    PortraitPhone=12,
+                                                    LandscapePhone=12,
+                                                    PortraitTablet=18,
+                                                    LandscapeTablet=18 
+                                            }" />
+                                    </grial:WrapPanel>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </grial:IntMemberTemplateSelectorItem>
+                    
+                </grial:IntMemberTemplateSelector>
+            </cv:CarouselViewControl.ItemTemplate>
+
+        </local:ExtendedCarouselViewControl>
+
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+	x:Class="AppName.NotificationPopup"
+	BackgroundColor="Transparent"
+	x:Name="Root">
+
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:DialogsResources />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <pages:PopupPage.Animation>
+        <animations:MoveAnimation
+			PositionIn="Top"
+			PositionOut="Top" />
+    </pages:PopupPage.Animation>
+
+    <Grid
+		Style="{DynamicResource BlurredShadow}"
+		Margin="20"
+		InputTransparent="true"
+		VerticalOptions="{StaticResource NotificationsVerticalPositioning}">
+        <Grid
+			Padding="{StaticResource NotificationsPadding}"
+			RowSpacing="0"
+			grial:Effects.BackgroundGradient="{DynamicResource SimpleDialogBodyGradient}"
+			grial:Effects.CornerRadius="{StaticResource DialogsCornerRadius}"
+			BackgroundColor="{DynamicResource BasePageColor}"
+			ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="Auto" />
+                <ColumnDefinition
+					Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- CONTENT -->
+            <Label
+				Margin="0"
+				TextColor="{ DynamicResource OkColor }"
+				Text="{ x:Static local:GrialIconsFont.CheckCircle }"
+				Style="{ StaticResource FontIconFill }"
+				HorizontalTextAlignment="Start"
+				VerticalTextAlignment="Center"
+				FontSize="{ StaticResource NotificationsIconSize }" />
+
+            <Label
+				Grid.Column="1"
+				Text="{ Binding Message, Source={x:Reference Root} }"
+				FontSize="{ StaticResource NotificationsFontSize }" />
+        </Grid>
+    </Grid>
+
+</pages:PopupPage>

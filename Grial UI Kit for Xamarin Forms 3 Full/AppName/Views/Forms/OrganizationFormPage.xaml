@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+	x:Class="AppName.OrganizationFormPage"
+	Title="{ grial:Translate PageTitleOrganizationForm }"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+    <ContentPage.Content>
+        <ScrollView
+			grial:Effects.IgnoreIOSSafeAreaOnScrollView="Bottom">
+            <Grid
+				RowSpacing="0"
+				grial:Effects.ApplyIOSSafeAreaAsPadding="Bottom"
+				grial:Effects.IOSSafeAreaBottomSize="15"
+				Padding="20"
+				Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="*" />
+                    <RowDefinition
+						Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <!-- FIELD CONTAINERS -->
+                <StackLayout
+					Spacing="20">
+                    
+                    <StackLayout
+						Orientation="Horizontal"
+						Spacing="14">
+                        
+                        <!-- Circle Button -->
+                        <Button
+							VerticalOptions="CenterAndExpand"
+							Text="{ x:Static local:GrialIconsFont.Camera }"
+							FontFamily="{ StaticResource IconsFontFamily }"
+							Style="{ StaticResource PrimaryCircleActionButtonStyle }" />
+                        
+                        <!-- Organization Name -->
+                        <Entry
+							Placeholder="Organization Name"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand" />
+                        
+                    </StackLayout>
+                    
+                    <!-- Address 1 -->
+                    <Entry
+						Placeholder="Address line 1"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand" />
+                    
+                    <!-- Address 2 -->
+                    <Entry
+						Placeholder="Address line 1"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand" />
+                    
+                    <!-- Country -->
+                    <Entry
+						Placeholder="Country"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand" />
+                    
+                    <StackLayout
+						Orientation="Horizontal"
+						Spacing="14">
+                        
+                        <!-- City -->
+                        <Entry
+							Placeholder="City"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand" />
+                        
+                        <!-- Zip -->
+                        <Entry
+							Placeholder="Zip"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                    
+                    <StackLayout
+						Orientation="Horizontal"
+						Spacing="14">
+                        
+                        <!-- Country Code -->
+                        <Entry
+							Placeholder="+354"
+							WidthRequest="80"
+							VerticalOptions="Center"
+							HorizontalOptions="Start" />
+                        
+                        <!-- Phone -->
+                        <Entry
+							Placeholder="Phone"
+							VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                    
+                    <!-- Contact email -->
+                    <Entry
+						Placeholder="Contact email"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand" />
+                    
+                </StackLayout>
+
+                <!-- Primary Button -->
+                <Button
+					Margin="0,20,0,0"
+					Grid.Row="1"
+					HeightRequest="44"
+					VerticalOptions="CenterAndExpand"
+					Text="Save"
+					Style="{ StaticResource PrimaryActionButtonStyle }" />
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

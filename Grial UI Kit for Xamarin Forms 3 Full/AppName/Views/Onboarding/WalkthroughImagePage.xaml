@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<local:WalkthroughBasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	x:Class="AppName.WalkthroughImagePage"
+	NavigationPage.HasNavigationBar="False">
+    
+    <local:WalkthroughImageStepTemplate
+		StepBackgroundImage="https://s3-us-west-2.amazonaws.com/grial-images/v3.0/walkthroughImage_1.jpg"
+		Header="{ grial:Translate WalkthroughHeaderWelcome }"
+		Text="{ grial:Translate WalkthroughTextWelcome }"
+		ButtonText="{grial:Translate StringNext }"
+		BackgroundColor="{ DynamicResource BasePageColor }" />
+    
+    <local:WalkthroughImageStepTemplate
+		StepBackgroundImage="https://s3-us-west-2.amazonaws.com/grial-images/v3.0/walkthroughImage_2.jpg"
+		Header="{ grial:Translate WalkthroughHeaderSaveTime }"
+		Text="{ grial:Translate WalkthroughTextSaveTime }"
+		ButtonText="{grial:Translate StringNext }"
+		BackgroundColor="{ DynamicResource BasePageColor }" />
+    
+    <local:WalkthroughImageStepTemplate
+		StepBackgroundImage="https://s3-us-west-2.amazonaws.com/grial-images/v3.0/walkthroughImage_3.jpg"
+		Header="{ grial:Translate WalkthroughHeaderLearn }"
+		Text="{ grial:Translate WalkthroughTextLearn }"
+		ButtonText="{grial:Translate StringFinish }"
+		BackgroundColor="{ DynamicResource BasePageColor }" />
+    
+</local:WalkthroughBasePage>

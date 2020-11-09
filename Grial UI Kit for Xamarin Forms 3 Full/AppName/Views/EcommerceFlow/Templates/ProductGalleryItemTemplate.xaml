@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	x:Class="AppName.ProductGalleryItemTemplate">
+    
+    <ContentView.Content>
+        <Grid>
+            
+            <!-- IMAGE -->
+            <ffimageloading:CachedImage
+				FadeAnimationEnabled="true"
+				Source="{ Binding Image }"
+				Aspect="AspectFill"
+				Margin="0" />
+            
+            <!-- TAG -->
+            <local:Tag
+				IsVisible="{ Binding IsNew }"
+				Text="NEW"
+				FontSize="14"
+				HeightRequest="22"
+				CornerRadius="11"
+				Margin="20"
+				Padding="10,0"
+				VerticalOptions="End"
+				HorizontalOptions="Start" />
+            
+        </Grid> 
+    </ContentView.Content>
+    
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer
+			Tapped="OnTapGestureRecognizerTapped"
+			NumberOfTapsRequired="1" />
+    </ContentView.GestureRecognizers>
+</ContentView>

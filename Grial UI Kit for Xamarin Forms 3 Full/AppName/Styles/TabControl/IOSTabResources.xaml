@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.IOSTabResources">
+    <ControlTemplate
+		x:Key="TabItemTemplate">
+        <Grid
+			RowSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- TOP SEPARATOR -->
+            <BoxView
+				VerticalOptions="Start"
+				Grid.Row="0"
+				HeightRequest=".5"
+				BackgroundColor="#B3B3B3" />
+
+            <!-- IMAGE ICON -->
+            <Image
+				Grid.Row="0"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				WidthRequest="25"
+				HeightRequest="25"
+				IsVisible="{ TemplateBinding CurrentIconImage, Converter={ StaticResource IsNotNullConverter } }"
+				Source="{ TemplateBinding CurrentIconImage }" />
+
+            <!-- FONT ICON -->
+            <Label
+				Margin="0,10,0,6"
+				Grid.Row="0"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				IsVisible="{ TemplateBinding CurrentIconText, Converter={StaticResource IsNotEmptyStringConverter} }"
+				Text="{ TemplateBinding CurrentIconText }"
+				TextColor="{ TemplateBinding CurrentIconTextColor }"
+				FontSize="{ TemplateBinding IconTextFontSize }"
+				FontFamily="{ TemplateBinding IconTextFontFamily }" />
+
+            <!-- TEXT -->
+            <Label
+				Grid.Row="1"
+				TranslationY="-4"
+				HorizontalOptions="Center"
+				FontSize="{ TemplateBinding FontSize }"
+				IsVisible="{ TemplateBinding Text, Converter={StaticResource IsNotEmptyStringConverter} }"
+				Text="{ TemplateBinding Text }"
+				TextColor="{ TemplateBinding CurrentTextColor }" />
+
+            <!-- BADGE -->
+            <local:Badge
+				Scale=".5"
+				Text="{ TemplateBinding BadgeText }"
+				BackgroundColor="{ TemplateBinding BadgeBackgroundColor }"
+				TextColor="{ TemplateBinding BadgeTextColor }"
+				HorizontalOptions="Center"
+				VerticalOptions="Start"
+				TranslationX="10"
+				TranslationY="-3" />
+
+        </Grid>
+    </ControlTemplate>
+
+    <Style
+		x:Key="TabItemStyle"
+		TargetType="grial:TabItem">
+        <Setter
+			Property="FontSize"
+			Value="10" />
+        <Setter
+			Property="TextColor"
+			Value="#979797" />
+        <Setter
+			Property="TextColorSelected"
+			Value="{ DynamicResource AccentColor }" />
+        <Setter
+			Property="IconTextFontFamily"
+			Value="{ StaticResource IconsFontFamily }" />
+        <Setter
+			Property="IconTextFontSize"
+			Value="25" />
+        <Setter
+			Property="IconTextColor"
+			Value="#979797" />
+        <Setter
+			Property="IconTextColorSelected"
+			Value="{ DynamicResource AccentColor }" />
+        <Setter
+			Property="BadgeTextColor"
+			Value="White" />
+        <Setter
+			Property="BadgeBackgroundColor"
+			Value="Red" />
+    </Style>
+
+    <Style
+		x:Key="iOSTabStyle"
+		TargetType="grial:TabControl">
+        <Setter
+			Property="TabItemStyle"
+			Value="{ StaticResource TabItemStyle }" />
+        <Setter
+			Property="TabItemControlTemplate"
+			Value="{ StaticResource TabItemTemplate }" />
+        <Setter
+			Property="TabStripBackgroundColor"
+			Value="#E6F9F9F9" />
+        <Setter
+			Property="TabContentBackgroundColor"
+			Value="#F5F5F5" />
+        <Setter
+			Property="TabStripPlacement"
+			Value="Bottom" />
+        <Setter
+			Property="AnimateTransition"
+			Value="True" />
+
+        <Setter
+			Property="TabStripStyle">
+            <Setter.Value>
+                <Style
+					TargetType="Grid">
+                    <Setter
+						Property="grial:Effects.ApplyIOSSafeAreaAsPadding"
+						Value="Bottom" />
+                    <Setter
+						Property="grial:Effects.IOSSafeAreaBottomSize"
+						Value="15" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

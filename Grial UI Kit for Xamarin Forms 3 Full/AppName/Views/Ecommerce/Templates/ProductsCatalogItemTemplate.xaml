@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.ProductsCatalogItemTemplate"
+	Padding="10"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+
+    <Grid
+		RowSpacing="1"
+		VerticalOptions="Center"
+		grial:Effects.CornerRadius="4">
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="Auto" />
+            <RowDefinition
+				Height="50" />
+        </Grid.RowDefinitions>
+
+        <!-- PRODUCT -->
+        <Grid
+			Grid.Row="0"
+			Grid.Column="0"
+			RowSpacing="10"
+			ColumnSpacing="10"
+			Padding="14"
+			BackgroundColor="{ DynamicResource BasePageColor }">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="100" />
+                <ColumnDefinition
+					Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="Auto" />
+                <RowDefinition
+					Height="Auto" />
+                <RowDefinition
+					Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- IMAGE -->
+            <ffimageloading:CachedImage
+				Grid.Row="0"
+				Grid.RowSpan="3"
+				FadeAnimationEnabled="true"
+				Source="{ Binding Image }"
+				Aspect="AspectFill"
+				HeightRequest="100"
+				grial:Effects.CornerRadius="2" />
+            
+            <!-- PRODUCT NAME -->
+            <Label
+				Grid.Row="0"
+				Grid.Column="1"
+				Text="{ Binding Name }"
+				Style="{ StaticResource LabelBoldStyle }"
+				FontSize="{ grial:OnOrientationDouble
+                    PortraitPhone=18,
+                    LandscapePhone=18,
+                    PortraitTablet=22,
+                    LandscapeTablet=22 }"
+				LineBreakMode="TailTruncation"
+				TextColor="{ DynamicResource AccentColor }"
+				VerticalTextAlignment="Center" />
+
+            <!-- DESCRIPTION -->
+            <Label
+				Grid.Row="1"
+				Grid.Column="1"
+				Text="{Binding Description}"
+				HorizontalOptions="Fill"
+				TextColor="{ DynamicResource BaseTextColor }"
+				FontSize="{ grial:OnOrientationDouble
+                    PortraitPhone=12,
+                    LandscapePhone=12,
+                    PortraitTablet=16,
+                    LandscapeTablet=16 }" />
+            
+            <local:Rating
+				Grid.Row="2"
+				Grid.Column="1"
+				VerticalOptions="Center"
+				HorizontalOptions="Start"
+				Max="{ Binding RatingMax }"
+				Value="{ Binding RatingValue }" />
+        </Grid>
+
+        <!-- BUTTONS -->
+        <Grid
+			Grid.Row="1"
+			ColumnSpacing="1"
+			BackgroundColor="{ DynamicResource BasePageColor }">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="*" />
+                <ColumnDefinition
+					Width="*" />
+                <ColumnDefinition
+					Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout
+				Grid.Row="0"
+				Grid.Column="0"
+				Padding="15,0,0,0"
+				Orientation="Horizontal"
+				HorizontalOptions="Start"
+				VerticalOptions="Center"
+				Spacing="3">
+                <Label
+					Margin="4,0,4,0"
+					Text="{ x:Static local:GrialIconsFont.Heart } "
+					TextColor="{ DynamicResource AccentColor }"
+					FontFamily="{ StaticResource IconsFontFamily }"
+					VerticalOptions="Center">
+                    <Label.FontSize>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="18"
+							Tablet="22" />
+                    </Label.FontSize>
+                </Label>
+                
+                <Label
+					Text="{grial:Translate Key=StringSave}"
+					TextColor="{ DynamicResource BaseTextColor }"
+					VerticalOptions="Center">
+                    <Label.FontSize>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="16"
+							Tablet="20" />
+                    </Label.FontSize>
+                </Label>
+            </StackLayout>
+
+            <StackLayout
+				Grid.Row="0"
+				Grid.Column="1"
+				Orientation="Horizontal"
+				HorizontalOptions="Center"
+				VerticalOptions="Center"
+				Spacing="3">
+                <Label
+					Margin="4,0,4,0"
+					VerticalTextAlignment="Center"
+					HorizontalTextAlignment="End"
+					Text="{ x:Static local:GrialIconsFont.Copy } "
+					TextColor="{ DynamicResource AccentColor }"
+					FontFamily="{ StaticResource IconsFontFamily }">
+                    <Label.FontSize>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="18"
+							Tablet="22" />
+                    </Label.FontSize>
+                </Label>
+
+                <Label
+					Text="{grial:Translate Key=StringCompare}"
+					TextColor="{ DynamicResource BaseTextColor }"
+					VerticalOptions="Center">
+                    <Label.FontSize>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="16"
+							Tablet="20" />
+                    </Label.FontSize>
+                </Label>
+            </StackLayout>
+
+            <StackLayout
+				Grid.Row="0"
+				Grid.Column="2"
+				Padding="0,0,15,0"
+				Orientation="Horizontal"
+				HorizontalOptions="End"
+				VerticalOptions="Center"
+				Spacing="3">
+                <Label
+					Margin="4,0,4,0"
+					VerticalTextAlignment="Center"
+					HorizontalTextAlignment="End"
+					Text="{ x:Static local:GrialIconsFont.Share2 } "
+					TextColor="{ DynamicResource AccentColor }"
+					FontFamily="{ StaticResource IconsFontFamily }">
+                    <Label.FontSize>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="18"
+							Tablet="22" />
+                    </Label.FontSize>
+                </Label>
+
+                <Label
+					Text="{ grial:Translate StringShare }"
+					TextColor="{ DynamicResource BaseTextColor }"
+					VerticalOptions="Center">
+                    <Label.FontSize>
+                        <OnIdiom
+							x:TypeArguments="x:Double"
+							Phone="16"
+							Tablet="20" />
+                    </Label.FontSize>
+                </Label>
+            </StackLayout>
+
+        </Grid>
+            
+    </Grid>
+
+</ContentView>
+

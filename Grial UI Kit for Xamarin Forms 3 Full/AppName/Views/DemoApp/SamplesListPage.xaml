@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.SamplesListPage">
+
+    <ContentPage.Content>
+        <Grid>
+            <grial:GrialNavigationBar
+				UseNavigationPageBarBackgroundColor="true"
+				UseNavigationPageBarBackgroundGradient="true" />
+            
+            <!-- BACKGROUND IMAGE -->
+            <Image
+				Style="{ StaticResource MainMenuBackgroundImageStyle }" />
+            
+            <Grid
+				RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="170" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+                
+                <!-- CURVED MASK -->
+                <local:CurvedMask
+					Grid.Row="0"
+					VerticalOptions="End"
+					MaskColor="{ DynamicResource MainWrapperBackgroundColor }" />
+                
+                <!-- BACKGROUND BOTTOM COLOR -->
+                <BoxView
+					BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }"
+					Grid.Row="1" />
+            
+                <!-- CONTENT -->
+                <Grid
+					Grid.Row="0"
+					Grid.RowSpan="2"
+					RowSpacing="0"
+					Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="Auto" />
+                        <RowDefinition
+							Height="*" />
+                    </Grid.RowDefinitions>
+                
+                    <!-- HEADER -->
+                    <Grid
+						Margin="20,5,20,0"
+						ColumnSpacing="12"
+						RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="Auto" />
+                            <ColumnDefinition
+								Width="*" />
+                        </Grid.ColumnDefinitions>
+                    
+                        <!-- ICON -->
+                        <Label
+							Grid.Column="0"
+							Grid.Row="0"
+							FontSize="24"
+							VerticalTextAlignment="Center"
+							TextColor="{ DynamicResource InverseTextColor }"
+							Text="{ Binding Icon }"
+							Style="{ StaticResource FontIcon }" />
+                    
+                        <!-- TITLE -->
+                        <Label
+							Grid.Column="1"
+							Grid.Row="0"
+							FontSize="22"
+							VerticalTextAlignment="Center"
+							Text="{ Binding Title }"
+							TextColor="{ DynamicResource InverseTextColor }" />
+                    </Grid>
+                    
+                    <!-- LIST -->
+                    <ListView
+						Grid.Row="1"
+						ItemsSource="{ Binding Samples }"
+						SeparatorVisibility="None"
+						HasUnevenRows="true"
+						SelectionMode="None"
+						ItemTapped="OnItemTapped"
+						Margin="10">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <local:SamplesListItemTemplate />
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                
+                </Grid>
+            </Grid>
+          
+        </Grid>
+
+    </ContentPage.Content>
+    
+</ContentPage>

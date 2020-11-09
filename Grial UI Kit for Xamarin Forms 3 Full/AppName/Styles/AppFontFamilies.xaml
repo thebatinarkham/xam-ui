@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <OnPlatform
+		x:Key="AppFontFamily"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="SourceSansPro-Regular.ttf#Source Sans Pro" />
+        <On
+			Platform="iOS"
+			Value="Source Sans Pro" />
+    </OnPlatform>
+
+    <OnPlatform
+		x:Key="AppBoldFontFamily"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="SourceSansPro-Bold.ttf#Source Sans Pro" />
+        <On
+			Platform="iOS"
+			Value="Source Sans Pro" />
+    </OnPlatform>
+
+    <OnPlatform
+		x:Key="FancyFontFamily"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="Billabong.ttf#Billabong" />
+        <On
+			Platform="iOS"
+			Value="Billabong" />
+    </OnPlatform>
+
+
+    <!-- AVAILABLE ICON FONTS -->
+    <OnPlatform
+		x:Key="GrialIconsLine"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="grialiconsline.ttf#grialiconsline" />
+        <On
+			Platform="iOS"
+			Value="grialiconsline" />
+    </OnPlatform>
+
+    <OnPlatform
+		x:Key="GrialIconsFill"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="grialiconsfill.ttf#grialiconsfill" />
+        <On
+			Platform="iOS"
+			Value="grialiconsfill" />
+    </OnPlatform>
+
+    <OnPlatform
+		x:Key="LineAwesome"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="line-awesome.ttf#LineAwesome" />
+        <On
+			Platform="iOS"
+			Value="LineAwesome" />
+    </OnPlatform>
+
+    <OnPlatform
+		x:Key="FontawesomeRegular"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="fa-regular-400.ttf#Font Awesome 5 Free" />
+        <On
+			Platform="iOS"
+			Value="Font Awesome 5 Free" />
+    </OnPlatform>
+
+    <OnPlatform
+		x:Key="FontawesomeSolid"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="fa-solid-900.ttf#Font Awesome 5 Free" />
+        <On
+			Platform="iOS"
+			Value="Font Awesome 5 Free" />
+    </OnPlatform>
+
+    <OnPlatform
+		x:Key="FontawesomeBrands"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="fa-brands-400.ttf#Font Awesome 5 Brands" />
+        <On
+			Platform="iOS"
+			Value="Font Awesome 5 Brands" />
+    </OnPlatform>
+
+    <OnPlatform
+		x:Key="MaterialCommunityIcons"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="materialdesignicons-webfont.ttf#Material Design Icons" />
+        <On
+			Platform="iOS"
+			Value="Material Design Icons" />
+    </OnPlatform>
+
+    <OnPlatform
+		x:Key="Ionicons"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="ionicons.ttf#Ionicons" />
+        <On
+			Platform="iOS"
+			Value="Ionicons" />
+    </OnPlatform>
+
+
+    <!-- DEFAULT ICON FONT -->
+
+    <OnPlatform
+		x:Key="IconsFontFamily"
+		x:TypeArguments="x:String">
+        <On
+			Platform="Android"
+			Value="grialiconsline.ttf#grialiconsline" />
+        <On
+			Platform="iOS"
+			Value="grialiconsline" />
+    </OnPlatform>
+
+    <!-- 
+        'IconsFontFamily' is the default font family used for icons
+        along Grial. If you change it with one of the other fonts commented 
+        below bear in mind that, with the exception of 'grialiconsfill' that 
+        share the exact same character set than 'grialiconsfill', you will 
+        need to review the pages that use icons and change the icon characters 
+        according to the new font. For instance, if you pick 'LineAwesome' this 
+        kind of use:
+    
+            Text="{ x:Static local:GrialIconsFont.Camera }" 
+    
+        will need to be changed by:
+            
+            Text="{ x:Static local:LineAwesomeFont.Camera }" 
+    
+        In this case both have an icon called 'Camera' which simplifies things.
+    -->
+
+    <!--
+    <OnPlatform x:Key="IconsFontFamily" x:TypeArguments="x:String">
+         <On Platform="Android" Value="grialiconsfill.ttf#grialiconsfill"/>
+         <On Platform="iOS" Value="grialiconsfill"/>
+    </OnPlatform>
+
+    <OnPlatform x:Key="IconsFontFamily" x:TypeArguments="x:String">
+        <On Platform="Android" Value="line-awesome.ttf#LineAwesome"/>
+        <On Platform="iOS" Value="LineAwesome"/>
+    </OnPlatform>
+    
+    <OnPlatform x:Key="IconsFontFamily" x:TypeArguments="x:String">
+        <On Platform="Android" Value="fa-regular-400#Font Awesome 5 Free"/>
+        <On Platform="iOS" Value="Font Awesome 5 Free"/>
+    </OnPlatform>
+    
+    <OnPlatform x:Key="IconsFontFamily" x:TypeArguments="x:String">
+        <On Platform="Android" Value="fa-solid-900#Font Awesome 5 Free"/>
+        <On Platform="iOS" Value="Font Awesome 5 Free"/>
+    </OnPlatform>
+    
+    <OnPlatform x:Key="IconsFontFamily" x:TypeArguments="x:String">
+        <On Platform="Android" Value="fa-brands-400#Font Awesome 5 Brands"/>
+        <On Platform="iOS" Value="Font Awesome 5 Brands"/>
+    </OnPlatform>
+    
+    <OnPlatform x:Key="IconsFontFamily" x:TypeArguments="x:String">
+        <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons"/>
+        <On Platform="iOS" Value="Material Design Icons"/>
+    </OnPlatform>
+    
+    <OnPlatform x:Key="IconsFontFamily" x:TypeArguments="x:String">
+        <On Platform="Android" Value="ionicons.ttf#Ionicons"/>
+        <On Platform="iOS" Value="Ionicons"/>
+    </OnPlatform>
+    -->
+
+</ResourceDictionary>

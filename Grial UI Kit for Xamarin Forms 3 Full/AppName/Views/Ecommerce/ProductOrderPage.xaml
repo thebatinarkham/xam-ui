@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.ProductOrderPage"
+	Title="{ grial:Translate PageTitleProductOrder }"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+    <ContentPage.Content>
+        <ScrollView
+			Padding="{ StaticResource MainWrapperPadding }">
+            <Grid
+				Padding="20"
+				RowSpacing="20"
+				Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="200" />
+                    <RowDefinition
+						Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!---NAME FIELD--> 
+                <Grid
+					Grid.Row="0"
+					ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="*" />
+                        <ColumnDefinition
+							Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--NAME ENTRY-->
+                    <Entry
+						Grid.Column="0"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand"
+						Placeholder="{ grial:Translate StringName }" />
+
+                    <!--LAST NAME ENTRY-->
+                    <Entry
+						Grid.Column="1"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand"
+						Placeholder="{ grial:Translate StringLastName }" />
+                </Grid>
+
+                <!--CARD NUMBER ENTRY & CVC -->
+                <Grid
+					Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="7*" />
+                        <ColumnDefinition
+							Width="3*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--CARD NUMBER ENTRY-->
+                    <Entry
+						Grid.Column="0"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand"
+						Placeholder="{ grial:Translate StringCardNumber }" />
+
+                    <!--CVC NUMBER-->
+                    <Entry
+						Grid.Column="1"
+						Margin="6,0,0,0"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand"
+						Placeholder="{ grial:Translate StringCVC }" />
+                </Grid>    
+
+                <!--EXPIRATION DATE-->
+                <Entry
+					Grid.Row="2"
+					VerticalOptions="Center"
+					HorizontalOptions="FillAndExpand"
+					Placeholder="{ grial:Translate StringExpirationDate }" />
+
+                <!--ADDRESS LINE 1-->
+                <Entry
+					Grid.Row="3"
+					VerticalOptions="Center"
+					HorizontalOptions="FillAndExpand"
+					Placeholder="{ grial:Translate StringAddress1 }" />
+
+                <!-- ADDRESS LINE 2 -->
+                <Entry
+					Grid.Row="4"
+					VerticalOptions="Center"
+					HorizontalOptions="FillAndExpand"
+					Placeholder="{ grial:Translate StringAddress2 }" />
+
+                <Grid
+					Grid.Row="5"
+					RowSpacing="20"
+					ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="*" />
+                        <ColumnDefinition
+							Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="Auto" />
+                        <RowDefinition
+							Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!--CITY ENTRY-->
+                    <Entry
+						Grid.Column="0"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand"
+						Placeholder="{ grial:Translate StringCity }" />
+
+                    <!-- STATE ENTRY -->
+                    <Entry
+						Grid.Column="1"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand"
+						Placeholder="{ grial:Translate StringState }" />
+
+                    <!--ZIP CODE ENTRY-->
+                    <Entry
+						Grid.Column="0"
+						Grid.Row="1"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand"
+						Placeholder="{ grial:Translate StringZipCode }" />
+
+                    <!-- COUNTRY ENTRY -->
+                    <Entry
+						Grid.Column="1"
+						Grid.Row="1"
+						VerticalOptions="Center"
+						HorizontalOptions="FillAndExpand"
+						Placeholder="{ grial:Translate StringCountry }" />
+                </Grid>    
+
+                <!-- NOTES -->
+                <Editor
+					Grid.Row="6"
+					grial:EditorProperties.Placeholder="{ grial:Translate StringNotes }" />
+
+                <!-- Buy -->
+                <Button
+					Grid.Row="7"
+					Style="{ StaticResource PrimaryActionButtonStyle }"
+					VerticalOptions="End"
+					Text="{ grial:Translate StringBuy }"
+					WidthRequest="{ 
+                        grial:OnOrientationDouble
+                            LandscapePhone=200,
+                            LandscapeTablet=400 
+                    }"
+					HorizontalOptions="{ 
+                        grial:OnOrientationLayoutOptions
+                            PortraitPhone=Fill,
+                            LandscapePhone=Center,
+                            PortraitTablet=Fill,
+                            LandscapeTablet=Center 
+                    }" />
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

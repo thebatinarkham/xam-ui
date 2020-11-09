@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.VideoPlayerResources">
+    <grial:BooleanToObjectConverter
+		x:Key="VolumeIconConverter"
+		x:TypeArguments="x:String"
+		TrueValue="{ x:Static local:GrialIconsFont.Volumex }"
+		FalseValue="{ x:Static local:GrialIconsFont.Volume2 }" />
+
+    <Style
+		x:Key="VideoPlayerBaseButtonStyle"
+		TargetType="Label"
+		ApplyToDerivedTypes="true">
+        <Setter
+			Property="TextColor"
+			Value="{ DynamicResource OverImageTextColor }" />
+        <Setter
+			Property="FontFamily"
+			Value="{ StaticResource IconsFontFamily }" />
+        <Setter
+			Property="FontSize"
+			Value="30" />
+        <Setter
+			Property="BackgroundColor"
+			Value="Transparent" />
+        <Setter
+			Property="WidthRequest"
+			Value="44" />
+        <Setter
+			Property="HeightRequest"
+			Value="44" />
+        <Setter
+			Property="VerticalTextAlignment"
+			Value="Center" />
+        <Setter
+			Property="HorizontalTextAlignment"
+			Value="Center" />
+    </Style>
+
+    <Style
+		x:Key="VideoPlayerPlayButtonStyle"
+		TargetType="Label"
+		ApplyToDerivedTypes="true">
+        <Setter
+			Property="HorizontalOptions"
+			Value="Center" />
+        <Setter
+			Property="VerticalOptions"
+			Value="Center" />
+        <Setter
+			Property="FontFamily"
+			Value="{ StaticResource IconsFontFamily }" />
+        <Setter
+			Property="TextColor"
+			Value="{ DynamicResource OverImageTextColor }" />
+        <Setter
+			Property="FontSize"
+			Value="66" />
+        <Setter
+			Property="WidthRequest"
+			Value="66" />
+        <Setter
+			Property="HeightRequest"
+			Value="66" />
+        <Setter
+			Property="grial:Effects.CornerRadius"
+			Value="33" />
+    </Style>
+
+    <ControlTemplate
+		x:Key="VideoPlayerErrorSkin">
+        <Grid
+			BackgroundColor="Black"
+			HeightRequest="500">
+            <StackLayout
+				Spacing="30"
+				HorizontalOptions="Center"
+				VerticalOptions="Center">
+
+                <local:RoundedLabel
+					Style="{ StaticResource ValidationEntryErrorStyle }"
+					Text="{ TemplateBinding Message }"
+					HorizontalOptions="Fill"
+					FontSize="14"
+					Padding="10"
+					Margin="50,0"
+					LineBreakMode="WordWrap" />
+
+                <Button
+					Text="{ grial:Translate StringRetry }"
+					FontSize="14"
+					Style="{ StaticResource OutlineButtonStyle }"
+					Command="{ TemplateBinding RetryCommand }"
+					BorderColor="White"
+					TextColor="White"
+					HeightRequest="28"
+					WidthRequest="64"
+					CornerRadius="14"
+					HorizontalOptions="Center" />
+            </StackLayout>
+
+            <!--CLOSE BUTTON-->
+            <Label
+				VerticalOptions="Start"
+				HorizontalOptions="End"
+				Margin="0,30,8,0"
+				IsVisible="{ TemplateBinding IsFullScreen }"
+				Style="{ StaticResource VideoPlayerBaseButtonStyle }"
+				Text="{ x:Static local:GrialIconsFont.Close }">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Command="{ TemplateBinding ToggleFullScreenCommand }" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate
+		x:Key="VideoPlayerSkin">
+        <Grid
+			RowSpacing="0"
+			BackgroundColor="#55000000">
+            <StackLayout
+				VerticalOptions="End"
+				Padding="10"
+				Spacing="0">
+                <!--PROGRESS-->
+                <Slider
+					Value="{ TemplateBinding VideoProgress, Mode=TwoWay }" />
+
+                <Grid
+					Margin="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="Auto" />
+                        <ColumnDefinition
+							Width="Auto" />
+                        <ColumnDefinition
+							Width="*" />
+                        <ColumnDefinition
+							Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--STOP BUTTON-->
+                    <Label
+						Grid.Column="0"
+						Text="{ x:Static local:GrialIconsFont.StopCircle }"
+						Style="{ StaticResource VideoPlayerBaseButtonStyle }">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+								Command="{ TemplateBinding StopCommand }" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <!--VOLUME BUTTON-->
+                    <Label
+						Grid.Column="1"
+						Text="{ TemplateBinding IsMuted, Converter={ StaticResource VolumeIconConverter } }"
+						Style="{ StaticResource VideoPlayerBaseButtonStyle }">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+								Command="{ TemplateBinding ToggleMuteCommand }" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <!--TIME-->
+                    <StackLayout
+						Orientation="Horizontal"
+						Grid.Column="2"
+						HorizontalOptions="End"
+						VerticalOptions="Center"
+						Margin="0,0,10,0">
+                        <Label
+							FontSize="12"
+							TextColor="{ DynamicResource OverImageTextColor }"
+							Text="{ TemplateBinding Position, StringFormat='{}{0:mm\\:ss}' }" />
+
+                        <Label
+							FontSize="12"
+							TextColor="{ DynamicResource OverImageTextColor }"
+							Text=" / " />
+
+                        <Label
+							FontSize="12"
+							TextColor="{ DynamicResource OverImageTextColor }"
+							Text="{ TemplateBinding Duration, StringFormat='{}{0:mm\\:ss}' }" />
+                    </StackLayout>
+
+                    <Label
+						Grid.Column="3"
+						IsVisible="{ TemplateBinding IsFullScreen, Converter={StaticResource NegateBooleanConverter} }"
+						Text="{ x:Static local:GrialIconsFont.Maximize2 }"
+						Style="{ StaticResource VideoPlayerBaseButtonStyle }">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+								Command="{ TemplateBinding ToggleFullScreenCommand }" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                </Grid>
+
+            </StackLayout>
+
+            <!--CLOSE BUTTON-->
+            <Label
+				VerticalOptions="Start"
+				HorizontalOptions="End"
+				Margin="0,30,8,0"
+				IsVisible="{ TemplateBinding IsFullScreen }"
+				Style="{ StaticResource VideoPlayerBaseButtonStyle }"
+				Text="{ x:Static local:GrialIconsFont.Close }">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Command="{ TemplateBinding ToggleFullScreenCommand }" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!--PLAY BUTTON-->
+            <Label
+				IsVisible="{ TemplateBinding IsPlaying, Converter={ StaticResource NegateBooleanConverter } }"
+				Style="{ StaticResource VideoPlayerPlayButtonStyle }"
+				Text="{ x:Static local:GrialIconsFont.AudioPlayCircle }"
+				BackgroundColor="#55000000">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Command="{ TemplateBinding PlayCommand }" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!--PAUSE BUTTON-->
+            <Label
+				IsVisible="{ TemplateBinding IsPlaying }"
+				Style="{ StaticResource VideoPlayerPlayButtonStyle }"
+				Text="{ x:Static local:GrialIconsFont.AudioPauseCircle }"
+				BackgroundColor="#55000000">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Command="{ TemplateBinding PauseCommand }" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </Grid>
+    </ControlTemplate>
+
+    <Style
+		TargetType="grial:VideoPlayer"
+		ApplyToDerivedTypes="true">
+        <Setter
+			Property="SkinTemplate"
+			Value="{ StaticResource VideoPlayerSkin }" />
+        <Setter
+			Property="ErrorTemplate"
+			Value="{ StaticResource VideoPlayerErrorSkin }" />
+        <Setter
+			Property="LoadingSpinnerColor"
+			Value="{ DynamicResource AccentColor }" />
+    </Style>
+
+    <Style
+		TargetType="grial:VideoPlayer"
+		x:Key="BackgroundVideoPlayerStyle">
+        <Setter
+			Property="SkinTemplate"
+			Value="{ x:Null }" />
+        <Setter
+			Property="LoadingSpinnerColor"
+			Value="Transparent" />
+        <Setter
+			Property="InputTransparent"
+			Value="True" />
+        <Setter
+			Property="AutoPlay"
+			Value="True" />
+        <Setter
+			Property="IsMuted"
+			Value="True" />
+        <Setter
+			Property="Repeat"
+			Value="True" />
+        <Setter
+			Property="Aspect"
+			Value="AspectFill" />
+    </Style>
+
+</ResourceDictionary>

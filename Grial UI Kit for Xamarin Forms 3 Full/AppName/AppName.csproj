@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>AppName</RootNamespace>
+    <AssemblyName>AppName</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microcharts.Forms" Version="0.8.5-pre" />
+    <PackageReference Include="Microcharts" Version="0.8.5-pre" />
+    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.991211" />
+    <PackageReference Include="Xamanimation" Version="1.3.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Styles\" />
+    <Folder Include="Helpers\Fonts\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\MoviesFlow\" />
+    <Folder Include="Views\MoviesFlow\" />
+    <Folder Include="Controls\" />
+    <Folder Include="ViewModels\TasksFlow\" />
+    <Folder Include="Views\TasksFlow\" />
+    <Folder Include="Views\TasksFlow\Templates\" />
+    <Folder Include="ViewModels\ChatFlow\" />
+    <Folder Include="Views\ChatFlow\" />
+    <Folder Include="Views\ChatFlow\Templates\" />
+    <Folder Include="ViewModels\EcommerceFlow\" />
+    <Folder Include="Views\EcommerceFlow\" />
+    <Folder Include="Styles\TabControl\" />
+    <Folder Include="Views\EcommerceFlow\Templates\" />
+    <Folder Include="Styles\VideoPlayer\" />
+    <Folder Include="Controls\Charts\" />
+    <Folder Include="Controls\Popups\" />
+    <Folder Include="Helpers\Animations\" />
+    <Folder Include="Helpers\Converters\" />
+    <Folder Include="Views\Navigation\Lists\" />
+    <Folder Include="Views\Navigation\Dashboards\" />
+    <Folder Include="Views\Navigation\Lists\Templates\" />
+    <Folder Include="ViewModels\Navigation\Dashboards\" />
+    <Folder Include="Views\Navigation\Tabs\" />
+    <Folder Include="ViewModels\Articles\" />
+    <Folder Include="ViewModels\Ecommerce\" />
+    <Folder Include="ViewModels\Messages\" />
+    <Folder Include="ViewModels\Navigation\" />
+    <Folder Include="ViewModels\Social\" />
+    <Folder Include="ViewModels\Onboarding\" />
+    <Folder Include="Resx\" />
+    <Folder Include="Views\Articles\" />
+    <Folder Include="Views\Articles\Templates\" />
+    <Folder Include="Views\Ecommerce\" />
+    <Folder Include="Views\Ecommerce\Templates\" />
+    <Folder Include="Views\Messages\" />
+    <Folder Include="Views\Messages\Templates\" />
+    <Folder Include="Views\Onboarding\" />
+    <Folder Include="Views\Onboarding\Templates\" />
+    <Folder Include="Views\Social\" />
+    <Folder Include="Views\Social\Templates\" />
+    <Folder Include="ViewModels\Messages\Data\" />
+    <Folder Include="ViewModels\Articles\Data\" />
+    <Folder Include="ViewModels\Ecommerce\Data\" />
+    <Folder Include="ViewModels\Social\Data\" />
+    <Folder Include="ViewModels\ChatFlow\Data\" />
+    <Folder Include="ViewModels\EcommerceFlow\Data\" />
+    <Folder Include="ViewModels\MoviesFlow\Data\" />
+    <Folder Include="ViewModels\TasksFlow\Data\" />
+    <Folder Include="Controls\SharedViews\" />
+    <Folder Include="Views\Theme\" />
+    <Folder Include="Views\DataViz\" />
+    <Folder Include="ViewModels\DataViz\" />
+    <Folder Include="ViewModels\DataViz\Data\" />
+    <Folder Include="Views\DataViz\Templates\" />
+    <Folder Include="ViewModels\Theme\" />
+    <Folder Include="ViewModels\Theme\Data\" />
+    <Folder Include="ViewModels\Onboarding\Data\" />
+    <Folder Include="ViewModels\Navigation\Dashboards\Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Styles\curved_mask.svg" />
+    <EmbeddedResource Include="ViewModels\Messages\Data\Messages.json" />
+    <EmbeddedResource Include="ViewModels\Articles\Data\Articles.json" />
+    <EmbeddedResource Include="ViewModels\Ecommerce\Data\Ecommerce.json" />
+    <EmbeddedResource Include="ViewModels\Social\Data\Social.json" />
+    <EmbeddedResource Include="ViewModels\ChatFlow\Data\ChatFlow.json" />
+    <EmbeddedResource Include="ViewModels\EcommerceFlow\Data\EcommerceFlow.json" />
+    <EmbeddedResource Include="ViewModels\MoviesFlow\Data\MoviesFlow.json" />
+    <EmbeddedResource Include="ViewModels\TasksFlow\Data\TasksFlow.json" />
+    <EmbeddedResource Include="ViewModels\DataViz\Data\DataViz.json" />
+    <EmbeddedResource Include="ViewModels\Theme\Data\Theme.json" />
+    <EmbeddedResource Include="ViewModels\Onboarding\Data\Onboarding.json" />
+    <EmbeddedResource Include="ViewModels\Navigation\Dashboards\Data\NavigationDashboards.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Styles\curved_mask.svg" />
+    <None Remove="ViewModels\Messages\Data\Messages.ar.json" />
+    <None Remove="ViewModels\Messages\Data\Messages.json" />
+    <None Remove="ViewModels\Articles\Data\Articles.ar.json" />
+    <None Remove="ViewModels\Articles\Data\Articles.json" />
+    <None Remove="ViewModels\Ecommerce\Data\Ecommerce.ar.json" />
+    <None Remove="ViewModels\Ecommerce\Data\Ecommerce.json" />
+    <None Remove="ViewModels\Social\Data\Social.ar.json" />
+    <None Remove="ViewModels\Social\Data\Social.json" />
+    <None Remove="ViewModels\ChatFlow\Data\ChatFlow.ar.json" />
+    <None Remove="ViewModels\ChatFlow\Data\ChatFlow.json" />
+    <None Remove="ViewModels\EcommerceFlow\Data\EcommerceFlow.ar.json" />
+    <None Remove="ViewModels\EcommerceFlow\Data\EcommerceFlow.json" />
+    <None Remove="ViewModels\MoviesFlow\Data\MoviesFlow.ar.json" />
+    <None Remove="ViewModels\MoviesFlow\Data\MoviesFlow.json" />
+    <None Remove="ViewModels\TasksFlow\Data\TasksFlow.ar.json" />
+    <None Remove="ViewModels\TasksFlow\Data\TasksFlow.json" />
+    <None Remove="ViewModels\DataViz\Data\DataViz.json" />
+    <None Remove="ViewModels\DataViz\Data\DataViz.ar.json" />
+    <None Remove="ViewModels\Theme\Data\Theme.json" />
+    <None Remove="ViewModels\Theme\Data\Theme.ar.json" />
+    <None Remove="ViewModels\Onboarding\Data\Onboarding.json" />
+    <None Remove="ViewModels\Onboarding\Data\Onboarding.ar.json" />
+    <None Remove="ViewModels\Navigation\Dashboards\Data\NavigationDashboards.json" />
+    <None Remove="ViewModels\Navigation\Dashboards\Data\NavigationDashboards.ar.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\AppName.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="Resx\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ViewModels\DemoApp\Resx\DemoAppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DemoAppResources.Designer.cs</LastGenOutput>
+      <LogicalName>AppName.DemoAppResources.resources</LogicalName>
+      <CustomToolNamespace>AppName</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="ViewModels\DemoApp\Resx\DemoAppResources.ar.resx">
+      <LogicalName>AppName.DemoAppResources.ar.resources</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Resx\AppResources.Designer.cs">
+      <DependentUpon>AppResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="ViewModels\DemoApp\Resx\DemoAppResources.Designer.cs">
+      <DependentUpon>DemoAppResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup></PropertyGroup>
+</Project>

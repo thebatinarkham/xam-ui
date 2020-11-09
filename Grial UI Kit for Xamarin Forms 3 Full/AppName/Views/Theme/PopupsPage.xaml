@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+	ios:Page.UseSafeArea="true"
+	x:Class="AppName.PopupsPage">
+    
+    <ContentPage.Resources>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+				Padding="20">
+
+                <Button
+					WidthRequest="100"
+					Style="{StaticResource OutlineButtonStyle}"
+					Text="Open Simple Dialog"
+					Clicked="OpenSimpleDialog" />
+
+                <Button
+					WidthRequest="100"
+					Style="{StaticResource OutlineButtonStyle}"
+					Text="Open Simple Dialog No Title"
+					Clicked="OpenSimpleDialogNoTitle" />
+
+                <Button
+					WidthRequest="100"
+					Style="{StaticResource OutlineButtonStyle}"
+					Text="Open Simple Dialog No Title Inverse"
+					Clicked="OpenSimpleDialogNoTitleInverse" />
+
+                <Button
+					WidthRequest="100"
+					Style="{StaticResource OutlineButtonStyle}"
+					Text="Open Irregular Dialog"
+					Clicked="OpenIrregularDialog" />
+
+
+                <Button
+					WidthRequest="100"
+					Style="{StaticResource OutlineButtonStyle}"
+					Text="Open Notification Popup"
+					Clicked="OpenNotificationPopup" />
+                
+                <Button
+					WidthRequest="100"
+					Style="{StaticResource OutlineButtonStyle}"
+					Text="Open Custom ActionSheet"
+					Clicked="OpenCustomActionSheet" />
+                
+            </StackLayout>
+            
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

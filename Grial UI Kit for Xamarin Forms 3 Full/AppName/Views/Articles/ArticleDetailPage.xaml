@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.ArticleDetailPage"
+	Title="{ grial:Translate PageTitleArticleDetail }"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+
+    <ScrollView
+		Padding="{ StaticResource MainWrapperPadding }">
+        <Grid
+			RowSpacing="0"
+			VerticalOptions="FillAndExpand">
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="240" />
+                <RowDefinition
+					Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- MAIN IMAGE -->
+            <ffimageloading:CachedImage
+				Grid.Row="0"
+				Source="{ Binding Article.BackgroundImage }"
+				Aspect="AspectFill"
+				BackgroundColor="Black"
+				HorizontalOptions="FillAndExpand" />
+
+            <!-- MAIN HEADER -->
+            <StackLayout
+				HorizontalOptions="Start"
+				Grid.Row="0"
+				Padding="20"
+				Spacing="0"
+				VerticalOptions="End"
+				grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+
+                <!-- HEADERS -->
+                <Label
+					Text="{ Binding Article.Title }"
+					LineBreakMode="WordWrap"
+					TextColor="{ DynamicResource OverImageTextColor }"
+					FontSize="26"
+					Style="{ StaticResource LabelBoldStyle }" />
+
+                <Label
+					Text="{ Binding Article.Subtitle }"
+					LineBreakMode="WordWrap"
+					TextColor="{ DynamicResource OverImageTextColor }"
+					FontSize="16" />
+
+                <BoxView
+					Style="{DynamicResource BrandNameOrnamentStyle}"
+					Margin="0,20,0,0" />
+
+            </StackLayout>
+            
+            <!-- CONTENT -->
+            <Grid
+				Grid.Row="1"
+				RowSpacing="0"
+				BackgroundColor="{ DynamicResource BasePageColor }">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="60" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="60" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!--HEADER BACKGROUND-->
+                <BoxView
+					Grid.Row="0"
+					BackgroundColor="{ DynamicResource ArticleHeaderBackgroundColor }" />
+
+                <!--HEADER INFO-->
+                <Grid
+					Padding="20,0"
+					VerticalOptions="Center"
+					ColumnSpacing="6"
+					grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="*" />
+                        <ColumnDefinition
+							Width="Auto" />
+                        <ColumnDefinition
+							Width="Auto" />
+                        <ColumnDefinition
+							Width="Auto" />
+                        <ColumnDefinition
+							Width="Auto" />
+                        <ColumnDefinition
+							Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label
+						Grid.Column="0"
+						Text="{ Binding Article.Section }"
+						FontSize="14"
+						TextColor="{ DynamicResource BaseTextColor }"
+						VerticalTextAlignment="Center" />
+                        
+                    <Label
+						Grid.Column="1"
+						Margin="10,0"
+						Text="{ Binding Article.When }"
+						FontSize="14"
+						TextColor="{ DynamicResource BaseTextColor }"
+						VerticalTextAlignment="Center" />
+                        
+                    <Label
+						Grid.Column="2"
+						Text="{ x:Static local:GrialIconsFont.Users } "
+						FontSize="{ StaticResource BaseFontSize }"
+						TextColor="{ DynamicResource AccentColor }"
+						FontFamily="{ StaticResource IconsFontFamily }"
+						VerticalTextAlignment="Center" />
+                
+                    <Label
+						Grid.Column="3"
+						Text="72"
+						FontSize="14"
+						TextColor="{ DynamicResource AccentColor }"
+						VerticalTextAlignment="Center" />
+
+                    <Label
+						Grid.Column="4"
+						Text="{ x:Static local:GrialIconsFont.Heart } "
+						FontSize="{ StaticResource BaseFontSize }"
+						TextColor="{ DynamicResource AccentColor }"
+						FontFamily="{ StaticResource IconsFontFamily }"
+						VerticalTextAlignment="Center" />
+                
+                    <Label
+						Grid.Column="5"
+						Text="24"
+						FontSize="14"
+						TextColor="{ DynamicResource AccentColor }"
+						VerticalTextAlignment="Center" />
+                </Grid>
+                
+                <!-- SEPARATOR -->
+                <BoxView
+					Grid.Row="0"
+					VerticalOptions="End"
+					Style="{ StaticResource Horizontal1ptLineStyle}" />
+
+                <!-- TEXT -->
+                <Grid
+					Grid.Row="1"
+					Padding="20,20,20,0"
+					VerticalOptions="Center"
+					RowSpacing="20"
+					grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="Auto" />
+                        <RowDefinition
+							Height="Auto" />
+                        <RowDefinition
+							Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!-- MAIN PARAGRAPH -->
+                    <Label
+						Grid.Row="0"
+						Text="{ Binding Article.Body }"
+						VerticalOptions="Center"
+						TextColor="{ DynamicResource BaseTextColor }" />
+
+                    <!-- QUOTE -->
+                    <Grid
+						Grid.Row="1"
+						Padding="0,30"
+						VerticalOptions="Center">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+								Width="30" />
+                            <ColumnDefinition
+								Width="*" />
+                            <ColumnDefinition
+								Width="30" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="Auto" />
+                            <RowDefinition
+								Height="30" />
+                        </Grid.RowDefinitions>
+                    
+                        <Label
+							Grid.Row="0"
+							Grid.Column="0"
+							Text="“"
+							FontSize="42"
+							MinimumWidthRequest="42"
+							Style="{ StaticResource LabelBoldStyle }"
+							VerticalOptions="Start"
+							TextColor="{ DynamicResource ComplementColor }" />
+                        
+                        <Label
+							Grid.Row="0"
+							Grid.Column="1"
+							Text="{ Binding Article.Quote }"
+							VerticalTextAlignment="Center"
+							FontSize="20"
+							LineBreakMode="WordWrap"
+							TextColor="{ DynamicResource ComplementColor }" />
+                        
+                        <Label
+							Grid.Row="1"
+							Grid.Column="1"
+							Text="{ Binding Article.QuoteAuthor }"
+							VerticalTextAlignment="Center"
+							TextColor="{ DynamicResource ComplementColor }" />
+                        
+                        <Label
+							Grid.Row="1"
+							Grid.Column="2"
+							Text="”"
+							FontSize="42"
+							Style="{ StaticResource LabelBoldStyle }"
+							MinimumWidthRequest="42"
+							VerticalOptions="End"
+							TextColor="{ DynamicResource ComplementColor }" />
+                    </Grid>
+
+                    <!-- REMAINING PARAGRAPHS -->
+                    <Label
+						Grid.Row="2"
+						Text="{ Binding Article.Body }"
+						VerticalOptions="Center"
+						TextColor="{ DynamicResource BaseTextColor }" />
+                </Grid>
+
+                <!-- POSTED BY -->
+                <Grid
+					Grid.Row="2"
+					Padding="0,30"
+					grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+							Width="50*" />
+                        <ColumnDefinition
+							Width="50*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout
+						Grid.Column="0"
+						Orientation="Horizontal"
+						VerticalOptions="Center"
+						HorizontalOptions="Center"
+						Spacing="10">
+
+                        <local:CircleCachedImage
+							Source="{ Binding Article.Avatar }"
+							Style="{ StaticResource AvatarXSmall }"
+							VerticalOptions="Center" />
+                        <Label
+							Text="{ Binding Article.Author, StringFormat='by {0:F0}'} }"
+							TextColor="{ DynamicResource AccentColor }"
+							VerticalTextAlignment="Center" />
+                    </StackLayout>
+
+                    <StackLayout
+						Grid.Column="1"
+						Orientation="Horizontal"
+						VerticalOptions="Center"
+						HorizontalOptions="Center"
+						Spacing="10">
+
+                        <Label
+							Text="{ x:Static local:GrialIconsFont.Tag }"
+							TextColor="{ DynamicResource AccentColor }"
+							FontSize="24"
+							Style="{ StaticResource FontIcon }"
+							VerticalOptions="Center"
+							VerticalTextAlignment="Center" />
+                        <Label
+							Text="{ Binding Article.Section, StringFormat='in {0:F0}'} }"
+							TextColor="{ DynamicResource AccentColor }"
+							VerticalTextAlignment="Start" />
+                    </StackLayout>
+
+                </Grid>
+
+                <!-- COMMENTS -->
+                <!-- HEADER BACKGROUND -->
+                <BoxView
+					Grid.Row="3"
+					BackgroundColor="{ DynamicResource ArticleHeaderBackgroundColor }" />
+
+                <!-- TEXT -->
+                <Grid
+					Grid.Row="3"
+					Padding="20,0"
+					grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+                    <Label
+						BindingContext="{ Binding Comments }"
+						Text="{ Binding Count, StringFormat='{}{0:F0} COMMENTS' }"
+						TextColor="{ DynamicResource BaseTextColor }"
+						FontSize="12"
+						VerticalTextAlignment="Center"
+						HorizontalTextAlignment="Start" />
+                </Grid>
+            
+                <!-- SEPARATOR -->
+                <BoxView
+					Grid.Row="3"
+					Style="{ StaticResource Horizontal1ptLineStyle }"
+					VerticalOptions="End" />
+
+                <ListView
+					Grid.Row="4"
+					ItemsSource="{ Binding Comments }"
+					SeparatorColor="{ DynamicResource ListViewSeparatorColor}"
+					SeparatorVisibility="Default"
+					RowHeight="160"
+					HasUnevenRows="false"
+					ItemTapped="OnItemTapped"
+					CachingStrategy="RecycleElement"
+					VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem
+										Clicked="OnMore"
+										Text="{ grial:Translate Key=ButtonMore, Mode=OneTime }" />
+                                    <MenuItem
+										Clicked="OnDelete"
+										Text="{ grial:Translate Key=ButtonDelete, Mode=OneTime }"
+										IsDestructive="True" />
+                                </ViewCell.ContextActions>
+
+                                <local:ArticleCommentItemTemplate
+									grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right" />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button
+					Grid.Row="5"
+					Margin="20"
+					VerticalOptions="Center"
+					Text="{ grial:Translate ButtonAddComment }"
+					Style="{ StaticResource PrimaryActionButtonStyle }"
+					Clicked="OnPrimaryActionButtonClicked"
+					WidthRequest="{ grial:OnOrientationDouble
+                        LandscapePhone=200,
+                        LandscapeTablet=400 
+                    }"
+					HorizontalOptions="{ grial:OnOrientationLayoutOptions
+                        PortraitPhone=Fill,
+                        LandscapePhone=Center,
+                        PortraitTablet=Fill,
+                        LandscapeTablet=Center 
+                    }" />
+            
+            </Grid>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

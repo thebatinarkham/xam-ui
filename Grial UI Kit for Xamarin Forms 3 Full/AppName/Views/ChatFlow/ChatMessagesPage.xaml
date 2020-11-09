@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.ChatMessagesPage"
+	grial:Effects.ApplyIOSSafeAreaAsPadding="Bottom">
+    <NavigationPage.TitleView>
+        <StackLayout
+			Orientation="Horizontal"
+			HorizontalOptions="Start"
+			Spacing="10">
+            
+            <!-- AVATAR -->
+            <local:AvatarWithStatus
+				Grid.Row="0"
+				HeightRequest="30"
+				WidthRequest="30"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				BindingContext="{ Binding Conversation.From }"
+				Source="{ Binding Avatar }"
+				Status="{ Binding Status }">
+                <local:AvatarWithStatus.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnAvatarTapped" />
+                </local:AvatarWithStatus.GestureRecognizers>
+            </local:AvatarWithStatus>
+            
+            <Label
+				BindingContext="{ Binding Conversation.From }"
+				Text="{ Binding Name }"
+				TextColor="{ DynamicResource NavigationBarTextColor }"
+				VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnLabelTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            
+        </StackLayout>
+        
+    </NavigationPage.TitleView>
+   
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <grial:BoolMemberTemplateSelector
+				x:Key="Selector"
+				MemberName="IsIncoming">
+                
+                <grial:BoolMemberTemplateSelector.TrueDataTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <local:IncomingMessageItemTemplate />
+                        </ViewCell>
+                    </DataTemplate>
+                </grial:BoolMemberTemplateSelector.TrueDataTemplate>
+                
+                <grial:BoolMemberTemplateSelector.FalseDataTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <local:OutgoingMessageItemTemplate />
+                        </ViewCell>
+                    </DataTemplate>
+                </grial:BoolMemberTemplateSelector.FalseDataTemplate>
+                
+            </grial:BoolMemberTemplateSelector>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid
+		Grid.Column="0"
+		RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition
+				Height="*" />
+            <RowDefinition
+				Height="62" />
+        </Grid.RowDefinitions>
+
+        <!--- IMAGE  -->
+        <Image
+			Style="{ StaticResource MainMenuBackgroundImageStyle }" />
+
+        <!--- MESSAGES LIST -->
+        <ListView
+			Grid.Row="0"
+			CachingStrategy="RecycleElement"
+			ItemsSource="{ Binding Conversation.Messages }"
+			SeparatorVisibility="None"
+			HasUnevenRows="true"
+			ItemTemplate="{ StaticResource Selector }"
+			SelectionMode="None"
+			Style="{ StaticResource ResponsiveLandscapeMarginStyle }" />
+
+        <!--- BUTTONS CONTAINER  -->
+        <Grid
+			Grid.Row="1"
+			BackgroundColor="{DynamicResource MainWrapperBackgroundColor}"
+			ColumnSpacing="6"
+			Padding="10,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="32" />
+                <ColumnDefinition
+					Width="50*" />
+                <ColumnDefinition
+					Width="32" />
+                <ColumnDefinition
+					Width="32" />
+            </Grid.ColumnDefinitions>
+
+            <!--- PLUS BUTTON  -->
+            <Label
+				Grid.Column="0"
+				TextColor="{ DynamicResource BaseTextColor }"
+				Style="{ StaticResource FontIcon }"
+				Text="{ x:Static local:GrialIconsFont.Plus }"
+				FontSize="22"
+				VerticalOptions="Center"
+				HorizontalOptions="Center" />
+
+            <!--- ENTRY  -->  
+            <Entry
+				Grid.Column="1"
+				Margin="0,10"
+				Placeholder="{ grial:Translate TypeYourMessage }" />
+            
+
+            <!--- CAMERA BUTTON  -->
+            <Label
+				Grid.Column="2"
+				TextColor="{ DynamicResource ComplementColor }"
+				Style="{ StaticResource FontIcon }"
+				Text="{ x:Static local:GrialIconsFont.Camera }"
+				FontSize="22"
+				VerticalOptions="Center"
+				HorizontalOptions="Center" />
+
+            <!--- MIC BUTTON  -->
+            <Label
+				Grid.Column="3"
+				TextColor="{ DynamicResource ComplementColor }"
+				Style="{ StaticResource FontIcon }"
+				Text="{ x:Static local:GrialIconsFont.Mic }"
+				FontSize="22"
+				VerticalOptions="Center"
+				HorizontalOptions="Center" />
+
+        </Grid>
+
+        <!--- LINE  -->
+        <BoxView
+			Grid.Row="1"
+			BackgroundColor="{DynamicResource ListViewSeparatorColor}"
+			HeightRequest="1"
+			VerticalOptions="Start" />
+    </Grid>
+
+</ContentPage>

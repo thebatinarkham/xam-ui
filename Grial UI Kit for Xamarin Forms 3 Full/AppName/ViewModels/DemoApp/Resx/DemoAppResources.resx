@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    
+    <data name="PageTitleThemesPreview" xml:space="preserve">
+        <value>Pick Your Theme</value> 
+    </data>
+    <data name="StringApply" xml:space="preserve">
+        <value>Apply</value> 
+    </data>
+    <data name="ScreenCount" xml:space="preserve">
+        <value>Screens {0}</value>
+    </data>
+    
+    
+    <!-- MAIN MENU -->
+    <data name="MainMenuWhatsNew" xml:space="preserve">
+        <value>What's new?</value>
+    </data>
+    <data name="MainMenuControlsAndFeatures" xml:space="preserve">
+        <value>Controls and features</value>
+    </data>   
+    <data name="MainMenuCustomControls" xml:space="preserve">
+        <value>Custom controls</value>
+    </data>    
+    <data name="MainMenuDashboard" xml:space="preserve">
+        <value>Main dashboard</value>
+    </data>
+    <data name="MainMenuIcons" xml:space="preserve">
+        <value>All icons</value>
+    </data>
+    <data name="MainMenuGrialThemes" xml:space="preserve">
+        <value>Grial themes</value>
+    </data>
+    <data name="MainMenuAbout" xml:space="preserve">
+        <value>About Binaria</value>
+    </data>
+    <data name="DemoAppPageTitleAbout" xml:space="preserve">
+        <value>About Binaria Wallet</value>
+    </data>
+    
+    <data name="StringGetGrial" xml:space="preserve">
+        <value>Get Binaria</value>
+    </data>
+    <data name="StringGetGrialNow" xml:space="preserve">
+        <value>Get Binaria Wallet now</value>
+    </data>
+    <data name="ButtonBrowseOurSamples" xml:space="preserve">
+        <value>Browse samples</value>
+    </data>    
+    <data name="ButtonSeeOurWalkThrough" xml:space="preserve">
+        <value>See what's new</value>
+    </data>
+
+    <!-- FLOW DESCRIPTIONS -->
+    <data name="FlowDescriptionMovies" xml:space="preserve">
+        <value>Experience the power of animations, and visual effects in this super polished example of movies navigation.</value>
+    </data>
+    <data name="FlowDescriptionEcommerce" xml:space="preserve">
+        <value>A beautiful and simple ecommerce flow, featuring product detail, order confirmation, product checkout and purchase notification.</value>
+    </data>
+    <data name="FlowDescriptionTasks" xml:space="preserve">
+        <value>Tasks performance overview dashboard. Team performance overview and team member details.</value>
+    </data>
+    <data name="FlowDescriptionMessages" xml:space="preserve">
+        <value>Handle the messages and notifications of your mobile app in a beautiful and simple way. Save time with message flow.</value>
+    </data>
+
+    <!-- PAGES DESCRIPTIONS -->
+    <data name="DocumentTimelinePageDescription" xml:space="preserve">
+        <value>This timeline was designed to show actions over a document. Use it to show a clear sequence of actions performed over any item, i.e a transaction.</value>
+    </data>
+    <data name="TimelinePageDescription" xml:space="preserve">
+        <value>This timeline is designed to give a clear messaging or conversation overview. Team player collaboration is always a good thing.</value>
+    </data>
+    <data name="ProfilePageTimelinePageDescription" xml:space="preserve">
+        <value>Use this user profile page to display a bio and some key stats of a person, product or service. Use large pictures to take the best out of this view.</value>
+    </data>
+    <data name="SocialPageDescription" xml:space="preserve">
+        <value>A classic among modern mobile apps. The social page layout has an overview, some key stats, a photo album, and a cool look and feel.</value>
+    </data>
+    <data name="SocialVariantPageDescription" xml:space="preserve">
+        <value>A classic among modern mobile apps. The social page layout has an overview, some key stats, a photo album, and a cool look and feel.</value>
+    </data>
+    <data name="SocialCardPageDescription" xml:space="preserve">
+        <value>A classic among modern mobile apps but with a design twist. The social card page layout has a bio overview some key stats, connected friends, a photo album. Something simple and nice to delight your users.</value>
+    </data>
+    <data name="FullHeaderArticlePagePageDescription" xml:space="preserve">
+        <value>This page combines different ways to perfectly display any kind of content in a beautiful and balanced UI with an eye-catching parallax effect.</value>
+    </data>
+    <data name="ArticlesClassicViewPageDescription" xml:space="preserve">
+        <value>Use this page to display either articles or documentation. It's a commonly used pattern to display an overview of items.</value>
+    </data>
+    <data name="ArticlesColumnPageDescription" xml:space="preserve">
+        <value>Use this page to display either articles or documentation. This particular view displays a featured article at the top of the page, and in landscape changes layout to show more columns.</value>
+    </data>
+    <data name="ArticleDetailPageDescription" xml:space="preserve">
+        <value>This a classic article view, it displays a featured image and a toolbar with key stats. It's a simple but useful layout.</value>
+    </data>
+    <data name="ArticlesListPageDescription" xml:space="preserve">
+        <value>This variation of article list can also be used to show any kind of product, service, or recipe photo. You can also remove the pictures and use a solid color background.</value>
+    </data>
+    <data name="ArticlesFeedPageDescription" xml:space="preserve">
+        <value>This variation of the articles view is based on a Twitter-like feed. Each card has an author, featured image, title, and date.</value>
+    </data>
+    <data name="DashboardCarouselPageDescription" xml:space="preserve">
+        <value>A beautiful dashboard with a carousel view on top. Use it to display categories and eye catching content.</value>
+    </data>
+    <data name="NavigationCardsDescriptionListPageDescription" xml:space="preserve">
+        <value>A detailed navigation list showing title, description and tags. Use it to display details about inner content.</value>
+    </data>
+    <data name="MoviesMainPageDescription" xml:space="preserve">
+        <value>Inspired by Netflix and Spotify, this page displays a featured item and multiple horizontal scrollable lists of movies. Use it to display a large amount of items previews such books, documents, movies or audio files.</value>
+    </data>
+    <data name="MovieDetailPageDescription" xml:space="preserve">
+        <value>This item detail page displays a featured item and related information such as description, rating and related items. Use it to display any kind of product, document or service.</value>
+    </data>
+    <data name="DashboardCardsPageDescription" xml:space="preserve">
+        <value>Use this page to display any kind of article, service, document or product. Every item on the grid has an author, a brief description and featured image.</value>
+    </data>
+    <data name="DashboardMultipleTilesPageDescription" xml:space="preserve">
+        <value>Use this a beautiful navigation grid with icons, images, and data. Use this page to display different tiles to navigate to apps, locations or just to show messages previews.</value>
+    </data>
+    <data name="IconsDashboardPageDescription" xml:space="preserve">
+        <value>This a classic navigation grid with icons. Use is it as the main screen of your app. Useful to show users an easy way to navigate through your app.</value>
+    </data>
+    <data name="FlatDashboardPageDescription" xml:space="preserve">
+        <value>This a classic navigation grid with icons. Use is it as the main screen of your app. Useful to show users an easy way to navigate through your app.</value>
+    </data>
+    <data name="ImagesDashboardPageDescription" xml:space="preserve">
+        <value>This a classic navigation grid with background images and icons. Use is it as the main screen of your app. Useful to show users an easy way to navigate through your app.</value>
+    </data>
+    <data name="NavigationCardsListPageDescription" xml:space="preserve">
+        <value>A good looking card list menu is always effective to show different categories of items. For example, different store departments or different document categories.</value>
+    </data>
+    <data name="EmptyStatePageDescription" xml:space="preserve">
+        <value>This a simple but useful view. Use it to notify your users when something went wrong or something has changed.</value>
+    </data>
+    <data name="NotificationsPageDescription" xml:space="preserve">
+        <value>Notifications page it's always useful in any app. Updates, policy changes, password updates, etc.</value>
+    </data>
+    <data name="NavigationFlatListPageDescription" xml:space="preserve">
+        <value>A good looking list menu is always effective to show different categories of items. For example, different store departments or different document categories.</value>
+    </data>
+    <data name="NavigationListWithImagesPageDescription" xml:space="preserve">
+        <value>A good looking list menu is always effective to show different categories of items. For example, different store departments or different document categories.</value>
+    </data>
+    <data name="NavigationListWithIconsPageDescription" xml:space="preserve">
+        <value>This example shows a simple list menu with icons, titles and a number preview. Use it to show different categories of products, services or documents.</value>
+    </data>
+    <data name="TabbedLoginPageDescription" xml:space="preserve">
+        <value>A perfect combination of simplicity and functionality. This tabbed page is another great option to include in your app.</value>
+    </data>
+    <data name="SimpleSignUpPageDescription" xml:space="preserve">
+        <value>A simple Sign Up page to register new users into your app. Add or remove controls and content as you need.</value>
+    </data>
+    <data name="SimpleLoginPageDescription" xml:space="preserve">
+        <value>This Login Page is both useful and simple. Add or remove controls and content as you need.</value>
+    </data>
+    <data name="LoginPageDescription" xml:space="preserve">
+        <value>This Login Page is both useful and simple. Add or remove controls and content as you need.</value>
+    </data>
+    <data name="SignUpPageDescription" xml:space="preserve">
+        <value>A simple Sign Up page to register new users into your app. Add or remove controls and content as you need.</value>
+    </data>
+    <data name="PasswordRecoveryPageDescription" xml:space="preserve">
+        <value>This is a simple password recovery page. Add or remove controls and content as you need.</value>
+    </data>
+    <data name="ProductImageFullScreenPageDescription" xml:space="preserve">
+        <value>Very useful to show product pictures and short descriptions. Use it to show product details.</value>
+    </data>
+    <data name="ProductsCatalogPageDescription" xml:space="preserve">
+        <value>A common UI to showcase products or collections. Use it to display either product or services.</value>
+    </data>
+    <data name="ProductOrderPageDescription" xml:space="preserve">
+        <value>This a useful page if you are planning to sell other products or services through the app.</value>
+    </data>
+    <data name="ProductsGridPageDescription" xml:space="preserve">
+        <value>This a useful page if you are planning to sell other products or services through the app.</value>
+    </data>
+    <data name="ProductsGridVariantPageDescription" xml:space="preserve">
+        <value>This page is inspired by a common products showcase pattern. Use to showcase either products or services in your app.</value>
+    </data>
+    <data name="ProductItemViewPageDescription" xml:space="preserve">
+        <value>A simple but useful way to show content. In this example, we choose to show a product. Featured image, title, price, and description.</value>
+    </data>
+    <data name="ProductsCarouselPageDescription" xml:space="preserve">
+        <value>A simple but useful way to show content. In this example, we choose to show a product. Browse more related products swiping.</value>
+    </data>
+    <data name="WalkthroughPageDescription" xml:space="preserve">
+        <value>This Walkthrough is designed to be functional almost in every app. Use it to give users a quick tour through your app.</value>
+    </data>
+    <data name="WalkthroughFlatPageDescription" xml:space="preserve">
+        <value>This Walkthrough is designed to be functional almost in every app. Use it to give users a quick tour through your app.</value>
+    </data>
+    <data name="WalkthroughVariantPageDescription" xml:space="preserve">
+        <value>This Walkthrough is designed to be functional almost in every app. Use it to give users a quick tour through your app.</value>
+    </data>
+    <data name="ChatTimelinePageDescription" xml:space="preserve">
+        <value>This Chat Timeline page is desgined to show a conversation or interaction. Use it to display interactions or workflows.</value>
+    </data>
+    <data name="RecentChatListPageDescription" xml:space="preserve">
+        <value>Inspired by commonly used chat applications, this is a list of conversations. Each list item shows a contact and its last message.</value>
+    </data>
+    <data name="MessagesListPageDescription" xml:space="preserve">
+        <value>Inspired by commonly used chat applications, this is a list of conversations. Each list item shows a contact and its last message.</value>
+    </data>
+    <data name="ChatMessagesListPageDescription" xml:space="preserve">
+        <value>Inspired by most commonly used chat applications like Skype, Telegram, Whatsapp, Slack, and so many others.</value>
+    </data>
+    <data name="TabControlCustomSamplePageDescription" xml:space="preserve">
+        <value>Grial Tab Control is fully customizable. Place it anywhere on the screen and get a consistent look and feel across platforms.</value>
+    </data>
+    <data name="TabControlAndroidSamplePageDescription" xml:space="preserve">
+        <value>Get Android TabControl look and feel also in your iOS application.</value>
+    </data>
+    <data name="TabControliOSSamplePageDescription" xml:space="preserve">
+        <value>Get iOS TabControl look and feel also in your Android application. </value>
+    </data>
+    <data name="TabControlBottomPlacementSamplePageDescription" xml:space="preserve">
+        <value>Get a fully customizable Android bottom Tab Control for your app.</value>
+    </data>
+    <data name="TabPageDescription" xml:space="preserve">
+        <value>A simple Tabbed Page sample page.</value>
+    </data>
+    <data name="DemoSettingsPageDescription" xml:space="preserve">
+        <value>Displays a list with all our gorgeous themes where you can choose any of them.</value>
+    </data>
+    <data name="GenericAboutPageDescription" xml:space="preserve">
+        <value>Use this template to display general info about your mobile application.</value>
+    </data>
+    <data name="RichAboutPageDescription" xml:space="preserve">
+        <value>An eye catching about page with nice parallax and scroll animations. Use this template to display general info about your mobile application.</value>
+    </data>
+    <data name="CustomSettingsPageDescription" xml:space="preserve">
+        <value>A simple settings page. Use this page as a basic settings display page.</value>
+    </data>
+    <data name="CustomActivityIndicatorPageDescription" xml:space="preserve">
+        <value>This is a simple custom Activity Indicator. Change the content as you wish.</value>
+    </data>
+    <data name="ResponsiveHelpersPageDescription" xml:space="preserve">
+        <value>The Responsive Helpers will allow you to take full control of how things layout on your pages, different devices, orientations, and platforms.</value>
+    </data>
+    <data name="IconsPageDescription" xml:space="preserve">
+        <value>Use this page to overview all available icons in Grial.</value>
+    </data>
+    <data name="ThemeOverviewPageDescription" xml:space="preserve">
+        <value>A simple page showing all xamarin forms controls styled with current Grial selected theme.</value>
+    </data>
+    <data name="CustomRenderersPageDescription" xml:space="preserve">
+        <value>A simple page that lists all available Grial custom renderers.</value>
+    </data>
+    <data name="SettingsPageDescription" xml:space="preserve">
+        <value>A simple settings page. Use this page as a basic settings display page.</value>
+    </data>
+    <data name="PerformanceDashboardMainPageDescription" xml:space="preserve">
+        <value>Get a quick overview of team tasks. This great example showcases a lot of cool stuff, including our Data Grid control.</value>
+    </data>
+    <data name="PerformanceDashboardMainPageDescription" xml:space="preserve">
+        <value>Get a quick overview of team tasks. This great example showcases a lot of cool stuff, including our Data Grid control.</value>
+    </data>
+    <data name="EmployeePerformanceDashboardPageDescription" xml:space="preserve">
+        <value>A clean example useful to show Employee Performance details. Add, remove and customize it according to your specific needs.</value>
+    </data>
+    <data name="EmployeeProfileDashboardPageDescription" xml:space="preserve">
+        <value>A clean example useful to show Employee Performance details. Add, remove and customize it according to your specific needs.</value>
+    </data>
+    <data name="AddContactPageDescription" xml:space="preserve">
+        <value>Add a new contact to your app, organization or team. This form has been designed to simplify a commonly used page in mobile apps.</value>
+    </data>
+    <data name="ContactSimpleDetailPageDescription" xml:space="preserve">
+        <value>This is a simple but beautiful designed contact details page. It can be also used as a profile page.</value>
+    </data>
+    <data name="ContactDetailPageDescription" xml:space="preserve">
+        <value>This is a simple but beautiful designed contact details page. It can be also used as a profile page.</value>
+    </data>
+    <data name="ChatMessagesPageDescription" xml:space="preserve">
+        <value>The kind of template that will save you countless hours of design and implementation.</value>
+    </data>
+    <data name="ChatMainPageDescription" xml:space="preserve">
+        <value>A clean but effective design. Showcasing Grial Custom Tab control. This is a great example of a simple UI design.</value>
+    </data>
+    <data name="CardArticlePageDescription" xml:space="preserve">
+        <value>Perfect to display any kind of content the Card Article page template display a modern look and feel. Perfect to show food recipes.</value>
+    </data>
+    <data name="ArticlesBrowserPageDescription" xml:space="preserve">
+        <value>A beautiful way to display content. Perfect to be used as the main navigation for travels and tourism related content.</value>
+    </data>
+    <data name="FeaturedMoviesPageDescription" xml:space="preserve">
+        <value>Delight your users with this beautifully designed content navigation. Use it to display any kind of product or services inside your app.</value>
+    </data>
+    <data name="CurvedHeaderArticlePageDescription" xml:space="preserve">
+        <value>This Blog Article page was designed to showcase tours, trips or similar kind of experiences.</value>
+    </data>
+    <data name="OrganizationFormPageDescription" xml:space="preserve">
+        <value>A nice and clean form page to add organization data.</value>
+    </data>
+    <data name="FullBackgroundLoginPageDescription" xml:space="preserve">
+        <value>Stylish and simple Login Page. Add some branding with a simple image in the background.</value>
+    </data>
+    <data name="FullBackgroundSignupPageDescription" xml:space="preserve">
+        <value>If you are building an app that handles multiple providers this form will be a very useful one to have.</value>
+    </data>
+    <data name="EmployeeFormPageDescription" xml:space="preserve">
+        <value>From employees to products, this form layout it's a nice way to add anything in your app.</value>
+    </data>
+    <data name="EcommerceMainPageDescription" xml:space="preserve">
+        <value>This is a perfect layout to use on any kind of store app. It includes a search field and a top area to display offers or featured products.</value>
+    </data>
+    <data name="ProductDetailPageDescription" xml:space="preserve">
+        <value>This product display page has it all. If you are building an app that showcases products or services, this a must-have page.</value>
+    </data>
+    <data name="OrderConfirmationPageDescription" xml:space="preserve">
+        <value>Useful in any E-commerce app: an order confirmation is always needed.</value>
+    </data>
+    <data name="CheckoutPageDescription" xml:space="preserve">
+        <value>If you are planning to sell anything through your app, you will probably need this template.</value>
+    </data>
+    <data name="VideoCarouselHighlightsPageDescription" xml:space="preserve">
+        <value>An eye-catching and interactive page showing a video background with a carousel view that animates and transitions the video colors on swipe over it.</value>
+    </data>    
+    <data name="WalkthroughGradientPageDescription" xml:space="preserve">
+        <value>A simple but visually appealing walkthrough that calls to action.</value>
+    </data>
+    <data name="WalkthroughImagePageDescription" xml:space="preserve">
+        <value>This is a simply designed Walkthrough sample. It just displays an image, a description, and a button.</value>
+    </data>
+    <data name="WalkthroughMinimalPageDescription" xml:space="preserve">
+        <value>Give instant feedback to app users. Change the message and it will be ready to use in any app.</value>
+    </data>
+    <data name="PopupsPageDescription" xml:space="preserve">
+        <value>A complete set of Pop Up designs to include in your app. From user feedback to multiple choice forms.</value>
+    </data> 
+    <data name="ShippingDetailPageDescription" xml:space="preserve">
+        <value>A beautifully presented list of tasks and related data. This page uses Grial Data Grid control and Grial Custom Tab Control.</value>
+    </data>
+    <data name="TaskBrowserPageDescription" xml:space="preserve">
+        <value>A clean visualization of tasks grouped into projects and workspaces. This page uses Charts for task completion evolution, the Grial Custom Tab Control and Grial Card Views.</value>
+    </data>
+    <data name="TaskOverviewPageDescription" xml:space="preserve">
+        <value>A nice visualization of people performance related to tasks. This page uses Charts and Grial Card Views.</value>
+    </data>    
+    
+    <!--FEATURES-->
+    <data name="FeatureRtlInvite" xml:space="preserve">
+        <value>Please try the RTL button on top to see the app with a right-to-left layout.</value>
+    </data>
+    <data name="FeatureI18nInvite" xml:space="preserve">
+        <value>Please try the RTL button on top to see the app in arabic!</value>
+    </data>
+    <data name="FeatureI18nTitle" xml:space="preserve">
+        <value>i18n</value>
+    </data>
+    <data name="FeatureI18nDescription" xml:space="preserve">
+        <value>Grial based apps are localizable by default, which means they support different languages effortlessly. We provide a XAML markup extension to consume strings from RESX files and runtime options to change the app language.</value>
+    </data>
+    <data name="FeatureRTLTitle" xml:space="preserve">
+        <value>Right-to-left</value>
+    </data>
+    <data name="FeatureRTLDescription" xml:space="preserve">
+        <value>All pages come with support for right-to-left languages with the same XAML code. Yes! A single XAML codebase that works for both LTR and RTL with no duplicated chunks of code, conditional visibilities or other complexities. We also provide the option to change the layout direction at runtime as a user preference.</value>
+    </data>    
+    <data name="FeatureDataGridTitle" xml:space="preserve">
+        <value>DataGrid</value>
+    </data>
+    <data name="FeatureDataGridDescription" xml:space="preserve">
+        <value>Display tabular data with our cross-platform Data Grid. Easily customize its look and feel through XAML properties such as odd row color, header background color, etc., or go deeper into customization using templates for cells, columns, headers, etc. It allows sorting and selection.</value>
+    </data>
+    
+    <data name="FeatureCardViewTitle" xml:space="preserve">
+        <value>Card View</value>
+    </data>
+    <data name="FeatureCardViewDescription" xml:space="preserve">
+        <value>One of the most used mobile UI patterns now simplified and available for Xamarin Forms through XAML. Define the shadow color, shadow blur, and corner radius, set the background color and use it as a container for any of your contents.</value>
+    </data>
+    
+    <data name="FeatureVideoPlayerTitle" xml:space="preserve">
+        <value>Video Player </value>
+    </data>
+    <data name="FeatureVideoPlayerDescription" xml:space="preserve">
+        <value>A complete cross-platform video player available in Xamarin Forms and fully skinnable through XAML. You can use it as a background for your page, or simply to show a video feed. Easily reproduce local or remote videos in a variety of formats including Youtube.</value>
+    </data>
+
+    <data name="FeaturePopupsTitle" xml:space="preserve">
+        <value>Pop Ups</value>
+    </data>
+    <data name="FeaturePopupsDescription" xml:space="preserve">
+        <value>A full collection of beautiful dialogs and pop-us made in XAML, fully customizable and themeable. It covers the most typical use cases such as: notifications, user feedback, irregular dialogs, custom action sheets, and more.</value>
+    </data>
+
+    <data name="FeatureCarouselViewTitle" xml:space="preserve">
+        <value>Carousel View</value>
+    </data>
+    <data name="FeatureCarouselViewDescription" xml:space="preserve">
+        <value>Display a collection of subviews in your page through the Carousel View. It is fully customizable and supports progressive animations allowing to change your content on user drag events, enabling rich UIs for your app that your users will enjoy.</value>
+    </data>
+
+    <data name="FeatureAnimationsViewTitle" xml:space="preserve">
+        <value>Animations</value>
+    </data>
+    <data name="FeatureAnimationsViewDescription" xml:space="preserve">
+        <value>Easily incorporate our animations API and add life to your app. Create lovely and engaging UXs on user scroll. Translate or rotate items, change their colors, fade and scale them to achieve outstanding parallax effects. The combinations are infinite, and your users will love your app.</value>
+    </data>
+
+    <data name="FeatureGradientsViewTitle" xml:space="preserve">
+        <value>Gradients</value>
+    </data>
+    <data name="FeatureGradientsViewDescription" xml:space="preserve">
+        <value>A great new addition to allow further styling and customization of your app. No need to create images. Linear and radial gradients are now available in XAML through our expressive API: define the colors, color stops, opacity, angles, relative or absolute positioning in a similar fashion as in CSS.</value>
+    </data>
+
+    <data name="FeatureGrialNavbarViewTitle" xml:space="preserve">
+        <value>Grial Navbar</value>
+    </data>
+    <data name="FeatureGrialNavbarViewDescription" xml:space="preserve">
+        <value>One of the most requested features for Xamarin Forms finally is here: now you can make your navigation bar fully transparent, or simulate a taller bar. You can combine its power by using our new XAML gradients and animations to make gorgeous and engaging UIs.</value>
+    </data>
+
+    <data name="FeatureCheckboxesAndRadiosTitle" xml:space="preserve">
+        <value>Checkboxes and Radios</value>
+    </data>
+    <data name="FeatureCheckboxesAndRadiosDescription" xml:space="preserve">
+        <value>Complete your UI interaction needs in Xamarin Forms by including single and multiple user selection through checkboxes and radios with fully customizable XAML templates. Change colors, styles, sizes to suit your needs. Take your data forms pages to the next level.</value>
+    </data>
+
+    <data name="FeatureTabControlTitle" xml:space="preserve">
+        <value>Tab Control</value>
+    </data>
+    <data name="FeatureTabControlDescription" xml:space="preserve">
+        <value>Switch views inside your page easily by alternating content visibility. Default look and feel matching Android and iOS and their native positioning. Fully customizable appearance through XAML templates and styles. Icon support. Full width or AutoScrollable, no matter how many tabs you add they will scroll automatically.</value>
+    </data>
+
+    <data name="FeatureRepeaterTitle" xml:space="preserve">
+        <value>Repeater</value>
+    </data>
+    <data name="FeatureRepeaterDescription" xml:space="preserve">
+        <value>A layout that allows repeating content inside. It supports bindings, data templates, horizontal and vertical orientation, items selection and virtualization.</value>
+    </data>
+
+    <data name="FeatureWrapPanelTitle" xml:space="preserve">
+        <value>Wrap Panel</value>
+    </data>
+    <data name="FeatureWrapPanelDescription" xml:space="preserve">
+        <value>Our wrap-panel layout allows displaying wrapped content inside. It arranges its children horizontally inside it, and then wraps the display of subsequent children to additional rows. Supports templates, bindings or XAML content directly.</value>
+    </data>
+
+    <data name="FeatureGridViewTitle" xml:space="preserve">
+        <value>Grid View </value>
+    </data>
+    <data name="FeatureGridViewDescription" xml:space="preserve">
+        <value>A bindable and dynamic UI control that inherits from Grid. It allows to easily control how column and rows rendered from a bound data source.</value>
+    </data>
+
+    <data name="FeatureIconsTitle" xml:space="preserve">
+        <value>Icons </value>
+    </data>
+    <data name="FeatureIconsDescription" xml:space="preserve">
+        <value>Grial 3 provides 8 fonts containing more than free 5K icons available from XAML! Icons are provided in different styles: filled, line, matching look and feel for material design and iOS. They will render sharply across different devices with different pixel densities and resolutions, making this a very flexible and maintainable way that avoids generating lots of bitmaps.</value>
+    </data>
+
+    <data name="FeatureGrialFlowsTitle" xml:space="preserve">
+        <value>Grial Flows </value>
+    </data>
+    <data name="FeatureGrialFlowsDescription" xml:space="preserve">
+        <value>Our newest addition to the kit: the flows can be seen as micro apps that cover typical patterns and UX. They contain a certain number of related screens, templates and UI controls, that work together in harmony as a unit. Messages, movie catalog, tasks dashboard and e-commerce flows are available.</value>
+    </data>
+
+    <data name="FeatureSafeAreaEffectTitle" xml:space="preserve">
+        <value>iOS Safe Area Effects</value>
+    </data>
+    <data name="FeatureSafeAreaEffectDescription" xml:space="preserve">
+        <value>Our Xamarin Forms effects provide fine-grained control to adjust your page content to the device safe area insets making sure it's never clipped by the rounded corners or the home indicator. The background elements can cover every pixel of the screen and through optional paddings you avoid actual content clipping.</value>
+    </data>
+
+    <data name="FeatureCustomRenderersTitle" xml:space="preserve">
+        <value>Custom Renderers</value>
+    </data>
+    <data name="FeatureCustomRenderersDescription" xml:space="preserve">
+        <value>Have more control over common Xamarin Forms controls to make them look exactly as you need them. We added more styling properties to controls such as editor, entry, pickers, searchbar and more.</value>
+    </data>
+
+    <data name="FeatureResponsiveHelpersTitle" xml:space="preserve">
+        <value>Responsive Helpers</value>
+    </data>
+    <data name="FeatureResponsiveHelpersDescription" xml:space="preserve">
+        <value>Have full control over how your UI renders across multiple devices, platforms and screen orientations. Control how your page’s content flow. Set your font sizes, alignments, margins, paddings and almost every possible property for each specific case.</value>
+    </data>
+
+    <data name="FeatureChartsTitle" xml:space="preserve">
+        <value>Charts</value>
+    </data>
+    <data name="FeatureChartsDescription" xml:space="preserve">
+        <value>Add data visualization to your app through our beautifully styled charts. Easily change colors and bind your data through our helpers and wrappers from XAML code.</value>
+    </data>
+
+    <data name="FeatureAnimationLoopsTitle" xml:space="preserve">
+        <value>Animation Loop Behaviors</value>
+    </data>
+    <data name="FeatureAnimationLoopsDescription" xml:space="preserve">
+        <value>Make your still imagery come to life by adding our Ken Burns behavior. Easily get this panning and zooming effect in your images, icons or any view in your app through this behavior. Use our Pulse behavior to highlight important pieces of UI so your users don't miss anything.</value>
+    </data>
+    <data name="FeaturePoweredBy" xml:space="preserve">
+        <value>Powered by</value>
+    </data>
+    
+    <!-- DEMO APP ABOUT PAGE -->
+    <data name="GrialAboutDescription" xml:space="preserve">
+        <value>Designed for .NET Developers. this provides a complete ready made collection of fully customizable layouts, components, templates and resources to help developers and companies build beautiful cross-platform mobile app using Xamarin.Forms.</value>
+    </data>
+    <data name="GrialAboutMission" xml:space="preserve">
+        <value>We are a team designers and developers on a mission: taking Xamarin.Forms apps to the next level while having fun, becoming better, healthy, happier people in the process.</value>
+    </data>
+    <data name="GrialAboutTeam" xml:space="preserve">
+        <value>Our team is also well known for our XAML Previsualization tool, Gorilla Player.</value>
+    </data>
+    <data name="GrialAboutFollowUs" xml:space="preserve">
+        <value>Follow us on:</value>
+    </data>
+    <data name="GrialAboutEagerToHear" xml:space="preserve">
+        <value>We are eager to hear about your experiences working with Xamarin. 
+        
+Don’t be shy and say hello!</value>
+    </data>
+    <data name="GrialAboutSayHello" xml:space="preserve">
+        <value>Say Hello</value> 
+    </data>
+    <data name="GrialAboutGrialUses" xml:space="preserve">
+        <value>Grial uses these </value>
+    </data>
+    <data name="GrialAboutGrialThirdParty" xml:space="preserve">
+        <value>third party packages</value>
+    </data>
+    <data name="GrialAboutGrialPoweredBy" xml:space="preserve">
+        <value> powered by the awesome </value>
+    </data>
+    <data name="GrialAboutGrialCommunity" xml:space="preserve">
+        <value> community.</value>
+    </data>
+    <data name="GrialAboutTestimonialMiguelDeIcaza" xml:space="preserve">
+        <value>I am blown away by how good looking and easy to use GrialKit is. Do yourself a favor and check it out.</value>
+    </data>
+    <data name="GrialAboutTestimonialDavidOrtinau" xml:space="preserve">
+        <value>GrialKit 3.0 not only gives you gorgeous animations, styling, and tons of layouts, but it teaches you amazing techniques for delivering next level mobile experiences.</value>
+    </data>
+    
+    <data name="WhatsNewDescription1" xml:space="preserve">
+        <value>More than 160 XAML pages and templates. An infinite set of possibilities to build beautiful apps.</value>
+    </data> 
+    <data name="WhatsNewDescription2" xml:space="preserve">
+        <value>Themeable, scalable, Grial Icons provide a huge collection of icons and styles.</value>
+    </data> 
+    <data name="WhatsNewDescription3" xml:space="preserve">
+        <value>Fluid animations, gradient support, flexible layouts, and much more.</value>
+    </data> 
+    <data name="WhatsNewDescription4" xml:space="preserve">
+        <value>Tab Control, Data grid, Checkbox, Radio Button, Video Player, Repeater and more.</value>
+    </data> 
+    <data name="WhatsNewDescription5" xml:space="preserve">
+        <value>Include screens in your project and build your own theme through Grial Web Admin.</value>
+    </data> 
+    <data name="WhatsNewTitle1" xml:space="preserve">
+        <value>160+ XAMLs</value>
+    </data> 
+    <data name="WhatsNewTitle2" xml:space="preserve">
+        <value>More than 5000 Icons</value>
+    </data>     
+    <data name="WhatsNewTitle3" xml:space="preserve">
+        <value>Richer content</value>
+    </data> 
+    <data name="WhatsNewTitle4" xml:space="preserve">
+        <value>12 New Controls</value>
+    </data> 
+    <data name="WhatsNewTitle5" xml:space="preserve">
+        <value>Fast Kickstart</value>
+    </data> 
+    
+    <data name="TermsAndConditionsURL" xml:space="preserve">
+        <value>https://bit.ly/2DZUJnS</value>
+    </data> 
+
+    <!-- Pick Your Theme -->
+    <data name="StringPickYourTheme" xml:space="preserve">
+        <value>Pick your theme</value>
+    </data>
+    <data name="LightThemeDescription" xml:space="preserve">
+        <value>Make your eyes cry of happiness!</value>
+    </data>
+    <data name="DarkThemeDescription" xml:space="preserve">
+        <value>Professional look for your screens.</value>
+    </data>
+    <data name="BlackboardThemeDescription" xml:space="preserve">
+         <value>Get a clean view of Grial layouts.</value>
+    </data>    
+    <data name="BlackSunThemeDescription" xml:space="preserve">
+        <value>A chill vibe for your app.</value>
+    </data>
+    <data name="HazeThemeDescription" xml:space="preserve">
+        <value>Natural look of Grial layouts.</value>
+    </data>
+    <data name="CabernetLightThemeDescription" xml:space="preserve">
+        <value>The delicate choice for your app.</value>
+    </data>
+    
+</root>

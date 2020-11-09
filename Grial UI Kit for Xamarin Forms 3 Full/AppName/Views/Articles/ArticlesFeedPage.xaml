@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.ArticlesFeedPage" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	Title="{ grial:Translate PageTitleArticlesFeed }"
+	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+    <ListView
+		SeparatorColor="{ DynamicResource MainWrapperBackgroundColor }"
+		SeparatorVisibility="Default"
+		ItemsSource="{ Binding List }"
+		ItemTapped="OnItemTapped"
+		HasUnevenRows="true"
+		Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <local:ArticleFeedItemTemplate
+						Padding="{ StaticResource MainWrapperPadding }" />
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

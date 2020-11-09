@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.WelcomeStarterPage" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	Title="{ grial:Translate PageTitleWelcomeStarter }"
+	BackgroundColor="{DynamicResource BasePageColor}">
+
+	<ContentPage.Content>
+		<!-- MAIN WRAPPER -->
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="*" />
+				<RowDefinition
+					Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<Grid
+				Grid.Row="0"
+				VerticalOptions="Center"
+				HorizontalOptions="Center">
+				<Grid.RowDefinitions>
+					<RowDefinition
+						Height="60*" />
+					<RowDefinition
+						Height="40*" />
+				</Grid.RowDefinitions>
+
+
+				<!--ICON BACKGROUND-->
+				<Label
+					Grid.Row="0"
+					Style="{StaticResource FontIcon}"
+					Text="{ x:Static local:GrialIconsFont.ShapeCircle }"
+					TextColor="{DynamicResource ComplementColor}"
+					VerticalOptions="Center"
+					HorizontalOptions="Center"
+					FontSize="250"
+					Opacity="0.1" />
+
+				<!--ICON BACKGROUND-->
+				<Label
+					Grid.Row="0"
+					Style="{StaticResource FontIcon}"
+					Text="{ x:Static local:GrialIconsFont.ShapeCircle }"
+					TextColor="{DynamicResource ComplementColor}"
+					VerticalOptions="Center"
+					HorizontalOptions="Center"
+					FontSize="180"
+					Opacity="0.1" />	
+
+				<!--ICON-->
+				<Label
+					Grid.Row="0"
+					Text="{ x:Static local:GrialIconsFont.Check }"
+					Style="{StaticResource FontIcon}"
+					FontSize="100"
+					HorizontalTextAlignment="Center"
+					TextColor="{ DynamicResource ComplementColor }"
+					VerticalOptions="Center"
+					HorizontalOptions="Center" />
+
+				
+				<!--TEXT -->
+				<StackLayout
+					Grid.Row="1"
+					VerticalOptions="Center"
+					Padding="60,0"
+					Spacing="2">
+					
+					<Label
+						HorizontalTextAlignment="Center"
+						Text="{ grial:Translate LabelWelcomeToGrialStarter }"
+						FontSize="24"
+						FontAttributes="Bold"
+						TextColor="{ DynamicResource BaseTextColor }" />
+					
+					<Label
+						HorizontalTextAlignment="Center"
+						Opacity="0.8"
+						Text="{ grial:Translate LabelWelcomeToGrialStarterDescription }"
+						FontSize="16"
+						TextColor="{ DynamicResource BaseTextColor }" />
+					
+				</StackLayout>
+
+			
+			</Grid>
+
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

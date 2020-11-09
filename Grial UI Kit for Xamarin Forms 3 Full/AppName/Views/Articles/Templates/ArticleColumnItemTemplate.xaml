@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.ArticleColumnItemTemplate"
+	BackgroundColor="{ DynamicResource BasePageColor }">
+    <ContentView.Content>
+        <Grid
+			Padding="15,15,15,20"
+			RowSpacing="5"
+			ColumnSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="Auto" />
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="*" />
+                <ColumnDefinition
+					Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- TITLE -->
+            <Label
+				Grid.Row="0"
+				Grid.Column="0"
+				Grid.ColumnSpan="2"
+				Text="{ Binding Title }"
+				Style="{ StaticResource LabelBoldStyle }"
+				FontSize="{ 
+                    grial:OnOrientationDouble 
+                        PortraitPhone=14,
+                        LandscapePhone=14,
+                        PortraitTablet=16,
+                        LandscapeTablet=18 
+                }"
+				LineBreakMode="TailTruncation"
+				TextColor="{ DynamicResource AccentColor }" />
+
+            <!-- IMAGE -->
+            <ffimageloading:CachedImage
+				Grid.Row="1"
+				Grid.Column="0"
+				Grid.RowSpan="2"
+				FadeAnimationEnabled="true"
+				TranslationY="5"
+				Source="{ Binding BackgroundImage }"
+				HeightRequest="100"
+				VerticalOptions="StartAndExpand"
+				Aspect="AspectFill" />
+
+            <!-- ARTICLE -->
+            <Label
+				Grid.Row="1"
+				Grid.Column="1"
+				Text="{ Binding Body }"
+				FontSize="{ 
+                    grial:OnOrientationDouble 
+                        PortraitPhone=12,
+                        LandscapePhone=12,
+                        PortraitTablet=14,
+                        LandscapeTablet=14 
+                }"
+				HeightRequest="{ 
+                    grial:OnOrientationDouble 
+                        PortraitPhone=50,
+                        LandscapePhone=50,
+                        PortraitTablet=5,
+                        LandscapeTablet=70 
+                }"
+				MaxLines="{ 
+                    grial:OnOrientationDouble 
+                        Default=5,
+                        LandscapeTablet=4 
+                }"
+				LineBreakMode="TailTruncation" />
+
+            <!-- FOOTER -->
+            <StackLayout
+				Grid.Row="2"
+				Grid.Column="1"
+				VerticalOptions="End"
+				Orientation="Horizontal">
+                <Label
+					Text="{ x:Static local:GrialIconsFont.Calendar }"
+					Style="{ StaticResource FontIcon }"
+					FontSize="{ grial:OnOrientationDouble 
+                        PortraitPhone=12,
+                        LandscapePhone=12,
+                        PortraitTablet=14,
+                        LandscapeTablet=14 }"
+					VerticalOptions="Center"
+					TextColor="{ DynamicResource AccentColor }" />
+                
+                <Label
+					Text="{ Binding When }"
+					Opacity=".7"
+					FontSize="{ grial:OnOrientationDouble 
+                        PortraitPhone=12,
+                        LandscapePhone=12,
+                        PortraitTablet=14,
+                        LandscapeTablet=14 
+                    }"
+					HorizontalOptions="FillAndExpand" />
+
+            </StackLayout>
+            
+        </Grid>
+    </ContentView.Content>
+    
+</ContentView>

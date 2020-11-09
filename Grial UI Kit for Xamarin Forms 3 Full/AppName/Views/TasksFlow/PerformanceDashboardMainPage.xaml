@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" 
+	x:Class="AppName.PerformanceDashboardMainPage"
+	Title="Performance Dashboard"
+	BackgroundColor="Transparent">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <grial:GreaterThanConverter
+				x:Key="ChartWidthConverter"
+				x:TypeArguments="x:Int32"
+				Threshold="15">
+                <grial:GreaterThanZeroConverter.TrueValue>700</grial:GreaterThanZeroConverter.TrueValue>
+                <grial:GreaterThanZeroConverter.FalseValue>-1</grial:GreaterThanZeroConverter.FalseValue>
+            </grial:GreaterThanConverter>
+
+            <!-- Grid Styles -->
+            <Style
+				TargetType="grial:DataGrid">
+                <Setter
+					Property="SelectedBackgroundColor"
+					Value="#20BFE1FF" />
+                <Setter
+					Property="HeaderRowBackgroundColor"
+					Value="{ DynamicResource DataGridHeaderRowBackgroundColor }" />
+                <Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource DataGridBackgroundColor }" />
+                <Setter
+					Property="GridSeparatorVisibility"
+					Value="None" />
+                <Setter
+					Property="HeaderSeparatorVisibility"
+					Value="None" />
+            </Style>
+            
+            <!-- Column Styles -->
+            <Style
+				x:Key="BaseColumn"
+				TargetType="grial:DataGridColumn">
+                <Setter
+					Property="IsSortable"
+					Value="True" />
+                <Setter
+					Property="SortIconsFontFamily"
+					Value="{StaticResource IconsFontFamily}" />
+                <Setter
+					Property="DescendingSortIconText"
+					Value="{ x:Static local:GrialIconsFont.ChevronDown }" />
+                <Setter
+					Property="AscendingSortIconText"
+					Value="{ x:Static local:GrialIconsFont.ChevronUp }" />
+                <Setter
+					Property="ColumnWidth"
+					Value="0.1*" />
+                <Setter
+					Property="HeaderTextColor"
+					Value="{ DynamicResource DataGridHeaderTextColor }" />
+                <Setter
+					Property="HeaderTextAlignment"
+					Value="Center" />
+                <Setter
+					Property="HeaderFontSize"
+					Value="14" />
+                <Setter
+					Property="HeaderFontFamily"
+					Value="{ StaticResource AppBoldFontFamily }" />
+                <Setter
+					Property="CellTextColor"
+					Value="{ DynamicResource DataGridCellTextColor }" />
+                <Setter
+					Property="CellPadding"
+					Value="14" />
+                <Setter
+					Property="CellFontSize"
+					Value="14" />
+                <Setter
+					Property="CellTextAlignment"
+					Value="Center" />
+                <Setter
+					Property="CellVerticalAlignment"
+					Value="Center" />
+                <Setter
+					Property="HeaderPadding"
+					Value="4,14" />
+            </Style>
+
+            <Style
+				x:Key="TeamMemberColumn"
+				TargetType="grial:DataGridColumn"
+				BasedOn="{StaticResource BaseColumn}">
+                <Setter
+					Property="BindingPath"
+					Value="Name" />
+                <Setter
+					Property="HeaderText"
+					Value="{ grial:Translate TeamMember }" />
+                <Setter
+					Property="HeaderTextAlignment"
+					Value="Start" />
+                <Setter
+					Property="HeaderPadding"
+					Value="14" />
+                <Setter
+					Property="ColumnWidth"
+					Value="180" />
+
+                <Setter
+					Property="CellTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+
+                            <Grid
+								Grid.Row="0"
+								Grid.Column="0"
+								ColumnSpacing="10"
+								RowSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+										Width="Auto" />
+                                    <ColumnDefinition
+										Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+										Height="0.55*" />
+                                    <RowDefinition
+										Height="0.45*" />
+                                </Grid.RowDefinitions>
+
+                                <!-- AVATAR -->
+                                <local:AvatarWithStatus
+									HeightRequest="35"
+									WidthRequest="35"
+									VerticalOptions="Center"
+									Grid.RowSpan="2"
+									HorizontalOptions="Center"
+									Source="{ Binding Avatar }"
+									Status="{ Binding Status }" />
+
+                                <!-- NAME -->
+                                <Label
+									Grid.Column="1"
+									FontSize="14"
+									Text="{Binding Name}"
+									VerticalOptions="End"
+									LineBreakMode="TailTruncation" />
+
+                                <!-- TITLE -->
+                                <Label
+									Grid.Column="1"
+									Grid.Row="1"
+									FontSize="10"
+									Text="{Binding Team, Converter={StaticResource ToUpperConverter}}"
+									VerticalOptions="Start" />
+                                
+                            </Grid>
+                        
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style
+				x:Key="OpenColumn"
+				TargetType="grial:DataGridColumn"
+				BasedOn="{StaticResource BaseColumn}">
+                <Setter
+					Property="BindingPath"
+					Value="Open" />
+                <Setter
+					Property="HeaderText"
+					Value="{ grial:Translate StringOpen }" />
+            </Style>
+
+            <Style
+				x:Key="ClosedColumn"
+				TargetType="grial:DataGridColumn"
+				BasedOn="{StaticResource BaseColumn}">
+                <Setter
+					Property="BindingPath"
+					Value="Closed" />
+                <Setter
+					Property="HeaderText"
+					Value="{ grial:Translate StringClosed }" />
+            </Style>
+            
+            <Style
+				x:Key="ScoreColumn"
+				TargetType="grial:DataGridColumn"
+				BasedOn="{StaticResource BaseColumn}">
+                <Setter
+					Property="BindingPath"
+					Value="Score" />
+                <Setter
+					Property="HeaderText"
+					Value="{ grial:Translate StringScore }" />
+                
+                <Setter
+					Property="CellTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+       
+                            <local:RingChart
+								Value="{ Binding Score }"
+								ValueColor="{ DynamicResource ComplementColor }"
+								RingChartValueLabelFontSize="12"
+								RingChartValueLabel="{ Binding ScoreLabel }"
+								RingChartTextColor="{ DynamicResource ComplementColor }" />
+                        
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid
+			RowSpacing="0">
+                
+            <!-- FIXED BACKGROUND IMAGE -->
+            <Image
+				Style="{ StaticResource MainMenuBackgroundImageStyle }" />
+
+            <!-- OVERLAPPED CONTENT -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+                
+                <!-- FILTER -->
+                <local:PerformanceDashboardFilterTemplate
+					Grid.Row="0"
+					grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right" />
+
+                <!-- SCROLLING AREA -->
+                <ScrollView
+					Grid.Row="1"
+					grial:Effects.IgnoreIOSSafeAreaOnScrollView="All">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="220" />
+                            <RowDefinition
+								Height="Auto" />
+                            <RowDefinition
+								Height="Auto" />
+                        </Grid.RowDefinitions>
+                        
+                        <!-- CHART -->
+                        <ScrollView
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+							Orientation="Horizontal"
+							Margin="20,0"
+							Grid.Row="0">
+                            <local:LineChart
+								WidthRequest="{ Binding SelectedPeriodData.Series.Count, Converter={StaticResource ChartWidthConverter} }"
+								MaxValue="{ Binding SelectedPeriodData.MaxValue }"
+								ItemsSource="{ Binding SelectedPeriodData.Series }"
+								IsAnimated="true"
+								ShowValueLabel="true"
+								LabelOrientation="Horizontal"
+								ValueLabelOrientation="Horizontal"
+								LabelColor="{ DynamicResource InverseTextColor }"
+								DefaultEntryColor="{ DynamicResource InverseTextColor }"
+								LineSize="1"
+								LineMode="Straight"
+								PointSize="10"
+								UseEntryValuesAsLabels="true"
+								PointMode="Square"
+								AreaAlpha="0"
+								LabelTextSize="9" />
+                        </ScrollView>
+                        
+                        <!-- SCORECARDS -->
+                        <grial:Repeater
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+							Grid.Row="1"
+							ItemsSource="{ Binding Metrics }"
+							Orientation="Horizontal"
+							HeightRequest="90"
+							Spacing="10"
+							Padding="5"
+							ScrollPadding="10,0"
+							Margin="0,0,0,5"
+							VerticalOptions="Center"
+							ItemSize="110"
+							ScrollBarVisibility="Never">
+
+                            <grial:Repeater.ItemTemplate>
+                                <DataTemplate>
+                                    <local:PerformanceDashboardScorecardTemplate />
+                                </DataTemplate>
+                            </grial:Repeater.ItemTemplate>
+
+                        </grial:Repeater> 
+                        
+                        <!-- DATA GRID -->
+                        <grial:DataGrid
+							Grid.Row="2"
+							Padding="0,0,0,20"
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right"
+							RowHeight="80"
+							SelectionMode="Row"
+							ItemSelected="OnItemSelected"
+							HorizontalOptions="FillAndExpand"
+							VerticalOptions="FillAndExpand"
+							ItemsSource="{ Binding TeamMembers }">
+                            <grial:DataGrid.ColumnDefinitions>
+                                <grial:DataGridColumn
+									Style="{ StaticResource TeamMemberColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource OpenColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource ClosedColumn }" />
+                                <grial:DataGridColumn
+									Style="{ StaticResource ScoreColumn }" />
+                            </grial:DataGrid.ColumnDefinitions>
+                            
+                        </grial:DataGrid>
+                    </Grid>
+                </ScrollView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

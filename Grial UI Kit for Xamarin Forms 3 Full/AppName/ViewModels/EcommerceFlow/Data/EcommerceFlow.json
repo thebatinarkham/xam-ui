@@ -1,0 +1,739 @@
+﻿{
+    "EcommerceFlowReviews": {
+        "$id": "ecommerce-flow-product-reviews",
+        "List": [
+            {
+                "$id": "ecommerce-flow-product-review-1",
+                "Title": "Nice product",
+                "Reviewer": "Regina Joplin",
+                "RatingValue": 4.3,
+                "RatingMax": 5.0,
+                "Date": "October 2th 2018",
+                "Comment": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors. This is how we design a great article sample."
+            },
+            {
+                "Title": "Very good choice",
+                "Reviewer": "Pat Davies",
+                "RatingValue": 4.0,
+                "RatingMax": 5.0,
+                "Date": "August 25th 2018",
+                "Comment": "I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly."
+            },
+            {
+                "Title": "Nice product",
+                "Reviewer": "Regina Joplin",
+                "RatingValue": 4.3,
+                "RatingMax": 5.0,
+                "Date": "October 2th 2018",
+                "Comment": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors. This is how we design a great article sample."
+            },
+            {
+                "Title": "Very good choice",
+                "Reviewer": "Pat Davies",
+                "RatingValue": 4.0,
+                "RatingMax": 5.0,
+                "Date": "August 25th 2018",
+                "Comment": "I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly."
+            },
+            {
+                "Title": "Exceelent!!",
+                "Reviewer": "Peter Puchelli",
+                "RatingValue": 5.0,
+                "RatingMax": 5.0,
+                "Date": "November 2th 2017",
+                "Comment": " love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly."
+            },
+            {
+                "Title": "Fine",
+                "Reviewer": "Rick Morty",
+                "RatingValue": 3.0,
+                "RatingMax": 5.0,
+                "Date": "July 5th 2017",
+                "Comment": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors. This is how we design a great article sample."
+            }
+        ],
+        "Count": 7
+    },
+
+    "EcommerceMainPage.xaml": {
+        "Categories": [
+            {
+                "Name": "Lamps",
+                "Content": [
+                    {
+                        "$id": "prod-lamp-1",
+                        "Name": "Alta Lamp",
+                        "Manufacturer": "BINARIA",
+                        "Description": "This is Alta Lamp, designed by Roberto Camela the most innovative product designer from a beatiful scandinavian country.",
+                        "Price": 49.99,
+                        "IsNew": true,
+                        "IsFavorite": true,
+                        "Image": "http://52.10.147.219/system/uploads/images/product_big_lamp_c1_l@2x.png",
+                        "Rating": 4.3,
+                        "Reviews": {
+                            "$ref": "ecommerce-flow-product-reviews" 
+                        },
+                        "AvailableColors": [
+                            {
+                                "Color": "#ABDACF",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c1_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c1_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c1_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#9184C7",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c2_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c2_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c2_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#E47C7C",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c3_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c3_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c3_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#D5DF6F",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c4_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c4_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_big_lamp_c4_r@2x.png"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "$id": "prod-lamp-2",
+                        "Name": "Chuck Norris Lamp",
+                        "Manufacturer": "BINARIA",
+                        "Description": "Sharped angles, it looks hard, it's masculine it moves like a ninja lamp. This is the Chuck Norris Lamp and it will kick your light bulbs.",
+                        "Price": 39.99,
+                        "IsNew": false,
+                        "IsFavorite": false,
+                        "Image": "http://52.10.147.219/system/uploads/images/product_lamp_1_c1_l@2x.png",
+                        "Rating": 5.0,
+                        "Reviews": {
+                            "$ref": "ecommerce-flow-product-reviews" 
+                        },
+                        "AvailableColors": [
+                            {
+                                "Color": "#585857",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c1_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c1_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c1_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#EBEAEA",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c2_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c2_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c2_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#BE3A39",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c3_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c3_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c3_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#3D4084",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c4_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c4_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_lamp_1_c4_r@2x.png"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Sofas",
+                "Content": [
+                    {
+                        "$id": "prod-sofa-1",
+                        "Name": "Sofabio",
+                        "Manufacturer": "BINARIA",
+                        "Description": "Sofabio was carefully designed by a husband that was constantly kicked out of bed and sent to the sofa to spend the night. Durable, strong, designed for mens that like UFC.",
+                        "Price": 499,
+                        "IsNew": false,
+                        "IsFavorite": true,
+                        "Image": "http://52.10.147.219/system/uploads/images/product_feature_1@2x.png",
+                        "Rating": 3.9,
+                        "Reviews": {
+                            "$ref": "ecommerce-flow-product-reviews" 
+                        },
+                        "AvailableColors": [
+                            {
+                                "Color": "#C78E33",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c3_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c3_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c3_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#574741",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c1_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c1_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c1_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#CCCCCC",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c2_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c2_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c2_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#000000",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c4_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c4_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c4_r@2x.png"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "$id": "prod-sofa-2",
+                        "Name": "Al Bondi",
+                        "Manufacturer": "BINARIA",
+                        "Description": "Designed by Al Bondi from Married... with children. Lay down and spend a good time while watching your favorite tv program and get your brain washed once more.",
+                        "Price": 699,
+                        "IsNew": true,
+                        "IsFavorite": false,
+                        "Image": "http://52.10.147.219/system/uploads/images/product_feature_2@2x.png",
+                        "Rating": 3.5,
+                        "Reviews": {
+                            "$ref": "ecommerce-flow-product-reviews" 
+                        },
+                        "AvailableColors": [
+                            {
+                                "Color": "#000000",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_3_c2_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_3_c2_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_3_c2_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#A7926D",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_3_c3_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_3_c3_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_3_c3_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#CBCBCB",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_3_c4_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_3_c4_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_3_c4_r@2x.png"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "$id": "prod-sofa-3",
+                        "Name": "Offspring",
+                        "Manufacturer": "BINARIA",
+                        "Description": "So go on, indulge yourself. That's right, kick off your shoes, put your feet up, lean back and just enjoy the melodies. After all, music soothes even the savage beasts.",
+                        "Price": 799,
+                        "IsNew": false,
+                        "IsFavorite": false,
+                        "Image": "http://52.10.147.219/system/uploads/images/product_feature_3@2x.png",
+                        "Rating": 3.8,
+                        "Reviews": {
+                            "$ref": "ecommerce-flow-product-reviews" 
+                        },
+                        "AvailableColors": [
+                            {
+                                "Color": "#E6E6E6",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c1_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c1_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c1_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#404040",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c2_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c2_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c2_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#A7916E",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c3_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c3_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c3_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#7274F7",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c4_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c4_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_sofa_2_c4_r@2x.png"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Chairs",
+                "Content": [
+                    {
+                        "$id": "prod-chair-1",
+                        "Name": "La Shisha",
+                        "Manufacturer": "BINARIA",
+                        "Description": "This chair is not comfortable, is not durable, is not pretty, but you can pretend you know something about design with your friends.",
+                        "Price": 129,
+                        "IsNew": false,
+                        "IsFavorite": true,
+                        "Image": "http://52.10.147.219/system/uploads/images/product_chair_2_c2_l@2x.png",
+                        "Rating": 0.7,
+                        "Reviews": {
+                            "$ref": "ecommerce-flow-product-reviews" 
+                        },
+                        "AvailableColors": [
+                            {
+                                "Color": "#E6E6E6",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c1_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c1_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c1_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#894D31",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c2_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c2_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c2_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#3D74A0",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c3_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c3_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c3_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#B23332",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c4_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c4_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_2_c4_r@2x.png"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "$id": "prod-chair-2",
+                        "Name": "Chat Noir",
+                        "Manufacturer": "BINARIA",
+                        "Description": "Chat Noir, looks like a sofa but no, it's in fact a chair. The coolest thing about it, is that you can make a pile of Chat Noir chairs. Not comfortable.",
+                        "Price": 149,
+                        "IsNew": false,
+                        "IsFavorite": false,
+                        "Image": "http://52.10.147.219/system/uploads/images/product_chair_1_c1_l@2x.png",
+                        "Rating": 3.5,
+                        "Reviews": {
+                            "$ref": "ecommerce-flow-product-reviews" 
+                        },
+                        "AvailableColors": [
+                            {
+                                "Color": "#0c0c0c",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c1_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c1_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c1_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#E6E6E6",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c2_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c2_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c2_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#CD2026",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c3_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c3_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c3_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#774CAD",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c4_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c4_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_1_c4_r@2x.png"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "$id": "prod-chair-3",
+                        "Name": "The Crusher",
+                        "Manufacturer": "BINARIA",
+                        "Description": "If your back hurts, this not for you. This chair looks stylish, it looks pretty on photos, but it will brake your back if you spend more than 4 minutes on it. Buy it and feed your instagram.",
+                        "Price": 139,
+                        "IsNew": false,
+                        "IsFavorite": false,
+                        "Image": "http://52.10.147.219/system/uploads/images/product_chair_4_c3_l@2x.png",
+                        "Rating": 3.5,
+                        "Reviews": {
+                            "$ref": "ecommerce-flow-product-reviews" 
+                        },
+                        "AvailableColors": [
+                            {
+                                "Color": "#C5482A",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c1_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c1_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c1_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#E6E6E6",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c2_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c2_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c2_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#4553BA",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c3_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c3_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c3_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#7DCB2D",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c4_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c4_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_chair_4_c4_r@2x.png"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Stools",
+                "Content": [
+                    {
+                        "$id": "prod-stool-1",
+                        "Name": "Stephan Kito",
+                        "Manufacturer": "BINARIA",
+                        "Description": "Say hello to Esteban Kito. Give your hobbit friends a warm welcome to your home and invite them to drink a beer on Estabn Kito. Not recommended for Elfos.",
+                        "Price": 49.99,
+                        "IsNew": true,
+                        "IsFavorite": false,
+                        "Image": "http://52.10.147.219/system/uploads/images/product_stool_2_c1_d@2x.png",
+                        "Rating": 4.7,
+                        "Reviews": {
+                            "$ref": "ecommerce-flow-product-reviews" 
+                        },
+                        "AvailableColors": [
+                            {
+                                "Color": "#969696",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_stool_2_c1_d@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_2_c1_f@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#2B2B2B",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_stool_2_c2_d@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_2_c2_f@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#942425",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_stool_2_c3_d@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_2_c3_f@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#275297",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_stool_2_c4_d@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_2_c4_f@2x.png"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "$id": "prod-stool-2",
+                        "Name": "Little Boshta",
+                        "Manufacturer": "BINARIA",
+                        "Description": "Give your house some style with this Little Boshta stool from the great CakeOne collection. Of course this is not to sit, only use it to put magazines on it and take some cool pictures for your friends and family.",
+                        "Price": 29.99,
+                        "IsNew": false,
+                        "IsFavorite": false,
+                        "Image": "http://52.10.147.219/system/uploads/images/product_stool_4_c4_r@2x.png",
+                        "Rating": 4.1,
+                        "Reviews": {
+                            "$ref": "ecommerce-flow-product-reviews" 
+                        },
+                        "AvailableColors": [
+                            {
+                                "Color": "#1F2022",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c1_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c1_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c1_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#BC1B1C",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c2_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c2_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c2_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#E6E6E6",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c3_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c3_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c3_r@2x.png"
+                                ]
+                            },
+                            {
+                                "Color": "#47AFC9",
+                                "Gallery": [
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c4_l@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c4_f@2x.png",
+                                    "http://52.10.147.219/system/uploads/images/product_stool_4_c4_r@2x.png"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "HighlightedProducts": [
+            {
+                "$ref": "prod-sofa-1"
+            },
+            {
+                "$ref": "prod-sofa-2"
+            },
+            {
+                "$ref": "prod-sofa-3"
+            }
+        ],
+        "Banner": "Get 25% off on newest collections"
+    },
+    "ProductDetailPage.xaml": {
+        "Name": "Sofabio",
+        "Manufacturer": "BINARIA",
+        "Description": "Sofabio was carefully designed by a husband that was constantly kicked out of bed and sent to the sofa to spend the night. Durable, strong, designed for mens that like UFC.",
+        "Price": 499,
+        "IsNew": true,
+        "IsFavorite": true,
+        "Image": "http://52.10.147.219/system/uploads/images/product_feature_1@2x.png",
+        "Rating": 3.9,
+        "Quantities": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "AvailableColors": [
+            {
+                "Color": "#C78E33",
+                "Gallery": [
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c3_l@2x.png",
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c3_f@2x.png",
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c3_r@2x.png"
+                ]
+            },
+            {
+                "Color": "#574741",
+                "Gallery": [
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c1_l@2x.png",
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c1_f@2x.png",
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c1_r@2x.png"
+                ]
+            },
+            {
+                "Color": "#CCCCCC",
+                "Gallery": [
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c2_l@2x.png",
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c2_f@2x.png",
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c2_r@2x.png"
+                ]
+            },
+            {
+                "Color": "#000000",
+                "Gallery": [
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c4_l@2x.png",
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c4_f@2x.png",
+                    "http://52.10.147.219/system/uploads/images/product_sofa_1_c4_r@2x.png"
+                ]
+            }
+        ],
+        "Reviews": {
+            "List": [
+            {
+                "Title": "Nice product",
+                "Reviewer": "Regina Joplin",
+                "RatingValue": 4.3,
+                "RatingMax": 5.0,
+                "Date": "October 2th 2018",
+                "Comment": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors. This is how we design a great article sample."
+            },
+            {
+                "Title": "Very good choice",
+                "Reviewer": "Pat Davies",
+                "RatingValue": 4.0,
+                "RatingMax": 5.0,
+                "Date": "August 25th 2018",
+                "Comment": "I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly."
+            },
+            {
+                "Title": "Nice product",
+                "Reviewer": "Regina Joplin",
+                "RatingValue": 4.3,
+                "RatingMax": 5.0,
+                "Date": "October 2th 2018",
+                "Comment": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors. This is how we design a great article sample."
+            },
+            {
+                "Title": "Very good choice",
+                "Reviewer": "Pat Davies",
+                "RatingValue": 4.0,
+                "RatingMax": 5.0,
+                "Date": "August 25th 2018",
+                "Comment": "I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly."
+            },
+            {
+                "Title": "Exceelent!!",
+                "Reviewer": "Peter Puchelli",
+                "RatingValue": 5.0,
+                "RatingMax": 5.0,
+                "Date": "November 2th 2017",
+                "Comment": " love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly."
+            },
+            {
+                "Title": "Fine",
+                "Reviewer": "Rick Morty",
+                "RatingValue": 3.0,
+                "RatingMax": 5.0,
+                "Date": "July 5th 2017",
+                "Comment": "In connection with this appellative of \"Whalebone whales,\" it is of great leap of yer happiness leadership colors. This is how we design a great article sample."
+            }
+        ]},
+        "RelatedProducts": [
+            {
+                "Name": "Al Bondi",
+                "Manufacturer": "BINARIA",
+                "Price": 699,
+                "Image": "http://52.10.147.219/system/uploads/images/product_feature_2@2x.png"
+            },
+            {
+                "Name": "Little Boshta",
+                "Manufacturer": "BINARIA",
+                "Price": 29.99,
+                "Image": "http://52.10.147.219/system/uploads/images/product_stool_4_c4_r@2x.png",
+                "Rating": 4.1
+            },
+            {
+                "Name": "Alta Lamp",
+                "Manufacturer": "BINARIA",
+                "Price": 49.99,
+                "Image": "http://52.10.147.219/system/uploads/images/product_big_lamp_c1_l@2x.png"
+            },
+            {
+                "$ref": "prod-sofa-3"
+            }
+        ]
+    },
+    "OrderConfirmationPage.xaml": {
+        "Product": {
+            "$id": "prod-with-related",
+            "Name": "Sofabio",
+            "Manufacturer": "BINARIA",
+            "Description": "Sofabio was carefully designed by a husband that was constantly kicked out of bed and sent to the sofa to spend the night. Durable, strong, designed for mens that like UFC.",
+            "Price": 499,
+            "IsNew": false,
+            "IsFavorite": true,
+            "Image": "http://52.10.147.219/system/uploads/images/product_feature_1@2x.png",
+            "Rating": 3.9,
+            "Quantities": [1,2,3],
+            "RelatedProducts": [
+                { "$ref": "prod-sofa-3" },
+                { "$ref": "prod-sofa-2" },
+                { "$ref": "prod-stool-1" }
+            ]
+        },
+        "IsGift": true,
+        "Subtotal": 499,
+        "Total": "40.1",
+        "ShippingAddress": "8952 Pacocha Station Suite 664",
+        "PaymentMethod": "VISA XXXX-XXX-XXXX-3461"
+    },
+    "CheckoutPage.xaml": {
+        "Product": {
+            "$ref": "prod-with-related"
+        },
+        "ShippingOptions": [
+            {
+                "Option": "Free Shipping",
+                "Description": "4-6 Business Day",
+                "Price": 0
+            },
+            {
+                "Option": "Standard",
+                "Description": "2-4 Business Day",
+                "Price": 10
+            },
+            {
+                "Option": "Express",
+                "Description": "1 Business Day",
+                "Price": 20
+            }
+        ],
+        "Quantity": 1,
+        "VAT": "0.79",
+        "Total": 499,
+        "ShippingAddress": "8952 Pacocha Station Suite 664",
+        "PaymentMethod": "VISA XXXX-XXX-XXXX-3461"
+    }
+}

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	grial:Effects.BackgroundGradient="{ DynamicResource NavigationBarGradient }"
+	NavigationPage.HasNavigationBar="False"
+	x:Class="AppName.ContactSimpleDetailPage">  
+    <ContentPage.Content>
+        <Grid>
+            <Grid
+				Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                <grial:CardView
+					Padding="0"
+					Margin="{ 
+                        grial:OnOrientationThickness
+                            Default='20,90,20,20',
+                            LandscapePhone='20,60,20,20'
+                    }">
+                    <grial:CardView.RowDefinitions>
+                        <RowDefinition
+							Height="*" />
+                        <RowDefinition
+							Height="Auto" />
+                    </grial:CardView.RowDefinitions>
+                    
+                    <!-- LIST -->
+                    <ListView
+						Margin="{ 
+                            grial:OnOrientationThickness
+                                Default='0,70,0,0',
+                                LandscapePhone='0,35,0,0'
+                        }"
+						ItemsSource="{ Binding Values }"
+						HasUnevenRows="true"
+						BackgroundColor="{ DynamicResource BasePageColor }"
+						SelectionMode="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <local:ContactDetailItemTemplate />
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    
+                    <!-- BUTTONS GRID -->
+                    <Grid
+						Grid.Row="1"
+						ColumnSpacing="20"
+						Padding="{ 
+                            grial:OnOrientationThickness
+                                Default='20',
+                                LandscapePhone='20,8'
+                        }"
+						HorizontalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="Auto" />
+                            <RowDefinition
+								Height="Auto" />
+                        </Grid.RowDefinitions>
+                        
+                        <!-- EMAIL -->
+                        <Button
+							HorizontalOptions="Center"
+							Text="{ x:Static local:GrialIconsFont.Mail }"
+							FontFamily="{ StaticResource IconsFontFamily }"
+							Style="{ StaticResource CircleActionButtonFlatStyle }" />
+                        
+                        <!--Text-->
+                        <Label
+							Grid.Row="1"
+							Grid.Column="0"
+							Text="Email"
+							FontSize="14"
+							TextColor="{ DynamicResource CircleActionButtonFlatTextColor }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center"
+							IsVisible="{ 
+                                grial:OnOrientationBool
+                                    Default='true',
+                                    LandscapePhone='false'
+                            }" />
+                        
+                        <!-- MOBILE -->
+                        <Button
+							Grid.Row="0"
+							Grid.Column="1"
+							HorizontalOptions="Center"
+							Text="{ x:Static local:GrialIconsFont.Smartphone }"
+							FontFamily="{ StaticResource IconsFontFamily }"
+							Style="{ StaticResource CircleActionButtonFlatStyle }" />
+
+                        <!--Text-->
+                        <Label
+							Grid.Row="1"
+							Grid.Column="1"
+							Text="Mobile"
+							FontSize="14"
+							TextColor="{ DynamicResource CircleActionButtonFlatTextColor }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center"
+							IsVisible="{ 
+                                grial:OnOrientationBool
+                                    Default='true',
+                                    LandscapePhone='false'
+                            }" />
+
+                        <!-- HOME -->
+                        <Button
+							Grid.Row="0"
+							Grid.Column="2"
+							HorizontalOptions="Center"
+							Text="{ x:Static local:GrialIconsFont.Phone }"
+							FontFamily="{ StaticResource IconsFontFamily }"
+							Style="{ StaticResource CircleActionButtonFlatStyle }" />
+
+                        <!--Text-->
+                        <Label
+							Grid.Row="1"
+							Grid.Column="2"
+							Text="Home"
+							FontSize="14"
+							TextColor="{ DynamicResource CircleActionButtonFlatTextColor }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center"
+							IsVisible="{ 
+                                grial:OnOrientationBool
+                                    Default='true',
+                                    LandscapePhone='false'
+                            }" />
+
+                        <!-- SMS -->
+                        <Button
+							Grid.Row="0"
+							Grid.Column="3"
+							HorizontalOptions="Center"
+							Text="{ x:Static local:GrialIconsFont.MessageSquare }"
+							FontFamily="{ StaticResource IconsFontFamily }"
+							Style="{ StaticResource CircleActionButtonFlatStyle }" />
+
+                        <!--Text-->
+                        <Label
+							Grid.Row="1"
+							Grid.Column="3"
+							Text="SMS"
+							FontSize="14"
+							TextColor="{ DynamicResource CircleActionButtonFlatTextColor }"
+							VerticalOptions="Center"
+							HorizontalOptions="Center"
+							IsVisible="{ 
+                                grial:OnOrientationBool
+                                    Default='true',
+                                    LandscapePhone='false'
+                            }" />
+
+                    </Grid>
+                </grial:CardView>
+            </Grid>
+            
+            <!-- ROUNDED OVERLAP -->
+            <Grid
+				HorizontalOptions="Center"
+				VerticalOptions="Start"
+				HeightRequest="80"
+				Margin="{ 
+                    grial:OnOrientationThickness
+                        Default='0,50,0,0',
+                        LandscapePhone='0,20,0,0'
+                }"
+				Padding="20,0"
+				grial:Effects.ShadowOpacity="0"
+				grial:Effects.Shadow="true">
+            
+                <!-- AVATAR -->
+                <local:CircleCachedImage
+					Source="{ Binding Avatar }"
+					HorizontalOptions="Start"
+					VerticalOptions="Start"
+					HeightRequest="80"
+					WidthRequest="80">
+                    <local:CircleCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer
+							Tapped="OnEdit" />
+                    </local:CircleCachedImage.GestureRecognizers>
+                </local:CircleCachedImage>
+                
+                <!-- EDIT BUTTON -->
+                <Button
+					Grid.Column="0"
+					HorizontalOptions="End"
+					VerticalOptions="End"
+					HeightRequest="36"
+					WidthRequest="36"
+					CornerRadius="18"
+					Text="{ x:Static local:GrialIconsFont.Edit2 }"
+					FontFamily="{ StaticResource IconsFontFamily }"
+					Style="{ StaticResource CircleActionButtonFlatStyle }"
+					BackgroundColor="{ DynamicResource AccentColor }"
+					BorderWidth="0"
+					TranslationX="14"
+					TranslationY="6">
+                    <Button.GestureRecognizers>
+                        <TapGestureRecognizer
+							Tapped="OnEdit" />
+                    </Button.GestureRecognizers>
+                </Button>
+            </Grid>
+                        
+            <!--CLOSE ICON-->
+            <Label
+				Style="{ StaticResource IconCloseLabelStyle }">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnClose" />
+                </Label.GestureRecognizers>
+            </Label> 
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>

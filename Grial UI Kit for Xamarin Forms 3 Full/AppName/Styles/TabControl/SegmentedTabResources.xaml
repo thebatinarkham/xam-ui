@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:local="clr-namespace:AppName"
+	x:Class="AppName.SegmentedTabResources">
+    <ControlTemplate
+		x:Key="TabItemTemplate">
+        <Grid>
+
+            <!-- SELECTED INDICATOR -->
+            <BoxView
+				BackgroundColor="#88000000"
+				IsVisible="{ TemplateBinding IsSelected }" />
+
+            <Grid
+				VerticalOptions="Center"
+				HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="Auto" />
+                    <ColumnDefinition
+						Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- IMAGE ICON -->
+                <Image
+					Grid.Column="0"
+					WidthRequest="20"
+					HeightRequest="20"
+					VerticalOptions="Center"
+					IsVisible="{ TemplateBinding CurrentIconImage, Converter={StaticResource IsNotNullConverter} }"
+					Source="{ TemplateBinding CurrentIconImage }">
+                    <Image.Triggers>
+                        <DataTrigger
+							TargetType="Image"
+							Binding="{ TemplateBinding IsSelected }"
+							Value="false">
+                            <Setter
+								Property="Opacity"
+								Value="0.7" />
+                        </DataTrigger>
+                    </Image.Triggers>
+                </Image>
+
+                <!-- FONT ICON -->
+                <Label
+					Grid.Column="0"
+					VerticalOptions="Center"
+					IsVisible="{ TemplateBinding CurrentIconText, Converter={StaticResource IsNotEmptyStringConverter} }"
+					Text="{ TemplateBinding CurrentIconText }"
+					TextColor="{ TemplateBinding CurrentIconTextColor }"
+					FontSize="{ TemplateBinding IconTextFontSize }"
+					FontFamily="{ TemplateBinding IconTextFontFamily }" />
+
+                <!-- TEXT -->
+                <Label
+					Grid.Column="1"
+					VerticalOptions="Center"
+					HorizontalOptions="Start"
+					IsVisible="{ TemplateBinding Text, Converter={ StaticResource IsNotEmptyStringConverter } }"
+					Text="{ TemplateBinding Text }"
+					TextColor="{ TemplateBinding TextColor }"
+					FontSize="{ TemplateBinding FontSize }" />
+
+                <!-- BADGE -->
+                <local:Badge
+					Grid.Column="1"
+					Scale=".6"
+					Text="{ TemplateBinding BadgeText }"
+					BackgroundColor="{ TemplateBinding BadgeBackgroundColor }"
+					TextColor="{ TemplateBinding BadgeTextColor }"
+					HorizontalOptions="End"
+					VerticalOptions="Start"
+					TranslationX="22"
+					TranslationY="-6" />
+
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <Style
+		x:Key="TabItemStyle"
+		TargetType="grial:TabItem">
+        <Setter
+			Property="FontSize"
+			Value="16" />
+        <Setter
+			Property="TextColor"
+			Value="#CCFFFFFF" />
+        <Setter
+			Property="TextColorSelected"
+			Value="#FFFFFF" />
+        <Setter
+			Property="IconTextFontFamily"
+			Value="{ StaticResource IconsFontFamily }" />
+        <Setter
+			Property="IconTextFontSize"
+			Value="18" />
+        <Setter
+			Property="IconTextColor"
+			Value="#CCFFFFFF" />
+        <Setter
+			Property="IconTextColorSelected"
+			Value="#FFFFFF" />
+        <Setter
+			Property="BadgeTextColor"
+			Value="White" />
+        <Setter
+			Property="BadgeBackgroundColor"
+			Value="Red" />
+    </Style>
+
+    <Style
+		x:Key="SegmentedTabStyle"
+		TargetType="grial:TabControl">
+        <Setter
+			Property="TabItemControlTemplate"
+			Value="{ StaticResource TabItemTemplate }" />
+        <Setter
+			Property="TabItemStyle"
+			Value="{ StaticResource TabItemStyle }" />
+        <Setter
+			Property="TabStripHeight"
+			Value="34" />
+        <Setter
+			Property="TabStripBackgroundColor"
+			Value="#33000000" />
+        <Setter
+			Property="TabContentBackgroundColor"
+			Value="#FFFFFF" />
+        <Setter
+			Property="AnimateTransition"
+			Value="False" />
+
+        <Setter
+			Property="TabStripStyle">
+            <Setter.Value>
+                <Style
+					TargetType="Grid">
+                    <Setter
+						Property="grial:Effects.CornerRadius"
+						Value="17" />
+                    <Setter
+						Property="Margin"
+						Value="{ 
+                            grial:OnOrientationThickness
+                                Portrait=20,18,
+                                Landscape='100,18' 
+                        }" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
+

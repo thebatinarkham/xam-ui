@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions" xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+	x:Class="AppName.DashboardCarouselPage"
+	BackgroundColor="Transparent">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xamanimation:StoryBoard
+				x:Key="Anim">
+                   
+                <xamanimation:FadeInAnimation
+					Target="{ x:Reference carousel }"
+					Duration="200" />
+
+                <xamanimation:FadeInAnimation
+					Target="{ x:Reference grid }"
+					Duration="400" />
+
+            </xamanimation:StoryBoard>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Triggers>
+        <EventTrigger
+			Event="Appearing">
+            <xamanimation:BeginAnimation
+				Animation="{ StaticResource Anim }" />
+        </EventTrigger>
+    </ContentPage.Triggers>
+    
+    <ContentPage.Content>
+        <Grid>
+            <grial:GrialNavigationBar
+				UseNavigationPageBarBackgroundColor="true"
+				UseNavigationPageBarBackgroundGradient="true" />
+
+            <Image
+				Style="{ StaticResource MainMenuBackgroundImageStyle }">
+                <VisualElement.Behaviors>
+                    <grial:AnimatedTranslationY
+						Progress="{ Binding RelativeScrollY, Source={x:Reference scroll} }"
+						ProgressStart="0"
+						ProgressEnd=".5"
+						Start="0"
+						End="8" /> 
+                    <grial:AnimatedScale
+						Progress="{ Binding RelativeScrollY, Source={x:Reference scroll} }"
+						ProgressStart="0"
+						ProgressEnd=".75"
+						Start="1"
+						End="1.05" />
+                    <grial:AnimatedOpacity
+						Progress="{ Binding RelativeScrollY, Source={x:Reference scroll} }"
+						ProgressStart="0"
+						ProgressEnd=".65"
+						Start=".5"
+						End="0.2" />
+                </VisualElement.Behaviors>
+            </Image>
+            
+            <Grid
+				Margin="{
+                    grial:OnOrientationThickness
+                        Portrait='0,275,0,0',
+                        Landscape=0
+                }"
+				RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="41" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+            
+                <!-- CURVED MASK -->
+                <local:CurvedMask
+					MaskColor="{ DynamicResource BasePageColor }" />
+                    
+                <BoxView
+					Grid.Row="1"
+					BackgroundColor="{ DynamicResource BasePageColor }" />
+            </Grid> 
+            
+            <ScrollView
+				VerticalScrollBarVisibility="Never">
+                <VisualElement.Behaviors>
+                    <grial:ScrollViewScrollBehavior
+						x:Name="scroll" />
+                </VisualElement.Behaviors> 
+                
+                <Grid
+					RowSpacing="0">
+       
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+							Height="{
+                                grial:OnOrientationDouble
+                                    Portrait=245,
+                                    Landscape=0
+                            }" />
+                        <RowDefinition
+							Height="*" />
+                    </Grid.RowDefinitions>
+            
+                    <!--OVERLAPPED BACKGROUND-->
+                    <Grid
+						Grid.Row="1"
+						Margin="0,30,0,0"
+						RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+								Height="41" />
+                            <RowDefinition
+								Height="*" />
+                        </Grid.RowDefinitions>
+                        
+                        <VisualElement.Behaviors>
+                            <grial:AnimatedTranslationY
+								Progress="{ Binding RelativeScrollY, Source={x:Reference scroll} }"
+								ProgressStart=".15"
+								ProgressEnd="1"
+								Start="0"
+								End="{
+                                    grial:OnOrientationDouble
+                                        Portrait=-16,
+                                        Landscape=0
+                                }" /> 
+                        </VisualElement.Behaviors>
+                    
+                        <!-- CURVED MASK -->
+                        <local:CurvedMask
+							HeightRequest="41"
+							MaskColor="{ DynamicResource BasePageColor }" />
+                            
+                        <BoxView
+							Grid.Row="1"
+							BackgroundColor="{ DynamicResource BasePageColor }" />
+                    </Grid>  
+                                        
+                    <grial:GridView
+						x:Name="grid"
+						Opacity="0"
+						Grid.Row="1"
+						ColumnCount="3"
+						ColumnSpacing="15"
+						RowSpacing="15"
+						Padding="20"
+						ItemsSource="{ Binding Items }"
+						TranslationY="-15"
+						Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                        <grial:GridView.ItemTemplate>
+                            <DataTemplate>
+                                <local:DashboardCarouselMaintemTemplate />
+                            </DataTemplate>
+                        </grial:GridView.ItemTemplate>
+
+                    </grial:GridView>
+                </Grid>
+            </ScrollView>
+            
+            <!-- Carousel -->
+            <local:ExtendedCarouselViewControl
+				x:Name="carousel"
+				Opacity="0"
+				ShowIndicators="true"
+				Margin="0"
+				IndicatorsTintColor="{ DynamicResource TranslucidWhite }"
+				CurrentPageIndicatorTintColor="{ DynamicResource OverImageTextColor }"
+				HeightRequest="245"
+				VerticalOptions="Start"
+				ItemsSource="{ Binding Headers }"
+				IsVisible="{
+                    grial:OnOrientationBool
+                        Portrait=true,
+                        Landscape=false
+                }">   
+                <VisualElement.Behaviors>
+                    <grial:AnimatedTranslationY
+						Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+						ProgressStart="0"
+						ProgressEnd="245"
+						Start="0"
+						End="-145" />
+                    
+                    <grial:AnimatedScale
+						Progress="{ Binding AbsoluteScrollY, Source={x:Reference scroll} }"
+						ProgressStart="0"
+						ProgressEnd="145"
+						Start="1"
+						End="0.55" />
+                </VisualElement.Behaviors>
+                
+                <cv:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:DashboardCarouselHeaderItemTemplate />
+                    </DataTemplate>
+                </cv:CarouselViewControl.ItemTemplate>
+                
+            </local:ExtendedCarouselViewControl>
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>

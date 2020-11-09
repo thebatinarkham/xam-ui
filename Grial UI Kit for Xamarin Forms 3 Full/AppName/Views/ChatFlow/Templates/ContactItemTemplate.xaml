@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+	x:Class="AppName.ContactItemTemplate">
+    
+    <ContentView.Content>
+        
+        <Grid
+			BackgroundColor="{ DynamicResource BasePageBackgroundColor }"
+			RowSpacing="0"
+			ColumnSpacing="14"
+			Padding="20,0"
+			VerticalOptions="Center"
+			Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+					Width="44" />
+                <ColumnDefinition
+					Width="*" />
+            </Grid.ColumnDefinitions>
+        
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="Auto" />
+                <RowDefinition
+					Height="Auto" />
+            </Grid.RowDefinitions>
+        
+            <local:CircleCachedImage
+				Grid.Column="0"
+				Grid.RowSpan="2"
+				Source="{ Binding Avatar }"
+				Style="{ StaticResource Avatar }"
+				Aspect="AspectFill"
+				VerticalOptions="Center"
+				WidthRequest="44"
+				HeightRequest="44" />
+            
+            <!-- NAME -->
+            <Label
+				Grid.Column="1"
+				Grid.Row="0"
+				Text="{ Binding Name }"
+				VerticalOptions="End"
+				Style="{ StaticResource LabelBoldStyle }" />
+            
+            <!-- LAST SEEN -->
+            <Label
+				Grid.Column="1"
+				Grid.RowSpan="2"
+				VerticalOptions="End"
+				Text="{ Binding LastSeen }"
+				Margin="0,0,0,4"
+				Opacity="0.6"
+				FontSize="12"
+				FontAttributes="Italic"
+				HorizontalOptions="End" />
+            
+            <StackLayout
+				Grid.Column="1"
+				Grid.Row="1"
+				Orientation="Horizontal"
+				HorizontalOptions="Start">
+                <!-- LOCATION ICON -->
+                <Label
+					VerticalOptions="Center"
+					Text="{ x:Static local:GrialIconsFont.MapPin }"
+					TextColor="{ DynamicResource AccentColor }"
+					FontSize="13"
+					FontFamily="{ StaticResource IconsFontFamily }" />
+                
+                <!-- LOCATION -->
+                <Label
+					Grid.Column="1"
+					Grid.Row="1"
+					VerticalOptions="Center"
+					Text="{ Binding City }"
+					TextColor="{ DynamicResource AccentColor }"
+					FontSize="13" />
+            </StackLayout>
+
+        </Grid>
+
+    </ContentView.Content>
+    
+</ContentView>

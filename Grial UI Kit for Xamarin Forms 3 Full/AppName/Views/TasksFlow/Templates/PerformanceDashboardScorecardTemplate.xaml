@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.PerformanceDashboardScorecardTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <grial:GreaterThanZeroConverter
+				x:TypeArguments="Color"
+				x:Key="PositiveToOkColorConverter"
+				TrueValue="{ StaticResource OkColor }"
+				FalseValue="{ StaticResource DisabledColor }" />
+            
+            <grial:GreaterThanZeroConverter
+				x:TypeArguments="x:Double"
+				x:Key="PositiveTo1Converter"
+				TrueValue="1"
+				FalseValue="0.6" />
+
+            <grial:LessThanZeroConverter
+				x:TypeArguments="Color"
+				x:Key="NegativeToErrorColorConverter"
+				TrueValue="{ StaticResource ErrorColor }"
+				FalseValue="{ StaticResource DisabledColor }" />
+            
+            <grial:LessThanZeroConverter
+				x:TypeArguments="x:Double"
+				x:Key="NegativeTo1Converter"
+				TrueValue="1"
+				FalseValue="0.6" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    
+	<ContentView.Content>
+
+		<Grid
+			RowSpacing="0"
+			BackgroundColor="{ DynamicResource TranslucidWhite }"
+			grial:Effects.CornerRadius="4"
+			Padding="5,10">
+
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="60*" />
+				<RowDefinition
+					Height="40*" />
+			</Grid.RowDefinitions>
+            
+            <Grid
+				Grid.Row="0"
+				BackgroundColor="Transparent"
+				HorizontalOptions="Center">
+
+                <StackLayout
+					BackgroundColor="Transparent"
+					HorizontalOptions="Start"
+					VerticalOptions="End"
+					Spacing="-11"
+					Margin="-22,0,0,1">
+                    <!-- Up arrow -->
+        			<Label
+						FontSize="20"
+						Text="{ x:Static local:GrialIconsFont.ShapeArrowUp }"
+						TextColor="{ Binding ValueDifference, Converter={StaticResource PositiveToOkColorConverter} }"
+						Opacity="{ Binding ValueDifference, Converter={StaticResource PositiveTo1Converter} }"
+						FontFamily="{ StaticResource IconsFontFamily }"
+						VerticalOptions="End" />
+                    
+        			<!-- Down arrow -->
+        			<Label
+						FontSize="20"
+						Text="{ x:Static local:GrialIconsFont.ShapeArrowDown }"
+						TextColor="{ Binding ValueDifference, Converter={StaticResource NegativeToErrorColorConverter} }"
+						Opacity="{ Binding ValueDifference, Converter={StaticResource NegativeTo1Converter} }"
+						FontFamily="{ StaticResource IconsFontFamily }"
+						VerticalOptions="Start" />
+                </StackLayout>
+
+                <!-- Value -->
+                <Label
+					Grid.Row="0"
+					FontSize="24"
+					Style="{StaticResource LabelBoldStyle}"
+					Text="{ Binding Value }"
+					TextColor="{DynamicResource InverseTextColor}"
+					VerticalOptions="End"
+					HorizontalOptions="Center" />
+            </Grid>
+            
+            <!-- Name -->
+			<Label
+				Grid.Row="1"
+				FontSize="14"
+				Text="{ Binding Name }"
+				TextColor="{ DynamicResource InverseTextColor }"
+				HorizontalOptions="Center" />
+			
+		</Grid>
+
+	</ContentView.Content>
+	
+</ContentView>

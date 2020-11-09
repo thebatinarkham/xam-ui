@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<local:WalkthroughBasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AppName.WalkthroughMinimalPage" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	Style="{ StaticResource WalkthroughPageStyle }"
+	BackgroundColor="{ DynamicResource BasePageColor }"
+	NavigationPage.HasNavigationBar="False">
+
+    <local:WalkthroughMinimalStepItemTemplate
+		Header="{ grial:Translate WalkthroughHeaderWelcome }"
+		Text="{ grial:Translate WalkthroughTextWelcome }"
+		IconText="{ x:Static local:GrialIconsFont.CheckCircle }"
+		IconColor="#7ED321"
+		ButtonText="{ grial:Translate StringNext }" />
+
+    <local:WalkthroughMinimalStepItemTemplate
+		Header="{ grial:Translate WalkthroughHeaderSaveTime }"
+		Text="{ grial:Translate WalkthroughTextSaveTime }"
+		IconText="{ x:Static local:GrialIconsFont.AlertTriangle }"
+		IconColor="#F5A623"
+		ButtonText="{ grial:Translate StringNext }" />
+
+    <local:WalkthroughMinimalStepItemTemplate
+		Header="{ grial:Translate WalkthroughHeaderLearn }"
+		Text="{ grial:Translate WalkthroughTextLearn }"
+		IconText="{ x:Static local:GrialIconsFont.AlertCircle }"
+		IconColor="#D0021B"
+		ButtonText="{ grial:Translate StringFinish }" />
+
+</local:WalkthroughBasePage>

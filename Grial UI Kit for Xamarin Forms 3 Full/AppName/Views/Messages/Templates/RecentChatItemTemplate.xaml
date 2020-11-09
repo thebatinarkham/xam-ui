@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core"
+	x:Class="AppName.RecentChatItemTemplate">
+
+    <ContentView.Content>
+        <!-- MAIN WRAPPER-->
+        <StackLayout
+			Spacing="0"
+			Padding="0"
+			HorizontalOptions="Fill">
+
+            <!-- MAIN GRID -->
+            <Grid
+				Padding="20,0"
+				ColumnSpacing="10"
+				VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="{ grial:OnOrientationDouble 
+                        Default=45,
+                        PortraitTablet=55,
+                        LandscapeTablet=55 }" />
+                    <ColumnDefinition
+						Width="*" />
+                    <ColumnDefinition
+						Width="60" />
+                </Grid.ColumnDefinitions>
+
+                <!-- CONTACT IMAGE -->
+                <local:CircleCachedImage
+					Grid.Column="0"
+					Source="{ Binding From.Avatar }"
+					BorderColor="{ DynamicResource AccentColor }"
+					BorderSize="2"
+					Aspect="AspectFill"
+					WidthRequest="{ grial:OnOrientationDouble 
+                        Default=45,
+                        PortraitTablet=55,
+                        LandscapeTablet=55 }"
+					HeightRequest="{ grial:OnOrientationDouble 
+                        Default=45,
+                        PortraitTablet=55,
+                        LandscapeTablet=55 }"
+					VerticalOptions="Center" />
+
+                <!-- NOTIFICATION -->
+                <StackLayout
+					Grid.Column="1"
+					Spacing="{ grial:OnOrientationDouble 
+                        Default=0,
+                        PortraitTablet=2,
+                        LandscapeTablet=2 }"
+					Orientation="Vertical"
+					VerticalOptions="Center">
+                    
+                    <Label
+						Style="{ StaticResource LabelBoldStyle }"
+						Text="{ Binding From.Name }"
+						VerticalOptions="Center"
+						HorizontalOptions="Start"
+						FontSize="16" />
+
+                    <StackLayout
+						Orientation="Horizontal"
+						Spacing="6">
+                        
+                        <Label
+							HorizontalTextAlignment="End"
+							VerticalOptions="Center"
+							IsVisible="{ Binding IsRead }"
+							TextColor="{ DynamicResource OkColor }"
+							Text="{ x:Static local:GrialIconsFont.Check }"
+							Style="{ StaticResource FontIcon }" />
+                            
+                        <Label
+							FontAttributes="Italic"
+							Text="{ Binding Body }"
+							HorizontalOptions="FillAndExpand"
+							VerticalOptions="Center"
+							LineBreakMode="TailTruncation" />
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- TIME DELIVER -->
+                <StackLayout
+					Grid.Column="2"
+					VerticalOptions="Center"
+					Orientation="Horizontal">
+                    
+                    <Label
+						Text="{ Binding When }"
+						FontSize="12" />
+                        
+                    <Label
+						FontSize="14"
+						HorizontalTextAlignment="End"
+						VerticalTextAlignment="Center"
+						Text="{ x:Static local:GrialIconsFont.Clock }"
+						TextColor="{ DynamicResource OkColor }"
+						Style="{ StaticResource FontIcon }" />
+                    
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

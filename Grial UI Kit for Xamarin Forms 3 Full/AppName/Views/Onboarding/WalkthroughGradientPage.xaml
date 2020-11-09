@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<local:WalkthroughBasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	x:Class="AppName.WalkthroughGradientPage"
+	NavigationPage.HasNavigationBar="False">
+    <local:WalkthroughGradientStepTemplate
+		BackgroundColor="#EC3679"
+		StepBackgroundImage="https://s3-us-west-2.amazonaws.com/grial-images/v3.0/walkthrough_gradient_01.png"
+		Header="{ grial:Translate WalkthroughHeaderWelcome }"
+		Text="{ grial:Translate WalkthroughTextWelcome }"
+		ButtonText="{ grial:Translate StringNext }" />
+    
+    <local:WalkthroughGradientStepTemplate
+		BackgroundColor="#BC42D1"
+		StepBackgroundImage="https://s3-us-west-2.amazonaws.com/grial-images/v3.0/walkthrough_gradient_02.png"
+		Header="{ grial:Translate WalkthroughHeaderSaveTime }"
+		Text="{ grial:Translate WalkthroughTextSaveTime }"
+		ButtonText="{ grial:Translate StringNext }" />
+    
+    <local:WalkthroughGradientStepTemplate
+		BackgroundColor="#7A8FFF"
+		StepBackgroundImage="https://s3-us-west-2.amazonaws.com/grial-images/v3.0/walkthrough_gradient_03.png"
+		Header="{ grial:Translate WalkthroughHeaderLearn }"
+		Text="{ grial:Translate WalkthroughTextLearn }"
+		ButtonText="{ grial:Translate StringFinish }" />
+    
+</local:WalkthroughBasePage>

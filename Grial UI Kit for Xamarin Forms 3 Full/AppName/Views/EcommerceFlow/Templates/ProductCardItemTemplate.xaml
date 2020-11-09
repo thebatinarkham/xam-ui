@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	x:Class="AppName.ProductCardItemTemplate">
+    
+    <ContentView.Content>
+        <grial:CardView
+			Margin="8">
+            <grial:CardView.RowDefinitions>
+                <RowDefinition
+					Height="190" />
+                <RowDefinition
+					Height="*" />
+            </grial:CardView.RowDefinitions>
+            
+            <!-- PRODUCT IMAGE -->
+            <ffimageloading:CachedImage
+				Grid.Row="0"
+				FadeAnimationEnabled="true"
+				Source="{ Binding Image }"
+				Aspect="AspectFill" />
+            
+            <!-- TAG -->
+            <local:Tag
+				IsVisible="{ Binding IsNew }"
+				Text="NEW"
+				IconFontSize="10"
+				FontSize="10"
+				HeightRequest="16"
+				CornerRadius="8"
+				Margin="10,10"
+				Padding="6,0"
+				VerticalOptions="End"
+				HorizontalOptions="Start" />
+            
+            <Grid
+				Grid.Row="1"
+				Padding="16"
+				RowSpacing="{
+                    OnPlatform 
+                        iOS=2,
+                        Android=0, 
+                }">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="Auto" />
+                    <RowDefinition
+						Height="*" />
+                </Grid.RowDefinitions>
+                
+                <!-- PRODUCT MANUFACTURER -->
+                <Label
+					Grid.Row="0"
+					Text="{ Binding Manufacturer, StringFormat='BY {0}' }"
+					FontSize="11"
+					HorizontalOptions="Start"
+					TextColor="{ DynamicResource AccentColor }" />
+                
+                <!-- PRODUCT NAME -->
+                <Label
+					Grid.Row="1"
+					Text="{ Binding Name }"
+					FontSize="20"
+					Style="{ StaticResource LabelBoldStyle }"
+					HorizontalOptions="Start"
+					TextColor="{ DynamicResource BaseTextColor }"
+					LineBreakMode="TailTruncation" />
+                       
+                <!-- PRICE -->
+                <Label
+					Grid.Row="2"
+					Text="{ Binding Price, StringFormat='$ {0:0.##}' }"
+					FontSize="{ grial:OnOrientationDouble
+                        PortraitPhone=20,
+                        LandscapePhone=202,
+                        PortraitTablet=27,
+                        LandscapeTablet=27 }"
+					HorizontalOptions="Start"
+					TextColor="{ DynamicResource BaseTextColor }" />
+                
+            </Grid>
+        </grial:CardView>
+    </ContentView.Content>
+    
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer
+			Tapped="OnTapGestureRecognizerTapped"
+			NumberOfTapsRequired="1" />
+    </ContentView.GestureRecognizers>    
+</ContentView>
